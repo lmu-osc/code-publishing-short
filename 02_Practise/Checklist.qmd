@@ -1,0 +1,65 @@
+---
+title: "Checklist"
+format: html
+---
+
+# Workshop Checklist for Reproducible Manuscripts
+
+You can use this checklist for the project you worked on today or for any future projects that you make reproducible. The more points you can check off, the more reproducible your project is.
+
+You will encounter some points that were not part of this workshop, but don't worry, we provide additional resources so you can seek more information about them if you wish to.
+
+1.  Project Setup
+  + Independence
+    -   Are all files contained in an .Rproj environment?
+    -   Are all files being accessed with relative paths using the 'here' package?
+  + Stability
+    -   Are package dependencies being stabilized with the 'renv' package?
+    -   Is the environment encapsulated with Binder?
+    -   Does the online version have a persistent identifier (DOI)?
+    -   If you are the only author, does a coworker with a longer contract have access as well?
+  + Version control
+    -   Is the project being controlled through a Git integration?
+    -   Are all commits small and meaningfully labelled?
+    -   Does the repository have a license file?
+    -   Does the repository have a short but meaningful README file?
+
+2.  Data Management
+  + Structure
+    -   Are all files clearly named with consistent conventions?
+    -   Is the folder structure intuitive? There should be ≤3 levels with ≤7 folders each.
+  + Resolution level
+    -   Have sensitive data been anonymized/pseudonymized?
+    -   Are raw or preprocessed data being published? Clearly label the data as one or the other and describe any preprocessing steps in a README file.
+    -   Are there any legal restrictions regarding the data? If your work involves patents, contracts, patient data, etc., contact your data protection officer for guidelines.
+  + Accessibility
+    -   Where will the data be stored? Small datasets can be stored in Github, larger ones on the servers of storage providers, e.g. OSF or Figshare.
+    -   Where will the data be archived? On your institution's servers and/or publicly.
+    -   Under which license/restrictions is the data being published?
+
+3.  Analyses and Documentation
+  + Informativity
+    -   Is all code meaningfully commented?
+    -   Is there a codebook?
+    -   Are all analyses described in sufficient detail?
+  + Ease
+    -   Is there metadata provided to increase discoverability?
+    -   Are the analyses executable with one click?
+    -   If multiple steps are necessary, are they clearly instructed?
+
+4.  Manuscript
+  + References
+    -   Does the provided .bib-file contain all relevant and correct citations?
+    -   Are the citation keys meaningful?
+  + Tables
+    -   Can the tables be reproduced by running the applicable code section?
+  + Figures
+    -   Can the figures be reproduced by running the applicable code section?
+    -   If multiple steps are necessary, are they clearly instructed?
+
+5.  Review
+  + Internally
+    -   Has a coworker attempted to reproduce your project? Bonus points, if it's on a different operating system.
+  + Externally
+    -   Is the repository accessible to reviewers? Some repositories provide anonymized links for peer-review.
+    -   Does the repository link to the preprint/final manuscript?
