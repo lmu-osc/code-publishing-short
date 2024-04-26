@@ -1,0 +1,73 @@
+---
+title: "A Study on Penguins: A Minimal Reproducible Example"
+author:
+  - name: "Kan Garoo"
+    affiliation: "University of Melbourne"
+    email: "kangaroo@email.com"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  quarto::apa_document
+bibliography: Bibliography.bib
+---
+
+# Introduction
+
+Penguins are fascinating creatures that inhabit various regions of the Southern Hemisphere, including Antarctica and surrounding islands.
+The study of penguins provides valuable insights into ecosystem dynamics, climate change impacts, and evolutionary biology [@smith2020; @jones2018].
+
+This manuscript presents a minimal reproducible example utilizing the penguins dataset to demonstrate scientific workflows in R.
+
+```{r t_test, echo=FALSE}
+
+# Load penguins data set
+data <- read.csv("Data.csv")
+
+# Remove rows with NA
+data_clean <- data[complete.cases(data),]
+
+# Perform t-test
+t_test_result <- t.test(bill_length_mm ~ sex, data = data_clean)
+
+```
+
+# Methods
+
+We conducted a two-sample t-test to compare the average bill lengths between male and female penguins.
+The null hypothesis ($H_0$) states that there is no difference in bill lengths between male and female penguins, while the alternative hypothesis ($H_1$) suggests a significant difference.
+
+The t-test was performed using the `t.test()` function in R, with a significance level of 0.05.
+
+# Results
+
+Descriptive statistics of the data set are displayed in Table 1.
+
+```{r descriptive_statistics, echo=FALSE, results='asis'}
+
+# Call descriptive table with the vtable package
+vtable::sumtable(data_clean, group = "species")
+```
+
+The t-test revealed a significant difference in bill lengths between male and female penguins ($t($`{r} round(t_test_result$parameter, digits = 2)` $)=$ `{r} round(t_test_result$statistic, digits = 2)`, $p$ `{r} format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`).
+Female penguins ($M=$ `{r} round(mean(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)`mm, $SD=$ `{r} round(sd(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)` mm) exhibited shorter bill lengths compared to male penguins ($M=$ `{r} round(mean(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)`mm, $SD=$ `{r} round(sd(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)` mm).
+
+```{r bill_length_comparison, echo=FALSE, fig.cap="Histogram with Scatter Plot of Bill Lengths by Sex"}
+
+# Create ggplot object
+ggplot2::ggplot(data_clean, ggplot2::aes(x = sex, y = bill_length_mm, fill = sex), group = sex) +
+  ggplot2::geom_boxplot(width = 0.5, show.legend = FALSE) +
+  ggplot2::geom_jitter(width = 0.15, show.legend = FALSE) +
+  ggplot2::labs(x = "Sex", y = "Bill length in mm") +
+  ggplot2::theme_minimal()
+```
+
+# Discussion
+
+The significant difference in bill lengths between male and female penguins suggests potential sexual dimorphism in this trait.
+This finding aligns with previous research indicating differential foraging strategies and resource partitioning between male and female penguins [@brown2015; @wilson2019].
+
+Understanding the factors influencing bill morphology in penguins is crucial for conservation efforts and ecosystem management, particularly in the face of ongoing environmental challenges.
+
+# References
+
+::: {#refs}
+:::
