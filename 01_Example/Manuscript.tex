@@ -1,5 +1,6 @@
 \documentclass[
-  man,
+  jou,
+  floatsintext,
   longtable,
   nolmodern,
   notxfonts,
@@ -15,14 +16,6 @@
 \RequirePackage{longtable}
 % \setlength\LTleft{0pt}
 \RequirePackage{threeparttablex}
-
-% % % \RequirePackage{rotating}
-% \RequirePackage{threeparttablex}
-% \DeclareDelayedFloatFlavor{sidewaysfigure}{figure}
-% \DeclareDelayedFloatFlavor{sidewaystable}{table}
-% \DeclareDelayedFloatFlavor{longtable}{table}
-\DeclareDelayedFloatFlavor{ThreePartTable}{table}
-
 
 % % 
 
@@ -162,43 +155,85 @@
 
 
 
-\author{Kan Garoo}
 
 
-\affiliation{
-{University of Melbourne}}
 
+\authorsnames{Josephine Zerna,Christoph Scheffel}
 
 
 
 
 
-\leftheader{Garoo}
+\authorsaffiliations{
+{Faculty of Psychology, Technische Universität Dresden},{}}
+
+
+
+
+
+
+\leftheader{Zerna and Scheffel}
 
 
 \date{2024-04-29}
 
+\abstract{This document is a minimal, reproducible manuscript using the
+penguins data set as an example.}
 % 
+\keywords{penguins, reproducibility, minimal, example}
 
-
-\authornote{
+\authornote{\par{\addORCIDlink{Josephine
+Zerna}{0000-0003-2892-884X}}\par{\addORCIDlink{Christoph
+Scheffel}{0000-0001-5963-9229}}
 \par{ }
-\par{       }
-\par{Correspondence concerning this article should be addressed to }
+\par{       Author roles were classified using the Contributor Role Taxonomy (CRediT; https://credit.niso.org/) as follows: Josephine
+Zerna:   conceptualization, writing; Christoph Scheffel:   project
+administration, methodology}
+\par{Correspondence concerning this article should be addressed
+to Christoph Scheffel, Email: christoph\_scheffel@tu-dresden.de}
 }
+
+
+\usepackage{pbalance} 
+\usepackage{float}
+\makeatletter
+\let\oldtpt\ThreePartTable
+\let\endoldtpt\endThreePartTable
+\def\ThreePartTable{\@ifnextchar[\ThreePartTable@i \ThreePartTable@ii}
+\def\ThreePartTable@i[#1]{\begin{figure}[!htbp]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldtpt[#1]
+}
+\def\ThreePartTable@ii{\begin{figure}[!htbp]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldtpt
+}
+\def\endThreePartTable{
+\endoldtpt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
 
 
 \makeatletter
-\let\endoldlt\endlongtable
+\let\endoldlt\endlongtable		
 \def\endlongtable{
 \hline
-\endoldlt
-}
+\endoldlt}
 \makeatother
-\RequirePackage{longtable}
-\DeclareDelayedFloatFlavor{longtable}{table}
-% \RequirePackage{threeparttablex}
-% \DeclareDelayedFloatFlavor{ThreePartTable}{table}
+
+\newenvironment{twocolumntable}% environment name
+{% begin code
+\begin{table*}[!htbp]%
+\onecolumn%
+}%
+{%
+\twocolumn%
+\end{table*}%
+}% end code
 
 \urlstyle{same}
 

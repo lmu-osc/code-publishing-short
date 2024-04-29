@@ -1,17 +1,39 @@
 ---
 title: "A Study on Penguins: A Minimal Reproducible Example"
 author:
-  - name: "Kan Garoo"
-    affiliation: "University of Melbourne"
-    email: "kangaroo@email.com"
+  - name: "Josephine Zerna"
+    email: "josephine.zerna@tu-dresden.de"
+    orcid: 0000-0003-2892-884X
+    roles:
+      - conceptualization
+      - writing
+    affiliations:
+      - id: id1
+        name: "Technische Universität Dresden"
+        group: Chair of Differential and Personality Psychology
+        department: Faculty of Psychology
+        city: Dresden
+        postal-code: 01069
+  - name: "Christoph Scheffel"
+    affiliation: 
+      - id: id1
+    email: "christoph_scheffel@tu-dresden.de"
+    orcid: 0000-0001-5963-9229
+    corresponding: true
+    roles:
+      - project administration
+      - methodology
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
+abstract: "This document is a minimal, reproducible manuscript using the penguins data set as an example."
+keywords: [penguins, reproducibility, minimal, example]
+floatsintext: true
 bibliography: Bibliography.bib
 format:
   #apaquarto-docx: default
   #apaquarto-html: default
   apaquarto-pdf:
     # Can be jou (journal), man (manuscript), stu (student), or doc (document)
-    documentmode: man
+    documentmode: jou
     keep-tex: true
 ---
 
