@@ -1,0 +1,29 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+\caption{\label{tab:descriptive_statistics}Summary Statistics}
+\centering
+\begin{tabular}[t]{llllllllll}
+\toprule
+\multicolumn{1}{c}{species} & \multicolumn{3}{c}{Adelie} & \multicolumn{3}{c}{Chinstrap} & \multicolumn{3}{c}{Gentoo} \\
+\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
+Variable & N & Mean & SD & N & Mean & SD & N & Mean & SD\\
+\midrule
+island & 146 &  &  & 68 &  &  & 119 &  & \\
+... Biscoe & 44 & 30\% &  & 0 & 0\% &  & 119 & 100\% & \\
+... Dream & 55 & 38\% &  & 68 & 100\% &  & 0 & 0\% & \\
+... Torgersen & 47 & 32\% &  & 0 & 0\% &  & 0 & 0\% & \\
+bill\_length\_mm & 146 & 39 & 2.7 & 68 & 49 & 3.3 & 119 & 48 & 3.1\\
+\addlinespace
+bill\_depth\_mm & 146 & 18 & 1.2 & 68 & 18 & 1.1 & 119 & 15 & 0.99\\
+flipper\_length\_mm & 146 & 190 & 6.5 & 68 & 196 & 7.1 & 119 & 217 & 6.6\\
+body\_mass\_g & 146 & 3706 & 459 & 68 & 3733 & 384 & 119 & 5092 & 501\\
+sex & 146 &  &  & 68 &  &  & 119 &  & \\
+... female & 73 & 50\% &  & 34 & 50\% &  & 58 & 49\% & \\
+\addlinespace
+... male & 73 & 50\% &  & 34 & 50\% &  & 61 & 51\% & \\
+year & 146 & 2008 & 0.81 & 68 & 2008 & 0.86 & 119 & 2008 & 0.79\\
+\bottomrule
+\end{tabular}
+\end{table*}

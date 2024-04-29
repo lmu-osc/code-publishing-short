@@ -5,9 +5,14 @@ author:
     affiliation: "University of Melbourne"
     email: "kangaroo@email.com"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
-output:
-  quarto::apa_document
 bibliography: Bibliography.bib
+format:
+  #apaquarto-docx: default
+  #apaquarto-html: default
+  apaquarto-pdf:
+    # Can be jou (journal), man (manuscript), stu (student), or doc (document)
+    documentmode: man
+    keep-tex: true
 ---
 
 # Introduction

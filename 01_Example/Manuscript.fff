@@ -1,0 +1,11 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H]
+
+\caption{Histogram with Scatter Plot of Bill Lengths by Sex}
+
+{\centering \includegraphics{Manuscript_files/figure-pdf/bill_length_comparison-1.pdf}
+
+}
+
+\end{figure*}
