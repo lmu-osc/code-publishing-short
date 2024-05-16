@@ -48,6 +48,7 @@ renv::init()
 6. Replace the content of the new Quarto document with the provided text.
 7. Modify the fiel paths to ensure that all provided files (data, bibliography, etc.) are correctly imported and referenced in your Quarto document.
 8. Execute the Quarto document to generate your practice manuscript.
+9. Add a README.md file to the "02_Practise" folder and describe, which steps users have to to in order to execute your Minimal Example.
 
 ## Step 4: Apply the Methods to Your Own Project/Data
 
