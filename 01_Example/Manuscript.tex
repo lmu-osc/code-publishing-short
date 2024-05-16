@@ -1,6 +1,5 @@
 \documentclass[
-  jou,
-  floatsintext,
+  man,
   longtable,
   nolmodern,
   notxfonts,
@@ -16,6 +15,14 @@
 \RequirePackage{longtable}
 % \setlength\LTleft{0pt}
 \RequirePackage{threeparttablex}
+
+% % % \RequirePackage{rotating}
+% \RequirePackage{threeparttablex}
+% \DeclareDelayedFloatFlavor{sidewaysfigure}{figure}
+% \DeclareDelayedFloatFlavor{sidewaystable}{table}
+% \DeclareDelayedFloatFlavor{longtable}{table}
+\DeclareDelayedFloatFlavor{ThreePartTable}{table}
+
 
 % % 
 
@@ -175,7 +182,7 @@
 \leftheader{Zerna and Scheffel}
 
 
-\date{2024-04-29}
+\date{Invalid Date}
 
 \abstract{This document is a minimal, reproducible manuscript using the
 penguins data set as an example.}
@@ -194,46 +201,17 @@ to Christoph Scheffel, Email: christoph\_scheffel@tu-dresden.de}
 }
 
 
-\usepackage{pbalance} 
-\usepackage{float}
 \makeatletter
-\let\oldtpt\ThreePartTable
-\let\endoldtpt\endThreePartTable
-\def\ThreePartTable{\@ifnextchar[\ThreePartTable@i \ThreePartTable@ii}
-\def\ThreePartTable@i[#1]{\begin{figure}[!htbp]
-\onecolumn
-\begin{minipage}{0.5\textwidth}
-\oldtpt[#1]
-}
-\def\ThreePartTable@ii{\begin{figure}[!htbp]
-\onecolumn
-\begin{minipage}{0.5\textwidth}
-\oldtpt
-}
-\def\endThreePartTable{
-\endoldtpt
-\end{minipage}
-\twocolumn
-\end{figure}}
-\makeatother
-
-
-\makeatletter
-\let\endoldlt\endlongtable		
+\let\endoldlt\endlongtable
 \def\endlongtable{
 \hline
-\endoldlt}
+\endoldlt
+}
 \makeatother
-
-\newenvironment{twocolumntable}% environment name
-{% begin code
-\begin{table*}[!htbp]%
-\onecolumn%
-}%
-{%
-\twocolumn%
-\end{table*}%
-}% end code
+\RequirePackage{longtable}
+\DeclareDelayedFloatFlavor{longtable}{table}
+% \RequirePackage{threeparttablex}
+% \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 
 \urlstyle{same}
 
