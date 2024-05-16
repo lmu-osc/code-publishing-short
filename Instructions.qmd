@@ -1,0 +1,62 @@
+---
+title: "Workshop Instructions: Reproducible Scientific Manuscripts"
+---
+
+# Workshop Instructions: Reproducible Scientific Manuscripts
+
+## Step 1: Clone the Repository
+
+1. Open your terminal or command prompt.
+2. Navigate to the directory where you want to clone the repository.
+3. Execute the following command:
+
+```{r eval=FALSE}
+git clone <repository_url>
+```
+
+Replace `<repository_url>` with the URL of the GitHub repository provided to you.
+
+## Step 2: Execute the Minimal Example
+
+1. Navigate to the "01_Example" folder in the cloned repository.
+2. Open the "Example.Rproj" file in RStudio.
+3. Run the provided script, "Manuscript.qmd", to execute the minimal example. Data, bibliography and citation style file are already provided in the folder, there is no need to change or add anything.
+4. Review the generated manuscript files ("Manuscript.docx", "Manuscript.html", etc.) to ensure they were created successfully.
+
+## Step 3: Rebuild the Minimal Example as Practise
+
+1. Open your terminal or command prompt.
+2. Navigate to the "02_Practise" folder in the cloned repository.
+3. Create a new R Project in this folder and initialize the *renv* environment:
+
+```{r eval=FALSE}
+renv::init()
+```
+
+
+4. Open the newly created ".Rproj" file in RStudio.
+5. Within the R Project, create a new Quarto document:
+- Click on File > New File > Quarto Document...
+6. Replace the content of the new Quarto document with the provided text.
+7. Modify the fiel paths to ensure that all provided files (data, bibliography, etc.) are correctly imported and referenced in your Quarto document.
+8. Execute the Quarto document to generate your practice manuscript.
+
+## Step 4: Apply the Methods to Your Own Project/Data
+
+1. Navigate to your own project directory or create a new one if needed.
+2. Create a Quarto document and copy text from your existing manuscript into the document.
+3. Modify the formatting.
+4. Copy a figure into the project folder and insert it into the document.
+5. Create a table, either by hand or by importing your dataset into the project folder and using a package to generate a table.
+6. Add your bibliography as a .bib file.
+7. Choose a citation style and download the appropriate .csl file from the web.
+8. Execute your modified scripts and review the generated manuscript files.
+9. Add a license file.
+10. Add a README file to let others know what the project contains, how to execute it, and who to contact in case of trouble.
+
+## Step 5: Use the Checklist
+
+1. Navigate to the "03_Supplement" folder in the cloned repository.
+2. Open the "Checklist.qmd" in RStudio or the "Checklist.html" file in your web browser.
+3. Review each item on the checklist to ensure that your work meets the reproducibility criteria.
+4. Tick off each item as you verify its completion in your project.
