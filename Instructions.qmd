@@ -6,9 +6,9 @@ title: "Workshop Instructions: Reproducible Scientific Manuscripts"
 
 In this part of the workshop, you will integrate all of the skills, you acquired in the previous lessons.
 You will firstly execute a self-contained minimal example that is provided in this repository.
-Secondly, you will recreate the minimal example using all the components provided in the folder "02_practice".
+Secondly, you will recreate the minimal example using all the components provided in the folder "02_Practice".
 Thirdly, you will create your own first reproducible manuscript based on a conventional manuscript you already have.
-And finally, you can use the checklist provided in the "03_supplement" folder to go over your project and see how many reproducibility measure you applied.
+And finally, you can use the checklist provided in the "03_Supplement" folder to go over your project and see how many reproducibility measures you have applied.
 
 <!-- Please insert links to the appropriate workshop components and folders -->
 
