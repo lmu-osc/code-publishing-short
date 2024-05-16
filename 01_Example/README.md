@@ -3,8 +3,8 @@ This folder contains all relevant data to reproduce the manuscript:
 * An R-project ```Example.Rproj``` that was set up using a reproducible environment ```renv```
 * An apaquarto manuscript ```Manuscript.qmd```
 * Primary data that are necessary to reproduce the analyses ```Data.csv```
-* A bibliogrpahy file that contains all references used in the manuscript ```Bibliography.bib```
-* Citation language style files that are necessary to formate references in APA7 style ```apa7.csl``` and ```apa7.cls```
+* A bibliography file that contains all references used in the manuscript ```Bibliography.bib```
+* Citation language style files that are necessary to format references in APA7 style ```apa7.csl``` and ```apa7.cls```
 * further files and folders that are created when you produce the document
 
 In order to reproduce the Minimal Example, please execute the following steps:
