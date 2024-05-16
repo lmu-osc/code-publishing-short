@@ -27,9 +27,9 @@ Replace `<repository_url>` with the URL of the GitHub repository provided to you
 ## Step 2: Execute the Minimal Example
 
 1. Navigate to the "01_Example" folder in the cloned repository.
-2. Open the "Example.Rproj" file in RStudio.
-3. Run the provided script, "Manuscript.qmd", to execute the minimal example. Data, bibliography and citation style file are already provided in the folder, there is no need to change or add anything.
-4. Review the generated manuscript files ("Manuscript.docx", "Manuscript.html", etc.) to ensure they were created successfully.
+2. Open the README.md file. 
+Every repository should contain a README file describing the content of the repository, how to execute the files, and who to contact in case of issues. 
+Therefore, you will find the instructions on how to execute the Minimal Example within this README file.
 
 ## Step 3: Rebuild the Minimal Example as Practise
 
