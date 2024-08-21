@@ -8,15 +8,15 @@ author:
       - conceptualization
       - writing
     affiliations:
-      - id: id1
+      - id: "tu-dresden"
         name: "Technische Universität Dresden"
         group: Chair of Differential and Personality Psychology
         department: Faculty of Psychology
         city: Dresden
         postal-code: 01069
   - name: "Christoph Scheffel"
-    affiliation: 
-      - id: id1
+    affiliation:
+      - id: "tu-dresden"
     email: "christoph_scheffel@tu-dresden.de"
     orcid: 0000-0001-5963-9229
     corresponding: true
