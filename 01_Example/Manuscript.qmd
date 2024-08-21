@@ -86,11 +86,15 @@ Female penguins ($M=$ `{r} round(mean(data$bill_length_mm[data$sex == "female"],
 ```{r}
 #| label: "bill-length-comparison"
 #| echo: false
-#| fig.cap: "Histogram with Scatter Plot of Bill Lengths by Sex"
+#| fig-cap: "Scatter Plot of Bill Lengths by Sex"
+#| fig-subcap: "Violin Plot Displays Quartiles"
 
 # Create ggplot object
 ggplot2::ggplot(data_clean, ggplot2::aes(x = sex, y = bill_length_mm, fill = sex), group = sex) +
-  ggplot2::geom_boxplot(width = 0.5, show.legend = FALSE) +
+  ggplot2::geom_violin(
+    draw_quantiles = c(0.25, 0.5, 0.75),
+    show.legend = FALSE
+  ) +
   ggplot2::geom_jitter(width = 0.15, show.legend = FALSE) +
   ggplot2::labs(x = "Sex", y = "Bill length in mm") +
   ggplot2::theme_minimal()
