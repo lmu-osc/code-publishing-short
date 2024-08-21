@@ -44,7 +44,9 @@ The study of penguins provides valuable insights into ecosystem dynamics, climat
 
 This manuscript presents a minimal reproducible example utilizing the penguins dataset to demonstrate scientific workflows in R.
 
-```{r t_test, echo=FALSE}
+```{r}
+#| label: "t-test"
+#| echo: false
 
 # Load penguins data set
 data <- read.csv("Data.csv")
@@ -68,7 +70,10 @@ The t-test was performed using the `t.test()` function in R, with a significance
 
 Descriptive statistics of the data set are displayed in Table 1.
 
-```{r descriptive_statistics, echo=FALSE, results='asis'}
+```{r}
+#| label: "descriptive-statistics"
+#| echo: false
+#| results: "asis"
 
 # Call descriptive table with the vtable package
 vtable::sumtable(data_clean, group = "species")
@@ -78,7 +83,10 @@ vtable::sumtable(data_clean, group = "species")
 The t-test revealed a significant difference in bill lengths between male and female penguins ($t($`{r} round(t_test_result$parameter, digits = 2)` $)=$ `{r} round(t_test_result$statistic, digits = 2)`, $p$ `{r} format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`).
 Female penguins ($M=$ `{r} round(mean(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)`mm, $SD=$ `{r} round(sd(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)` mm) exhibited shorter bill lengths compared to male penguins ($M=$ `{r} round(mean(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)`mm, $SD=$ `{r} round(sd(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)` mm).
 
-```{r bill_length_comparison, echo=FALSE, fig.cap="Histogram with Scatter Plot of Bill Lengths by Sex"}
+```{r}
+#| label: "bill-length-comparison"
+#| echo: false
+#| fig.cap: "Histogram with Scatter Plot of Bill Lengths by Sex"
 
 # Create ggplot object
 ggplot2::ggplot(data_clean, ggplot2::aes(x = sex, y = bill_length_mm, fill = sex), group = sex) +
