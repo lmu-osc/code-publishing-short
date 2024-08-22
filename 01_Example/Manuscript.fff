@@ -1,10 +1,13 @@
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
-[H]
 
-\caption{Histogram with Scatter Plot of Bill Lengths by Sex}
 
-{\centering \includegraphics{Manuscript_files/figure-pdf/bill_length_comparison-1.pdf}
+\caption{\label{fig-bill-length-comparison}Scatter Plot of Bill Lengths
+by Sex With Violin Plot Showing Quartiles}
+
+\centering{
+
+\includegraphics{Manuscript_files/figure-pdf/fig-bill-length-comparison-1.pdf}
 
 }
 
