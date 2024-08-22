@@ -71,12 +71,13 @@ The t-test was performed using the `t.test()` function in R, with a significance
 Descriptive statistics of the data set are displayed in Table 1.
 
 ```{r}
-#| label: "tbl-descriptive-statistics"
+#| label: "descriptive-statistics"
 #| echo: false
 #| results: "asis"
+#| tbl-cap: "Summary Statistics"
 
-# Call descriptive table with the vtable package
-vtable::sumtable(data_clean, group = "species")
+options(modelsummary_warning_latex_siunitx_preamble = FALSE) # Hide LaTeX compilation tips
+modelsummary::datasummary_balance(formula = ~ species, data = data_clean, output = "latex", dinm = FALSE)
 
 ```
 
