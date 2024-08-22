@@ -71,7 +71,7 @@ The t-test was performed using the `t.test()` function in R, with a significance
 Descriptive statistics of the data set are displayed in Table 1.
 
 ```{r}
-#| label: "descriptive-statistics"
+#| label: "tbl-descriptive-statistics"
 #| echo: false
 #| results: "asis"
 
@@ -84,7 +84,7 @@ The t-test revealed a significant difference in bill lengths between male and fe
 Female penguins ($M = `{r} round(mean(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)` \mathrm{mm}, SD = `{r} round(sd(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)` \mathrm{mm}$) exhibited shorter bill lengths compared to male penguins ($M = `{r} round(mean(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)` \mathrm{mm}, SD = `{r} round(sd(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)` \mathrm{mm}$).
 
 ```{r}
-#| label: "bill-length-comparison"
+#| label: "fig-bill-length-comparison"
 #| echo: false
 #| fig-cap: "Scatter Plot of Bill Lengths by Sex With Violin Plot Showing Quartiles"
 
