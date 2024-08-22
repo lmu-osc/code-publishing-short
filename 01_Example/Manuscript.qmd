@@ -71,7 +71,7 @@ The t-test was performed using the `t.test()` function in R, with a significance
 Descriptive statistics of the data set are displayed in Table 1.
 
 ```{r}
-#| label: "descriptive-statistics"
+#| label: "tbl-descriptive-statistics"
 #| echo: false
 #| results: "asis"
 #| tbl-cap: "Summary Statistics"
