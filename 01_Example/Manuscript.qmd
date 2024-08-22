@@ -80,8 +80,8 @@ vtable::sumtable(data_clean, group = "species")
 
 ```
 
-The t-test revealed a significant difference in bill lengths between male and female penguins ($t($`{r} round(t_test_result$parameter, digits = 2)` $)=$ `{r} round(t_test_result$statistic, digits = 2)`, $p$ `{r} format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`).
-Female penguins ($M=$ `{r} round(mean(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)`mm, $SD=$ `{r} round(sd(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)` mm) exhibited shorter bill lengths compared to male penguins ($M=$ `{r} round(mean(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)`mm, $SD=$ `{r} round(sd(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)` mm).
+The t-test revealed a significant difference in bill lengths between male and female penguins ($t(`{r} round(t_test_result$parameter, digits = 2)`) = `{r} round(t_test_result$statistic, digits = 2)`, p `{r} format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`$).
+Female penguins ($M = `{r} round(mean(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)` \mathrm{mm}, SD = `{r} round(sd(data$bill_length_mm[data$sex == "female"], na.rm = TRUE), digits = 2)` \mathrm{mm}$) exhibited shorter bill lengths compared to male penguins ($M = `{r} round(mean(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)` \mathrm{mm}, SD = `{r} round(sd(data$bill_length_mm[data$sex == "male"], na.rm = TRUE), digits = 2)` \mathrm{mm}$).
 
 ```{r}
 #| label: "bill-length-comparison"
