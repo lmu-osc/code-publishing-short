@@ -1,6 +1,6 @@
 title: My Document in APA Style, Seventh Edition
 author: W. Joel Schneider
-version: 3.5.3
+version: 4.3.2
 quarto-required: ">=1.4.549"
 contributes:
   formats:
@@ -8,6 +8,7 @@ contributes:
       execute:
         echo: false
       citeproc: false
+      link-citations: true
       fig-cap-location: top
       tbl-cap-location: top
       cap-location: top
@@ -15,6 +16,41 @@ contributes:
       toc: false
       fig-width: 6.5
       fig-height: 6.5
+      suppress-title-page: false
+      suppress-title-page-number: false
+      suppress-title: false
+      suppress-short-title: false
+      suppress-author: false
+      suppress-affiliation: false
+      suppress-author-note: false
+      suppress-orcid: false
+      suppress-status-change-paragraph: false
+      suppress-disclosures-paragraph: false
+      suppress-credit-statement: false
+      suppress-corresponding-paragraph: false
+      suppress-corresponding-group: false
+      suppress-corresponding-department: false
+      suppress-corresponding-affiliation-name: false
+      suppress-corresponding-address: false
+      suppress-corresponding-city: false
+      suppress-corresponding-region: false
+      suppress-corresponding-postal-code: false
+      suppress-corresponding-email: false
+      suppress-abstract: false
+      suppress-keywords: false
+      suppress-title-introduction: false
+      no-ampersand-parenthetical: false
+      language: 
+        citation-last-author-separator: "and"
+        citation-masked-author: "Masked Author"
+        citation-masked-title: "Masked Title"
+        citation-masked-date: "n.d."
+        email: "Email"
+        figure-table-note: "Note"
+        title-block-author-note: "Author Note"
+        title-block-correspondence-note: "Correspondence concerning this article should be addressed to"
+        title-block-role-introduction: "Author roles were classified using the Contributor Role Taxonomy (CRediT; https://credit.niso.org/) as follows:"
+        references-meta-analysis: "Las referencias marcadas con un asterisco indican estudios incluidos en el metanálisis."
       filters:
         - at: pre-ast
           path: apalanguage.lua
@@ -86,13 +122,9 @@ contributes:
       knitr: 
         opts_chunk: 
           dev: svglite
-      filters:
-        - at: post-render
-          path: citeprocr.lua
     pdf:
       documentclass: apa7
       pdf-engine: xelatex
-      link-citations: false
       suppress-bibliography: false
       hyperrefoptions: 
         - linktoc=none
@@ -105,9 +137,6 @@ contributes:
         - before-body.tex
         - header.tex
       classoption: "colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue"
-      filters:
-        - at: post-render
-          path: citeprocr.lua
     docx: 
       reference-doc: apaquarto.docx
       filters: 
@@ -115,13 +144,13 @@ contributes:
           path: docxstyler.lua
         - at: post-render
           path: docxlinenumber.lua
-        - at: post-render
-          path: citeprocr.lua
       knitr: 
         opts_chunk: 
           dev: ragg_png
     typst:
-      bibliographystyle: apa
+      filters: 
+        - at: post-quarto
+          path: typst/formattypst.lua
       template-partials:
         - typst/typst-template.typ
         - typst/typst-show.typ

@@ -2,7 +2,15 @@ $doc-class.tex()$
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+$if(docmode)$
+\geometry{inner=1in, outer=1in}
+\fancyhfoffset[LE,RO]{0cm}
+$endif$
 
+$if(geometry)$
+\geometry{$for(geometry)$$geometry$$sep$,$endfor$}
+\fancyhfoffset[LE,RO]{0cm}
+$endif$
 
 $if(lang)$
 \usepackage[bidi=default]{babel}
@@ -30,29 +38,7 @@ $endfor$
 $endif$
 
 \RequirePackage{longtable}
-% \setlength\LTleft{0pt}
 \RequirePackage{threeparttablex}
-
-% $if(floatsintext)$
-% $else$
-% $if(journalmode)$
-% 
-% $else$
-% \RequirePackage{rotating}
-% \RequirePackage{threeparttablex}
-% \DeclareDelayedFloatFlavor{sidewaysfigure}{figure}
-% \DeclareDelayedFloatFlavor{sidewaystable}{table}
-% \DeclareDelayedFloatFlavor{longtable}{table}
-$if(floatsintext)$
-$else$
-\DeclareDelayedFloatFlavor{ThreePartTable}{table}
-$endif$
-
-
-% $endif$
-% $endif$
-
-
 
 $header.tex()$
 
@@ -177,10 +163,10 @@ $else$
 \makeatother
 $if(floatsintext)$
 $else$
+$if(manuscriptmode)$
 \RequirePackage{longtable}
 \DeclareDelayedFloatFlavor{longtable}{table}
-% \RequirePackage{threeparttablex}
-% \DeclareDelayedFloatFlavor{ThreePartTable}{table}
+$endif$
 $endif$
 $endif$
 
@@ -189,6 +175,10 @@ $endif$
 
 $for(header-insert)$
 $header-insert$
+$endfor$
+
+$for(header-includes)$
+$header-includes$
 $endfor$
 
 % From https://tex.stackexchange.com/a/645996/211326
@@ -213,6 +203,13 @@ $if(toc)$
 \tableofcontents
 \newpage
 \section[Introduction]{$title$}
+$else$
+$if(suppress-title-page)$
+$if(suppress-title-introduction)$
+$else$
+\section[Introduction]{$title$}
+$endif$
+$endif$
 $endif$
 
 $if(numbersections)$
@@ -226,8 +223,6 @@ $endif$
 $if(numbered-lines)$
 \resetlinenumber[1]
 $endif$
-
-
 
 $body$
 
