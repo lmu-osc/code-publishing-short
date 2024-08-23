@@ -57,8 +57,6 @@ div.csl-indent {
 <script src="Manuscript_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Manuscript_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Manuscript_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="Manuscript_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-<script src="Manuscript_files/libs/tabwid-1.1.3/tabwid.js"></script>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -163,13 +161,13 @@ window.Quarto = {
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
-<p>We conducted a two-sample Welch <em>t</em>-test to compare the average bill lengths between male and female penguins. The null hypothesis (<span class="math inline">H_0</span>) states that there is no difference in bill lengths between male and female penguins, while the alternative hypothesis (<span class="math inline">H_1</span>) suggests a significant difference.</p>
+<p>We conducted a Welch two-sample <em>t</em>-test to compare the average bill lengths between male and female penguins. The null hypothesis (<span class="math inline">H_0</span>) states that there is no difference in bill lengths between male and female penguins, while the alternative hypothesis (<span class="math inline">H_1</span>) suggests a significant difference.</p>
 <p>The <em>t</em>-test was performed using the <code>t.test()</code> function in R, with a significance level of 0.05.</p>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
 <p>Descriptive statistics of the data set are given in <a href="#tbl-descriptive-statistics" class="quarto-xref" aria-expanded="false">Table&nbsp;1</a> and individual bill lengths are displayed in <a href="#fig-bill-length-comparison" class="quarto-xref" aria-expanded="false">Figure&nbsp;1</a>.</p>
-<p>The <em>t</em>-test revealed a significant difference in bill lengths between male and female penguins (<span class="math inline">t(329.29) = -6.67{,}\&gt; p &lt; 0.001</span>). Female penguins (<span class="math inline">M = 42.1\,\mathrm{mm}{,}\&gt; SD = 4.9\,\mathrm{mm}</span>) exhibited shorter bill lengths compared to male penguins (<span class="math inline">M = 45.85\,\mathrm{mm}{,}\&gt; SD = 5.37\,\mathrm{mm}</span>).</p>
+<p>The Welch Two Sample t-test testing the difference of bill_length_mm by sex (mean in group female = 42.10, mean in group male = 45.85) suggests that the effect is negative, statistically significant, and large (difference = -3.76, 95% CI [-4.87, -2.65], t(329.29) = -6.67, p &lt; .001, Cohen’s d = -0.73)</p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
@@ -205,7 +203,82 @@ Wilson, G. H. (2019). Foraging strategies in male and female penguins. <em>Behav
 </figcaption>
 <div aria-describedby="tbl-descriptive-statistics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-06d27c9e{}.cl-06cc8c76{font-family:'TeX Gyre Termes';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-06cf5f6e{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 2;background-color:transparent;}.cl-06cf72e2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-06cf72ec{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-06cf72ed{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-06cf72ee{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-06cf72f6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-06d27c9e"><thead><tr style="overflow-wrap:break-word;"><th colspan="2" class="cl-06cf72e2"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"> </span></p></th><th colspan="2" class="cl-06cf72e2"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">female (N=165)</span></p></th><th colspan="2" class="cl-06cf72e2"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">male (N=168)</span></p></th><th colspan="2" class="cl-06cf72e2"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">unknown (N=11)</span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"> </span></p></th><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">  </span></p></th><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Mean</span></p></th><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Std. Dev.</span></p></th><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Mean </span></p></th><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Std. Dev. </span></p></th><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Mean  </span></p></th><th class="cl-06cf72ec"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Std. Dev.  </span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">bill_length_mm (N=342)</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">42.1</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">4.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">45.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">5.4</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">41.3</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">4.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">bill_depth_mm (N=342)</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">16.4</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">1.8</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">17.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">1.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">16.6</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">2.2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">flipper_length_mm (N=342)</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">197.4</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">12.5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">204.5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">14.5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">199.0</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">16.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">body_mass_g (N=342)</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">3862.3</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">666.2</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">4545.7</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">787.6</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">4005.6</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">679.4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">N</span></p></td><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Pct.</span></p></td><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">N</span></p></td><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Pct.</span></p></td><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">N</span></p></td><td class="cl-06cf72ee"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Pct.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">species</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Adelie</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">73</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">44.2</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">73</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">43.5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">6</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">54.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Chinstrap</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">34</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">20.6</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">34</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">20.2</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">0</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">0.0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Gentoo</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">58</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">35.2</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">61</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">36.3</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">45.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">island</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Biscoe</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">80</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">48.5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">83</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">49.4</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">45.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Dream</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">61</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">37.0</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">62</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">36.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">1</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">9.1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">Torgersen</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">24</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">14.5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">23</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">13.7</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">5</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">45.5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">year</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">2007</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">51</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">30.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">52</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">31.0</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">7</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">63.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">2008</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">56</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">33.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">57</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">33.9</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">1</span></p></td><td class="cl-06cf72ed"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">9.1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76"></span></p></td><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">2009</span></p></td><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">58</span></p></td><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">35.2</span></p></td><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">59</span></p></td><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">35.1</span></p></td><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">3</span></p></td><td class="cl-06cf72f6"><p class="cl-06cf5f6e"><span class="cl-06cc8c76">27.3</span></p></td></tr></tbody></table></div>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">female (n=165)</th>
+<th style="text-align: left;">male (n=168) (n=333)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">species [Adelie], %</td>
+<td style="text-align: left;">44.2</td>
+<td style="text-align: left;">43.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">species [Chinstrap], %</td>
+<td style="text-align: left;">20.6</td>
+<td style="text-align: left;">20.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">species [Gentoo], %</td>
+<td style="text-align: left;">35.2</td>
+<td style="text-align: left;">36.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">island [Biscoe], %</td>
+<td style="text-align: left;">48.5</td>
+<td style="text-align: left;">49.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">island [Dream], %</td>
+<td style="text-align: left;">37.0</td>
+<td style="text-align: left;">36.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">island [Torgersen], %</td>
+<td style="text-align: left;">14.5</td>
+<td style="text-align: left;">13.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean bill_length_mm (SD)</td>
+<td style="text-align: left;">42.10 (4.90)</td>
+<td style="text-align: left;">45.85 (5.37)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean bill_depth_mm (SD)</td>
+<td style="text-align: left;">16.43 (1.80)</td>
+<td style="text-align: left;">17.89 (1.86)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean flipper_length_mm (SD)</td>
+<td style="text-align: left;">197.36 (12.50)</td>
+<td style="text-align: left;">204.51 (14.55)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean body_mass_g (SD)</td>
+<td style="text-align: left;">3862.27 (666.17)</td>
+<td style="text-align: left;">4545.68 (787.63)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">year [2007], %</td>
+<td style="text-align: left;">30.9</td>
+<td style="text-align: left;">31.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year [2008], %</td>
+<td style="text-align: left;">33.9</td>
+<td style="text-align: left;">33.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">year [2009], %</td>
+<td style="text-align: left;">35.2</td>
+<td style="text-align: left;">35.1</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </figure>
@@ -213,7 +286,7 @@ Wilson, G. H. (2019). Foraging strategies in male and female penguins. <em>Behav
 </div>
 <div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
 <div class="cell-output-display">
-<div id="fig-bill-length-comparison" class="quarto-float quarto-figure quarto-figure-center" data-fignum="1" prefix="">
+<div id="fig-bill-length-comparison" class="quarto-float quarto-figure quarto-figure-center" prefix="" data-fignum="1">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-bill-length-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="FigureTitle" data-custom-style="FigureTitle">

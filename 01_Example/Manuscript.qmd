@@ -55,16 +55,22 @@ This manuscript presents a minimal reproducible example utilizing the penguins d
 dat <- read.csv("Data.csv")
 
 # Remove rows with NA
-dat_clean <- dat[complete.cases(dat),]
+dat_clean <- dat[complete.cases(dat), ]
+
+# Treat year as categorical variable
+dat_clean$year <- as.factor(dat_clean$year)
 
 # Perform t-test
-t_test_result <- t.test(bill_length_mm ~ sex, data = dat_clean, var.equal = FALSE)
-
+t_test_result <- t.test(
+  bill_length_mm ~ sex,
+  data = dat_clean,
+  var.equal = FALSE
+)
 ```
 
 # Methods
 
-We conducted a two-sample Welch *t*-test to compare the average bill lengths between male and female penguins.
+We conducted a Welch two-sample *t*-test to compare the average bill lengths between male and female penguins.
 The null hypothesis ($H_0$) states that there is no difference in bill lengths between male and female penguins, while the alternative hypothesis ($H_1$) suggests a significant difference.
 
 The *t*-test was performed using the `t.test()` function in R, with a significance level of 0.05.
@@ -74,43 +80,27 @@ The *t*-test was performed using the `t.test()` function in R, with a significan
 Descriptive statistics of the data set are given in @tbl-descriptive-statistics and individual bill lengths are displayed in @fig-bill-length-comparison.
 
 ```{r}
+#| echo: false
+#| output: "asis"
+
+report::report(
+  x = t_test_result,
+  data = dat_clean,
+  rules = "gignac2016"
+) |>
+  report::as.report_text(summary = TRUE)
+```
+
+```{r}
 #| label: "tbl-descriptive-statistics"
 #| echo: false
 #| tbl-cap: "Descriptive Statistics"
 #| apa-twocolumn: true
 
-dat_desc <- dat
-
-dat_desc$sex[is.na(dat_desc$sex)] <- "unknown" # Convert NA to "unknown"
-dat_desc$year <- as.factor(dat_desc$year) # Convert year to factor
-
-# Add number of non-missings to names of numeric variables
-n <- sapply(dat_desc, \(v) sum(!is.na(v))) # Calculate number of non-missings
-labels <- paste0(names(dat_desc), " (N=", n, ")") # Paste variable names and numbers together
-idx <- which(sapply(dat_desc, is.numeric)) # Identify numeric variables
-names(dat_desc)[idx] <- labels[idx] # Change the variable names
-
-modelsummary::datasummary_balance(
-  formula = ~ sex,
-  data = dat_desc,
-  output = "flextable",
-  dinm = FALSE
-) |>
-  flextable::theme_apa() |>
-  flextable::font(fontname = "TeX Gyre Termes", part = "all")
+report::report_sample(dat_clean, by = "sex", total = FALSE) |>
+  knitr::kable()
 
 ```
-
-```{r}
-#| label: "bill-lengths"
-#| echo: false
-
-blm_female <- dat_clean$bill_length_mm[dat_clean$sex == "female"]
-blm_male <- dat_clean$bill_length_mm[dat_clean$sex == "male"]
-```
-
-The *t*-test revealed a significant difference in bill lengths between male and female penguins ($t(`r round(t_test_result$parameter, digits = 2)`) = `r round(t_test_result$statistic, digits = 2)`{,}\> p `r format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`$).
-Female penguins ($M = `r round(mean(blm_female), digits = 2)`\,\mathrm{mm}{,}\> SD = `r round(sd(blm_female), digits = 2)`\,\mathrm{mm}$) exhibited shorter bill lengths compared to male penguins ($M = `r round(mean(blm_male), digits = 2)`\,\mathrm{mm}{,}\> SD = `r round(sd(blm_male), digits = 2)`\,\mathrm{mm}$).
 
 ```{r}
 #| label: "fig-bill-length-comparison"
