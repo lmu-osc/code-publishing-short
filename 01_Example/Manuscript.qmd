@@ -74,7 +74,7 @@ Descriptive statistics of the data set are displayed in Table 1.
 ```{r}
 #| label: "descriptive-statistics"
 #| echo: false
-#| tbl-cap: "Summary Statistics"
+#| tbl-cap: "Descriptive Statistics"
 
 within(dat, {
   sex[is.na(sex)] <- "unknown"
