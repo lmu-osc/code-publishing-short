@@ -70,12 +70,13 @@ The t-test was performed using the `t.test()` function in R, with a significance
 
 # Results
 
-Descriptive statistics of the data set are displayed in Table 1.
+Descriptive statistics of the data set are given in @tbl-descriptive-statistics and individual bill lengths are displayed in @fig-bill-length-comparison.
 
 ```{r}
-#| label: "descriptive-statistics"
+#| label: "tbl-descriptive-statistics"
 #| echo: false
 #| tbl-cap: "Descriptive Statistics"
+#| apa-twocolumn: true
 
 within(dat, {
   sex[is.na(sex)] <- "unknown"
@@ -92,11 +93,9 @@ within(dat, {
       )
     x
   })() |>
-  modelsummary::datasummary_balance(formula = ~ sex, dinm = FALSE) |>
-  tinytable::style_tt(
-    # Make table more compact to fit on page
-    tabularray_inner = "rowsep={0.2em}, colsep = {0.2em}"
-  )
+  modelsummary::datasummary_balance(formula = ~ sex, output = "flextable", dinm = FALSE) |>
+  flextable::theme_apa() |>
+  flextable::font(fontname = "TeX Gyre Termes", part = "all")
 
 ```
 
