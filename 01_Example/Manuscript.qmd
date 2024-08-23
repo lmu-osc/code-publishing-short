@@ -76,7 +76,7 @@ Descriptive statistics of the data set are displayed in Table 1.
 #| echo: false
 #| tbl-cap: "Summary Statistics"
 
-modelsummary::datasummary_balance(formula = ~ species, data = data_clean, dinm = FALSE)
+modelsummary::datasummary_balance(formula = ~ sex, data = data_clean, dinm = FALSE)
 
 ```
 
