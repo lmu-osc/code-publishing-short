@@ -83,15 +83,11 @@ within(dat, {
   sex[is.na(sex)] <- "unknown"
   year <- as.factor(year) # Year is more interesting if analyzed as factor
 }) |>
-  (\(x) { # Add number of non-missings
-    n <- sapply(x, \(v) sum(!is.na(v)))
-    labels <- paste0(names(x), " (N=", n, ")")
-    idx <- which(sapply(x, is.numeric))
-    names(x) <- names(x) |>
-      replace(
-        list = idx,
-        values = labels[idx]
-      )
+  (\(x) { # Add number of non-missings to labels
+    n <- sapply(x, \(v) sum(!is.na(v))) # Calculate number of non-missings
+    labels <- paste0(names(x), " (N=", n, ")") # Paste labels and numbers together
+    idx <- which(sapply(x, is.numeric)) # Get numeric variables
+    names(x)[idx] <- labels[idx] # Change the labels
     x
   })() |>
   modelsummary::datasummary_balance(formula = ~ sex, output = "flextable", dinm = FALSE) |>
