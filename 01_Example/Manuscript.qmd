@@ -36,6 +36,7 @@ format:
     # Can be jou (journal), man (manuscript), stu (student), or doc (document)
     documentmode: man
     keep-tex: true
+    pdf-engine: lualatex
     a4paper: true
 ---
 
