@@ -88,8 +88,8 @@ blm_female <- data_clean$bill_length_mm[data_clean$sex == "female"]
 blm_male <- data_clean$bill_length_mm[data_clean$sex == "male"]
 ```
 
-The t-test revealed a significant difference in bill lengths between male and female penguins ($t(`{r} round(t_test_result$parameter, digits = 2)`) = `{r} round(t_test_result$statistic, digits = 2)`, p `{r} format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`$).
-Female penguins ($M = `{r} round(mean(blm_female), digits = 2)`\,\mathrm{mm}, SD = `{r} round(sd(blm_female), digits = 2)`\,\mathrm{mm}$) exhibited shorter bill lengths compared to male penguins ($M = `{r} round(mean(blm_male), digits = 2)`\,\mathrm{mm}, SD = `{r} round(sd(blm_male), digits = 2)`\,\mathrm{mm}$).
+The t-test revealed a significant difference in bill lengths between male and female penguins ($t(`r round(t_test_result$parameter, digits = 2)`) = `r round(t_test_result$statistic, digits = 2)`, p `r format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`$).
+Female penguins ($M = `r round(mean(blm_female), digits = 2)`\,\mathrm{mm}, SD = `r round(sd(blm_female), digits = 2)`\,\mathrm{mm}$) exhibited shorter bill lengths compared to male penguins ($M = `r round(mean(blm_male), digits = 2)`\,\mathrm{mm}, SD = `r round(sd(blm_male), digits = 2)`\,\mathrm{mm}$).
 
 ```{r}
 #| label: "fig-bill-length-comparison"
