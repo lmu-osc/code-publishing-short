@@ -79,25 +79,30 @@ Descriptive statistics of the data set are given in @tbl-descriptive-statistics 
 #| tbl-cap: "Descriptive Statistics"
 #| apa-twocolumn: true
 
-within(dat, {
-  sex[is.na(sex)] <- "unknown"
-  year <- as.factor(year) # Year is more interesting if analyzed as factor
-}) |>
-  (\(x) { # Add number of non-missings to labels
-    n <- sapply(x, \(v) sum(!is.na(v))) # Calculate number of non-missings
-    labels <- paste0(names(x), " (N=", n, ")") # Paste labels and numbers together
-    idx <- which(sapply(x, is.numeric)) # Get numeric variables
-    names(x)[idx] <- labels[idx] # Change the labels
-    x
-  })() |>
-  modelsummary::datasummary_balance(formula = ~ sex, output = "flextable", dinm = FALSE) |>
+dat_desc <- dat
+
+dat_desc$sex[is.na(dat_desc$sex)] <- "unknown" # Convert NA to "unknown"
+dat_desc$year <- as.factor(dat_desc$year) # Convert year to factor
+
+# Add number of non-missings to names of numeric variables
+n <- sapply(dat_desc, \(v) sum(!is.na(v))) # Calculate number of non-missings
+labels <- paste0(names(dat_desc), " (N=", n, ")") # Paste variable names and numbers together
+idx <- which(sapply(dat_desc, is.numeric)) # Identify numeric variables
+names(dat_desc)[idx] <- labels[idx] # Change the variable names
+
+modelsummary::datasummary_balance(
+  formula = ~ sex,
+  data = dat_desc,
+  output = "flextable",
+  dinm = FALSE
+) |>
   flextable::theme_apa() |>
   flextable::font(fontname = "TeX Gyre Termes", part = "all")
 
 ```
 
 ```{r}
-#| label: "variables"
+#| label: "bill-lengths"
 #| echo: false
 
 blm_female <- dat_clean$bill_length_mm[dat_clean$sex == "female"]
