@@ -56,13 +56,13 @@ dat <- read.csv("Data.csv")
 dat_clean <- dat[complete.cases(dat),]
 
 # Perform t-test
-t_test_result <- t.test(bill_length_mm ~ sex, data = dat_clean)
+t_test_result <- t.test(bill_length_mm ~ sex, data = dat_clean, var.equal = FALSE)
 
 ```
 
 # Methods
 
-We conducted a two-sample t-test to compare the average bill lengths between male and female penguins.
+We conducted a two-sample Welch t-test to compare the average bill lengths between male and female penguins.
 The null hypothesis ($H_0$) states that there is no difference in bill lengths between male and female penguins, while the alternative hypothesis ($H_1$) suggests a significant difference.
 
 The t-test was performed using the `t.test()` function in R, with a significance level of 0.05.
