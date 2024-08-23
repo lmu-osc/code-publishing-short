@@ -1,5 +1,6 @@
 ---
 title: "Workshop Instructions: Reproducible Scientific Manuscripts"
+lang: en
 ---
 
 # Workshop Instructions: Reproducible Scientific Manuscripts
