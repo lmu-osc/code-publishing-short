@@ -76,7 +76,24 @@ Descriptive statistics of the data set are displayed in Table 1.
 #| echo: false
 #| tbl-cap: "Summary Statistics"
 
-modelsummary::datasummary_balance(formula = ~ sex, data = dat_clean, dinm = FALSE)
+within(dat, {
+  sex[is.na(sex)] <- "unknown"
+}) |>
+  (\(x) { # Add number of non-missings
+    idx <- which(sapply(x, is.numeric))
+    n <- sapply(x, \(v) sum(!is.na(v)))
+    names(x) <- names(x) |>
+      replace(
+        list = idx,
+        values = paste0(names(x), " (N=", n, ")")[idx]
+      )
+    x
+  })() |>
+  modelsummary::datasummary_balance(formula = ~ sex, dinm = FALSE) |>
+  tinytable::style_tt(
+    # Make table more compact to fit on page
+    tabularray_inner = "rowsep={0.2em}, colsep = {0.2em}"
+  )
 
 ```
 
