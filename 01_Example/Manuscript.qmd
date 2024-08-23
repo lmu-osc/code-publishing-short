@@ -78,6 +78,7 @@ Descriptive statistics of the data set are displayed in Table 1.
 
 within(dat, {
   sex[is.na(sex)] <- "unknown"
+  year <- as.factor(year) # Year is more interesting if analyzed as factor
 }) |>
   (\(x) { # Add number of non-missings
     idx <- which(sapply(x, is.numeric))
