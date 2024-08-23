@@ -50,13 +50,13 @@ This manuscript presents a minimal reproducible example utilizing the penguins d
 #| echo: false
 
 # Load penguins data set
-data <- read.csv("Data.csv")
+dat <- read.csv("Data.csv")
 
 # Remove rows with NA
-data_clean <- data[complete.cases(data),]
+dat_clean <- dat[complete.cases(dat),]
 
 # Perform t-test
-t_test_result <- t.test(bill_length_mm ~ sex, data = data_clean)
+t_test_result <- t.test(bill_length_mm ~ sex, data = dat_clean)
 
 ```
 
@@ -76,7 +76,7 @@ Descriptive statistics of the data set are displayed in Table 1.
 #| echo: false
 #| tbl-cap: "Summary Statistics"
 
-modelsummary::datasummary_balance(formula = ~ sex, data = data_clean, dinm = FALSE)
+modelsummary::datasummary_balance(formula = ~ sex, data = dat_clean, dinm = FALSE)
 
 ```
 
@@ -84,8 +84,8 @@ modelsummary::datasummary_balance(formula = ~ sex, data = data_clean, dinm = FAL
 #| label: "variables"
 #| echo: false
 
-blm_female <- data_clean$bill_length_mm[data_clean$sex == "female"]
-blm_male <- data_clean$bill_length_mm[data_clean$sex == "male"]
+blm_female <- dat_clean$bill_length_mm[dat_clean$sex == "female"]
+blm_male <- dat_clean$bill_length_mm[dat_clean$sex == "male"]
 ```
 
 The t-test revealed a significant difference in bill lengths between male and female penguins ($t(`r round(t_test_result$parameter, digits = 2)`) = `r round(t_test_result$statistic, digits = 2)`, p `r format.pval(t_test_result$p.value, eps = 0.001, scientific = FALSE)`$).
@@ -97,7 +97,7 @@ Female penguins ($M = `r round(mean(blm_female), digits = 2)`\,\mathrm{mm}, SD =
 #| fig-cap: "Scatter Plot of Bill Lengths by Sex With Violin Plot Showing Quartiles"
 
 # Create ggplot object
-ggplot2::ggplot(data_clean, ggplot2::aes(x = sex, y = bill_length_mm, fill = sex), group = sex) +
+ggplot2::ggplot(dat_clean, ggplot2::aes(x = sex, y = bill_length_mm, fill = sex), group = sex) +
   ggplot2::geom_violin(
     draw_quantiles = c(0.25, 0.5, 0.75),
     show.legend = FALSE
