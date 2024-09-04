@@ -1,0 +1,403 @@
+---
+title: "Project Setup"
+lang: en
+bibliography: literature.bib
+engine: knitr
+---
+
+We will start by setting up a simple example of a reproducible report.
+
+## Create Quarto Project
+
+First, we will need to create a new Quarto project.
+
+If you haven't already, open RStudio. Then, click on _File_ > _New Project..._ to open the _New Project Wizard_.
+
+![](images/setup_01.png){width=500px fig-align="center"}
+
+Here, select _New Directory_
+
+![](images/setup_02.png){width=600px fig-align="center"}
+
+And choose the project type _Quarto Project_.
+
+![](images/setup_03.png){width=600px fig-align="center"}
+
+Finally, enter the name of the directory where our report will be created in, for example `code-publishing-exercise`.
+
+As we will use Git to track the version history of files, be sure to check _Create a git repository_. If you don't know what Git is, have a look at the tutorial "[Introduction to version Control with git and GitHub within RStudio](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)".
+
+::: {.column-margin}
+![renv: A dependency management toolkit for R](images/renv.svg){width=250px}
+:::
+
+Also, we will utilize the package [`renv`](https://rstudio.github.io/renv/) to track the R packages our project depends on. Therefore make sure that the box _Use renv with this project_ is checked. Again, if this is the first time you are hearing about `renv`, have a look at the tutorial "[Introduction to {renv}](https://lmu-osc.github.io/introduction-to-renv/)".
+
+If you are already familiar with Markdown and Quarto, you can uncheck the box _Use visual markdown editor_.
+
+![](images/setup_04.png){width=600px fig-align="center"}
+
+Click on _Create Project_. Your RStudio window should now look similar to this:
+
+![](images/setup_05.png){.lightbox fig-align="center" alt="The project `code-publishing-exercise` opened in RStudio. The source pane to the top left has a Quarto file open called \"code-publishing-exercise.qmd\". The console pane to the bottom left indicates by its output that renv is active in the current project. The environment pane to the top right indicates that the environment is currently empty. The output pane to the bottom right shows the files in the current project."}
+
+If, like in the image, a Quarto file with some demo content was opened automatically, you can close and delete it, for example, using RStudio's file manager.
+
+Make sure that your project is in a consistent state according to `renv` by running:
+
+```{.r filename="Console"}
+renv::status()
+```
+
+If it reports packages that are not used, synchronize the lock file using:
+
+```{.r filename="Console"}
+renv::snapshot()
+```
+
+You are now ready to stage and commit your files. You can either stage files separately or the whole project folder at once. If you do the latter, we recommend you to inspect the untracked changes before staging all of them:
+
+::: {.column-margin}
+In file paths, a period (`.`) means "the current directory", while two periods (`..`) mean "the parent directory". Therefore `git add .` means "stage the current directory for committing".
+:::
+
+```{.bash filename="Terminal"}
+git status
+```
+
+Since no commits have been made so far, this should include every file that is not covered by the `.gitignore` file. If everything can be staged for committing -- as is the case in this tutorial -- you can follow up with:
+
+```{.bash filename="Terminal"}
+git add .
+git commit -m "Initial commit"
+```
+
+If you see a file you'd rather not commit, delete it or add its name to the `.gitignore` file. If you don't check your changes before committing, you might accidentally commit something you'd rather not.
+
+::: {#tip-author-identity-unknown .callout-tip}
+If `git commit` fails with the message `Author identity unknown`, you need to tell Git who you are. Run the following commands to set your name and email address:
+
+```{.bash filename="Terminal"}
+git config user.name "YOUR NAME"
+git config user.email "YOUR EMAIL ADDRESS"
+```
+
+Then, commit again.
+:::
+
+## Decide on Structure
+
+Before adding your project files, it is helpful to decide on a directory structure, that is, how to call each file and where to put it. In general, the directory structure should facilitate understanding a project by breaking it into logical chunks. There is no single best solution, as a good structure depends on where a project's complexity lies. However, it is usually helpful if the different files and folders reflect the execution order. For example, if there are multiple data processing stages, one can possibly differentiate input (raw data), intermediate (processed data), and output files (e.g., figures) and put them into separate folders. Similarly, the corresponding code files (e.g., preparation, modeling, visualization) can be prefixed with increasing numbers.
+
+Luckily, there are already numerous proposals for how to organize one's project files, both general [e.g., @Wilson2017; @TIER4] as well as specific to a particular programming language [e.g., @Marwick2018; @Vuorre2021] or journal [@Vilhuber2021]. We recommend you to follow the standards of your field.
+
+For the purpose of this tutorial, we will provide you with a data set and a corresponding analysis. They are simple enough to be put together in the root folder of your project.
+
+## Add Data
+
+You can now download the data set we have prepared for you and put into your project folder: [`Data.csv`](_01_Example/Data.csv){download=""}
+
+::: {.column-margin}
+![palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data](images/palmerpenguins.png){width=250px}
+:::
+
+The data set is from the package [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) and contains the recorded bill lengths and sex of penguins living on three islands in the Palmer Archipelago, Antarctica. It was made available under the license [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+
+::: {#wrn-legal-restrictions .callout-warning}
+### Consider Legal Restrictions Before Sharing
+
+Everything you put into the project folder will be shared publicly. For reasons of reproducibility, this should include the data you analyze. Of course, you should only share them to the extent you are allowed to, taking into account:
+
+1. applicable privacy laws (e.g., the GDPR for European citizens),
+2. contractual obligations (e.g., with your data provider),
+3. copyright of the data and their particular structure, and
+4. any sui generis database right.
+
+Privacy laws and contractual obligations may require you to create a completely anonymized or synthetic dataset^[For example, using [Amnesia](https://amnesia.openaire.eu/), [ARX](https://arx.deidentifier.org/), [sdcMicro](https://sdctools.github.io/sdcMicro/), or [Synthpop](https://www.synthpop.org.uk/).] (if possible), or prohibit any sharing of data, in which case you should provide a reference to a data repository where they can be obtained from. For further information, you can watch the talk "[Data anonymity](https://osf.io/j6fy8)" by Felix Schönbrodt recorded during the LMU Open Science Center Summer School 2023 and have a look at [the accompanying slides](https://osf.io/z6gcu).
+
+Purely factual data such as measurements are usually not copyrightable, but literary or artistic works that cross the threshold of originality are. Additionally, in some jurisdictions data can be subject to _sui generis database rights_ which prevent extracting substantial parts of a database. As a consequence, you need to ensure that you own or have authority to share the data with respect to copyright and similar rights, and to license it to others (see "[Choose a License](choose_license.qmd)").
+:::
+
+When publishing a data set, it is important to document the meaning (e.g., units) and possible values of its variables. This is typically done with a _data dictionary_ (also called a _codebook_). In the following, we will demonstrate how to create a simple data dictionary using the R packages [`tinylabels`](https://cran.r-project.org/package=tinylabels), [`datawizard`](https://easystats.github.io/datawizard/), and [`tinytable`](https://vincentarelbundock.github.io/tinytable/). You can install them now using:
+
+```{.r filename="Console"}
+renv::install(c(
+  "tinylabels",
+  "datawizard",
+  "tinytable"
+))
+```
+
+You can put the code that follows for creating the data dictionary into a new file called `create_data_dictionary.R`.
+
+Using `tinylabels` we can add labels to the variables of a `data.frame` in R:^[Note that the code provided does not alter the data file -- no labels will be added to `Data.csv`. The labels are only added to a (temporary) copy of the data set within R in order to create the data dictionary.]
+
+```{r, echo = -1, eval = -2, filename="create_data_dictionary.R"}
+dat <- read.csv(file.path("_01_Example", "Data.csv"))
+dat <- read.csv("Data.csv")
+
+descriptions <- c(
+  species = "a character string denoting penguin species",
+  island = "a character string denoting island in Palmer Archipelago, Antarctica",
+  bill_length_mm = "a number denoting bill length (millimeters)",
+  bill_depth_mm = "a number denoting bill depth (millimeters)",
+  flipper_length_mm = "an integer denoting flipper length (millimeters)",
+  body_mass_g = "an integer denoting body mass (grams)",
+  sex = "a character string denoting penguin sex",
+  year = "an integer denoting the study year"
+)
+tinylabels::variable_label(dat) <- descriptions
+```
+
+Subsequently, `datawizard` can be employed to create the data dictionary containing the name and label, but also some other information about each variable:
+
+::: {.column-margin}
+![datawizard: Easy Data Wrangling and Statistical Transformations](images/datawizard.png){width=250px}
+:::
+
+```{r, filename="create_data_dictionary.R"}
+(dict <- datawizard::data_codebook(dat) |>
+  subset(select = -.row_id) |>
+  tinytable::tt())
+```
+
+Finally, we can store the data dictionary inside an HTML file using the R package `tinytable` and put the HTML file into the project folder as well.
+
+::: {.column-margin}
+![tinytable: Simple and Configurable Tables](images/tinytable.svg){width=250px}
+:::
+
+```{.r filename="create_data_dictionary.R"}
+tinytable::save_tt(dict, output = "data_dictionary.html")
+```
+
+A human-readable data dictionary is necessary for making one's research reproducible and the example we provided demonstrates only the bare minimum. A full data documentation including measurement instruments, sampling procedures, appropriate weighting, contact information, and more information about the study can be created with the R package [`pointblank`](https://rstudio.github.io/pointblank/articles/INFO-1.html). And one could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR Data management](https://github.com/MPDL/FAIR-Data-Management)".
+
+::: {#nte-frictionless .callout-note collapse="true"}
+### Create Machine-Readable Variable Documentation
+
+This example demonstrates how the title and description of the data set, the description of the variables and their possible values are stored in a machine-readable way.
+
+```r
+table_info <- c(
+  title = "penguins dataset",
+  description = "Size measurements for adult foraging penguins near Palmer Station, Antarctica"
+)
+descriptions <- c(
+  species = "a character string denoting penguin species",
+  island = "a character string denoting island in Palmer Archipelago, Antarctica",
+  bill_length_mm = "a number denoting bill length (millimeters)",
+  bill_depth_mm = "a number denoting bill depth (millimeters)",
+  flipper_length_mm = "an integer denoting flipper length (millimeters)",
+  body_mass_g = "an integer denoting body mass (grams)",
+  sex = "a character string denoting penguin sex",
+  year = "an integer denoting the study year"
+)
+vals <- list(
+  species = c("Adelie", "Gentoo", "Chinstrap"),
+  island = c("Torgersen", "Biscoe", "Dream"),
+  sex = c("male", "female"),
+  year = c(2007, 2008, 2009)
+)
+```
+
+Generally, metadata are either stored embedded into the data or externally, for example, in a separate file. We will use the "[frictionless data](https://frictionlessdata.io/)" standard, where metadata are stored separately.
+
+Specifically, one can use the R package [`frictionless`](https://docs.ropensci.org/frictionless/) to create a _schema_ which describes the structure of the data. For the purpose of the following code, it is just a nested list that we edit to include our own information. We also explicitly record in the schema that missing values are stored in the data file as `NA` and that the data are licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Finally, the package is used to create a metadata file that contains the schema.
+
+```r
+# Read data and create schema
+dat_filename <- "Data.csv"
+dat <- read.csv(dat_filename)
+dat_schema <- frictionless::create_schema(dat)
+
+# Add descriptions to the fields
+dat_schema$fields <- lapply(dat_schema$fields, \(x) {
+  c(x, description = descriptions[[x$name]])
+})
+
+# Record possible values
+dat_schema$fields <- lapply(dat_schema$fields, \(x) {
+  if (x$name %in% names(vals)) {
+    modifyList(x, list(constraints = list(enum = vals[[x$name]])))
+  } else {
+    x
+  }
+})
+
+# Define missing values
+dat_schema$missingValues <- c("", "NA")
+
+# Create package with license info and write it
+dat_package <- frictionless::create_package() |>
+  frictionless::add_resource(
+    resource_name = "penguins",
+    data = dat_filename,
+    schema = dat_schema,
+    title = table_info[["title"]],
+    description = table_info[["description"]],
+    licenses = list(list(
+      name = "CC0-1.0",
+      path = "https://creativecommons.org/publicdomain/zero/1.0/",
+      title = "CC0 1.0 Universal"
+    ))
+  )
+frictionless::write_package(dat_package, directory = ".")
+```
+
+This creates the metadata file `datapackage.json` in the current directory. Make sure it is located in the same folder as `Data.csv`, as together they comprise a [data package](https://specs.frictionlessdata.io/data-package/).
+:::
+
+Having added the data and its documentation, one can view and record the utilized packages with `renv`...
+
+```{.r filename="Console"}
+renv::status()
+renv::snapshot()
+```
+
+...and go through the commit routine:
+
+```{.bash filename="Terminal"}
+git status
+git add .
+git commit -m "Add data"
+```
+
+## Add Code
+
+In order to have some code which you can practice to share, we have prepared a simple manuscript for you, alongside a bibliography file. The manuscript contains code together with a written narrative. Download the two files to your computer and put them into your project folder.
+
+- [`Manuscript.qmd`](_01_Example/Manuscript.qmd){download=""}
+- [`Bibliography.bib`](_01_Example/Bibliography.bib){download=""}
+
+The manuscript explores differences in bill length between male and female penguins, feel free to read through it.
+
+::: {#wrn-take-copyright-seriously .callout-warning}
+### Take Copyright Seriously
+
+When you include work by others in your project -- especially if you intend to make it available publicly --, make sure you have the necessary rights to do so. Only build on existing work for which you are given an express grant of relevant rights. How do you know you are allowed to copy, edit, and share the two files linked above?
+:::
+
+As the manuscript uses some new packages, install them with:
+
+```{.r filename="Console"}
+renv::install()
+```
+
+
+The manuscript also uses the Quarto extension "[apaquarto](https://wjschne.github.io/apaquarto/)", which needs to be installed in the project before it can be rendered:
+
+```{.bash filename="Terminal"}
+quarto add --no-prompt wjschne/apaquarto
+```
+
+Also, you need to have a $\TeX$ distribution installed on your computer. A lightweight choice is [TinyTeX](https://yihui.org/tinytex/), which can be installed with Quarto as follows:
+
+```{.bash filename="Terminal"}
+quarto install tinytex
+```
+
+You should now be able to render the document using Quarto:
+
+```{.bash filename="Terminal"}
+quarto render Manuscript.qmd
+```
+
+This should create a PDF file called `Manuscript.pdf` in your project folder.
+
+::: {#tip-update-quarto .callout-tip}
+If the PDF file cannot be created, try updating Quarto. It comes bundled with RStudio, however `apaquarto` sometimes requires more recent versions.
+:::
+
+With the code being added, one can use `renv` again to view and record the new packages:
+
+```{.r filename="Console"}
+renv::status()
+renv::snapshot()
+```
+
+::: {#tip-renv-status .callout-tip}
+Always run `renv::status()` and resolve any inconsistencies before you commit code to your project. This way, every commit represents a working state of your project.
+:::
+
+Finally, make your changes known to Git:
+
+```{.bash filename="Terminal"}
+git status
+git add .
+git commit -m "Add manuscript"
+```
+
+::: {#wrn-credentials .callout-warning}
+### Beware of Credentials
+
+Sometimes, a data analysis requires the interaction with online services:
+
+- Data may be collected from social network sites using their APIs^[An _application programming interface_ provides the capability to interact with other software using a programming language.] or downloaded from a data repository, or
+- an analysis may be conducted with the help of AI providers.
+
+In these cases, make sure that the code you check in to Git does not contain any credentials that are required for accessing these services. Instead, make use of environment variables which are defined in a location that is excluded from version control. When programming with R, you can define them in a file called `.Renviron` in the root of your project folder:
+
+```{.ini filename=".Renviron"}
+MY_FIRST_KEY="your_api_key_here"
+MY_SECOND_KEY="your_api_key_here"
+```
+
+When you start a new session from the project root, the file is automatically read by R and the environment variables can be accessed using `Sys.getenv()`:
+
+```r
+query_api(..., api_key = Sys.getenv("MY_FIRST_KEY"))
+```
+
+Make sure that `.Renviron` is added to your `.gitignore` file in order to exclude it from the Git repository. If you already committed a file that you found contains credentials, you can follow @Chacon2024.
+:::
+
+### Coding Best Practices
+
+Although we provide the code in this example for you, a few things remain to be said about best practices when it comes to writing code that is readable and maintainable.
+
+- __Use project-relative paths.__ When you refer to a file within your project, write paths relative to your project root. For example, don't write `C:\Users\Public\Documents\my_project\images\result.png`, instead write `images\result.png`.^[In R, use `file.path()` for a platform-independent way to concatenate folders to build a path.]
+
+- __Keep it simple.__ Add complexity only when you must. Whenever there's a boring way to do something and a clever way, go for the boring way. If the code grows increasingly complex, refactor it into separate functions and files.
+
+- __Don't repeat yourself.__ Use variables and functions before you start to write (or copy-paste) the same thing twice.
+
+- __Use comments to explain why you do things.__ The code already shows what you do. Use comments to summarize it and explain why you do it.
+
+- __Don't reinvent the wheel.__ With R, chances are that what you need to do is greatly facilitated by a package from one of many high-quality collections such as [rOpenSci](https://ropensci.org/packages/), [r-lib](https://github.com/r-lib), [Tidyverse](https://www.tidyverse.org/packages/), or [fastverse](https://fastverse.github.io/fastverse/).
+
+- __Think twice about your dependencies.__ Every dependency increases the risk of irreproducibility in the future. Prefer packages that are well-maintained and light on dependencies^[You can use the [R package dependency badges](https://tinyverse.netlify.app/) to count the direct and total dependencies.]. We also recommend you to read "When should you take a dependency?" by @Wickham2023PackagesDependency.
+
+- __Fail early, often and noisily.__ Whenever you expect a certain state, use assertions to be sure. In R, you can use `stopifnot()` to make sure that a condition is actually true.
+
+- __Test your code.__ Test your code with scenarios where you know what the result should be. Turn bugs you discovered into test cases. Use linting tools, for example, the R package [`lintr`](https://lintr.r-lib.org/).
+
+- __Read through a style guide and follow it.__ A style guide is a set of stylistic conventions that improve the code quality. R users are recommended to read Wickham's [-@Wickham2022Style] "Tidyverse style guide" and use the R package [`styler`](https://styler.r-lib.org/). Python users may benefit from reading the "Style Guide for Python Code" by @VanRossum2013. And even if you don't follow a style guide, be consistent.
+
+This is only a brief summary and there is much more to be learned about coding practices. If you want to dive deeper we recommend the following resources:
+
+- "Tidy design principles" [@Wickham2023Design]
+- "The Good Research Code Handbook" [@Mineault2021]
+- "The Art of UNIX Programming" [@Raymond2003]
+
+> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+> 
+> --- Martin Fowler, British software engineer
+
+## The Last Mile
+
+`renv` only records the versions of R packages and of R itself. This means that potential system dependencies of R packages and other tools utilized in the project are not documented anywhere, including Quarto.^[As of August 2024, a proposal to record the version of Quarto and Pandoc has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] We will manually write them down when [creating a README](add_readme.qmd). For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:
+
+```{.bash filename="Terminal"}
+quarto use binder
+```
+
+This will create a few additional files which facilitate reconstructing the computational environment in the future.^[Either using [repo2docker](https://repo2docker.readthedocs.io/) or the public [binder](https://mybinder.org/) service.] As always, commit your changes:
+
+```{.bash filename="Terminal"}
+git status
+git add .
+git commit -m "Add repo2docker config"
+```
+
+You are now all set up to prepare your project for sharing!

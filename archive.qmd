@@ -1,0 +1,40 @@
+---
+title: "Archive"
+lang: "en"
+bibliography: literature.bib
+---
+
+The project is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder [@Jackson2018]:
+
+> __Does the digital repository give you a unique persistent digital identifier for your deposit?__
+> 
+> Persistent digital identifiers are identifiers that are provided under the assumption that they, and the digital objects they refer to, will remain available long term. Examples of unique persistent digital identifiers include DOIs and ARKs. The use of persistent digital identifiers for research outputs, including papers, data and software, and the use of these for citation purposes, is becoming prevalent in research.
+> 
+> __Can the digital repository accommodate the size of your deposit?__
+> 
+> Digital repositories may have constraints on the size of deposits they accept. For example, Zenodo has a limit of 50 GB and the University of Edinburgh DataShare has a limit of 20 GB for deposits done via a browser and 100 GB otherwise.
+> 
+> __Has your funder or publisher recommended or mandated a digital repository to use?__
+> 
+> If both a funder and publisher mandate two different digital repositories you could deposit within them both, or discuss with each to see if they will agree for you to use one only, even if it is not the one they mandate.
+> 
+> __Are the policies of the digital repository acceptable to you?__
+> 
+> These can include terms and conditions of use; availability of the service (e.g. does the service regularly go down for updates or does it run 24/7); how resilient the service is to breakdowns; where deposits are stored; how they are stored; what are the plans for stored deposits if the repository goes out of business; how secure the storage is; how regularly it is backed up; how long backups are kept for; and what disaster recovery plans are in place. Knowing the quality of service can help you judge whether your deposit will be available to others, and yourself, even in the face of disaster. It also allows you, and your institution, to develop contingency plans should such drastic circumstances arise.
+> 
+> __Is the longevity of the digital repository acceptable to you?__
+> 
+> You want to know that the digital repository will host your deposit for as long as you need it too, not just 6 months or so. The policies or terms and conditions of the digital repository should state this. For example, Zenodo states that their lifetime is currently 20 years and figshare guarantees 10 years of persistent availability.
+> 
+> __Is the digital repository free or do you have to pay a fee?__
+> __If there is a fee, is this a one-off payment and can you afford it?__
+> 
+> If a digital repository expects a one-off payment, to subsidise its hosting, you may be able to pay for this out of your project budget or your institution may pay this for you. It is recommended that you avoid any digital repository that expects a regular fee for the duration for which they hold the deposit, since it would most likely be unsustainable for your institution to commit to ever-increasing fees over a long term. There are many free digital repositories available.
+> 
+> __Is the digital repository accredited or certified?__
+> 
+> The digital repository may be accredited or certified by an independent agency that reviews digital repositories according to various criteria related to its policies and processes. The presence of an accreditation or certification may provide you with an additional degree of confidence that the digital repository meets your requirements. For example, the Data Seal of Approval can be awarded to digital repositories who satisfy a set of quality guidelines relating to how they manage, preserve and make available the deposits they hold. The presence of a Data Seal of Approval could give you additional confidence that a digital repository is suitable for holding your deposit.
+
+Additional guidance is provided by @Daquin2023 and @Garijo2022. We will cover the archival using the Software Heritage archive and Zenodo.
+
+For further information, you may be interested in [Software Deposit Guidance for Researchers](https://softwaresaved.github.io/software-deposit-guidance/).

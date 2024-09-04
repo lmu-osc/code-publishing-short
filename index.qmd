@@ -2,6 +2,20 @@
 title: "Code publishing tutorial"
 ---
 
-This is a Quarto website.
+## Content
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This tutorial covers how to make your code available to others. While the general principles taught in this tutorial apply to most researchers publishing code, we will make very specific suggestions what tools to use.
+
+We will start with creating a simple report which incorporates R code. Then, we will focus on what is required to publish your work:
+
+- removing legal barriers: adding a appropriate license
+- high-level documentation: adding a README file
+- archival: uploading to a repository
+
+## Prerequisites
+
+We will assume you have installed [Git](https://git-scm.com/), [R](https://www.r-project.org/), and [RStudio](https://posit.co/download/rstudio-desktop/).
+
+If you are really new to R, we recommend looking at the tutorial "[Introduction to R](https://lmu-osc.github.io/introduction-to-R/)". If you have not used Quarto before, we have also prepared a "[Quarto Workshop](https://lmu-osc.github.io/introduction-to-Quarto/)".
+
+[Get started](intro.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg}

@@ -3,11 +3,19 @@ project:
 
 website:
   title: "Code publishing tutorial"
+  page-navigation: true
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+    contents:
+      - intro.qmd
+      - setup.qmd
+      - choose_license.qmd
+      - add_readme.qmd
+      - archive.qmd
 
 format:
   html:

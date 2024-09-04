@@ -1,0 +1,350 @@
+---
+title: "Choose a License"
+lang: en
+bibliography: literature.bib
+format:
+  html:
+    mermaid:
+      theme: neutral
+engine: knitr
+---
+
+## A Primer on Licenses
+
+Whenever you create a literary or artistic work (such as a text, image, video, or software), the copyright law in most countries limits other people from copying, modifying, and sharing it without your express permission. [If the work was created as part of your job, it might be your employer who holds the copyright to the work, depending on the country and contract.]{.aside} This even applies if you make it available to others (e.g., on your website): First and foremost they are not allowed to copy, modify, or share it. This legal default of "all rights reserved" runs counter to many cultural and scientific processes. Copyright licenses enable authors to free up their works for reuse by others.
+
+::: {.column-margin}
+For the purpose of this tutorial, by _license_ we mean _copyright license_.
+:::
+
+A license is a legal document that regulates what _others_ are allowed to do with a copyright-protected work -- the licenses we discuss do not limit the author or copyright holder in their rights. And while you _could_ write your own, there are already many pre-formulated licenses available to choose from and to apply to your work.^[In fact, you should not create your own license if the purpose is to share your work freely and openly with others. By using a boilerplate license others know what to expect, also because they have been [tested](https://sfconservancy.org/copyleft-compliance/) in [courts](https://legaldb.creativecommons.org/).]
+
+::: {#cau-exclusive-rights .callout-caution}
+### Publishing Without Exclusive Rights
+
+When you have your article published under an open access license, some publishers still demand an exclusive publishing and distribution license that goes further than the open access license available to readers of the journal [@Rumsey2022]. However, technically this is not required for publishers to provide their services [@Suber2022] and authors should oppose this practice. If your chosen publisher insists on an exclusive license, you may at least retain the copyright for your figures -- follow the guide by @Elson2016 to learn how to do that.
+
+If you have published a closed-access paper before, you can consult [ShareYourPaper](https://shareyourpaper.org/) and [Dissemin](https://dissem.in/) for legal options to still make it available free of charge to readers.
+:::
+
+The licenses we discuss here mostly regard copyright. Therefore, recipients may lack other rights such as publicity, privacy, moral, patent,^[In fact, the software licenses we recommend on this page have been specifically selected to provide an express grant of patent rights.] or trademark rights. For example, sharing photos that depict people is not only a matter of copyright, but also of privacy rights. Conversely, the licenses do not apply if recipients are allowed to use the works for other reasons such as fair use, the right to quote, or because they made a different arrangement with the author.
+
+## Which License to Choose?
+
+Many boilerplate licenses are available to apply to your work. Which license is appropriate depends on several factors, including existing licenses in place and the type of work, but also your personal considerations. We strongly recommend to apply a _free/open_ license to your work, which means that the work "can be freely studied, applied, copied and/or modified, by anyone, for any purpose" [@Moller2015]. Importantly, this also means that others do not need to ask or notify the author and that they can use it for commercial purposes. By the choice of license, authors can, however, demand that they are credited, that the original license is indicated, that modifications are indicated, that modifications are only shared under the same license, and that no further restrictions are imposed on the work. Software licenses may additionally require to make the source code available to everybody the software is shared with. Because there are many free/open licenses available, the following decision tree only contains a recommended subset.
+
+::: {.column-margin}
+If you would like to choose a license not listed here, it should be appropriate for the type of work in question and be compatible with the dominant copyleft license in the respective community (see also @nte-silos). For software that's almost universally the [GPLv3](https://www.gnu.org/licenses/license-list.en.html#GPLCompatibleLicenses) and for writing, image, audio, and video that's mostly the [CC\ BY-SA\ 4.0](https://creativecommons.org/compatiblelicenses). For data, no dominant copyleft license has emerged yet, so any of [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/), [CDLA\ Sharing\ 1.0](https://cdla.dev/sharing-1-0/), and CC\ BY-SA\ 4.0 are acceptable.
+:::
+
+::: {#nte-terminology .callout-note collapse="true"}
+### A Note on Terminology
+
+The terms _free_ and _open_, especially with regard to software, come with a history. The Free Software Foundation (FSF) was founded in 1985 to protect "four essential freedoms" [-@FSF2024] of a program's user. These are the freedoms to use, study, share, and improve a program. Software whose users legally and practically have these freedoms (because, among other things, they have access to its source code) is considered _free_. The four freedoms are seen as vital for a society as a whole in the sense that they enable sharing, cooperation and ultimately freedom in general. The FSF maintains [a list of software licenses](https://www.gnu.org/licenses/license-list.en.html#SoftwareLicenses) that it considers to be protecting the four freedoms. Sometimes the term _libre_ (Spanish and French for _free_) is used to make a distinction from _gratis_ software. You can learn more about free software at [Write Free Software](https://writefreesoftware.org/learn).
+
+The Open Source Initiative (OSI), which was founded in 1998, follows a more pragmatic approach. It is concerned with developing high-quality software, for which everyone's ability to obtain, modify and contribute back the source code is considered beneficial. Access to the source code is one out of multiple conditions for software to be considered _open source_ by the OSI [-@OSI2007], which equally maintains [a list of approved licenses](https://opensource.org/licenses).
+
+Access to the source code is a necessary, but not sufficient requirement both for _free software_ and for _open source software_. Conversely, both can (and frequently are) sold for money, as their respective criteria only apply once one has access to the software. Throughout this tutorial, we write "free/open license" to mean a license that is approved by either the FSF or the OSI. Software which is neither but makes available its source code is sometimes referred to as _source-available software_.
+
+Apart from software, the term _open access_ has often been used for works that are available at no cost. For example, this is the commonality of bronze, green, hybrid, gold, and diamond/platinum open access _articles_, which otherwise vary in the rights that are granted to readers. In 2002, the Budapest Open Access Initiative declared that _open access_ additionally includes the right to use articles for any purpose, and in 2003, the Bethesda Statement and the Berlin Declaration added the right to make derivative works.
+
+Two other notable definitions include the _Open Definition_ [@OKFN2016], which was first drafted in 2005, and the definition of _Free Cultural Works_ [@Moller2015], for which the open editing phase began in 2006. They are largely viewed as compatible with one another.
+
+:::: {.column-margin}
+![](images/Definition_of_Free_Cultural_Works.svg){width=250px}
+::::
+:::
+
+### Existing License?
+
+First, if you adapt (i.e., modify, build on) a work by others you need to determine if it is provided to you under a free/open license.[You can determine whether a license is free/open by searching for its name in the [SPDX License List](https://spdx.org/licenses/) and looking for at least one `Y` in the two columns _FSF Free/Libre?_ and _OSI Approved?_]{.aside} If yes, we we recommend you to make your contribution available under the same license.^[Copyleft licenses even require you to choose the same or a compatible license.] For example, if you adapt code published in another paper, choose the same license for your modifications. The same applies if there are strong community norms to use a particular free/open license.^[Of course, this is only a heuristic and there might be good reasons to deviate from community norms.] Importantly, as discussed before, you are generally not allowed to adapt a work _not_ published under a free/open license.
+
+### Work Type?
+
+If you create a new work and no strong community norms suggest a particular license, you need to choose the license yourself. Which license to choose depends on the type of work you create. Software licenses, for example, may consider that the source code is the preferred form for making modifications, while licenses for data can differentiate between the database and any works produced from it. We have created a flowchart that covers the most likely types of works you will create as a researcher: software, writing (i.e., text), images, audio, video, and data (see @fig-flowchart-simple). The flowchart always recommends the most permissive license possible to maximize reuse. Click on the name of a license to learn more about it.
+
+Note, that for data you have, at least in principle, the option to apply separate licenses to the individual entries and the collective database. For example, if you were to create a database of artworks by others, those artworks would be licensed individually as chosen by the artists, but the license for the database as a whole could be chosen by you. The latter includes the structure of the database (e.g., the selection of entries and field names) and any sui generis database rights. However, if the content was created by you, we recommend you to choose the same license for both content and database. Metadata, in particular, should always be licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+
+::: {#fig-flowchart-simple}
+```{mermaid}
+flowchart TB
+  start("We want<br>to choose<br>a license.") --"We adapted a work by<br>others shared under a<br>free/open license."--> use_existing_license["<em>Use its license</em>"]
+  start --"We created the work<br>entirely by ourselves."--> norm("Community norm<br>regarding license?")
+  
+  norm --"Exists"--> follow_existing_norms["<em>Follow that norm</em>"]
+  norm --"Does not<br>exist"--> type("Work type?")
+  
+  type --"Software"--> apache["Apache 2.0"]
+  type --"Writing, image, audio, video"--> cc0["CC0 1.0"]
+  type --"Data(base)"--> existing_license_data("Adapting individual<br>data entries by others?")
+  
+  existing_license_data --"No, we created them<br>entirely by ourselves."--> cc0_data["CC0 1.0 <em>for database<br>and its content</em>"]
+  existing_license_data --"Yes, they were<br>shared under a<br>free/open license."--> use_existing_license_data["<em>Use their license<br>for content and</em><br>CC0 1.0 <em>for<br>the database</em>"]
+  
+  click apache href "https://choosealicense.com/licenses/apache-2.0/"
+  click cc0 href "https://creativecommons.org/publicdomain/zero/1.0/"
+  click cc0_data href "https://creativecommons.org/publicdomain/zero/1.0/"
+```
+
+Flowchart for Choosing a License
+:::
+
+::: {#nte-other-work-types .callout-note collapse="true"}
+#### Other Work Types
+
+There are specific licenses available (and recommended) for fonts and hardware:
+
+- fonts: [SIL Open Font License 1.1](https://openfontlicense.org/)
+- hardware: [CERN Open Hardware Licence](https://cern-ohl.web.cern.ch/)
+
+Furthermore, one should be cautious about the restrictions of licenses applied to the following types of works:
+
+- __templates and LaTeX packages:__ If a template or, for this purpose, a LaTeX package, is licensed under a copyleft software license such as the [AGPLv3](https://choosealicense.com/licenses/gpl-3.0/), every work that is a derivative of the template or that uses the LaTeX package has to put under the same license, if shared [@Koppor2016]. And if a document contained source code covered by the GPLv3, the same license would also apply to the document [@MadHatter2022].
+- __database content:__ If the work produced from a database (the "output") is a derivative of the content in the database, the output is subject to the restrictions laid out in the license. For example, if geospatial data were to be licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/), all maps produced from the data would likely need to fulfill this license's obligation for unrestricted access if shared [see @Poole2017]. Similarly, following an example from @Matt2009 if one were to choose the copyleft license [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/) for this purpose, any map that is a derivative of the data would also need to licensed under CC\ BY-SA\ 4.0 (or a compatible license) if shared. If the intention is to only have [derivative databases](https://osmfoundation.org/wiki/Licence/Community_Guidelines/Produced_Work_-_Guideline) under the same license, one might want to choose the [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/) for the database, as it was specifically designed not to apply to works produced from the data in the database.
+
+Finally, works in the public domain should be marked using the [PDM 1.0](https://creativecommons.org/publicdomain/mark/1.0/), rather than applying a waiver such as the [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (or even another license).
+:::
+
+### Copyleft?
+
+The consequence of applying a permissive license to your work is that others may distribute their modifications to it under stricter terms, possibly without a free/open license. You may prefer that everybody who receives somebody else's adaptations of your work enjoys the same rights that you granted to them. This can be achieved by _copyleft_ licenses.^[So called because copyleft licenses make content permanently free, thus turning copyright around: © → 🄯] For software, they come in two flavours:
+
+- __Weak copyleft licenses__ only require that modifications to the software itself are licensed under the same or a compatible license if shared. For example, if I create and publish an R package under a weak copyleft license, others who modify it and put their version on the internet have to apply the same license. However, people who merely _use_ my R package in their scripts can choose any license for their scripts.
+- __Strong copyleft licenses,__ on the other side, insist that any larger works that use the copyleft-licensed software must also be licensed under the same or a compatible license if shared. For example, if my R package were to be put under a strong copyleft license, everybody publishing a data analysis script that uses my package would need to put it under the same license. Similarly, a Quarto manuscript using such a package would need to disclose its source code if shared.
+
+Note, however, that the copyleft licenses we discuss here do not mandate sharing. Copyleft (and attribution) clauses are only triggered if the work is shared [@CC2015]. It is also worth reiterating that these licenses do not restrict the original author(s): They are still permitted to distribute their work under a different license and without sharing the source code.
+
+We have prepared two advanced license flowcharts, one for software, writing, images, audio, and video in @fig-flowchart-non-data and one for data in @fig-flowchart-data where you can make additional choices. Note, however, that especially the advanced flowchart for licensing data is quite complex and we recommend you to seek legal counsel if you want to be sure.
+
+::: {#cau-license-versions .callout-caution}
+### License Versions Are Important
+
+You may have noticed that we mostly refer to licenses using a name _and_ a version number. This is because the organizations that created the licenses sometimes publish updated versions to accommodate for developments in copyright law and the communities that use the licenses. For example, the Creative Commons licenses (that start with `CC`) were first published in 2002. Since then, the possibility to relicense under compatible licenses has been added ([v3.0](https://creativecommons.org/2007/02/23/version-30-launched/)), a 30-day window to correct license violations has been established to combat [copyleft trolls](https://commons.wikimedia.org/wiki/Commons:Copyleft_trolling), and sui generis database rights are covered explicitly ([v4.0](https://creativecommons.org/version4/)). There are many more [subtle differences between license versions](https://wiki.creativecommons.org/wiki/License_Versions), therefore it is important to indicate which license version exactly one is referring to, as the license of a work does not "update" automatically.
+
+For the AGPLv3 it is even recommended to state whether a work is licensed under exactly the indicated version of the license or, alternatively, also under newer versions of the license [@Stallman2022].
+:::
+
+### Attribution and Anti-DRM?
+
+The advanced license flowcharts also allow you to make two additional decisions for Creative Commons licenses (i.e., when deciding between CC0\ 1.0, CC\ BY\ 4.0, and CC\ BY-SA\ 4.0):
+
+- __Attribution__ means whether recipients of your work are required to provide attribution to you and indicate if changes were made. Note that even if attribution is not a requirement of the license, good scientific practice demands that appropriate citations are made.
+- __Anti-DRM__ means that when others share your work they are not allowed to apply technological measures restricting anything that the license permits.
+
+All software licenses in @fig-flowchart-non-data require providing attribution, although only [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) and [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) require others to indicate changes. Of the software licenses listed, only the AGPLv3 also has an anti-DRM provision. For data, the [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/) allows for technological measures that restrict the work only if a version of the database is provided in parallel without such measures.
+
+::: {#nte-silos .callout-note collapse="true"}
+### Other Restrictions
+
+As indicated before, a free/open license must allow creating derivative works and must allow exercising the rights granted by it _for any purpose_, including commercial use. There are a few good resources on the reasoning behind that [e.g., see @Klimpel2013; @ODI2015], but we would like to highlight one reason in particular.
+
+With the rights provided by free/open licenses comes the possibility to build on and combine multiple works by different authors, which is essential for any cultural and scientific activity. However, this is only possible if the various licenses involved are compatible with each other. For example, one is allowed to remix two figures if the first is licensed under CC\ BY\ 4.0 and the second under CC\ BY-SA\ 4.0 because the licenses were written to be compatible with each other [compare @CC2024FAQ]. Also note that CC\ BY-SA\ 4.0 is [one-way compatible](https://creativecommons.org/compatiblelicenses) with the GPLv3, which in turn is compatible with the AGPLv3.
+
+However, applying a restriction such as only permitting non-commercial use or not allowing derivative works creates _silos_ of works which are mutually incompatible with each other. Put differently, one cannot share a remix of two works where one is licensed under CC\ BY-SA\ 4.0 and the other only allows non-commercial use. In order to avoid silos, one should only choose license which are compatible with the dominant copyleft license in the respective community [@Lammerhirt2017; @Wheeler2014]. If you would like to learn more about the different types of compatibility, we recommend you to read the article "A Quick Guide to Software Licensing for the Scientist-Programmer" by @Morin2012. The following diagram provides an overview of the compatibility of various licenses:
+
+!["Open data-capable license interoperability" by Robbie Morrison licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). Taken without modification from @Morrison2024](images/Morrison2024.jpg){.lightbox}
+:::
+
+## Applying the License
+
+Having selected the licenses of your choice -- you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which license applies to which file or folder, usually in the project's README (among other places), whose creation will be discussed in "[Add a README](add_readme.qmd)".
+
+For example, the `apaquarto` extension that you included in your project contains works by others. You need to indicate its license so that others know what they are allowed to do -- and, of course, you need to comply with its terms yourself, such as retaining the copyright notice.^[In this particular case, `apaquarto` is licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/), which does not require you to retain a copyright notice. In fact, it's an extremely permissive license.] In contrast, if it were not for this tutorial, the manuscript would contain your own work and you would need to indicate under which license you provide it to others.
+
+::: {#tip-license-help .callout-tip}
+### Follow the Help Provided by the License Authors
+
+For all the licenses recommended in this tutorial, the organizations that created these licenses provide more information on how to apply them to your work:
+
+::: {layout-ncol=2}
+
+:::: {}
+- [Apache\ 2.0](https://www.apache.org/licenses/LICENSE-2.0#apply)
+- [MPL\ 2.0](https://www.mozilla.org/MPL/2.0/FAQ/#license-use)
+- [AGPLv3](https://www.gnu.org/licenses/gpl-howto.html)
+::::
+
+:::: {}
+- [CC licenses](https://creativecommons.org/faq/#how-do-i-apply-a-creative-commons-license-to-my-material)
+- [ODbL](https://opendatacommons.org/licenses/odbl/)
+::::
+:::
+
+Creative Commons even provides a range of considerations for licensors and licensees [@CC2013] and an [interactive chooser](https://creativecommons.org/choose/) which you can use to create snippet that you can copy and paste to the desired location.
+:::
+
+While it is common to state the chosen license(s) in the README, usually one of the following actions is taken in addition:
+
+In the simplest case, one just creates a file called `LICENSE.txt` where the full text of the license is copied verbatim. This is a practice propagated by GitHub, who provides instructions for many licenses via [ChooseALicense.com](https://choosealicense.com/licenses/). However, if the project is not completely covered by one single license, this practice may become unwieldy. For example, if a project contains different types of works by different authors, the `LICENSE.txt` needs to detail which file is covered by which license(s), along with any copyright notices.
+
+Individual programming languages also have their own way of stating which license a package is distributed under. For R packages, this is usually set by the field `License` in the file `DESCRIPTION` [@Wickham2023PackagesLicense].
+
+Finally, @nte-reuse explains how to use the [REUSE](https://reuse.software/) specification to make the choice of license machine-readable. This is the approach we recommend taking.
+
+::: {#nte-reuse .callout-note collapse="true"}
+### Using REUSE to Record Licenses
+
+Every major free/open license has a unique [SPDX identifier](https://spdx.org/licenses/) which allows communicating the license choice unequivocally. We will be using that to indicate the license for every file in your project, along with the year of publication and the copyright holder. To do this, we add a comment to the beginning of every file and add the two tags `SPDX-FileCopyrightText` and `SPDX-License-Identifier`. How this works depends on the file type, as the syntax for a comment varies.
+
+For example, if you previously created the file `create_data_dictionary.R`, you can now add the following comment to the beginning of the file, replacing `<YEAR>` and `<NAME>` with the current year and your name:
+
+```{.r filename="create_data_dictionary.R"}
+# SPDX-FileCopyrightText: <YEAR> <NAME>
+#
+# SPDX-License-Identifier: CC0-1.0
+```
+
+You need to use `#` to start the comment because this is the symbol that starts comment lines in R scripts. Alternatively, you can use the [reuse tool](https://github.com/fsfe/reuse-tool) to add these information for you. After installing it with...
+
+```{.bash filename="Terminal"}
+pip install reuse
+```
+
+...you can add the copyright information using the following command -- the current year will be added automatically:
+
+```{.bash .code-overflow-wrap filename="Terminal"}
+reuse annotate --copyright="<NAME>" --license="CC0-1.0" create_data_dictionary.R
+```
+
+In many cases, the reuse tool will figure out the appropriate comment style for you. If this is not the case, as currently with Quarto files, you can tell it directly which comment style to use (`html` in this case):
+
+```{.bash .code-overflow-wrap filename="Terminal"}
+reuse annotate --copyright="Josephine Zerna <josephine.zerna@tu-dresden.de>" --copyright="Christoph Scheffel <christoph_scheffel@tu-dresden.de>" --copyright="Florian Kohrt" --license="CC-BY-4.0" --style=html Manuscript.qmd
+```
+
+This adds the following header to `Manuscript.qmd`:
+
+```{.html filename="Manuscript.qmd"}
+<!--
+SPDX-FileCopyrightText: 2024 Christoph Scheffel <christoph_scheffel@tu-dresden.de>
+SPDX-FileCopyrightText: 2024 Florian Kohrt
+SPDX-FileCopyrightText: 2024 Josephine Zerna <josephine.zerna@tu-dresden.de>
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+```
+
+Note that `Manuscript.qmd` was provided to you under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/), which is what you indicate with the previous comment. If you edited the file, you may also add yourself.
+
+Sometimes, there are file types which do not allow for adding the license information inside them, such as PDF and CSV files. For these, a corresponding `.license` file can be created. Try the following command which indicates that the data were published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
+
+```{.bash .code-overflow-wrap filename="Terminal"}
+reuse annotate --copyright="Kristen Gorman" --license="CC0-1.0" Data.csv
+```
+
+You will notice that this creates another file called `Data.csv.license` containing the relevant information:
+
+```{.yml filename="Data.csv.license"}
+SPDX-FileCopyrightText: 2024 Kristen Gorman
+
+SPDX-License-Identifier: CC0-1.0
+```
+
+If you want to indicate the license for all files in a particular folder, you can create a filed called `REUSE.toml` and add an `[[annotations]]` table for them:
+
+```{.toml filename="REUSE.toml"}
+version = 1
+
+# apaquarto extension from https://github.com/wjschne/apaquarto
+[[annotations]]
+path = "_extensions/wjschne/apaquarto/*"
+SPDX-FileCopyrightText = "2024 William Joel Schneider <w.joel.schneider@gmail.com>"
+SPDX-License-Identifier = "CC0-1.0"
+```
+
+Finally, there may be some minor files which are build artifacts. You can either add them to your `.gitignore` file or use the CC0\ 1.0 license/waiver with a copyright tag such as `SPDX-FileCopyrightText: NONE` to assert that there is no copyright holder. For more information, also discussing other corner cases, you can read their [Frequently Asked Questions](https://reuse.software/faq/).
+
+Once you are done, you can download the texts of all indicated licenses using...
+
+```{.bash filename="Terminal"}
+reuse download --all
+```
+
+...and verify that you did not miss a file by running...
+
+```{.bash filename="Terminal"}
+reuse lint
+```
+:::
+
+Regardless of how exactly the licenses are added to the project, this is a good opportunity to verify one last time that all third party content is provided to you under a free/open license and that you comply with it. Please add a license to your project now, either creating a file `LICENSE.txt` or following the REUSE standard.
+
+## Wrap-up
+
+If you would like to learn more about copyright and licenses you might find the following resources interesting:
+
+- "Open Content -- A Practical Guide to Using Creative Commons Licences" by @Kreutzer2014
+- "Creative Commons Certificate for Educators, Academic Librarians, and Open Culture" by @CC2024Certificate
+- "Freie Software -- Zwischen Privat- und Gemeineigentum" by @Grassmuck2004
+
+## Additional Figures {.appendix}
+
+::: {#fig-flowchart-non-data}
+```{mermaid}
+flowchart TB
+  start("We want to choose a<br>license for software,<br>writing, image, audio,<br>or video.") --"We adapted a work by<br>others shared under a<br>free/open license."--> use_existing_license["<em>Use its license</em>"]
+  start --"We created the work<br>entirely by ourselves."--> norm("Community norm<br>regarding license?")
+  
+  norm --"Exists"--> follow_existing_norms["<em>Follow that norm</em>"]
+  norm --"Does not<br>exist"--> type("Work type?")
+  
+  type --"Software"--> code_sa(Copyleft?)
+  type --"Writing, image, audio, video"--> nocode_cc("Anti-DRM?<br>Attribution?<br>Copyleft?")
+  
+  code_sa --"No (permissive)"--> apache["Apache 2.0"]
+  code_sa --"Yes (weak)"--> mpl["MPL 2.0"]
+  code_sa --"Yes (strong)"--> agpl["AGPLv3"]
+  
+  nocode_cc --"Neither"--> cc0["CC0 1.0"]
+  nocode_cc --"Anti-DRM &<br>Attribution"--> cc_by["CC BY 4.0"]
+  nocode_cc --"Anti-DRM &<br>Attribution &<br>Copyleft"--> cc_by_sa["CC BY-SA 4.0"]
+  
+  click apache href "https://choosealicense.com/licenses/apache-2.0/"
+  click mpl href "https://choosealicense.com/licenses/mpl-2.0/"
+  click agpl href "https://choosealicense.com/licenses/agpl-3.0/"
+  click cc0 href "https://creativecommons.org/publicdomain/zero/1.0/"
+  click cc_by href "https://creativecommons.org/licenses/by/4.0/"
+  click cc_by_sa href "https://creativecommons.org/licenses/by-sa/4.0/"
+```
+
+Advanced License Flowchart for Software, Writing, Images, Audio, and Video
+:::
+
+::: {#fig-flowchart-data}
+```{mermaid}
+flowchart TB
+  start("We want to choose a<br>license for data.") --"We adapted a database by<br>others shared under a<br>free/open license."--> use_existing_license_db["<em>Use its license(s)<br>for content and database</em>"]
+  start --"We created a database<br>entirely by ourselves."--> norm("Community norm<br>regarding license?")
+  
+  norm --"Exists"--> follow_existing_norms["<em>Follow that norm</em>"]
+  norm --"Does not<br>exist"--> existing_license_content("Adapting content<br> by others?")
+  
+  subgraph "License for individual data entries (content)"
+  existing_license_content --"No, we created the content<br>entirely by ourselves."--> metadata("Is metadata?")
+  existing_license_content --"Yes, it was<br>shared under a<br>free/open license."--> use_existing_license_content["<em>Use that license</em>"]
+  metadata --"Yes"--> cc0_content_metadata["CC0 1.0"]
+  metadata --"No"--> choose_license["<em>Consult flowchart for<br>software, writing,<br>image, audio, and video</em>"]
+  end
+  
+  subgraph "License for combination of data (database)"
+  choose_license --> switch_license["<em>Depending on content license</em>"]
+  use_existing_license_content --> switch_license
+  
+  cc0_content_metadata --> cc0_db["CC0 1.0"]
+  switch_license --"CC0 or<br>non-CC license"--> sa(Copyleft?)
+  switch_license --"CC BY or<br>CC BY-SA"--> same["<em>Same license for DB</em>"]
+  
+  sa --"No (permissive)"--> cc0_db
+  sa --"Yes"--> odbl["ODbL 1.0"]
+  
+  %% the following link is only added to have terminal nodes on the same level
+  sa ~~~ same
+  end
+  
+  click cc0_content_metadata href "https://creativecommons.org/publicdomain/zero/1.0/"
+  click cc0_db href "https://creativecommons.org/publicdomain/zero/1.0/"
+  click odbl href "https://opendatacommons.org/licenses/odbl/summary/"
+```
+
+Advanced License Flowchart for Data(base)
+:::

@@ -1,0 +1,33 @@
+---
+title: "Introduction"
+lang: en
+bibliography: literature.bib
+---
+
+Together, we will create a research compendium whilst taking the following ten things into account [@Arguillas2022]:
+
+> __Does the research compendium contain everything needed to reproduce a predefined outcome in an organized and parsimonious way?__
+> 
+> 1. __Completeness:__ The research compendium contains all of the objects needed to reproduce a predefined outcome.
+> 2. __Organization:__ It is easy to understand and keep track of the various objects in the research compendium and their relationship over time.
+> 3. __Economy:__ Fewer extraneous objects in the compendium mean fewer things that can break and require less maintenance over time.
+> 
+> __Is descriptive information about the research compendium and its components available and easy to understand?__
+> 
+> 4. __Transparency:__ The research compendium provides full disclosure of the research process that produced the scientific claim.
+> 5. __Documentation:__ Information describing compendium objects is provided in enough detail to enable independent understanding and use of the compendium.
+> 
+> __Is information about how the research compendium and its components can be used available and easy to understand?__
+> 
+> 6. __Access:__ It is clear who can use what, how, and under what conditions, with open access preferred.
+> 7. __Provenance:__ The origin of the components of the research compendium and how each has changed over time is evident.
+> 
+> __Is information about the research compendium and its components embedded in code?__
+> 
+> 8. __Metadata:__ Information about the research compendium and its components is embedded in a standardized, machine-readable code.
+> 9. __Automation:__ As much as possible, the computational workflow is script- or workflow-based so that the workflow can be re-executed using minimal actions.
+> 
+> __Is there a plan for reviewing the research compendium for FAIR and computational reproducibility standards over time?__
+> 
+> 10. __Review:__ A series of managed activities are needed to ensure continued access to and functionality of the research compendium and its components for as long as necessary.
+

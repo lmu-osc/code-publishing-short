@@ -1,5 +1,29 @@
 ---
 title: "About"
+bibliography: grateful-refs.bib
 ---
 
-About this site
+```{r}
+#| echo: false
+
+grateful::cite_packages(
+  output = "paragraph",
+  out.dir = ".",
+  pkgs = unique(renv::dependencies(progress = FALSE)$Package),
+  passive.voice = TRUE
+) |>
+  withr::with_options(new = list(warnPartialMatchDollar = FALSE))
+```
+
+```{r}
+#| output: "asis"
+#| echo: false
+
+cat(c("Quarto:", as.character(quarto::quarto_version())))
+```
+
+```{r}
+#| echo: false
+
+sessioninfo::session_info()
+```
