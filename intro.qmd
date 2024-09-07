@@ -4,7 +4,7 @@ lang: en
 bibliography: literature.bib
 ---
 
-Together, we will create a research compendium whilst taking the following ten things into account [@Arguillas2022]:
+Together, we will create a research compendium whilst taking the following ten things into account [by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
 
 > __Does the research compendium contain everything needed to reproduce a predefined outcome in an organized and parsimonious way?__
 > 
@@ -30,4 +30,3 @@ Together, we will create a research compendium whilst taking the following ten t
 > __Is there a plan for reviewing the research compendium for FAIR and computational reproducibility standards over time?__
 > 
 > 10. __Review:__ A series of managed activities are needed to ensure continued access to and functionality of the research compendium and its components for as long as necessary.
-

@@ -4,7 +4,7 @@ lang: "en"
 bibliography: literature.bib
 ---
 
-The project is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder [@Jackson2018]:
+The project is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder [excerpt from @Jackson2018, with footnotes removed, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
 
 > __Does the digital repository give you a unique persistent digital identifier for your deposit?__
 > 
