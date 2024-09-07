@@ -59,3 +59,6 @@ rsconnect/
 .quarto
 _site/
 _outline.md
+
+# Other files created by the project
+grateful-refs.bib
