@@ -28,7 +28,7 @@ Installation/Dependencies
 
 :   What steps need to be taken to run the project? What software needs to be installed? Mention all dependencies here that are not explicitly managed by `renv`, such as the system dependencies of R packages as well as the version of Quarto.
 
-    An overview over the system dependencies of one more multiple R packages can be created using the function `pkg_sysreqs()` from the R package `pak`. In combination with `renv`, we can obtain the system dependencies of all R packages in the current project:
+    An overview over the system dependencies of R packages can be created using the function `pak::pkg_sysreqs()`. In combination with `renv`, we can obtain the system dependencies of all R packages in the current project:
     
     ```{.r filename="Console"}
     pak::pkg_sysreqs(renv::dependencies()$Package)
@@ -36,7 +36,7 @@ Installation/Dependencies
     
     The output may look like the following:
     
-    ```
+    ```txt
     ── Install scripts ─────────────────────── 
     dnf install -y make pandoc
     
@@ -69,7 +69,7 @@ Installation/Dependencies
     
     The output is quite long and it might look slightly different for you, but the relevant sections are the following:
     
-    ```
+    ```txt
     [✓] Checking tools....................OK
           TinyTeX: (not installed)
           Chromium: (not installed)
