@@ -2,9 +2,9 @@ project:
   type: website
 
 website:
-  title: "Code publishing tutorial"
+  title: "Code Publishing Tutorial"
   page-footer: 
-    center: "Copyright, 2024 Open Science Center at LMU Munich"
+    center: "Copyright 2024 Open Science Center at LMU Munich"
     border: false
   search:
     location: sidebar
