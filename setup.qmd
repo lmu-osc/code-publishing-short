@@ -171,7 +171,7 @@ Finally, we can store the data dictionary inside an HTML file using the R packag
 tinytable::save_tt(dict, output = "data_dictionary.html")
 ```
 
-A human-readable data dictionary is necessary for making one's research reproducible and the example we provided demonstrates only the bare minimum. A full data documentation including measurement instruments, sampling procedures, appropriate weighting, contact information, and more information about the study can be created with the R package [`pointblank`](https://rstudio.github.io/pointblank/articles/INFO-1.html). And one could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR Data management](https://github.com/MPDL/FAIR-Data-Management)".
+A human-readable data dictionary is necessary for making one's research reproducible and the example we provided demonstrates only the bare minimum. A full data documentation including measurement instruments, sampling procedures, appropriate weighting, contact information, and more information about the study can be created with the R package [`pointblank`](https://rstudio.github.io/pointblank/articles/INFO-1.html). And one could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR Data management](https://lmu-osc.github.io/FAIR-Data-Management/)".
 
 ::: {#nte-frictionless .callout-note collapse="true"}
 ### Create Machine-Readable Variable Documentation
@@ -356,7 +356,7 @@ Make sure that `.Renviron` is added to your `.gitignore` file in order to exclud
 
 Although we provide the code in this example for you, a few things remain to be said about best practices when it comes to writing code that is readable and maintainable.
 
-- __Use project-relative paths.__ When you refer to a file within your project, write paths relative to your project root. For example, don't write `C:\Users\Public\Documents\my_project\images\result.png`, instead write `images\result.png`.^[In R, use `file.path()` for a platform-independent way to concatenate folders to build a path.]
+- __Use project-relative paths.__ When you refer to a file within your project, write paths relative to your project root. For example, don't write `C:/Users/Public/Documents/my_project/images/result.png`, instead write `images/result.png`.
 
 - __Keep it simple.__ Add complexity only when you must. Whenever there's a boring way to do something and a clever way, go for the boring way. If the code grows increasingly complex, refactor it into separate functions and files.
 
