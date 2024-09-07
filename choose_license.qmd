@@ -310,15 +310,15 @@ flowchart TB
   norm --"Does not<br>exist"--> type("Work type?")
   
   type --"Software"--> code_sa("Attribution?<br>State changes?<br>Copyleft?")
-  type --"Writing, image, audio, video"--> nocode_cc("Anti-DRM?<br>Attribution?<br>State changes?<br>Copyleft?")
+  type --"Writing, image, audio, video"--> nocode_cc("Attribution?<br>State changes?<br>Anti-DRM?<br>Copyleft?")
   
   code_sa --"Attribution &<br>State changes"--> apache["Apache 2.0"]
   code_sa --"Attribution &<br>Weak copyleft"--> mpl["MPL 2.0"]
   code_sa --"Attribution &<br>State changes &<br>Strong copyleft"--> agpl["AGPLv3"]
   
   nocode_cc --"Neither"--> cc0["CC0 1.0"]
-  nocode_cc --"Anti-DRM &<br>Attribution &<br>State changes"--> cc_by["CC BY 4.0"]
-  nocode_cc --"Anti-DRM &<br>Attribution &<br>State changes &<br>Copyleft"--> cc_by_sa["CC BY-SA 4.0"]
+  nocode_cc --"Attribution &<br>State changes &<br>Anti-DRM"--> cc_by["CC BY 4.0"]
+  nocode_cc --"Attribution &<br>State changes &<br>Anti-DRM &<br>Copyleft"--> cc_by_sa["CC BY-SA 4.0"]
   
   click apache href "https://choosealicense.com/licenses/apache-2.0/"
   click mpl href "https://choosealicense.com/licenses/mpl-2.0/"
@@ -328,7 +328,7 @@ flowchart TB
   click cc_by_sa href "https://creativecommons.org/licenses/by-sa/4.0/"
 ```
 
-DRM = digital rights management
+Note: DRM = digital rights management
 
 Advanced License Flowchart for Software, Writing, Images, Audio, and Video
 :::
@@ -354,11 +354,11 @@ flowchart TB
   use_existing_license_content --> switch_license
   
   cc0_content_metadata --> cc0_db["CC0 1.0"]
-  switch_license --"CC0 or<br>non-CC license"--> sa(Copyleft?)
+  switch_license --"CC0 or<br>non-CC license"--> sa("Attribution?<br>Anti-DRM?<br>Copyleft?")
   switch_license --"CC BY or<br>CC BY-SA"--> same["<em>Same license for DB</em>"]
   
-  sa --"No (permissive)"--> cc0_db
-  sa --"Yes"--> odbl["ODbL 1.0"]
+  sa --"Neither"--> cc0_db
+  sa --"Attribution &<br>Anti-DRM &<br>Copyleft"--> odbl["ODbL 1.0"]
   
   %% the following link is only added to have terminal nodes on the same level
   sa ~~~ same
