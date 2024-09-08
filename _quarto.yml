@@ -31,7 +31,7 @@ website:
           - text: Report a Bug
             url:  https://github.com/lmu-osc/code-publishing/issues
       - icon: house-heart
-        url: https://www.osc.uni-muenchen.de/index.html
+        url: https://www.osc.uni-muenchen.de/
 
       
   sidebar:
@@ -51,7 +51,6 @@ format:
     css: styles.css
     toc: true
     fontsize: 13pt
-    code-overflow: wrap
     grid:
       sidebar-width: 300px
 
