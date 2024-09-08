@@ -25,7 +25,7 @@ And choose the project type _Quarto Project_.
 
 Finally, enter the name of the directory where our report will be created in, for example `code-publishing-exercise`.
 
-As we will use Git to track the version history of files, be sure to check _Create a git repository_. If you don't know what Git is, have a look at the tutorial "[Introduction to version Control with git and GitHub within RStudio](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)".
+As we will use Git to track the version history of files, be sure to check _Create a git repository_. If you don't know what Git is, have a look at the tutorial "[Introduction to version control with git and GitHub within RStudio](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)".
 
 ::: {.column-margin}
 ![renv: A dependency management toolkit for R](images/renv.svg){width=250px}
@@ -349,7 +349,7 @@ When you start a new session from the project root, the file is automatically re
 query_api(..., api_key = Sys.getenv("MY_FIRST_KEY"))
 ```
 
-Make sure that `.Renviron` is added to your `.gitignore` file in order to exclude it from the Git repository. If you already committed a file that you found contains credentials, you can follow @Chacon2024.
+Make sure that `.Renviron` is added to your `.gitignore` file in order to exclude it from the Git repository. If you already committed a file that contains credentials, you can follow @Chacon2024.
 :::
 
 ### Coding Best Practices

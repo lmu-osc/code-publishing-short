@@ -6,7 +6,7 @@ engine: knitr
 
 ## Creating a README
 
-Once you have prepared your project and settled on a license, it is time to add a final touch. Imagine you are coming back to your project in five years, having forgotten most of the details of what you did exactly. What would be useful to know in order to quickly understand what is going on in the project? This is what needs to be described in the README. While you could just start writing along, most READMEs have some sections in common which we describe below.
+Once you have prepared your project and settled on a license, it is time to add a final touch. Imagine returning to your project in five years, having forgotten most of the details of what you did exactly. What would be useful to know in order to quickly understand what is going on in the project? This is what needs to be described in the README. While you could just start writing along, most READMEs have some sections in common which we describe below.
 
 Name
 
@@ -22,7 +22,7 @@ Description
 
 Visuals
 
-:   If there is anything you can show that demonstrates how the project can be used? Screenshots or other visuals can make the README more appealing.
+:   Is there anything you can show that demonstrates how the project can be used? Screenshots or other visuals can make the README more appealing.
 
 Installation/Dependencies
 
@@ -100,7 +100,7 @@ Authors
 
 Citation
 
-:   Is there a recommended way to cite this project? We recommend to increase citability by using the [CodeMeta generator](https://codemeta.github.io/codemeta-generator/) to create the file `codemeta.json`. Alternatively, one can also use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create the file.
+:   Is there a recommended way to cite this project? We recommend to increase citability by using the [CodeMeta generator](https://codemeta.github.io/codemeta-generator/) to create a file called `codemeta.json`. Alternatively, one can also use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create this file. Then, put it into the project folder.
 
 License
 
