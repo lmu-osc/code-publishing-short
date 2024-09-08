@@ -1,5 +1,5 @@
 ---
-title: "Add a README"
+title: "Make a README"
 lang: en
 engine: knitr
 ---

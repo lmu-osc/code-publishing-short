@@ -9,7 +9,7 @@ This tutorial covers how to make your code available to others. While the genera
 We will start with creating a simple report which incorporates R code. Then, we will focus on what is required to publish your work:
 
 - removing legal barriers: adding an appropriate license
-- high-level documentation: adding a README file
+- high-level documentation: creating a README file
 - archival: uploading it to a repository
 
 ## Prerequisites

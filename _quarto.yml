@@ -39,7 +39,7 @@ website:
       - intro.qmd
       - setup.qmd
       - choose_license.qmd
-      - add_readme.qmd
+      - make_readme.qmd
       - archive.qmd
       
 
