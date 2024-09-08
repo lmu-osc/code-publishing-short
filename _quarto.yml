@@ -8,7 +8,7 @@ website:
     border: false
   search:
     location: sidebar
-  repo-url: https://github.com/lmu-osc/introduction-to-renv
+  repo-url: https://github.com/lmu-osc/code-publishing
   repo-actions: [edit, issue]
   back-to-top-navigation: true
   page-navigation: true
