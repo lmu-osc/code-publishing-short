@@ -366,7 +366,7 @@ Although we provide the code in this example for you, a few things remain to be 
 
 - __Don't reinvent the wheel.__ With R, chances are that what you need to do is greatly facilitated by a package from one of many high-quality collections such as [rOpenSci](https://ropensci.org/packages/), [r-lib](https://github.com/r-lib), [Tidyverse](https://www.tidyverse.org/packages/), or [fastverse](https://fastverse.github.io/fastverse/).
 
-- __Think twice about your dependencies.__ Every dependency increases the risk of irreproducibility in the future. Prefer packages that are well-maintained and light on dependencies^[You can use the [R package dependency badges](https://tinyverse.netlify.app/) to count the direct and total dependencies.]. We also recommend you to read "When should you take a dependency?" by @Wickham2023PackagesDependency.
+- __Think twice about your dependencies.__ Every dependency increases the risk of irreproducibility in the future. Prefer packages that are well-maintained and light on dependencies^[You can use the function `pak::pkg_deps()` to count the total number of package dependencies in R.]. We also recommend you to read "When should you take a dependency?" by @Wickham2023PackagesDependency.
 
 - __Fail early, often and noisily.__ Whenever you expect a certain state, use assertions to be sure. In R, you can use `stopifnot()` to make sure that a condition is actually true.
 

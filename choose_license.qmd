@@ -121,16 +121,11 @@ If a Quarto document contains both R code and writing, one may wonder what type 
 It is disputed whether software that uses an R package under AGPLv3 or GPLv3^[a variant of the AGPLv3 that does not cover software running as a service] can only be published under a GPL-compatible license -- or even has to be published under the same license. Posit, the company behind RStudio, does not believe that to be the case [see also @Wickham2023PackagesLicense]. You can learn which license an installed package uses via `packageDescription("<PACKAGE_NAME>", fields = "License")`. And to identify which licenses are being used by the R packages your project depends on, you can use the following code:
 
 ```r
-direct_deps <- unique(renv::dependencies()$Package)
-all_deps <- tools::package_dependencies(
-  packages = direct_deps,
-  which = "strong",
-  recursive = TRUE
-) |>
-  unlist() |>
-  append(direct_deps) |>
-  unique()
-unique(installed.packages(fields = "License")[all_deps, "License"])
+deps <- renv::dependencies()$Package |>
+  unique() |>
+  pak::pkg_deps(dependencies = NA) |>
+  getElement("package")
+unique(installed.packages(fields="License")[deps, "License"])
 ```
 :::
 
