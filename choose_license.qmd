@@ -128,9 +128,9 @@ all_deps <- tools::package_dependencies(
   recursive = TRUE
 ) |>
   unlist() |>
-  append(deps) |>
+  append(direct_deps) |>
   unique()
-unique(installed.packages(fields = "License")[pkgs, "License"])
+unique(installed.packages(fields = "License")[all_deps, "License"])
 ```
 :::
 
