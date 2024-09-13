@@ -1,8 +1,10 @@
 ---
-title: "Archive"
+title: "Archive Your Project"
 lang: "en"
 bibliography: literature.bib
 ---
+
+## Where to Deposit Software
 
 The project is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder [excerpt from @Jackson2018, with footnotes removed, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
 
@@ -35,6 +37,32 @@ The project is now ready to be deposited for long-term archival. When considerin
 > 
 > The digital repository may be accredited or certified by an independent agency that reviews digital repositories according to various criteria related to its policies and processes. The presence of an accreditation or certification may provide you with an additional degree of confidence that the digital repository meets your requirements. For example, the Data Seal of Approval can be awarded to digital repositories who satisfy a set of quality guidelines relating to how they manage, preserve and make available the deposits they hold. The presence of a Data Seal of Approval could give you additional confidence that a digital repository is suitable for holding your deposit.
 
-Additional guidance is provided by @Daquin2023 and @Garijo2022. We will cover the archival using the Software Heritage archive and Zenodo.
+Additional guidance is provided by @Daquin2023 and @Garijo2022.
+
+## Using Zenodo to Archive Your Project
+
+In the following we will demonstrate how to use Zenodo to archive one's project and obtain a DOI.
+
+::: {#cau-sandbox .callout-caution}
+### Zenodo Sandbox
+
+Note that during this tutorial, we will be using Zenodo's sandbox instance located at [`sandbox.zenodo.org`](https://sandbox.zenodo.org/) in order to learn how to use it while not wasting Zenodo's resources. For real projects, use the production instance at [`zenodo.org`](https://zenodo.org/), which requires a separate account.
+:::
+
+First, create an account on the Zenodo Sandbox by clicking on _Sign up_ in the upper right corner and submitting the provided form. Then, confirm your email address (also check your spam folder if you cannot find the confirmation email).
+
+Now you can follow the guide "[Create new upload](https://help.zenodo.org/docs/deposit/create-new-upload/)", taking into account the following notes specific to each step:
+
+- __Add/remove files__: To circumvent the file limit on Zenodo, you can bundle your project folder in one ZIP file and upload that instead.
+- __Fill in metadata__
+  - __Digital Object Identifier__ (DOI): Usually, you will want a DOI, therefore you need to choose _No_ for the question whether you already have a DOI for this upload, and click on _Get a DOI now!_.
+  - __Resource type__: Select the most appropriate one, for example, _Publication / Preprint_.
+  - __Licenses__: If your project only contains content by you and if you previously only chose one license, you can select that by choosing _Add standard_. Otherwise, click on _Add custom_ and describe how each file is licensed. If you have been using REUSE to record license information, you can run enter `SPDX Document` as title and run the reuse tool with `reuse spdx -o reuse.spdx` to create the file `reuse.spdx`. Then you can paste the content of `reuse.spdx` into the description field of the custom license as it contains information about the license of each file.
+
+If you previously uploaded your project to a public Git repository (which we didn't cover during this tutorial), you could also add the new DOI to your README, for example, under the section "Citation".
+
+## Final Remarks
+
+There are situations in which you are not allowed to share your data publicly. In this case, consider using a repository specifically for research data, which later grants access for valid uses individually.
 
 For further information, you may be interested in [Software Deposit Guidance for Researchers](https://softwaresaved.github.io/software-deposit-guidance/).

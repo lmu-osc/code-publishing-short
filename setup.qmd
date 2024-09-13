@@ -305,7 +305,7 @@ renv::install()
 ```
 
 
-The manuscript also uses the Quarto extension "[apaquarto](https://wjschne.github.io/apaquarto/)", which typesets documents according to the requirements of the @APA2020. It can be installed in the project using the following command:
+The manuscript also uses the Quarto extension "[apaquarto](https://wjschne.github.io/apaquarto/)", which typesets documents according to the requirements of the American Psychological Association [-@APA2020]. It can be installed in the project using the following command:
 
 ```{.bash filename="Terminal"}
 quarto add --no-prompt wjschne/apaquarto
