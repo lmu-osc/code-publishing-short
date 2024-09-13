@@ -9,6 +9,17 @@ format:
 engine: knitr
 ---
 
+## TL;DR
+
+Every expression of an idea, such as literary or artistic works, are automatically covered by copyright. This means that nobody else than the copyright holder is allowed to copy, modify, or share it. Copyright licenses can grant others some of the necessary rights, but mostly don't cover publicity, privacy, moral, patent, or trademark rights.
+
+Researchers are only allowed to share material they have the necessary rights to, for example, through a free/open license. These licenses often require to attribute the authors, indicate whether changes were made, and provide the text of the license, among other things. In addition, researchers should share any work by their own under such a license.
+
+"Choosing a License" involves:
+
+1. Recording the copyright notices and licenses for files by others (for example, in a file called `LICENSE.txt`) and following all their additional requirements.
+2. In the simplest case, choosing two licenses (one for code, one for everything else) which to apply  simultaneously (at the choice of the recipient) to all own files (for example, again by recording the license in the file `LICENSE.txt`).
+
 ## A Primer on Licenses
 
 Whenever you create a literary or artistic work (such as a text, image, video, or software), the copyright law in most countries limits other people from copying, modifying, and sharing it without your express permission. [If the work was created as part of your job, it might be your employer who holds the copyright to the work, depending on the country and contract.]{.aside} This even applies if you make it available to others (e.g., on your website): First and foremost they are not allowed to copy, modify, or share it. This legal default of "all rights reserved" runs counter to many cultural and scientific processes. Copyright licenses enable authors to free up their works for reuse by others.
@@ -29,7 +40,7 @@ If you have published a closed-access paper before, you can consult [ShareYourPa
 
 The licenses we discuss here mostly regard copyright. Therefore, recipients may lack other rights such as publicity, privacy, moral, patent,^[In fact, the software licenses we recommend on this page have been specifically selected to provide an express grant of patent rights.] or trademark rights. For example, sharing photos that depict people is not only a matter of copyright, but also of privacy rights. Conversely, the licenses do not apply if recipients are allowed to use the works for other reasons such as fair use, the right to quote, or because they made a different arrangement with the author.
 
-## Which License to Choose?
+## Which License to Choose for a Work?
 
 Many boilerplate licenses are available to apply to your work. Which license is appropriate depends on several factors, including existing licenses in place and the type of work, but also your personal considerations. We strongly recommend to apply a _free/open_ license to your work, which means that the work "can be freely studied, applied, copied and/or modified, by anyone, for any purpose" [@Moller2015]. Importantly, this also means that others do not need to ask or notify the author and that they can use it for commercial purposes. By the choice of license, authors can, however, demand that they are credited, that the original license is indicated, that modifications are indicated, that derivative works are only shared under the same license, and that no further restrictions are imposed on the work. Software licenses may additionally require to make the source code available to everybody the software is shared with. Because there are many free/open licenses available, the licenses discussed here only represent a recommended subset.
 
@@ -112,7 +123,7 @@ Note, however, that the copyleft licenses we discuss here do not mandate sharing
 ::: {#tip-license-r .callout-tip}
 #### Projects Involving R Code
 
-In most cases, the output of software, like images or tables, does not depend on its license. Therefore, if you use an R package under a copyleft license to create content, you are likely the copyright owner. However, if the output is based in data, it can be considered a derivative work and the license of the data also applies.
+In most cases, the output of software, like images or tables, does not depend on its license. Therefore, if you use an R package under a copyleft license to create a figure, you are likely the copyright owner. However, if the output is based on data, it can be considered a derivative work and the license of the data also applies. For example, maps may be considered as a derivative of the geographic data they are based on.
 
 If a Quarto document contains both R code and writing, one may wonder what type of license to apply. It is possible to make such a file simultaneously available under two licenses, at the choice of the recipient: Either under a specified software license, or under a Creative Commons license^[that is, a license for writing, image, audio, and video]. This is called dual-licensing and makes it easier to reuse both rendered PDF as well as the code. For example, one could write:
 
@@ -153,9 +164,15 @@ However, applying a restriction such as only permitting non-commercial use or no
 !["Open data-capable license interoperability" by Robbie Morrison licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). Taken without modification from @Morrison2024](images/Morrison2024.jpg){.lightbox}
 :::
 
+## Which Licenses to Choose for a Project?
+
+So far, we only discussed how to choose a license for works _of one type_. But what if you want to share a project with all kinds of files? For example, the project from this tutorial (among other things) includes a data file, a manuscript file with intermingled code and writing, and an R file. And what if you also want to share files by others, as is the case with `apaquarto` which you may have installed in this project?
+
+The answer is that you need to indicate the license on a per-file or per-folder basis (rather than choosing one for the whole project). The easiest approach is to make note of every foreign work included in your project and record its license. Then, dual-license all the remaining files, which are yours, under a code and a non-code license in parallel as explained in @tip-license-r.
+
 ## Applying the License
 
-Having selected the licenses of your choice -- you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which license applies to which file or folder, usually in the project's README (among other places), whose creation will be discussed in "[Add a README](add_readme.qmd)".
+Having selected the licenses of your choice -- again, you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which license applies to which file or folder, usually in the project's README (among other places), whose creation will be discussed "[later](make_readme.qmd)".
 
 ::: {#cau-license-versions .callout-caution}
 ### License Versions Are Important
