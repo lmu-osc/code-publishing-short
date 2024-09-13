@@ -46,7 +46,7 @@ Authors
 
 Citation
 
-:   Is there a recommended way to cite this project? We recommend to increase citability by using the [CodeMeta generator](https://codemeta.github.io/codemeta-generator/) to create a file called `codemeta.json`. Alternatively, one can also use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create this file. Then, put it into the project folder.
+:   Is there a recommended way to cite this project? We recommend to increase citability by using the [CodeMeta generator](https://codemeta.github.io/codemeta-generator/) to create a file called `codemeta.json`. Alternatively, one can also use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create this file. Then, put it into the project folder. Another common standard is the [Citation File Format](https://citation-file-format.github.io/) (CFF), which is an equally valid option.
 
 License
 
