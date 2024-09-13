@@ -74,7 +74,7 @@ First, if you adapt (i.e., modify, build on) a work by others you need to determ
 
 If you create a new work and no strong community norms suggest a particular license, you need to choose the license yourself. Which license to choose depends on the type of work you create. Software licenses, for example, may consider that the source code is the preferred form for making modifications, while licenses for data can differentiate between the database and any works produced from it. We have created a flowchart that covers the most likely types of works you will create as a researcher: software, writing (i.e., text), images, audio, video, and data (see @fig-flowchart-simple). This flowchart always recommends the most permissive license possible to maximize reuse -- below we provide two additional flowcharts that allow for more choices. Click on the name of a license to learn more about it.
 
-Note, that for data you have, at least in principle, the option to apply separate licenses to the individual entries and the collective database. For example, if you were to create a database of artworks by others, those artworks would be licensed individually as chosen by the artists, but the license for the database as a whole could be chosen by you. The latter includes the structure of the database (e.g., the selection of entries and field names) and any sui generis database rights. However, if the content was created by you, we recommend you to choose the same license for both content and database. Metadata, in particular, should always be licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+Note, that for data you have, at least in principle, the option to apply separate licenses to the individual entries and the collective database. For example, if you were to create a database of artworks by others, those artworks would be licensed individually as chosen by the artists, but the license for the database as a whole could be chosen by you. The latter includes the structure of the database (e.g., the selection of entries and field names) and any _sui generis_ database rights. However, if the content was created by you, we recommend you to choose the same license for both content and database. Metadata, in particular, should always be licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ::: {#fig-flowchart-simple}
 ```{mermaid}
@@ -118,7 +118,7 @@ The consequence of applying a permissive license to your work is that others may
 - __Weak copyleft licenses__ only require that modifications to the software itself are licensed under the same or a compatible license if shared. For example, if you create and publish software under a weak copyleft license, others who modify it and put their version on the internet have to apply the same license. However, people who merely _use_ your software in their own work which they make publicly available can choose any license for it.
 - __Strong copyleft licenses,__ on the other side, insist that any larger works that use the copyleft-licensed software must also be licensed under the same or a compatible license if shared. For example, if your software were to be put under a strong copyleft license, everybody publishing software that uses your software would need to put it under the same license. Because of only few rulings in courts, the extent of this requirement is disputed [@Wikipedia2024].
 
-Note, however, that the copyleft licenses we discuss here do not mandate sharing. Copyleft (and attribution) clauses are only triggered if the work is shared [@CC2015]. It is also worth reiterating that these licenses do not restrict the original author(s): They are still permitted to distribute their work under a different license and without sharing the source code.
+Note, however, that the copyleft licenses we discuss here do not mandate sharing. Copyleft (and attribution) clauses are only triggered if the work is shared [@CC2015]. This means that if you only use a work internally, you do not need to share your derivative works. It is also worth reiterating that these licenses do not restrict the original author(s): They are still permitted to distribute their work under a different license and without sharing the source code.
 
 ::: {#tip-license-r .callout-tip}
 #### Projects Involving R Code
@@ -177,7 +177,7 @@ Having selected the licenses of your choice -- again, you might need multiple on
 ::: {#cau-license-versions .callout-caution}
 ### License Versions Are Important
 
-You may have noticed that we mostly refer to licenses using a name _and_ a version number. This is because the organizations that created the licenses sometimes publish updated versions to accommodate for developments in copyright law and the communities that use the licenses. For example, the Creative Commons licenses (that start with `CC`) were first published in 2002. Since then, the possibility to relicense under compatible licenses has been added ([v3.0](https://creativecommons.org/2007/02/23/version-30-launched/)), a 30-day window to correct license violations has been established to combat [copyleft trolls](https://commons.wikimedia.org/wiki/Commons:Copyleft_trolling), and sui generis database rights are covered explicitly ([v4.0](https://creativecommons.org/version4/)). There are many more [subtle differences between license versions](https://wiki.creativecommons.org/wiki/License_Versions), therefore it is important to indicate which license version exactly one is referring to, as the license of a work does not "update" automatically.
+You may have noticed that we mostly refer to licenses using a name _and_ a version number. This is because the organizations that created the licenses sometimes publish updated versions to accommodate for developments in copyright law and the communities that use the licenses. For example, the Creative Commons licenses (that start with `CC`) were first published in 2002. Since then, the possibility to relicense under compatible licenses has been added ([v3.0](https://creativecommons.org/2007/02/23/version-30-launched/)), a 30-day window to correct license violations has been established to combat [copyleft trolls](https://commons.wikimedia.org/wiki/Commons:Copyleft_trolling), and _sui generis_ database rights are covered explicitly ([v4.0](https://creativecommons.org/version4/)). There are many more [subtle differences between license versions](https://wiki.creativecommons.org/wiki/License_Versions), therefore it is important to indicate which license version exactly one is referring to, as the license of a work does not "update" automatically.
 
 For the AGPLv3 it is even recommended to state whether a work is licensed under exactly the indicated version of the license or, alternatively, also under newer versions of the license [@Stallman2022].
 :::
@@ -230,7 +230,7 @@ For example, if you previously created the file `create_data_dictionary.R`, you 
 You need to use `#` to start the comment because this is the symbol that starts comment lines in R scripts. Alternatively, you can use the [reuse tool](https://github.com/fsfe/reuse-tool) to add these information for you. After installing it with...
 
 ```{.bash filename="Terminal"}
-pip install reuse
+pipx install reuse
 ```
 
 ...you can add the copyright information using the following command -- the current year will be added automatically:
@@ -273,7 +273,7 @@ SPDX-FileCopyrightText: 2024 Kristen Gorman
 SPDX-License-Identifier: CC0-1.0
 ```
 
-If you want to indicate the license for all files in a particular folder, you can create a filed called `REUSE.toml` and add an `[[annotations]]` table for them:
+If you want to indicate the license for all files in a particular folder, you can create a file called `REUSE.toml` and add an `[[annotations]]` table for them:
 
 ```{.toml filename="REUSE.toml"}
 version = 1
