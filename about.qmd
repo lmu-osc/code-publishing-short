@@ -4,7 +4,6 @@ author:
   - name: "Florian Kohrt"
     orcid: "0000-0003-0374-5625"
   - name: "Josephine Zerna"
-    email: "josephine.zerna@tu-dresden.de"
     orcid: "0000-0003-2892-884X"
   - name: "Christoph Scheffel"
     email: "christoph_scheffel@tu-dresden.de"
