@@ -24,7 +24,7 @@ We recommend to choose [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/
 
 You can adapt the following wording to your use case:
 
-> Except otherwise noted, all files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
+> Except where noted otherwise, all files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
 
 ## A Primer on Licenses
 
