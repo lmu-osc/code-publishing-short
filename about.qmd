@@ -12,7 +12,7 @@ author:
 bibliography: grateful-refs.bib
 ---
 
-# Utilized Software
+## Utilized Software
 
 ```{r}
 #| echo: false
@@ -39,7 +39,7 @@ cat(c("Quarto:", as.character(quarto::quarto_version())))
 sessioninfo::session_info()
 ```
 
-# License and Disclaimer
+## License and Disclaimer
 
 If not indicated otherwise, this tutorial is licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). None of the discussion in this tutorial constitutes legal advice.
 
@@ -55,7 +55,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```
 
-# Funding
+## Funding
 
 ::: {.column-margin}
 ![](images/bitss.png){width=250px}
