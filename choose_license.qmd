@@ -15,10 +15,10 @@ Every expression of an idea, such as a literary or an artistic works, is automat
 
 Researchers are only allowed to share material they have the necessary rights to, for example, through a free/open license. These licenses often require to attribute the authors, indicate whether changes were made, and provide the text of the license, among other things. In addition, researchers should share any work by their own under such a license.
 
-"Choosing a License" involves:
+_Choosing a license_ involves:
 
-1. Recording the copyright notices and licenses for files by others (for example, in a file called `LICENSE.txt`) and following all their additional requirements.
-2. In the simplest case, choosing two licenses (one for code, one for everything else) which to apply  simultaneously to all own files (for example, again by recording the license in the file `LICENSE.txt`). Recipients are then free to choose under which of the two licenses to use the material.
+1. Recording the copyright notices and licenses for content by others (for example, in a file called `LICENSE.txt`) and following all their additional requirements.
+2. In the simplest case, choosing two licenses (one suitable for code, one for everything else) which to apply  simultaneously to all own content (for example, again by recording the license in the file `LICENSE.txt`). Recipients are then free to choose under which of the two licenses to use the material.
 
 We recommend to choose [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) for all own works. Take your time to read the summaries behind the links and/or the actual license text to understand its legal effect.
 
@@ -80,6 +80,21 @@ First, if you adapt (i.e., modify, build on) a work by others you need to determ
 
 If you create a new work and no strong community norms suggest a particular license, you need to choose the license yourself. Which license to choose depends on the type of work you create. Software licenses, for example, may consider that the source code is the preferred form for making modifications, while licenses for data can differentiate between the database and any works produced from it. We have created a flowchart that covers the most likely types of works you will create as a researcher: software, writing (i.e., text), images, audio, video, and data (see @fig-flowchart-simple). This flowchart always recommends the most permissive license possible to maximize reuse -- below we provide two additional flowcharts that allow for more choices. Click on the name of a license to learn more about it.
 
+::: {#tip-dual-licensing .callout-tip}
+#### Dual-licensing
+
+Sometimes, the type of a work is not obvious. For example, a Quarto document...
+
+- ...contains both R code and writing, and
+- ...may be distributed in the source format or as rendered document, possibly including images.
+
+One may wonder which license to apply in this case, because Creative Commons licenses are not recommended for source code^[because (among other reasons) they explicitly disclaim any conveyance of patent rights] and applying software licenses to PDFs or images can lead to confusion or nuisance.^[because they often require to keep the license notice intact]
+
+One solution is to make such a work simultaneously available under two licenses, at the choice of the recipient: Either under a specified software license, or under a Creative Commons license^[that is, a license for writing, image, audio, and video]. This is called dual-licensing and makes it easier to reuse both the rendered document as well as the code. For example, one could write:
+
+> The Quarto files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
+:::
+
 Note, that for data you have, at least in principle, the option to apply separate licenses to the individual entries and the collective database. For example, if you were to create a database of artworks by others, those artworks would be licensed individually as chosen by the artists, but the license for the database as a whole could be chosen by you. The latter includes the structure of the database (e.g., the selection of entries and field names) and any _sui generis_ database rights. However, if the content was created by you, we recommend you to choose the same license for both content and database. Metadata, in particular, should always be licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ::: {#fig-flowchart-simple}
@@ -131,11 +146,9 @@ Note, however, that the copyleft licenses we discuss here do not mandate sharing
 
 In most cases, the output of software, like images or tables, does not depend on its license. Therefore, if you use an R package under a copyleft license to create a figure, you are likely the copyright owner. However, if the output is based on data, it can be considered a derivative work and the license of the data also applies. For example, maps may be considered as a derivative of the geographic data they are based on.
 
-If a Quarto document contains both R code and writing, one may wonder what type of license to apply. It is possible to make such a file simultaneously available under two licenses, at the choice of the recipient: Either under a specified software license, or under a Creative Commons license^[that is, a license for writing, image, audio, and video]. This is called dual-licensing and makes it easier to reuse both rendered PDF as well as the code. For example, one could write:
+It is disputed whether software that uses an R package under AGPLv3 or GPLv3^[a variant of the AGPLv3 that does not cover software running as a service] can only be published under a GPL-compatible license -- or even has to be published under the same license. Posit, the company behind RStudio, does not believe that to be the case [see also @Wickham2023PackagesLicense].
 
-> The Quarto files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
-
-It is disputed whether software that uses an R package under AGPLv3 or GPLv3^[a variant of the AGPLv3 that does not cover software running as a service] can only be published under a GPL-compatible license -- or even has to be published under the same license. Posit, the company behind RStudio, does not believe that to be the case [see also @Wickham2023PackagesLicense]. You can learn which license an installed package uses via `packageDescription("<PACKAGE_NAME>", fields = "License")`. And to identify which licenses are being used by the R packages your project depends on, you can use the following code:
+You can learn which license an installed package uses via `packageDescription("<PACKAGE_NAME>", fields = "License")`. And to identify which licenses are being used by the R packages your project depends on, you can use the following code:
 
 ```r
 deps <- renv::dependencies()$Package |>
@@ -178,7 +191,7 @@ The answer is that you need to indicate the license on a per-file or per-folder 
 
 ## Applying the License
 
-Having selected the licenses of your choice -- again, you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which license applies to which file or folder, usually in the project's README (among other places), whose creation will be discussed "[later](make_readme.qmd)".
+Having selected the licenses of your choice -- again, you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which license applies to which file or folder, usually in the project's README (among other places), whose creation will be discussed [later](make_readme.qmd).
 
 ::: {#cau-license-versions .callout-caution}
 ### License Versions Are Important
@@ -214,7 +227,7 @@ Creative Commons even provides a range of considerations for licensors and licen
 
 While it is common to state the chosen license(s) in the README, usually one of the following actions is taken in addition:
 
-In the simplest case, one just creates a file called `LICENSE.txt` where the full text of the license is copied verbatim. This is a practice propagated by GitHub, which provides instructions for many licenses via [ChooseALicense.com](https://choosealicense.com/licenses/). However, if the project is not completely covered by one single license, this practice may become unwieldy. For example, if a project contains different types of works by different authors, the `LICENSE.txt` needs to detail which file is covered by which license(s), along with any copyright notices.
+In the simplest case, one just creates a file called `LICENSE.txt` where the full text of the license is copied verbatim. This is a practice propagated by GitHub, which provides instructions for and comparisons of many licenses via [ChooseALicense.com](https://choosealicense.com/licenses/). However, if the project is not completely covered by one single license, this practice may become unwieldy. For example, if a project contains different types of works by different authors, the `LICENSE.txt` needs to detail which file is covered by which license(s), along with any copyright notices.
 
 Individual programming languages also have their own way of stating which license a package is distributed under. For R packages, this is usually set by the field `License` in the file `DESCRIPTION` [@Wickham2023PackagesLicense].
 
