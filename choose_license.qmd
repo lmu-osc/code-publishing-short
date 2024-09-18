@@ -18,7 +18,13 @@ Researchers are only allowed to share material they have the necessary rights to
 "Choosing a License" involves:
 
 1. Recording the copyright notices and licenses for files by others (for example, in a file called `LICENSE.txt`) and following all their additional requirements.
-2. In the simplest case, choosing two licenses (one for code, one for everything else) which to apply  simultaneously (at the choice of the recipient) to all own files (for example, again by recording the license in the file `LICENSE.txt`).
+2. In the simplest case, choosing two licenses (one for code, one for everything else) which to apply  simultaneously to all own files (for example, again by recording the license in the file `LICENSE.txt`). Recipients are then free to choose under which of the two licenses to use the material.
+
+We recommend to choose [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) for all own works. Take your time to read the summaries behind the links and/or the actual license text to understand its legal effect.
+
+You can adapt the following wording to your use case:
+
+> Except otherwise noted, all files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
 
 ## A Primer on Licenses
 
@@ -127,7 +133,7 @@ In most cases, the output of software, like images or tables, does not depend on
 
 If a Quarto document contains both R code and writing, one may wonder what type of license to apply. It is possible to make such a file simultaneously available under two licenses, at the choice of the recipient: Either under a specified software license, or under a Creative Commons license^[that is, a license for writing, image, audio, and video]. This is called dual-licensing and makes it easier to reuse both rendered PDF as well as the code. For example, one could write:
 
-> The Quarto files in this project are made available under CC\ BY-SA\ 4.0, or (at your option) under the terms of the Apache Software License\ 2.0.
+> The Quarto files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
 
 It is disputed whether software that uses an R package under AGPLv3 or GPLv3^[a variant of the AGPLv3 that does not cover software running as a service] can only be published under a GPL-compatible license -- or even has to be published under the same license. Posit, the company behind RStudio, does not believe that to be the case [see also @Wickham2023PackagesLicense]. You can learn which license an installed package uses via `packageDescription("<PACKAGE_NAME>", fields = "License")`. And to identify which licenses are being used by the R packages your project depends on, you can use the following code:
 
