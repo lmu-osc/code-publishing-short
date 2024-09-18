@@ -11,7 +11,7 @@ We will start by setting up a simple example of a reproducible report.
 
 First, we will need to create a new Quarto project.
 
-If you haven't already, open RStudio -- see @nte-terminal for an alternative to RStudio. Then, click on _File_ > _New Project..._ to open the _New Project Wizard_.
+If you haven't already, open RStudio -- see @nte-terminal for how to use the terminal instead. Then, click on _File_ > _New Project..._ to open the _New Project Wizard_.
 
 ![](images/setup_01.png){width=500px fig-align="center"}
 
@@ -68,7 +68,7 @@ git init
 git checkout -b main
 ```
 
-Then, one can open an R session, by simply typing `R` into the terminal. Next, sure that `getwd()` indicates that the working directory is `code-publishing-exercise`. If not, set it using `setwd("code-publishing-exercise")`. Then, initialize `renv`:
+Then, one can open an R session, by simply typing `R` into the terminal. Next, make sure that `getwd()` indicates that the working directory is `code-publishing-exercise`. If not, set it using `setwd("code-publishing-exercise")`. Then, initialize `renv`:
 
 ```{.r filename="Console"}
 renv::init()
@@ -191,7 +191,7 @@ Finally, we can store the data dictionary inside an HTML file using the R packag
 tinytable::save_tt(dict, output = "data_dictionary.html")
 ```
 
-A human-readable data dictionary is necessary for making one's research reproducible and the example we provided demonstrates only the bare minimum. A full data documentation including measurement instruments, sampling procedures, appropriate weighting, contact information, and more information about the study can be created with the R package [`pointblank`](https://rstudio.github.io/pointblank/articles/INFO-1.html). And one could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR Research Data management](https://lmu-osc.github.io/FAIR-Data-Management/)".
+A human-readable data dictionary is necessary for making one's research reproducible and the example we provided demonstrates only the bare minimum. A full data documentation including measurement instruments, sampling procedures, appropriate weighting, contact information, and more information about the study can be created with the R package [`pointblank`](https://rstudio.github.io/pointblank/articles/INFO-1.html). And one could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR research data management](https://lmu-osc.github.io/FAIR-Data-Management/)".
 
 ::: {#nte-frictionless .callout-note collapse="true"}
 ### Create Machine-Readable Variable Documentation
