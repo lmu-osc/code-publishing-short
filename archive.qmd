@@ -37,7 +37,7 @@ The project is now ready to be deposited for long-term archival. When considerin
 > 
 > The digital repository may be accredited or certified by an independent agency that reviews digital repositories according to various criteria related to its policies and processes. The presence of an accreditation or certification may provide you with an additional degree of confidence that the digital repository meets your requirements. For example, the Data Seal of Approval can be awarded to digital repositories who satisfy a set of quality guidelines relating to how they manage, preserve and make available the deposits they hold. The presence of a Data Seal of Approval could give you additional confidence that a digital repository is suitable for holding your deposit.
 
-Additional guidance is provided by @Daquin2023 and @Garijo2022.
+Additional guidance is provided by @Daquin2023, @Garijo2022, and @ScienceEurope2021.
 
 ## Using Zenodo to Archive Your Project
 
