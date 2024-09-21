@@ -28,7 +28,7 @@ You can adapt the following wording to your use case:
 
 ## A Primer on Licenses
 
-Whenever you create a literary or artistic work (such as a text, image, video, or software), the copyright law in most countries limits other people from copying, modifying, and sharing it without your express permission. [If the work was created as part of your job, it might be your employer who holds the copyright to the work, depending on the country and contract.]{.aside} This even applies if you make it available to others (e.g., on your website): First and foremost they are not allowed to copy, modify, or share it. This legal default of "all rights reserved" was created to benefit publishers, not authors, [@Fogel2006] and runs counter to many cultural and scientific processes. Copyright licenses enable authors to free up their works for reuse by others.
+Whenever you create a literary or artistic work (such as a text, image, video, or software), the copyright law in most countries limits other people from copying, modifying, and sharing it without your express permission. [If the work was created as part of your job, it might be your employer who holds the copyright to the work, depending on the country and contract.]{.aside} This even applies if you make it available to others (e.g., on your website): First and foremost they are not allowed to copy, modify, or share it. This legal default of "all rights reserved" was created to benefit publishers, not authors [@Fogel2006], and runs counter to many cultural and scientific processes. Copyright licenses enable authors to free up their works for reuse by others.
 
 ::: {.column-margin}
 For the purpose of this tutorial, by _license_ we mean _copyright license_.
