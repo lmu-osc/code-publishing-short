@@ -95,7 +95,7 @@ One solution is to make such a work simultaneously available under two (or more)
 > The Quarto files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
 :::
 
-Note, that for data you have, at least in principle, the option to apply separate licenses to the individual entries and the collective database. For example, if you were to create a database of artworks by others, those artworks would be licensed individually as chosen by the artists, but the license for the database as a whole could be chosen by you. The latter includes the structure of the database (e.g., the selection of entries and field names) and any _sui generis_ database rights. However, if the content was created by you, we recommend you to choose the same license for both content and database. Metadata, in particular, should always be licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+Note, that for data you have, at least in principle, the option to apply different licenses to the individual entries and the collective database. For example, if you were to create a database of artworks by others, those artworks would be licensed individually as chosen by the artists, but the license for the database as a whole could be chosen by you. The latter includes the structure of the database (e.g., the selection of entries and field names) and any _sui generis_ database rights. However, if the content was created by you, we recommend you to choose the same license for both content and database. Metadata, in particular, should always be licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ::: {#fig-flowchart-simple}
 ```{mermaid}
