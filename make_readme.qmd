@@ -18,7 +18,7 @@ Badges/Project Status
 
 Description
 
-:   What is the project about? What are its features? Is there a published article associated with it?
+:   What is the project about? What are its features? Why was it created?
 
 Visuals
 
@@ -46,11 +46,11 @@ Authors
 
 Citation
 
-:   Is there a recommended way to cite this project? We recommend to increase citability by using the [CodeMeta generator](https://codemeta.github.io/codemeta-generator/) to create a file called `codemeta.json`. Alternatively, one can also use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create this file. Then, put it into the project folder. Another common standard is the [Citation File Format](https://citation-file-format.github.io/) (CFF), which is an equally valid option.
+:   Is there a recommended way to cite this project? Is there a published article associated with it that you would like to have cited? We recommend to increase citability by using the [CodeMeta generator](https://codemeta.github.io/codemeta-generator/) to create a file called `codemeta.json`. Alternatively, one can also use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create this file. Then, put it into the project folder. Another common standard is the [Citation File Format](https://citation-file-format.github.io/) (CFF), which is an equally valid option.
 
 License
 
-:   Under which license are the contents in this project available?
+:   Under which licenses are the works in this project available?
 
 ## Installation/Dependencies {#sec-dependencies}
 
