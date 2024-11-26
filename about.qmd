@@ -40,7 +40,7 @@ sessioninfo::session_info()
 
 ## License and Disclaimer
 
-If not indicated otherwise, this tutorial is licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). None of the discussion in this tutorial constitutes legal advice.
+Where not indicated otherwise, the material in this tutorial is licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). None of the discussion in this tutorial constitutes legal advice.
 
 Any screenshots of [RStudio](https://github.com/rstudio/rstudio) are released under the [GNU Affero General Public License v3](https://www.gnu.org/licenses/gpl-3.0.html).
 
