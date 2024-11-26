@@ -221,7 +221,7 @@ vals <- list(
 )
 ```
 
-Generally, metadata are either stored embedded into the data or externally, for example, in a separate file. We will use the "[frictionless data](https://frictionlessdata.io/)" standard, where metadata are stored separately.
+Generally, metadata are either stored embedded into the data or externally, for example, in a separate file. We will use the "[frictionless data](https://frictionlessdata.io/)" standard, where metadata are stored separately. Another alternative would be [RO-Crate](https://www.researchobject.org/ro-crate/).
 
 Specifically, one can use the R package [`frictionless`](https://docs.ropensci.org/frictionless/) to create a _schema_ which describes the structure of the data. For the purpose of the following code, it is just a nested list that we edit to include our own information. We also explicitly record in the schema that missing values are stored in the data file as `NA` and that the data are licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Finally, the package is used to create a metadata file that contains the schema.
 
@@ -421,6 +421,7 @@ This is only a brief summary and there is much more to be learned about coding p
 
 - "Tidy design principles" [@Wickham2023Design]
 - "The Good Research Code Handbook" [@Mineault2021]
+- "Quality assurance of code for analysis and research" [@UKGovernment2020]
 - "The Art of UNIX Programming" [@Raymond2003]
 
 > "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
