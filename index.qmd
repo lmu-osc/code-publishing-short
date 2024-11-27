@@ -14,7 +14,7 @@ This tutorial covers how to make your code available to others. It wraps up a se
 
 While the general principles taught in this tutorial apply to most researchers publishing code, we will make very specific suggestions what tools to use.
 
-In particular, we will assume you have installed [Git](https://git-scm.com/download/), [R](https://cloud.r-project.org/), [RStudio](https://posit.co/download/rstudio-desktop/), and [Quarto](https://quarto.org/docs/download/). Windows users may additionally need [RTools](https://cloud.r-project.org/bin/windows/Rtools/).
+In particular, we will assume you have installed [Git](https://git-scm.com/downloads), [R](https://cloud.r-project.org/), [RStudio](https://posit.co/download/rstudio-desktop/), and [Quarto](https://quarto.org/docs/download/). Windows users may additionally need [RTools](https://cloud.r-project.org/bin/windows/Rtools/).
 
 ::: {#nte-quarto-alternatives .callout-note collapse="true"}
 ## Alternatives to Quarto
