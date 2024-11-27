@@ -54,5 +54,5 @@ format:
     grid:
       sidebar-width: 300px
 
-
-
+csl: apa.csl
+bibliography: literature.bib

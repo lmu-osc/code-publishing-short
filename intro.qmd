@@ -1,7 +1,6 @@
 ---
 title: "Introduction"
 lang: en
-bibliography: literature.bib
 ---
 
 Together, we will create a research compendium whilst taking the following ten things into account [by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:

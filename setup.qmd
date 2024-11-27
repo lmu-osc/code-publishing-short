@@ -1,7 +1,6 @@
 ---
 title: "Project Setup"
 lang: en
-bibliography: literature.bib
 engine: knitr
 ---
 

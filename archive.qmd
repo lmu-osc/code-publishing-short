@@ -1,7 +1,6 @@
 ---
 title: "Archive Your Project"
 lang: "en"
-bibliography: literature.bib
 ---
 
 ## Where to Deposit Software
