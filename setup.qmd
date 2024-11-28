@@ -427,6 +427,51 @@ This is only a brief summary and there is much more to be learned about coding p
 > 
 > --- @Fowler1999, p. 15
 
+## Citing Software and Data
+
+If you rely on software or data by others in your research, the question arises whether and how to cite it in your publications. Put simply, all data relied upon should be cited to allow for precise identification and access. From the "eight core principles of data citation" [@Starr2015, licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/)]:
+
+> **Principle 1 – Importance**: "Data should be considered legitimate, citable products of research. Data citations should be accorded the same importance in the scholarly record as citations of other research objects, such as publications."
+> 
+> **Principle 3 – Evidence**: "In scholarly literature, whenever and wherever a claim relies upon data, the corresponding data should be cited."
+> 
+> **Principle 5 – Access**: "Data citations should facilitate access to the data themselves and to such associated metadata, documentation, code, and other materials, as are necessary for both humans and machines to make informed use of the referenced data."
+> 
+> **Principle 7 – Specificity and Verifiability**: "Data citations should facilitate identification of, access to, and verification of the specific data that support a claim. Citations or citation metadata should include information about provenance and fixity sufficient to facilitate verifying that the specific time slice, version and/or granular portion of data retrieved subsequently is the same as was originally cited."
+
+When it comes to software, the answer is a little more nuanced – you can consult @fig-software-citation for advice whether to cite it. As with data, citations should allow for exact identification and access. From the "software citation principles" [@Smith2016]:
+
+> **1\. Importance**: Software should be considered a legitimate and citable product of research. Software citations should be accorded the same importance in the scholarly record as citations of other research products, such as publications and data; they should be included in the metadata of the citing work, for example in the reference list of a journal article, and should not be omitted or separated. Software should be cited on the same basis as any other research product such as a paper or a book, that is, authors should cite the appropriate set of software products just as they cite the appropriate set of papers.
+> 
+> **5\. Accessibility**: Software citations should facilitate access to the software itself and to its associated metadata, documentation, data, and other materials necessary for both humans and machines to make informed use of the referenced software.
+> 
+> **6\. Specificity**: Software citations should facilitate identification of, and access to, the specific version of software that was used. Software identification should be as specific as necessary, such as using version numbers, revision numbers, or variants such as platforms.
+
+To help with generating the citation, you can use the [CiteAs](https://citeas.org/) service.
+
+::: {#fig-software-citation}
+```{mermaid}
+flowchart TB
+  asks_for_citation("Does the software<br>ask you to cite it?")
+  critical_or_unique_contribution("Did the software<br>play a critical part<br>in or contributed<br>something unique<br>to your research?")
+  manipulate("Did the software<br>manipulate or create<br>your data, software,<br>or other outputs?")
+  relies_on_credit("Do the authors of<br>the software rely<br>on academic credit<br>for funding?")
+  cite[Cite!]
+  nocite[Don't cite!]
+
+  asks_for_citation --"Yes"--> cite
+  asks_for_citation --"No"--> critical_or_unique_contribution
+  critical_or_unique_contribution --"Yes"--> cite
+  critical_or_unique_contribution --"No"--> manipulate
+  manipulate --"Yes"--> cite
+  manipulate --"No"--> relies_on_credit
+  relies_on_credit --"Yes"--> cite
+  relies_on_credit --"No"--> nocite
+```
+
+"Should I cite the software?" by @Brown2016 licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Simplified from original.
+:::
+
 ## The Last Mile
 
 `renv` only records the versions of R packages and of R itself. This means that potential system dependencies of R packages and other tools utilized in the project are not documented anywhere, including Quarto.^[As of August 2024, a proposal to record the version of Quarto has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] We will manually write them down when [creating a README](make_readme.qmd). For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:
