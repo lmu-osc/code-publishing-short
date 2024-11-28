@@ -53,6 +53,8 @@ format:
     fontsize: 13pt
     grid:
       sidebar-width: 300px
+    mermaid:
+      theme: neutral
 
 csl: apa.csl
 bibliography: literature.bib

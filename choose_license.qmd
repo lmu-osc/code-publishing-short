@@ -1,10 +1,6 @@
 ---
 title: "Choose a License"
 lang: en
-format:
-  html:
-    mermaid:
-      theme: neutral
 engine: knitr
 ---
 
@@ -380,7 +376,7 @@ flowchart TB
   end
   
   subgraph "License for combination of data (database)"
-  choose_license --> switch_license["<em>Depending on content license</em>"]
+  choose_license --> switch_license["<em>Depending on<br>content license</em>"]
   use_existing_license_content --> switch_license
   
   cc0_content_metadata --> cc0_db["CC0 1.0"]
