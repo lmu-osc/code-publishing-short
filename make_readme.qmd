@@ -4,7 +4,7 @@ lang: en
 engine: knitr
 ---
 
-## What does a README contain?
+## What Does a README Contain?
 
 Once you have prepared your project and settled on a license, it is time to add a final touch. Imagine returning to your project in five years, having forgotten most of the details of what you did exactly. What would be useful to know in order to quickly understand what is going on in the project? This is what needs to be described in the README. While you could just start writing along, most READMEs have some sections in common which we describe below.
 

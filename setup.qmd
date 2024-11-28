@@ -67,7 +67,7 @@ git init
 git checkout -b main
 ```
 
-Then, one can open an R session, by simply typing `R` into the terminal. Next, make sure that `getwd()` indicates that the working directory is `code-publishing-exercise`. If not, set it using `setwd("code-publishing-exercise")`. Then, initialize `renv`:
+Then, one can open an R session by simply typing `R` into the terminal. Next, make sure that `getwd()` indicates that the working directory is `code-publishing-exercise`. If not, set it using `setwd("code-publishing-exercise")`. Then, initialize `renv`:
 
 ```{.r filename="Console"}
 renv::init()
@@ -317,7 +317,7 @@ quarto add --no-prompt wjschne/apaquarto
 ```
 
 ::: {#tip-apaquarto .callout-tip}
-#### Not a psychologist?
+#### Not a Psychologist?
 
 If you are not a psychologist, you can also skip installing `apaquarto`. If you installed it by accident, run `quarto remove wjschne/apaquarto`.
 
@@ -348,7 +348,7 @@ quarto render Manuscript.qmd
 This should create a PDF file called `Manuscript.pdf` in your project folder.
 
 ::: {#tip-update-quarto .callout-tip}
-If the PDF file cannot be created, try updating Quarto. It comes bundled with RStudio, however `apaquarto` sometimes requires more recent versions.
+If the PDF file cannot be created, try updating Quarto. It comes bundled with RStudio, however, `apaquarto` sometimes requires more recent versions.
 :::
 
 With the code being added, one can use `renv` again to view and record the new packages:
