@@ -139,7 +139,7 @@ Note, however, that the copyleft licenses we discuss here do not mandate sharing
 ::: {#tip-license-r .callout-tip}
 #### Projects Involving R Code
 
-In most cases, the output of software, like images or tables, does not depend on the software's license. Therefore, if you use an R package under a copyleft license to create a figure, you are likely the copyright owner. However, if the output is based on data, it can be considered a derivative work and the license of the data also applies. For example, maps may be considered as a derivative of the geographic data they are based on.
+In most cases, the output of software, like images or tables, does not depend on the software's license.^[The exception is when the software is part of the output [see @apsillers2019].] Therefore, if you use an R package under a copyleft license to create a figure, you are likely the copyright owner. However, if the output is based on data, it can be considered a derivative work of the data and the license of the data also applies. For example, maps may be considered as a derivative of the geographic data they are based on.
 
 It is disputed whether software that uses an R package under AGPLv3 or GPLv3^[a variant of the AGPLv3 that does not cover software running as a service] can only be published under a GPL-compatible license -- or even has to be published under the same license. Posit, the company behind RStudio, does not believe that to be the case [see also @Wickham2023PackagesLicense].
 
