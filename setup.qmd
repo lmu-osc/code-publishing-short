@@ -122,7 +122,7 @@ You can now download the data set we have prepared for you and put into your pro
 
 The data set is from the package [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) and contains the recorded bill lengths and sex of penguins living on three islands in the Palmer Archipelago, Antarctica. It was made available under the license [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-::: {#wrn-legal-restrictions .callout-warning}
+::: {#imp-legal-restrictions .callout-important}
 ### Consider Legal Restrictions Before Sharing
 
 Everything you put into the project folder will be shared publicly. For reasons of reproducibility, this should include the data you analyze. Of course, you should only share them to the extent you are allowed to, taking into account:
@@ -291,7 +291,7 @@ In order to have some code which you can practice to share, we have prepared a s
 
 The manuscript explores differences in bill length between male and female penguins, feel free to read through it.
 
-::: {#wrn-take-copyright-seriously .callout-warning}
+::: {#imp-take-copyright-seriously .callout-important}
 ### Take Copyright Seriously
 
 When you include work by others in your project -- especially if you intend to make it available publicly --, make sure you have the necessary rights to do so. Only build on existing work for which you are given an express grant of relevant rights. How do you know you are allowed to copy, edit, and share the two files linked above?
