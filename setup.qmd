@@ -439,7 +439,7 @@ If you rely on software or data by others in your research, the question arises 
 > 
 > **Principle 7 – Specificity and Verifiability**: "Data citations should facilitate identification of, access to, and verification of the specific data that support a claim. Citations or citation metadata should include information about provenance and fixity sufficient to facilitate verifying that the specific time slice, version and/or granular portion of data retrieved subsequently is the same as was originally cited."
 
-When it comes to software, the answer is a little more nuanced – you can consult @fig-software-citation for advice whether to cite it. As with data, citations should allow for exact identification and access. From the "software citation principles" [@Smith2016]:
+When it comes to software, the answer is a little more nuanced – you can consult @fig-software-citation for advice whether to cite it. As with data, citations should allow for exact identification and access. From the six "software citation principles" by @Smith2016:
 
 > **1\. Importance**: Software should be considered a legitimate and citable product of research. Software citations should be accorded the same importance in the scholarly record as citations of other research products, such as publications and data; they should be included in the metadata of the citing work, for example in the reference list of a journal article, and should not be omitted or separated. Software should be cited on the same basis as any other research product such as a paper or a book, that is, authors should cite the appropriate set of software products just as they cite the appropriate set of papers.
 > 
