@@ -425,7 +425,7 @@ This is only a brief summary and there is much more to be learned about coding p
 
 > "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
 > 
-> --- Martin Fowler, British software engineer
+> --- @Fowler1999, p. 15
 
 ## The Last Mile
 
