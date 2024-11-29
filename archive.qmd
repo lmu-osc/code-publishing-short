@@ -1,6 +1,5 @@
 ---
 title: "Archive Your Project"
-lang: "en"
 ---
 
 ## Where to Deposit Software

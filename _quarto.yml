@@ -15,8 +15,6 @@ website:
   favicon: images/LMU-OSC_favicon.jpg
   margin-header: |
     ![](/images/LMU-OSC_logo.jpg){width="175"}
-    
-    
   navbar:
     right:
       - about.qmd
@@ -32,8 +30,6 @@ website:
             url:  https://github.com/lmu-osc/code-publishing/issues
       - icon: house-heart
         url: https://www.osc.uni-muenchen.de/
-
-      
   sidebar:
     contents:
       - intro.qmd
@@ -41,7 +37,6 @@ website:
       - choose_license.qmd
       - make_readme.qmd
       - archive.qmd
-      
 
 format:
   html:
@@ -58,3 +53,4 @@ format:
 
 csl: apa.csl
 bibliography: literature.bib
+lang: en-US

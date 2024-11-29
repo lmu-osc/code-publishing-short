@@ -1,6 +1,5 @@
 ---
 title: "Choose a License"
-lang: en
 engine: knitr
 ---
 

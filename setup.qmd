@@ -1,6 +1,5 @@
 ---
 title: "Project Setup"
-lang: en
 engine: knitr
 ---
 

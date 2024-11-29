@@ -1,6 +1,5 @@
 ---
 title: "Introduction"
-lang: en
 ---
 
 In the following, we will provide a brief introduction to the concept of _research compendia_.
