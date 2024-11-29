@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.1",
+    "Version": "4.4.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -533,6 +533,16 @@
         "utils"
       ],
       "Hash": "ccbb8846be320b627e6aa2b4616a2ded"
+    },
+    "palmerpenguins": {
+      "Package": "palmerpenguins",
+      "Version": "0.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "6c6861efbc13c1d543749e9c7be4a592"
     },
     "parameters": {
       "Package": "parameters",
