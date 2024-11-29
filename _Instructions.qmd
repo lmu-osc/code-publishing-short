@@ -57,7 +57,7 @@ renv::init()
 2. Create a Quarto document and copy text from your existing manuscript into the document.
 3. Modify the formatting.
 4. Copy a figure into the project folder and insert it into the document.
-5. Create a table, either by hand or by importing your dataset into the project folder and using a package to generate a table.
+5. Create a table, either by hand or by importing your data set into the project folder and using a package to generate a table.
 6. Add your bibliography as a .bib file.
 7. Choose a citation style and download the appropriate .csl file from the web.
 8. Execute your modified scripts and review the generated manuscript files.

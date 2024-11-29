@@ -34,7 +34,7 @@ You will encounter some points that were not part of this workshop, but don't wo
     -   Are raw or preprocessed data being published? Clearly label the data as one or the other and describe any preprocessing steps in a README file.
     -   Are there any legal restrictions regarding the data? If your work involves patents, contracts, patient data, etc., contact your data protection officer for guidelines.
   + Accessibility
-    -   Where will the data be stored? Small datasets can be stored in Github, larger ones on the servers of storage providers, e.g. OSF or Figshare.
+    -   Where will the data be stored? Small data sets can be stored in Github, larger ones on the servers of storage providers, e.g. OSF or Figshare.
     -   Where will the data be archived? On your institution's servers and/or publicly.
     -   Under which license/restrictions is the data being published?
 

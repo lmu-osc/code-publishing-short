@@ -131,7 +131,7 @@ Everything you put into the project folder will be shared publicly. For reasons 
 3. copyright of the data and their particular structure, and
 4. any _sui generis_ database right.
 
-Privacy laws and contractual obligations may require you to create a completely anonymized or synthetic dataset^[For example, using [Amnesia](https://amnesia.openaire.eu/), [ARX](https://arx.deidentifier.org/), [sdcMicro](https://sdctools.github.io/sdcMicro/), or [Synthpop](https://www.synthpop.org.uk/).] (if possible), or prohibit any sharing of data, in which case you should provide a reference to a data repository where they can be obtained from. For further information, you can watch the talk "[Data anonymity](https://osf.io/j6fy8)" by Felix Schönbrodt recorded during the LMU Open Science Center Summer School 2023 and have a look at [the accompanying slides](https://osf.io/z6gcu).
+Privacy laws and contractual obligations may require you to create a completely anonymized or synthetic data set^[For example, using [Amnesia](https://amnesia.openaire.eu/), [ARX](https://arx.deidentifier.org/), [sdcMicro](https://sdctools.github.io/sdcMicro/), or [Synthpop](https://www.synthpop.org.uk/).] (if possible), or prohibit any sharing of data, in which case you should provide a reference to a data repository where they can be obtained from. For further information, you can watch the talk "[Data anonymity](https://osf.io/j6fy8)" by Felix Schönbrodt recorded during the LMU Open Science Center Summer School 2023 and have a look at [the accompanying slides](https://osf.io/z6gcu).
 
 Purely factual data such as measurements are usually not copyrightable, but literary or artistic works that cross the threshold of originality are. Additionally, in some jurisdictions data can be subject to _sui generis_ database rights which prevent extracting substantial parts of a database. As a consequence, you need to ensure that you own or have authority to share the data with respect to copyright and similar rights, and to license it to others (see "[Choose a License](choose_license.qmd)").
 :::
@@ -198,7 +198,7 @@ This example demonstrates how the title and description of the data set, the des
 
 ```{.r filename="Console"}
 table_info <- c(
-  title = "penguins dataset",
+  title = "penguins data set",
   description = "Size measurements for adult foraging penguins near Palmer Station, Antarctica"
 )
 descriptions <- c(
