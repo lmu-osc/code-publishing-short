@@ -196,7 +196,7 @@ A human-readable data dictionary is necessary for making one's research reproduc
 
 This example demonstrates how the title and description of the data set, the description of the variables and their possible values are stored in a machine-readable way.
 
-```r
+```{.r filename="Console"}
 table_info <- c(
   title = "penguins dataset",
   description = "Size measurements for adult foraging penguins near Palmer Station, Antarctica"
@@ -223,7 +223,7 @@ Generally, metadata are either stored embedded into the data or externally, for 
 
 Specifically, one can use the R package [`frictionless`](https://docs.ropensci.org/frictionless/) to create a _schema_ which describes the structure of the data.^[In June 2024, [version 2](https://datapackage.org/) of the frictionless data standard has been released. As of November 2024, the R package `frictionless` only supports the first version, though support for v2 is [planned](https://github.com/frictionlessdata/frictionless-r/labels/datapackage%3Av2).] For the purpose of the following code, it is just a nested list that we edit to include our own information. We also explicitly record in the schema that missing values are stored in the data file as `NA` and that the data are licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Finally, the package is used to create a metadata file that contains the schema.
 
-```r
+```{.r filename="Console"}
 # Read data and create schema
 dat_filename <- "Data.csv"
 dat <- read.csv(dat_filename)
