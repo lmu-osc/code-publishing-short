@@ -25,7 +25,7 @@ Visuals
 
 Installation/Dependencies
 
-:   What steps need to be taken to run the project? What software needs to be installed? Mention all dependencies here that are not explicitly managed by `renv`, such as the system dependencies of R packages as well as the version of Quarto. An R package's system dependency is any additional software that you need to install on your computer in order to use a particular R package. For example, the R package [`reticulate`](https://rstudio.github.io/reticulate/) allows to run Python code from within R. However, in order to actually use it, one has to additionally install Python itself as it does not come together with `reticulate` -- rather, it is a system dependency. See @sec-dependencies for additional information.
+:   What steps need to be taken to run the project? What software needs to be installed? R itself and the R packages are already documented as this project uses `renv`. Therefore you can focus on all other dependencies, such as the system dependencies of R packages as well as the version of Quarto.^[As of August 2024, a proposal for `renv` to record the version of Quarto has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] Also, don't forget to mention software that you have used for any manual steps. See @sec-dependencies for additional information.
 
 Usage
 
@@ -53,10 +53,16 @@ License
 
 ## Installation/Dependencies {#sec-dependencies}
 
-An overview over the system dependencies of R packages can be created using the function `pak::pkg_sysreqs()`. In combination with `renv`, we can obtain the system dependencies of all R packages in the current project:
+An overview over the system dependencies of R packages can be created using the function `pak::pkg_sysreqs()`. In combination with `renv`, we can obtain the system dependencies of all R packages the current project directly depends on:
 
 ```{.r filename="Console"}
-pak::pkg_sysreqs(renv::dependencies()$Package)
+# First, install pak
+renv::install("pak")
+
+# Then, identify the system dependencies of your direct dependencies
+renv::dependencies()$Package |>
+  unique() |>
+  pak::pkg_sysreqs()
 ```
 
 The output may look like the following:
@@ -72,7 +78,7 @@ rmarkdown – pandoc
 sass      – make
 ```
 
-We can see that `make` and `pandoc` were identified as system dependencies. One can obtain their version by running them with the `--version` argument:
+We can see that `make` and `pandoc` were identified as system dependencies. Often, one can obtain their version by running them with the `--version` argument:
 
 ```{.bash filename="Terminal"}
 make --version
@@ -109,6 +115,8 @@ The output is quite long and it might look slightly different for you, but the r
       Path: /home/r155953/.TinyTeX/bin/x86_64-linux
       Version: 2024
 ```
+
+Of course, all the system dependencies identified until now may have dependencies on their own. Use your own judgement to decide when not to dig deeper.
 
 ## Create It!
 

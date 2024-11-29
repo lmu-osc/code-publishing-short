@@ -426,9 +426,13 @@ This is only a brief summary and there is much more to be learned about coding p
 > 
 > --- @Fowler1999, p. 15
 
-## Citing Software and Data
+## Cite Data and Software
 
-If you rely on software or data by others in your research, the question arises whether and how to cite it in your publications. Put simply, all data relied upon should be cited to allow for precise identification and access. From the "eight core principles of data citation" by @Starr2015, licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
+If you rely on data or software by others in your research, the question arises whether and how to cite it in your publications.
+
+### Data
+
+Put simply, all data relied upon should be cited to allow for precise identification and access. From the "eight core principles of data citation" by @Starr2015, licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
 
 > **Principle 1 – Importance**: "Data should be considered legitimate, citable products of research. Data citations should be accorded the same importance in the scholarly record as citations of other research objects, such as publications."
 > 
@@ -438,7 +442,36 @@ If you rely on software or data by others in your research, the question arises 
 > 
 > **Principle 7 – Specificity and Verifiability**: "Data citations should facilitate identification of, access to, and verification of the specific data that support a claim. Citations or citation metadata should include information about provenance and fixity sufficient to facilitate verifying that the specific time slice, version and/or granular portion of data retrieved subsequently is the same as was originally cited."
 
-When it comes to software, the answer is a little more nuanced – you can consult @fig-software-citation for advice whether to cite it. As with data, citations should allow for exact identification and access. From the six "software citation principles" by @Smith2016, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/):
+Now, add an appropriate citation for the data set to the manuscript. Does your citation adhere to the principles above?
+
+::: {#nte-cite-palmerpenguins .callout-note collapse="true"}
+#### Hint for citing the data set
+
+As the data set is from the R package `palmerpenguins`, one can use the function `citation()` to display a suggested citation:
+
+```{r, echo = -1}
+invisible(loadNamespace("palmerpenguins")) # Tell renv that we need this package
+citation("palmerpenguins")
+```
+
+As this can only be run with the package `palmerpenguins` installed, you can also find a [suggested citation on its website](https://allisonhorst.github.io/palmerpenguins/#citation).
+
+Copy the BibTeX entry to the file `Bibliography.bib` and add an identifier between `@Manual{` and the comma, such that the entry's first line reads `@Manual{horst2020,`. Then, add a sentence to the manuscript such as follows:
+
+```md
+The analyzed data are by @horst2020.
+```
+
+Render the document to check that the citation is displayed properly.
+
+```{.bash filename="Terminal"}
+quarto render Manuscript.qmd
+```
+:::
+
+### Software
+
+When it comes to software, the answer is a little more nuanced due to the large number of involved dependencies. You can consult @fig-software-citation for general advice whether to cite a particular piece of software or not. As with data, citations should allow for exact identification and access. From the six "software citation principles" by @Smith2016, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/):
 
 > **1\. Importance**: Software should be considered a legitimate and citable product of research. Software citations should be accorded the same importance in the scholarly record as citations of other research products, such as publications and data; they should be included in the metadata of the citing work, for example in the reference list of a journal article, and should not be omitted or separated. Software should be cited on the same basis as any other research product such as a paper or a book, that is, authors should cite the appropriate set of software products just as they cite the appropriate set of papers.
 > 
@@ -446,7 +479,7 @@ When it comes to software, the answer is a little more nuanced – you can consu
 > 
 > **6\. Specificity**: Software citations should facilitate identification of, and access to, the specific version of software that was used. Software identification should be as specific as necessary, such as using version numbers, revision numbers, or variants such as platforms.
 
-To help with generating the citation, you can use the [CiteAs service](https://citeas.org/).
+In practice, the first step is to identify all pieces of software the project relies on. A few of them are obvious, such as R itself, Quarto, and the $\TeX$ distribution we installed before. Then there are the individual R packages, Quarto extensions, and $\TeX$ packages. All of them, in turn, may have dependencies and it is up to you decide when not to dig deeper. For example, some R packages are only thin wrappers around other R packages or around system dependencies which also might deserve credit. A system dependency is additional software that you require on your computer apart from the R package.
 
 ::: {#fig-software-citation}
 ```{mermaid}
@@ -471,9 +504,54 @@ flowchart TB
 "Should I cite the software?" by @Brown2016 licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Simplified from original.
 :::
 
+Now, add references for the software you would like to cite to the manuscript. In the following, we will demonstrate this for R and all R packages by using the R package `grateful`. For arbitrary software, you can use the [CiteAs service](https://citeas.org/) to create appropriate citations.
+
+Add the following code chunk to the end of the discussion in the manuscript:
+
+``````{.qmd filename="Manuscript.qmd"}
+```{{r}}
+#| echo: false
+
+grateful::cite_packages(
+    output = "paragraph",
+    out.dir = ".",
+    omit = NULL,
+    dependencies = TRUE,
+    passive.voice = TRUE,
+    bib.file = "grateful-refs"
+)
+```
+``````
+
+This will automatically create a paragraph citing all used packages and generate the bibliography file `grateful-refs.bib`.^[Note that the detection can fail ] Then, in the YAML header, add `grateful-refs.bib` by setting the `bibliography` as follows:
+
+```{.yml filename="Manuscript.qmd"}
+bibliography:
+  - Bibliography.bib
+  - grateful-refs.bib
+```
+
+Use `renv` to view, install, and record the newly used package `grateful`:
+
+```{.r filename="Console"}
+renv::status()
+renv::install()
+renv::snapshot()
+```
+
+Finally, render the document again and commit the changes:
+
+```{.bash filename="Terminal"}
+quarto render Manuscript.qmd
+
+git status
+git add .
+git commit -m "Cite data and software"
+```
+
 ## The Last Mile
 
-`renv` only records the versions of R packages and of R itself. This means that potential system dependencies of R packages and other tools utilized in the project are not documented anywhere, including Quarto.^[As of August 2024, a proposal to record the version of Quarto has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] We will manually write them down when [creating a README](make_readme.qmd). For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:
+`renv` only records the versions of R packages and of R itself. This means that everything we have not decided to cite in the previous step is not documented anywhere. We will cover system dependencies when [creating a README](make_readme.qmd). For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:
 
 ```{.bash filename="Terminal"}
 quarto use binder
