@@ -59,7 +59,8 @@ An overview over the system dependencies of R packages can be created using the 
 # First, install pak
 renv::install("pak")
 
-# Then, identify the system dependencies of your direct dependencies
+# Then, identify the system dependencies
+# of your direct dependencies.
 renv::dependencies()$Package |>
   unique() |>
   pak::pkg_sysreqs()
@@ -227,6 +228,6 @@ Please cite this draft as follows:
 ```{.md .code-overflow-wrap filename="README.md"}
 ## License
 
-The manuscript file and the bibliograhpic references are made available by us under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The data set by Kristen Gorman has been published under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). `apaquarto` has also been published under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). All other files in this project are available under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+The manuscript file and the bibliographic references are made available by us under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). The data set by Kristen Gorman has been published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). `apaquarto` has also been published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). All other files in this project are available under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 ```
 :::

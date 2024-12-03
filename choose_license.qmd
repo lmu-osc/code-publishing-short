@@ -7,7 +7,7 @@ engine: knitr
 
 Every expression of an idea, such as a literary or an artistic works, is automatically covered by copyright. Put simply, this means that nobody else than the copyright holder is allowed to copy, modify, or share it. Copyright licenses can grant others some of the necessary rights, but mostly don't cover publicity, privacy, moral, patent, or trademark rights. Certain exceptions and limitations to copyright (such as fair use or the right to quote) may obviate the need for a license.
 
-Researchers are only allowed to share material they have the necessary rights to, for example, through a free/open license. These licenses often require to attribute the authors, indicate whether changes were made, and provide the text of the license, among other things. In addition, researchers should share any work by their own under such a license.
+Researchers are only allowed to share material they have the necessary rights to. This includes copyrights, which are granted by free/open copyright licenses. These licenses often require to attribute the authors, indicate whether changes were made, and provide the text of the license, among other things. In addition, researchers should share any work by their own under such a license.
 
 _Choosing a license_ involves:
 
@@ -24,7 +24,7 @@ You can adapt the following wording to your use case:
 
 Whenever you create a literary or artistic work (such as a text, image, video, or software), the copyright law in most countries limits other people from copying, modifying, and sharing it without your express permission. [If the work was created as part of your job, it might be your employer who holds the copyright to the work, depending on the country and contract.]{.aside} This even applies if you make it available to others (e.g., on your website): First and foremost they are not allowed to copy, modify, or share it. This legal default of "all rights reserved" was created to benefit publishers, not authors [@Fogel2006], and runs counter to many cultural and scientific processes. Copyright licenses enable authors to free up their works for reuse by others.
 
-A license is a legal document that regulates what _others_ are allowed to do with a copyright-protected work -- the licenses we discuss do not limit the author or copyright holder in their rights. And while you _could_ write your own, there are already many pre-formulated licenses available to choose from and to apply to your work.^[In fact, you should not create your own license if the purpose is to share your work freely and openly with others. By using a boilerplate license others know what to expect, also because they have been [tested](https://sfconservancy.org/copyleft-compliance/) in [courts](https://legaldb.creativecommons.org/).]
+A license is a legal document that regulates what _others_ are allowed to do with a copyright-protected work -- the licenses we discuss are non-exclusive licenses and do not limit the author or copyright holder in their rights. And while you _could_ write your own license, there are already many pre-formulated licenses available to choose from and to apply to your work.^[In fact, you should not create your own license if the purpose is to share your work freely and openly with others. By using a boilerplate license others know what to expect, also because they have been [tested](https://sfconservancy.org/copyleft-compliance/) in [courts](https://legaldb.creativecommons.org/).]
 
 ::: {.column-margin}
 For the purpose of this tutorial, by _license_ we mean _copyright license_.
@@ -33,7 +33,7 @@ For the purpose of this tutorial, by _license_ we mean _copyright license_.
 ::: {#wrn-exclusive-rights .callout-warning}
 ### Giving Publishers Exclusive Rights
 
-When you have your article published under a Creative Commons license, some publishers still demand an exclusive publishing and distribution license or a copyright assignment. This would give them more rights than the readers of the article have through the chosen Creative Commons license [@Rumsey2022] and exceeds by far what is necessary to make publication possible [@Suber2022]. Consequently, authors should oppose this practice and grant publishers the same rights that every other reader of the article has. If your chosen publisher insists on an exclusive license, you may at least retain the copyright for your figures -- follow the guide "Retaining copyright for figures in academic publications to allow easy citation and reuse" by @Elson2016 to learn how to do that.
+Some journals offer to publish your article under a Creative Commons license, but still demand an exclusive publishing and distribution license or a copyright assignment from you. This would give them more rights than the readers of the article have through the respective Creative Commons license [@Rumsey2022] and exceeds by far what is necessary to make publication possible [@Suber2022]. Consequently, authors should oppose this practice and grant publishers the same rights that every other reader of the article has. If your chosen publisher insists on an exclusive license, you may at least retain the copyright for your figures -- follow the guide "Retaining copyright for figures in academic publications to allow easy citation and reuse" by @Elson2016 to learn how to do that.
 
 If you have published a closed-access paper before, you can consult [ShareYourPaper](https://shareyourpaper.org/) for legal options to still make it available free of charge to readers.
 :::
@@ -68,7 +68,7 @@ Two other notable definitions include the _Open Definition_ [@OKFN2016], which w
 
 ### Existing License?
 
-First, if you adapt (i.e., modify, build on) a work by others you need to determine if it is provided to you under a free/open license.[You can determine whether a license is free/open by searching for its name in the [SPDX License List](https://spdx.org/licenses/) and looking for at least one `Y` in the two columns _FSF Free/Libre?_ and _OSI Approved?_]{.aside} If yes, we recommend you to make your contribution available under the same license.^[Copyleft licenses even require you to choose the same or a compatible license.] For example, if you adapt code published in another paper, choose the same license for your modifications. The same applies if there are strong community norms to use a particular free/open license^[Of course, this is only a heuristic and there might be good reasons to deviate from community norms.] or if a particular license choice is mandated by your funder. Importantly, as discussed before, you are generally not allowed to adapt a work _not_ published under a free/open license.
+First, if you adapt (i.e., modify, remix, build on) a work by others you need to determine if it is provided to you under a free/open license.[You can determine whether a license is free/open by searching for its name in the [SPDX License List](https://spdx.org/licenses/) and looking for at least one `Y` in the two columns _FSF Free/Libre?_ and _OSI Approved?_]{.aside} If yes, we recommend you to make your contribution available under the same license.^[Copyleft licenses even require you to choose the same or a compatible license.] For example, if you adapt code published in another paper, choose the same license for your modifications. The same applies if there are strong community norms to use a particular free/open license^[Of course, this is only a heuristic and there might be good reasons to deviate from community norms.] or if a particular license choice is mandated by your funder. Importantly, as discussed before, you are generally not allowed to adapt a work _not_ published under a free/open license.
 
 ### Work Type?
 
@@ -95,7 +95,7 @@ Note, that for data there is, at least in principle, the possibility that a diff
 ```{mermaid}
 flowchart TB
   start("We want<br>to choose<br>a license.") --"We adapted a work by<br>others shared under a<br>free/open license."--> use_existing_license["<em>Use its license</em>"]
-  start --"We created the work<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>regarding license?")
+  start --"We created the work<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>concerning license?")
   
   regulation --"Exists"--> follow_existing_norms["<em>Follow that</em>"]
   regulation --"Does not<br>exist"--> type("Work type?")
@@ -159,7 +159,7 @@ We have prepared two advanced license flowcharts, one for software, writing, ima
 
 The advanced license flowcharts also allow you to make additional decisions:
 
-- __Attribution__ means whether recipients of your work are required to provide attribution to you. For software licenses, this is called a copyright notice. Note that even if attribution is not a requirement of the license, good scientific practice demands that appropriate citations are made.
+- __Attribution__ means whether recipients of your work are required to provide attribution to you. For software licenses, the attribution is part of a copyright notice. Note that even if attribution is not a requirement of the license, good scientific practice demands that appropriate citations are made.
 - __State changes__ means that recipients need to indicate if changes were made.
 - __Anti-DRM__ means that when others share your work they are not allowed to apply technological measures restricting anything that the license permits. DRM is an abbreviation for **d**igital **r**ights **m**anagement.
 
@@ -329,7 +329,7 @@ If you would like to learn more about copyright and licenses you might find the 
 ```{mermaid}
 flowchart TB
   start("We want to choose a<br>license for software,<br>writing, image, audio,<br>or video.") --"We adapted a work by<br>others shared under a<br>free/open license."--> use_existing_license["<em>Use its license</em>"]
-  start --"We created the work<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>regarding license?")
+  start --"We created the work<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>concerning license?")
   
   regulation --"Exists"--> follow_existing_norms["<em>Follow that</em>"]
   regulation --"Does not<br>exist"--> type("Work type?")
@@ -362,7 +362,7 @@ Advanced License Flowchart for Software, Writing, Images, Audio, and Video
 ```{mermaid}
 flowchart TB
   start("We want to choose a<br>license for data.") --"We adapted a database by<br>others shared under a<br>free/open license."--> use_existing_license_db["<em>Use its license(s)<br>for content and database</em>"]
-  start --"We created a database<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>regarding license?")
+  start --"We created a database<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>concerning license?")
   
   regulation --"Exists"--> follow_existing_norms["<em>Follow that</em>"]
   regulation --"Does not<br>exist"--> existing_license_content("Adapting content<br> by others?")
