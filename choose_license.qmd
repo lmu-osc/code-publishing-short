@@ -161,7 +161,7 @@ The advanced license flowcharts also allow you to make additional decisions:
 
 - __Attribution__ means whether recipients of your work are required to provide attribution to you. For software licenses, the attribution is part of a copyright notice. Note that even if attribution is not a requirement of the license, good scientific practice demands that appropriate citations are made.
 - __State changes__ means that recipients need to indicate if changes were made.
-- __Anti-DRM__ means that when others share your work they are not allowed to apply technological measures restricting anything that the license permits. DRM is an abbreviation for **d**igital **r**ights **m**anagement.
+- __Anti-DRM__ means that when others share your work they are not allowed to apply technological measures restricting anything that the license permits. Implementing such restrictive measures is also referred to as **d**igital **r**ights **m**anagement (DRM).
 
 From the Creative Commons licenses, only [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) does not require providing attribution. All software licenses in @fig-flowchart-non-data require providing attribution, although only [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) and [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) require others to indicate changes. For data, the [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/) allows for technological measures that restrict the work only if a version of the database is provided in parallel without such measures.
 
@@ -172,9 +172,9 @@ As indicated before, a free/open license must allow creating derivative works an
 
 With the rights provided by free/open licenses comes the possibility to build on and combine multiple works by different authors, which is essential for any cultural and scientific activity. However, this is only possible if the various licenses involved are compatible with each other. For example, one is allowed to remix two figures if the first is licensed under CC\ BY\ 4.0 and the second under CC\ BY-SA\ 4.0 because the licenses were written to be compatible with each other [compare @CC2024FAQ]. Also note that CC\ BY-SA\ 4.0 is [one-way compatible](https://creativecommons.org/compatiblelicenses) with the GPLv3, which in turn is compatible with the AGPLv3.
 
-However, applying a restriction such as only permitting non-commercial use or not allowing derivative works creates _silos_ of works which are mutually incompatible with each other. Put differently, one cannot share a remix of two works where one is licensed under CC\ BY-SA\ 4.0 and the other only allows non-commercial use. In order to avoid silos, one should only choose license which are compatible with the dominant copyleft license in the respective community [@Lammerhirt2017; @Wheeler2014]. If you would like to learn more about the different types of compatibility, we recommend you to read the article "A Quick Guide to Software Licensing for the Scientist-Programmer" by @Morin2012. The following diagram provides an overview of the compatibility of various licenses:
+However, applying a restriction such as only permitting non-commercial use or not allowing derivative works creates _silos_ of works which are mutually incompatible with each other. Put differently, one cannot share a remix of two works where one is licensed under CC\ BY-SA\ 4.0 and the other only allows non-commercial use. In order to avoid silos, one should only choose licenses which are compatible with the dominant copyleft license in the respective community [@Lammerhirt2017; @Wheeler2014]. If you would like to learn more about the different types of compatibility, we recommend you to read the article "A Quick Guide to Software Licensing for the Scientist-Programmer" by @Morin2012. The following diagram provides an overview of the compatibility of various licenses:
 
-!["Open data-capable license interoperability" by Robbie Morrison licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). Taken without modification from @Morrison2024](images/Morrison2024.jpg){.lightbox}
+!["Open data-capable license interoperability" by Robbie Morrison [-@Morrison2024] licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)](images/Morrison2024.jpg){.lightbox}
 :::
 
 ## Which Licenses to Choose for a Project?
@@ -185,7 +185,7 @@ The answer is that you need to indicate the license on a per-file or per-folder 
 
 ## Applying the License
 
-Having selected the licenses of your choice -- again, you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which license applies to which file or folder, usually in the project's README (among other places), whose creation will be discussed [later](make_readme.qmd).
+Having selected the licenses of your choice -- again, you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which file or folder is covered by which license, usually in the project's README (among other places), whose creation will be discussed [later](make_readme.qmd). Notably, no sort of registration is required.
 
 ::: {#cau-license-versions .callout-caution}
 ### License Versions Are Important
