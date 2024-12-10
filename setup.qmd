@@ -113,13 +113,19 @@ For the purpose of this tutorial, we will provide you with a data set and a corr
 
 ## Add Data
 
-You can now download the data set we have prepared for you and put it into your project folder: [`Data.csv`](_01_Example/Data.csv){download=""}
+```{r}
+#| echo: false
+
+write.csv(palmerpenguins::penguins, file = "data.csv", row.names = FALSE)
+```
+
+You can now download the data set we have prepared for you and put it into your project folder: [`data.csv`](data.csv){download=""}
 
 ::: {.column-margin}
 ![palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data](images/palmerpenguins.png){width=250px}
 :::
 
-The data set is from the package [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/)^[Created with `palmerpenguins` v0.1.1 using `write.csv(palmerpenguins::penguins, file = "Data.csv", row.names = FALSE)`.] and contains the recorded bill lengths and sex of penguins living on three islands in the Palmer Archipelago, Antarctica. It was made available under the license [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+The data set is from the package [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) (v`r packageVersion("palmerpenguins")`) and contains the recorded bill lengths and sex of penguins living on three islands in the Palmer Archipelago, Antarctica. It was made available under the license [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ::: {#imp-legal-restrictions .callout-important}
 ### Consider Legal Restrictions Before Sharing
@@ -136,69 +142,27 @@ Privacy laws and contractual obligations may require you to create a completely 
 Purely factual data such as measurements are usually not copyrightable, but literary or artistic works that cross the threshold of originality are. Additionally, in some jurisdictions data can be subject to _sui generis_ database rights which prevent extracting substantial parts of a database. As a consequence, you need to ensure that you own or have authority to share the data with respect to copyright and similar rights, and to license it to others (see "[Choose a License](choose_license.qmd)").
 :::
 
-When publishing a data set, it is important to document the meaning (e.g., units) and possible values of its variables. This is typically done with a _data dictionary_ (also called a _codebook_). In the following, we will demonstrate how to create a simple data dictionary using the R packages [`tinylabels`](https://cran.r-project.org/package=tinylabels), [`datawizard`](https://easystats.github.io/datawizard/), and [`tinytable`](https://vincentarelbundock.github.io/tinytable/). You can install them now using:
+When distributing a data set, it is important to document the meaning (e.g., units) and valid values of its variables. This is typically done with a _data dictionary_ (also called a _codebook_). In the following, we will demonstrate how to create a simple data dictionary using the R package [`pointblank`](https://rstudio.github.io/pointblank/). You can install it now using:
+
+::: {.column-margin}
+![pointblank: Data Validation and Organization of Metadata for Local and Remote Tables](images/pointblank.png){width=250px}
+:::
 
 ```{.r filename="Console"}
-renv::install(c(
-  "tinylabels",
-  "datawizard",
-  "tinytable"
-))
+renv::install("pointblank")
 ```
 
 You can put the code that follows for creating the data dictionary into a new file called `create_data_dictionary.R`.
 
-Using `tinylabels` we can add labels to the variables of a `data.frame` in R:^[Note that the code provided does not alter the data file -- no labels will be added to `Data.csv`. The labels are only added to a (temporary) copy of the data set within R in order to create the data dictionary.]
+First, we write down everything we know about the data set. This includes:
 
-```{r, echo = -1, eval = -2, filename="create_data_dictionary.R"}
-dat <- read.csv(file.path("_01_Example", "Data.csv"))
-dat <- read.csv("Data.csv")
-
-descriptions <- c(
-  species = "a character string denoting penguin species",
-  island = "a character string denoting island in Palmer Archipelago, Antarctica",
-  bill_length_mm = "a number denoting bill length (millimeters)",
-  bill_depth_mm = "a number denoting bill depth (millimeters)",
-  flipper_length_mm = "an integer denoting flipper length (millimeters)",
-  body_mass_g = "an integer denoting body mass (grams)",
-  sex = "a character string denoting penguin sex",
-  year = "an integer denoting the study year"
-)
-tinylabels::variable_label(dat) <- descriptions
-```
-
-Subsequently, `datawizard` can be employed to create the data dictionary containing the name and label, but also some other information about each variable:
-
-::: {.column-margin}
-![datawizard: Easy Data Wrangling and Statistical Transformations](images/datawizard.png){width=250px}
-:::
+- a general description of the data set
+- descriptions of all columns
+- valid values, where applicable
 
 ```{r, filename="create_data_dictionary.R"}
-(dict <- datawizard::data_codebook(dat) |>
-  subset(select = -.row_id) |>
-  tinytable::tt())
-```
-
-Finally, we can store the data dictionary inside an HTML file using the R package `tinytable` and put the HTML file into the project folder as well.
-
-::: {.column-margin}
-![tinytable: Simple and Configurable Tables](images/tinytable.svg){width=250px}
-:::
-
-```{.r filename="create_data_dictionary.R"}
-tinytable::save_tt(dict, output = "data_dictionary.html")
-```
-
-A human-readable data dictionary is necessary for making one's research reproducible and the example we provided demonstrates only the bare minimum. A full data documentation including measurement instruments, sampling procedures, appropriate weighting, contact information, and more information about the study can be created with the R package [`pointblank`](https://rstudio.github.io/pointblank/articles/INFO-1.html). And one could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR research data management](https://lmu-osc.github.io/FAIR-Data-Management/)".
-
-::: {#nte-frictionless .callout-note collapse="true"}
-### Create Machine-Readable Variable Documentation
-
-This example demonstrates how the title and description of the data set, the description of the variables and their possible values are stored in a machine-readable way.
-
-```{.r filename="Console"}
 table_info <- c(
-  title = "penguins data set",
+  title = "palmerpenguins::penguins",
   description = "Size measurements for adult foraging penguins near Palmer Station, Antarctica"
 )
 descriptions <- c(
@@ -211,6 +175,7 @@ descriptions <- c(
   sex = "a character string denoting penguin sex",
   year = "an integer denoting the study year"
 )
+
 vals <- list(
   species = c("Adelie", "Gentoo", "Chinstrap"),
   island = c("Torgersen", "Biscoe", "Dream"),
@@ -219,13 +184,90 @@ vals <- list(
 )
 ```
 
+Depending on the type of data, it may also be necessary to describe measurement instruments, sampling procedures, appropriate weighting, or contact information. In this case, as the data have already been published, we only store a reference to its source:
+
+```{r, class.output = "r code-overflow-wrap", echo = FALSE}
+
+# We have provided the data set as CSV file to the readers.
+# Therefore, we cannot assume or require that readers have
+# the R package palmerpenguins installed. Instead, we create
+# the citation on our end and hide how we obtained it.
+
+dat_source <- citation("palmerpenguins", auto = TRUE) |>
+  format(bibtex = FALSE, style = "text")
+dat_source |>
+  gsub("\\n", " ", x = _) |>
+  gsub("\"", "\\\\\"", x = _) |> # Escape any quotation marks
+  paste0("dat_source <- \"", ... = _, "\"") |>
+  cat()
+```
+
+Then, we use `pointblank` to create a data dictionary with this information.
+
+```{r, filename="create_data_dictionary.R"}
+vals <- sapply(vals, \(x) {
+  paste0(
+    "(",
+    knitr::combine_words(x, and = " or ", before = "`", after = "`"),
+    ")"
+  )
+})
+
+dat <- read.csv("data.csv")
+
+dict <- pointblank::create_informant(
+  dat,
+  tbl_name = NA,
+  label = table_info[["title"]],
+  lang = "en"
+) |>
+  pointblank::info_tabular(
+    Description = table_info[["description"]],
+    Source = dat_source
+  ) |>
+  pointblank::info_columns_from_tbl(stack(descriptions)[2:1]) |>
+  pointblank::info_columns_from_tbl(stack(vals)[2:1]) |>
+  pointblank::get_informant_report(
+    title = "Data Dictionary for `data.csv`"
+  )
+
+dict
+```
+
+Finally, we can store the data dictionary inside an HTML file and put the HTML file into the project folder as well.
+
+```{.r filename="create_data_dictionary.R"}
+pointblank::export_report(dict, filename = "data_dictionary.html")
+```
+
+For a more elaborate introduction to `pointblank`, you can read their [Intro to Information Management](https://rstudio.github.io/pointblank/articles/INFO-1.html).
+
+One could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR research data management](https://lmu-osc.github.io/FAIR-Data-Management/)".
+
+::: {#nte-frictionless .callout-note collapse="true"}
+### Create Machine-Readable Variable Documentation
+
+This example demonstrates how the title and description of the data set, the description of the variables and their valid values are stored in a machine-readable way. As before, we also provide a reference to the source.
+
+```{r, class.output = "r code-overflow-wrap", echo = FALSE}
+
+# We have provided the data set as CSV file to the readers.
+# Therefore, we cannot assume or require that readers have
+# the R package palmerpenguins installed. Instead, we create
+# the citation on our end and hide how we obtained it.
+
+citation("palmerpenguins", auto = TRUE)$url |>
+  paste0("dat_source <- \"", ... = _, "\"") |>
+  cat()
+```
+
 Generally, metadata are either stored embedded into the data or externally, for example, in a separate file. We will use the "[frictionless data](https://frictionlessdata.io/)" standard, where metadata are stored separately. Another alternative would be [RO-Crate](https://www.researchobject.org/ro-crate/).
 
 Specifically, one can use the R package [`frictionless`](https://docs.ropensci.org/frictionless/) to create a _schema_ which describes the structure of the data.^[In June 2024, [version 2](https://datapackage.org/) of the frictionless data standard has been released. As of November 2024, the R package `frictionless` only supports the first version, though support for v2 is [planned](https://github.com/frictionlessdata/frictionless-r/labels/datapackage%3Av2).] For the purpose of the following code, it is just a nested list that we edit to include our own information. We also explicitly record in the schema that missing values are stored in the data file as `NA` and that the data are licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Finally, the package is used to create a metadata file that contains the schema.
 
 ```{.r filename="Console"}
 # Read data and create schema
-dat_filename <- "Data.csv"
+dat_filename <- "data.csv"
 dat <- read.csv(dat_filename)
 dat_schema <- frictionless::create_schema(dat)
 
@@ -234,7 +276,7 @@ dat_schema$fields <- lapply(dat_schema$fields, \(x) {
   c(x, description = descriptions[[x$name]])
 })
 
-# Record possible values
+# Record valid values
 dat_schema$fields <- lapply(dat_schema$fields, \(x) {
   if (x$name %in% names(vals)) {
     modifyList(x, list(constraints = list(enum = vals[[x$name]])))
@@ -258,12 +300,16 @@ dat_package <- frictionless::create_package() |>
       name = "CC0-1.0",
       path = "https://creativecommons.org/publicdomain/zero/1.0/",
       title = "CC0 1.0 Universal"
+    )),
+    sources = list(list(
+      title = "CRAN",
+      path = dat_source
     ))
   )
 frictionless::write_package(dat_package, directory = ".")
 ```
 
-This creates the metadata file `datapackage.json` in the current directory. Make sure it is located in the same folder as `Data.csv`, as together they comprise a [data package](https://specs.frictionlessdata.io/data-package/).
+This creates the metadata file `datapackage.json` in the current directory. Make sure it is located in the same folder as `data.csv`, as together they comprise a [data package](https://specs.frictionlessdata.io/data-package/).
 :::
 
 Having added the data and its documentation, one can view and record the utilized packages with `renv`...

@@ -275,12 +275,12 @@ Note that `Manuscript.qmd` was provided to you under [CC\ BY\ 4.0](https://creat
 Sometimes, there are file types which do not allow for adding the license information inside them, such as PDF and CSV files. For these, a corresponding `.license` file can be created. Try the following command which indicates that the data were published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
 
 ```{.bash .code-overflow-wrap filename="Terminal"}
-reuse annotate --copyright="Kristen Gorman" --license="CC0-1.0" Data.csv
+reuse annotate --copyright="Kristen Gorman" --license="CC0-1.0" data.csv
 ```
 
-You will notice that this creates another file called `Data.csv.license` containing the relevant information:
+You will notice that this creates another file called `data.csv.license` containing the relevant information:
 
-```{.yml filename="Data.csv.license"}
+```{.yml filename="data.csv.license"}
 SPDX-FileCopyrightText: 2024 Kristen Gorman
 
 SPDX-License-Identifier: CC0-1.0
