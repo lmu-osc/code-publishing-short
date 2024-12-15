@@ -160,7 +160,9 @@ We have prepared two advanced license flowcharts, one for software, writing, ima
 The advanced license flowcharts also allow you to make additional decisions:
 
 - __Attribution__ means whether recipients of your work are required to provide attribution to you. For software licenses, the attribution is part of a copyright notice. Note that even if attribution is not a requirement of the license, good scientific practice demands that appropriate citations are made.
+- __Add license text__ means that recipients need to distribute the full text of the license along with the work (rather than only mentioning its license, for example, via a link).
 - __State changes__ means that recipients need to indicate if changes were made.
+- __Disclose code__ means that recipients need to disclose the source code when distributing modified versions of your work.
 - __Anti-DRM__ means that when others share your work they are not allowed to apply technological measures restricting anything that the license permits. Implementing such restrictive measures is also referred to as **d**igital **r**ights **m**anagement (DRM).
 
 From the Creative Commons licenses, only [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) does not require providing attribution. All software licenses in @fig-flowchart-non-data require providing attribution, although only [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) and [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) require others to indicate changes. For data, the [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/) allows for technological measures that restrict the work only if a version of the database is provided in parallel without such measures.
@@ -334,12 +336,12 @@ flowchart TB
   regulation --"Exists"--> follow_existing_norms["<em>Follow that</em>"]
   regulation --"Does not<br>exist"--> type("Work type?")
   
-  type --"Software"--> code_sa("Attribution?<br>State changes?<br>Copyleft?")
+  type --"Software"--> code_sa("Attribution?<br>Add license text?<br>State changes?<br>Disclose code?<br>Copyleft?")
   type --"Writing, image, audio, video"--> nocode_cc("Attribution?<br>State changes?<br>Anti-DRM?<br>Copyleft?")
   
-  code_sa --"Attribution &<br>State changes"--> apache["Apache 2.0"]
-  code_sa --"Attribution &<br>Weak copyleft"--> mpl["MPL 2.0"]
-  code_sa --"Attribution &<br>State changes &<br>Strong copyleft"--> agpl["AGPLv3"]
+  code_sa --"Attribution &<br>Add license text &<br>State changes"--> apache["Apache 2.0"]
+  code_sa --"Attribution &<br>Disclose code &<br>Weak copyleft"--> mpl["MPL 2.0"]
+  code_sa --"Attribution &<br>Add license text &<br>State changes &<br>Disclose code &<br>Strong copyleft"--> agpl["AGPLv3"]
   
   nocode_cc --"Neither"--> cc0["CC0 1.0"]
   nocode_cc --"Attribution &<br>State changes &<br>Anti-DRM"--> cc_by["CC BY 4.0"]
