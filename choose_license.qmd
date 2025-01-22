@@ -24,6 +24,12 @@ You can adapt the following wording to your use case:
 
 Whenever you create a literary or artistic work (such as a text, image, video, or software), the copyright law in most countries limits other people from copying, modifying, and sharing it without your express permission. [If the work was created as part of your job, it might be your employer who holds the copyright to the work, depending on the country and contract.]{.aside} This even applies if you make it available to others (e.g., on your website): First and foremost they are not allowed to copy, modify, or share it. This legal default of "all rights reserved" was created to benefit publishers, not authors [@Fogel2006], and runs counter to many cultural and scientific processes. Copyright licenses enable authors to free up their works for reuse by others.
 
+::: {#nte-situation-lmu .callout-note collapse="true"}
+### For researchers at LMU
+
+If you are an employee at LMU and your funder does not mandate the use of a particular license, the decision of which license to use lies with the holder of your chair (_Lehrstuhlinhaber\*in_). The only exception is the case that you developed an invention you would like to exploit commercially with a patent. Then, you are required to officially report your invention to the IP management team of the LMU, which will work out the next steps with you.
+:::
+
 A license is a legal document that regulates what _others_ are allowed to do with a copyright-protected work -- the licenses we discuss are non-exclusive licenses and do not limit the author or copyright holder in their rights. And while you _could_ write your own license, there are already many pre-formulated licenses available to choose from and to apply to your work.^[In fact, you should not create your own license if the purpose is to share your work freely and openly with others. By using a boilerplate license others know what to expect, also because they have been [tested](https://sfconservancy.org/copyleft-compliance/) in [courts](https://legaldb.creativecommons.org/).]
 
 ::: {.column-margin}
@@ -394,3 +400,4 @@ flowchart TB
 
 Advanced License Flowchart for Data(base)
 :::
+
