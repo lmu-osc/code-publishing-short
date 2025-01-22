@@ -1,29 +1,28 @@
 ---
 title: "Introduction"
-lang: en
 ---
 
 In the following, we will provide a brief introduction to the concept of _research compendia_.
 
-## The importance of sharing
+## The Importance of Sharing
 
-Suppose you are reading an article about a new imaging method to turn seismological data into subsurface images. The article describes the ideas that went into developing this method and presents a few examples to illustrate its superiority over previous approaches. You got interested and would like to apply this method to your own data. However, with only the article available, it could take months to come up with a working solution, if possible at all. This situation has been put aptly by @Buckheit1995, distilling an idea by Jon Claerbout:
+Suppose you are reading an article about a new imaging method to turn seismological data into subsurface images. The article describes the ideas that went into developing this method and presents a few examples to illustrate its superiority over previous approaches. You got interested and would like to apply this method to your own data. However, with only the article available, it could take months to come up with a working solution, if possible at all. This situation has been put aptly by Buckheit & Donoho [-@Buckheit1995, p. 59], distilling an idea by the geophysicist Jon Claerbout:
 
-> "An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
+> "An article about computational science in a scientific publication is __not__ the scholarship itself, it is merely __advertising__ of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
 
-Even for articles that are use computers to apply existing methods (rather than reporting on a new method), sharing the source code and being transparent about the computational environment is imperative to making research reproducible [@Ince2012]. By reproducibility, we mean "obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis" [@NASEM2019, p. 46].
+Even when researchers merely apply existing methods (rather than report on a new method), sharing the source code and being transparent about the computational environment is imperative to making their results reproducible [@Ince2012]. By reproducibility, we mean "obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis" [@NASEM2019, p. 46].
 
-## Linking results and computations
+## Linking Results and Computations
 
 This tutorial not only covers sharing the source code, but also connecting it to the results through the creation of dynamic documents. Rather than manually copying numerical results, figures, or tables, they are inserted automatically upon rendering of the article. Dynamic documents bundled together with any necessary data and auxiliary software are called a [research compendium](https://research-compendium.science/) [@Gentleman2007].
 
-The practice to interleave narrative text with code has its roots in the paradigm of literate programming, where documentation and source code are treated as equals and are arranged in a way to maximize understanding [@Knuth1984]. Alternating text and code can be also found in notebook interfaces for exploratory programming, such as provided by Wolfram Mathematica or Jupyter Notebooks [@Kluyver2016], with the added capability of executing the code and embedding its output. With _Sweave_ [@Leisch2002], ideas from both worlds -- literate programming and embedding program output -- were combined into one tool for rendering dynamic documents using the R programming language. It is the predecessor of the R package `knitr` [@Xie2015] which is being used under the hood in this tutorial.^[Specifically, Quarto employs `knitr` to execute chunks of R code.]
+The practice to interleave narrative text with code has its roots in the paradigm of literate programming, where documentation and source code are treated as equals and are arranged in a way to maximize understanding [@Knuth1984]. Alternating text and code can be also found in notebook interfaces for exploratory programming [e.g., Wolfram Mathematica or Jupyter Notebooks, see @Kluyver2016] that also have the capability to execute code and embed its output. With _Sweave_ [@Leisch2002], ideas from both worlds -- literate programming and embedding program output -- were combined into one tool for rendering dynamic documents using the R programming language. It is the predecessor of the R package `knitr` [@Xie2015] which is being used under the hood in this tutorial.^[Specifically, Quarto employs `knitr` to execute chunks of R code.]
 
 Linking results with their computations has benefits for authors and readers. For the author, articles always contain the most recent version of figures, as they are updated automatically when the computation changes. For the readers, it enables understanding exactly how a particular result was obtained if they get access to the underlying research compendium.
 
-## Best practices
+## Best Practices
 
-When creating the research compendium, there are a few things to consider [by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
+When creating a research compendium, there are a few things to consider [by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
 
 > __Does the research compendium contain everything needed to reproduce a predefined outcome in an organized and parsimonious way?__
 > 

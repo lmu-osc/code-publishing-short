@@ -2,7 +2,7 @@ A minimal reproducible example on penguins for the workshop on Quarto manuscript
 This folder contains all relevant data to reproduce the manuscript: 
 * An R-project ```Example.Rproj``` that was set up using a reproducible environment ```renv```
 * An apaquarto manuscript ```Manuscript.qmd```
-* Primary data that are necessary to reproduce the analyses ```Data.csv```
+* Primary data that are necessary to reproduce the analyses ```data.csv```
 * A bibliography file that contains all references used in the manuscript ```Bibliography.bib```
 * Citation language style files that are necessary to format references in APA7 style ```apa7.csl``` and ```apa7.cls```
 * further files and folders that are created when you produce the document

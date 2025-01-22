@@ -1,6 +1,5 @@
 ---
 title: "Archive Your Project"
-lang: "en"
 ---
 
 ## Where to Deposit Software
@@ -52,7 +51,7 @@ First, create an account on the Zenodo Sandbox by clicking on _Sign up_ in the u
 
 Now you can follow the guide "[Create new upload](https://help.zenodo.org/docs/deposit/create-new-upload/)", taking into account the following notes specific to each step:
 
-- __Add/remove files__: To circumvent the file limit on Zenodo, you can bundle your project folder in one ZIP file and upload that instead.
+- __Add/remove files__: To circumvent the file limit on Zenodo, you can bundle your project folder in one ZIP file and upload that instead. Be sure to exclude all files mentioned in your `.gitignore` file!
 - __Fill in metadata__
   - __Digital Object Identifier__ (DOI): Usually, you will want a DOI, therefore you need to choose _No_ for the question whether you already have a DOI for this upload, and click on _Get a DOI now!_.
   - __Resource type__: Select the most appropriate one, for example, _Publication / Preprint_.

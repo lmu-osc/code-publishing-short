@@ -1,10 +1,9 @@
 ---
 title: "Make a README"
-lang: en
 engine: knitr
 ---
 
-## What does a README contain?
+## What Does a README Contain?
 
 Once you have prepared your project and settled on a license, it is time to add a final touch. Imagine returning to your project in five years, having forgotten most of the details of what you did exactly. What would be useful to know in order to quickly understand what is going on in the project? This is what needs to be described in the README. While you could just start writing along, most READMEs have some sections in common which we describe below.
 
@@ -26,7 +25,7 @@ Visuals
 
 Installation/Dependencies
 
-:   What steps need to be taken to run the project? What software needs to be installed? Mention all dependencies here that are not explicitly managed by `renv`, such as the system dependencies of R packages as well as the version of Quarto. An R package's system dependency is any additional software that you need to install on your computer in order to use a particular R package. For example, the R package [`reticulate`](https://rstudio.github.io/reticulate/) allows to run Python code from within R. However, in order to actually use it, one has to additionally install Python itself as it does not come together with `reticulate` -- rather, it is a system dependency. See @sec-dependencies for additional information.
+:   What steps need to be taken to run the project? What software needs to be installed? R itself and the R packages are already documented as this project uses `renv`. Therefore you can focus on all other dependencies, such as the system dependencies of R packages as well as the version of Quarto.^[As of August 2024, a proposal for `renv` to record the version of Quarto has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] Also, don't forget to mention software that you have used for any manual steps. See @sec-dependencies for additional information.
 
 Usage
 
@@ -54,10 +53,17 @@ License
 
 ## Installation/Dependencies {#sec-dependencies}
 
-An overview over the system dependencies of R packages can be created using the function `pak::pkg_sysreqs()`. In combination with `renv`, we can obtain the system dependencies of all R packages in the current project:
+An overview over the system dependencies of R packages can be created using the function `pak::pkg_sysreqs()`. In combination with `renv`, we can obtain the system dependencies of all R packages the current project directly depends on:
 
 ```{.r filename="Console"}
-pak::pkg_sysreqs(renv::dependencies()$Package)
+# First, install pak
+renv::install("pak")
+
+# Then, identify the system dependencies
+# of your direct dependencies.
+renv::dependencies()$Package |>
+  unique() |>
+  pak::pkg_sysreqs()
 ```
 
 The output may look like the following:
@@ -73,7 +79,7 @@ rmarkdown – pandoc
 sass      – make
 ```
 
-We can see that `make` and `pandoc` were identified as system dependencies. One can obtain their version by running them with the `--version` argument:
+We can see that `make` and `pandoc` were identified as system dependencies. Often, one can obtain their version by running them with the `--version` argument:
 
 ```{.bash filename="Terminal"}
 make --version
@@ -110,6 +116,8 @@ The output is quite long and it might look slightly different for you, but the r
       Path: /home/r155953/.TinyTeX/bin/x86_64-linux
       Version: 2024
 ```
+
+Of course, all the system dependencies identified until now may have dependencies on their own. Use your own judgement to decide when not to dig deeper.
 
 ## Create It!
 
@@ -189,7 +197,7 @@ renv::restore()
 The most important file in this project is `Manuscript.qmd` which contains the text of the article as well as the code for its computations. It is accompanied by the following files:
 
 - `Bibliography.bib`: bibliographic references used in the manuscript
-- `Data.csv`: a data set containing the simplified `palmerpenguins` data created using `write.csv(palmerpenguins::penguins, "dat.csv", row.names = FALSE)`
+- `data.csv`: a data set containing the simplified `palmerpenguins` data created using `write.csv(palmerpenguins::penguins, "dat.csv", row.names = FALSE)`
 - `data_dictionary.html`: a dictionary to the data file, created using `create_data_dictionary.R`
 
 The folder `_extensions` contains the `apaquarto` extension which is used to typeset the PDF accoording to APA guidelines.
@@ -220,6 +228,6 @@ Please cite this draft as follows:
 ```{.md .code-overflow-wrap filename="README.md"}
 ## License
 
-The manuscript file and the bibliograhpic references are made available by us under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The data set by Kristen Gorman has been published under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). `apaquarto` has also been published under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). All other files in this project are available under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+The manuscript file and the bibliographic references are made available by us under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). The data set by Kristen Gorman has been published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). `apaquarto` has also been published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). All other files in this project are available under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 ```
 :::

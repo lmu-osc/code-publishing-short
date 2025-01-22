@@ -3,8 +3,8 @@ project:
 
 website:
   title: "Code Publishing Tutorial"
-  page-footer: 
-    center: "Copyright 2024 Open Science Center at LMU Munich"
+  page-footer:
+    center: "© 2024 Open Science Center at LMU Munich"
     border: false
   search:
     location: sidebar
@@ -15,8 +15,6 @@ website:
   favicon: images/LMU-OSC_favicon.jpg
   margin-header: |
     ![](/images/LMU-OSC_logo.jpg){width="175"}
-    
-    
   navbar:
     right:
       - about.qmd
@@ -32,8 +30,6 @@ website:
             url:  https://github.com/lmu-osc/code-publishing/issues
       - icon: house-heart
         url: https://www.osc.uni-muenchen.de/
-
-      
   sidebar:
     contents:
       - intro.qmd
@@ -41,11 +37,10 @@ website:
       - choose_license.qmd
       - make_readme.qmd
       - archive.qmd
-      
 
 format:
   html:
-    theme: 
+    theme:
       - cosmo
       - custom.scss
     css: styles.css
@@ -53,6 +48,9 @@ format:
     fontsize: 13pt
     grid:
       sidebar-width: 300px
+    mermaid:
+      theme: neutral
 
 csl: apa.csl
 bibliography: literature.bib
+lang: en-US

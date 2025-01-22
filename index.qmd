@@ -19,7 +19,7 @@ In particular, we will assume you have installed [Git](https://git-scm.com/downl
 ::: {#nte-quarto-alternatives .callout-note collapse="true"}
 ## Alternatives to Quarto
 
-Quarto is a tool to create reproducible documents, but not the only one. You may also use [RMarkdown](https://rmarkdown.rstudio.com/), [Jupyter Book](https://jupyterbook.org/), [Stencila](https://stencila.io/), [Curvenote](https://curvenote.dev/), [showyourwork!](https://show-your.work/), [Org Mode](https://orgmode.org/), [StatTag](https://sites.northwestern.edu/stattag/), or one of the countless others.
+Quarto is a tool to render dynamic documents, but not the only one. You may also use [`rmarkdown`](https://rmarkdown.rstudio.com/), [Jupyter Book](https://jupyterbook.org/), [Stencila](https://stencila.io/), [Curvenote](https://curvenote.dev/), [showyourwork!](https://show-your.work/), [Org Mode](https://orgmode.org/), [StatTag](https://sites.northwestern.edu/stattag/), or one of the countless others.
 :::
 
 We will start with creating a simple report which incorporates R code. Then, we will focus on what is required to publish your work:
