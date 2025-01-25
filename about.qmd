@@ -24,11 +24,11 @@ grateful::cite_packages(
 #| output: "asis"
 #| echo: false
 
-cat(c("Quarto:", as.character(quarto::quarto_version())))
+cat(paste0("Quarto ", as.character(quarto::quarto_version()), " was utilized to render the files."))
 ```
 
 ```{r}
-#| class.output: "txt code-overflow-scroll"
+#| class-output: "txt code-overflow-scroll"
 
 sessioninfo::session_info()
 ```
