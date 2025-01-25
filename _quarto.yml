@@ -10,7 +10,7 @@ website:
     location: sidebar
   repo-url: https://github.com/lmu-osc/code-publishing
   repo-actions: [edit, issue]
-  back-to-top-navigation: true
+  back-to-top-navigation: false
   page-navigation: true
   favicon: images/LMU-OSC_favicon.jpg
   margin-header: |
