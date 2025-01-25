@@ -34,6 +34,9 @@ website:
     contents:
       - intro.qmd
       - setup.qmd
+      - copyright.qmd
+      - data.qmd
+      - code.qmd
       - choose_license.qmd
       - make_readme.qmd
       - archive.qmd

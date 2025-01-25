@@ -3,11 +3,6 @@ title: "About"
 author:
   - name: "Florian Kohrt"
     orcid: "0000-0003-0374-5625"
-  - name: "Josephine Zerna"
-    orcid: "0000-0003-2892-884X"
-  - name: "Christoph Scheffel"
-    email: "christoph_scheffel@tu-dresden.de"
-    orcid: "0000-0001-5963-9229"
 bibliography: grateful-refs.bib
 ---
 
@@ -40,7 +35,11 @@ sessioninfo::session_info()
 
 ## License and Disclaimer
 
-Except where noted otherwise, the material in this tutorial is licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). None of the discussion in this tutorial constitutes legal advice.
+None of the discussion in this tutorial constitutes legal advice.
+
+Except where noted otherwise, the material in this tutorial is licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/); the code chunks are also (at your option) available under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) or the [Apache License\ 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+The file `Manuscript.qmd` is made available by Josephine Zerna and Christoph Scheffel under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 The screenshots of the [RStudio IDE](https://github.com/rstudio/rstudio) are available under the [GNU Affero General Public License v3](https://www.gnu.org/licenses/agpl-3.0.html). The source code is available on [GitHub](https://github.com/rstudio/rstudio/tree/v2024.04.2%2B764).
 

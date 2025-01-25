@@ -3,38 +3,7 @@ title: "Choose a License"
 engine: knitr
 ---
 
-## TL;DR
-
-Every expression of an idea, such as a literary or an artistic works, is automatically covered by copyright. Put simply, this means that nobody else than the copyright holder is allowed to copy, modify, or share it. Copyright licenses can grant others some of the necessary rights, but mostly don't cover publicity, privacy, moral, patent, or trademark rights. Certain exceptions and limitations to copyright (such as fair use or the right to quote) may obviate the need for a license.
-
-Researchers are only allowed to share material they have the necessary rights to. This includes copyrights, which are granted by free/open copyright licenses. These licenses often require to attribute the authors, indicate whether changes were made, and provide the text of the license, among other things. In addition, researchers should share any work by their own under such a license.
-
-_Choosing a license_ involves:
-
-1. Recording the copyright notices and licenses for content by others (for example, in a file called `LICENSE.txt`) and following all their additional requirements.
-2. In the simplest case, choosing two licenses (one suitable for code, one for everything else) which to apply  simultaneously to all own content (for example, again by recording the license in the file `LICENSE.txt`). Recipients are then free to choose under which of the two licenses to use the material.
-
-We recommend to choose [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) for all own works. Take your time to read the summaries behind the links and/or the actual license text to understand its legal effect.
-
-You can adapt the following wording to your use case:
-
-> Except where noted otherwise, all files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
-
-## A Primer on Licenses
-
-Whenever you create a literary or artistic work (such as a text, image, video, or software), the copyright law in most countries limits other people from copying, modifying, and sharing it without your express permission. [If the work was created as part of your job, it might be your employer who holds the copyright to the work, depending on the country and contract.]{.aside} This even applies if you make it available to others (e.g., on your website): First and foremost they are not allowed to copy, modify, or share it. This legal default of "all rights reserved" was created to benefit publishers, not authors [@Fogel2006], and runs counter to many cultural and scientific processes. Copyright licenses enable authors to free up their works for reuse by others.
-
-::: {#nte-situation-lmu .callout-note collapse="true"}
-### For researchers at LMU
-
-If you are an employee at LMU and your funder does not mandate the use of a particular license, the decision of which license to use lies with the holder of your chair (_Lehrstuhlinhaber\*in_). The only exception is the case that you developed an invention you would like to exploit commercially with a patent. Then, you are required to officially report your invention to the IP management team of the LMU, which will work out the next steps with you.
-:::
-
-A license is a legal document that regulates what _others_ are allowed to do with a copyright-protected work -- the licenses we discuss are non-exclusive licenses and do not limit the author or copyright holder in their rights. And while you _could_ write your own license, there are already many pre-formulated licenses available to choose from and to apply to your work.^[In fact, you should not create your own license if the purpose is to share your work freely and openly with others. By using a boilerplate license others know what to expect, also because they have been [tested](https://sfconservancy.org/copyleft-compliance/) in [courts](https://legaldb.creativecommons.org/).]
-
-::: {.column-margin}
-For the purpose of this tutorial, by _license_ we mean _copyright license_.
-:::
+So far, you took care to legally include works by others in your project folder. Up next, you will free up your project for reuse. This means ensuring that every bit (co-)authored by you in the project is put under a free/open license. It may be that your project (i.e., its files and folders) is not one work, but rather consists of multiple works available under different licenses. In that case, you need to indicate the license on a per-file or per-folder basis (rather than choosing one for the whole project). Sometimes, even different parts of a file might be subject to different licenses. For the purpose of this tutorial, we will consider the manuscript which you edited and the data dictionary you created.
 
 ::: {#wrn-exclusive-rights .callout-warning}
 ### Giving Publishers Exclusive Rights
@@ -44,41 +13,29 @@ Some journals offer to publish your article under a Creative Commons license, bu
 If your chosen publisher insists on an exclusive license, you may at least retain the copyright for your figures -- follow the guide "Retaining copyright for figures in academic publications to allow easy citation and reuse" by @Elson2016 to learn how to do that.
 :::
 
-The licenses we discuss here mostly regard copyright. Therefore, recipients may lack other rights such as publicity, privacy, moral, patent,^[In fact, the software licenses we recommend on this page have been specifically selected to provide an express grant of patent rights.] or trademark rights. For example, sharing photos that depict people is not only a matter of copyright, but also of privacy rights. Conversely, the licenses do not apply if recipients are allowed to use the works for other reasons such as fair use, the right to quote, or because they made a different arrangement with the author.
+::: {#nte-license-choice-tldr .callout-note}
+## License Choice TL;DR
+
+We recommend to choose free/open licenses suitable to the type of work (i.e., code, data, and everything else). [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) are good choices to apply simultaneously to all own works. Take your time to read the summaries behind the links and/or the actual license text to understand the legal effect. You can adapt the following wording to your use case:
+
+> Except where noted otherwise, all files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache License\ 2.0.
+:::
 
 ## Which License to Choose for a Work?
 
-Many boilerplate licenses are available to apply to your work. Which license is appropriate depends on several factors, including existing licenses in place and the type of work, but also your personal considerations. We strongly recommend to apply a _free/open_ license to your work, which means that the work "can be freely studied, applied, copied and/or modified, by anyone, for any purpose" [@Moller2015]. Importantly, this also means that others do not need to ask or notify the author and that they can use it for commercial purposes. By the choice of license, authors can, however, demand that they are credited, that the original license is indicated, that modifications are indicated, that derivative works are only shared under the same license, and that no further restrictions are imposed on the work. Software licenses may additionally require to make the source code available to everybody the software is shared with and often require to display the full text of the license upon usage. Because there are many free/open licenses available, the licenses discussed here only represent a recommended subset.
+Many boilerplate licenses are available to apply to your work. Which license is appropriate depends on several factors, including existing licenses in place and the type of work, but also your personal considerations. We strongly recommend to apply a _free/open_ license to your work that fits to the work type and potential use cases. Because there are many free/open licenses available, the licenses discussed here only represent a recommended subset.
 
 ::: {.column-margin}
-If you would like to choose a license not listed here, it should be appropriate for the type of work in question and be compatible with the dominant copyleft license in the respective community (see also @nte-silos). For software that's almost universally the (A)GPLv3 and for writing, image, audio, and video that's mostly the [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For data, no dominant copyleft license has emerged yet, so any of [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/), [CDLA\ Sharing\ 1.0](https://cdla.dev/sharing-1-0/), and [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/) are acceptable.
-:::
-
-::: {#nte-terminology .callout-note collapse="true"}
-### A Note on Terminology
-
-The terms _free_ and _open_, especially with regard to software, come with a history. The Free Software Foundation (FSF) was founded in 1985 to protect "four essential freedoms" [-@FSF2024] of a program's user. These are the freedoms to use, study, share, and improve a program. Software whose users legally and practically have these freedoms (because, among other things, they have access to its source code) is considered _free_. The four freedoms are seen as vital for a society as a whole in the sense that they enable sharing, cooperation and ultimately freedom in general. The FSF maintains [a list of software licenses](https://www.gnu.org/licenses/license-list.en.html#SoftwareLicenses) that it considers to be protecting the four freedoms. Sometimes the term _libre_ (Spanish and French for _free_) is used to make a distinction from _gratis_ software. You can learn more about free software at [Write Free Software](https://writefreesoftware.org/learn).
-
-The Open Source Initiative (OSI), which was founded in 1998, follows a more pragmatic approach. It is concerned with developing high-quality software, for which everyone's ability to obtain, modify and contribute back the source code is considered beneficial. Access to the source code is one out of multiple conditions for software to be considered _open source_ by the OSI [-@OSI2007], which equally maintains [a list of approved licenses](https://opensource.org/licenses).
-
-Access to the source code is a necessary, but not sufficient requirement both for _free software_ and for _open source software_. Conversely, both can (and frequently are) sold for money, as their respective criteria only apply once one has access to the software. Throughout this tutorial, we write "free/open license" to mean a license that is approved by either the FSF or the OSI. Software which is neither but makes available its source code is sometimes referred to as _source-available software_.
-
-Apart from software, the term _open access_ has often been used for works that are available at no cost. For example, this is the commonality of bronze, green, hybrid, gold, and diamond/platinum open access _articles_, which otherwise vary in the rights that are granted to readers. In 2002, the Budapest Open Access Initiative declared that _open access_ additionally includes the right to use articles for any purpose, and in 2003, the Bethesda Statement and the Berlin Declaration added the right to make derivative works.
-
-Two other notable definitions include the _Open Definition_ [@OKFN2016], which was first drafted in 2005, and the definition of _Free Cultural Works_ [@Moller2015], for which the open editing phase began in 2006. They are largely viewed as compatible with one another.
-
-:::: {.column-margin}
-![](images/Definition_of_Free_Cultural_Works.svg){width=250px}
-::::
+If you would like to choose a license not listed here, it should be appropriate for the type of work in question and be compatible with the dominant copyleft license in the respective community (see also @nte-silos). For software that's almost universally the (A)GPLv3 and for writing, image, audio, and video that's mostly the [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/). For databases, no dominant copyleft license has emerged yet, so any of [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/), [CDLA\ Sharing\ 1.0](https://cdla.dev/sharing-1-0/), and [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/) are acceptable.
 :::
 
 ### Existing License?
 
-First, if you adapt (i.e., modify, remix, build on) a work by others you need to determine if it is provided to you under a free/open license.[You can determine whether a license is free/open by searching for its name in the [SPDX License List](https://spdx.org/licenses/) and looking for at least one `Y` in the two columns _FSF Free/Libre?_ and _OSI Approved?_]{.aside} If yes, we recommend you to make your contribution available under the same license.^[Copyleft licenses even require you to choose the same or a compatible license.] For example, if you adapt code published in another paper, choose the same license for your modifications. The same applies if there are strong community norms to use a particular free/open license^[Of course, this is only a heuristic and there might be good reasons to deviate from community norms.] or if a particular license choice is mandated by your funder. Importantly, as discussed before, you are generally not allowed to adapt a work _not_ published under a free/open license.
+First, if you adapt (i.e., modify, remix, build on) a work by others you need to determine if it is provided to you under a free/open license. If yes, we recommend you to make your contribution available under the same license.^[Copyleft licenses even require you to choose the same or a compatible license.] For example, if you adapt code published in another paper, choose the same license for your modifications. The same applies if there are strong community norms to use a particular free/open license^[Of course, this is only a heuristic and there might be good reasons to deviate from community norms.] or if a particular license choice is mandated by your funder. Importantly, as discussed before, you are generally not allowed to adapt a work _not_ published under a free/open license.
 
 ### Work Type?
 
-If you create a new work and no strong community norms suggest a particular license, you need to choose the license yourself. Which license to choose depends on the type of work you create. Software licenses, for example, may consider that the source code is the preferred form for making modifications, while licenses for data can differentiate between the database and any works produced from it. We have created a flowchart that covers the most likely types of works you will create as a researcher: software, writing (i.e., text), images, audio, video, and data (see @fig-flowchart-simple). This flowchart always recommends the most permissive license possible to maximize reuse -- though we provide two additional flowcharts below that allow for more choices. Click on the name of a license to learn more about it.
+If you create a new work and no strong community norms suggest a particular license, you need to choose the license yourself. Which license to choose depends on the type of work you create. We have created a flowchart that covers the most likely types of works you will create as a researcher: software, writing (i.e., text), images, audio, video, and data (see @fig-flowchart-simple). This flowchart always recommends the most permissive license possible to maximize reuse -- though we provide two additional flowcharts below that allow for more choices. Click on the name of a license to learn more about it.
 
 ::: {#tip-multi-licensing .callout-tip}
 #### Multi-licensing
@@ -88,14 +45,14 @@ Sometimes, the type of a work is not obvious. For example, a Quarto document...
 - ...contains both R code and writing, and
 - ...may be distributed in the source format or as rendered document, possibly including images.
 
-One may wonder which license to apply in this case, because Creative Commons licenses are not recommended for source code^[because (among other reasons) they explicitly disclaim any conveyance of patent rights] and applying software licenses to PDFs or images can lead to confusion or nuisance.^[because they often require to display the full text of the license]
+One may wonder which license to apply in this case, because Creative Commons licenses are not recommended for source code^[because (among other reasons) they explicitly disclaim any conveyance of patent rights [see @CC2024Software]] and applying software licenses to PDFs or images can lead to confusion or nuisance.^[because they often require to display the full text of the license [see @Wikipedia2024FDL]]
 
 One solution is to make such a work simultaneously available under two (or more) licenses, at the choice of the recipient: Either under a specified software license, or under a Creative Commons license^[that is, a license for writing, image, audio, and video]. This is called multi-licensing and makes it easier to reuse both the rendered document as well as the code. For example, one could write:
 
-> The Quarto files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache Software License\ 2.0.
+> The Quarto documents in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache License\ 2.0.
 :::
 
-Note, that for data there is, at least in principle, the possibility that a different license applies to the individual entries than to the collective database. For example, if you were to create a database of artworks by others, those artworks would be licensed individually as chosen by the artists, but the license for the database as a whole could be chosen by you. The latter includes the selection of entries, field names and any _sui generis_ database rights. However, if the content was created by you, we recommend you to choose the same license for both content and database. Factual data (like measurements or metadata) should be licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) [@Villa2016Copyleft; @Villa2016CC0] -- otherwise, consult @nte-other-work-types for some caveats.
+We already mentioned that a database may be licensed differently than its content. However, if the content was created by you, we recommend you to choose the same license for both content and database. Factual data (like measurements or metadata) should be made available with [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) [@Villa2016Copyleft; @Villa2016CC0] -- otherwise, consult @nte-other-work-types for some caveats.
 
 ::: {#fig-flowchart-simple}
 ```{mermaid}
@@ -127,30 +84,25 @@ Flowchart for Choosing a License
 One should take special care when applying license to the following types of works:
 
 - __fonts:__ Copyleft licenses applied to fonts can be a special case: If a font is put under the license [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/), any documents containing texts using that font will probably be derivative works and have to be put under the same license if shared. The [SIL Open Font License\ 1.1](https://openfontlicense.org/) is the _de facto_ standard license for fonts, requiring that derived fonts, if published, have to be put under the same license. It doesn't require attribution for usage (e.g., when embedded in a document), but forbids that the font is sold by itself. Selling the font is allowed, however, if it is bundled with other software.
-- __templates and TeX packages:__ If a template or, for this purpose, a $\TeX$ package, is licensed under a copyleft license such as the (A)GPLv3, every work that is a derivative of the template or that uses the $\TeX$ package has to put under the same license, if shared [@Koppor2016]. And if a document contained source code covered by the (A)GPLv3, the same license would also apply to the document [@MadHatter2022].
+- __templates and TeX packages:__ If a template or, for this purpose, a $\TeX$ package, is licensed under a copyleft license such as the (A)GPLv3, every work that is a derivative of it has to be put under the same license if shared. If a document contained source code covered by the (A)GPLv3, it depends on the individual case whether the same license needs to be applied to the document if shared.
 - __database content:__ If the work produced from a database (the "output") is a derivative of the content in the database, the output is subject to the restrictions laid out in the license. For example, if geospatial data were to be licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/), all maps produced from the data would likely need to fulfill this license's obligation for unrestricted access (its Anti-DRM provision) if shared [see @Poole2017]. Similarly, following an example from @Matt2009, if one were to choose the copyleft license [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/) for this purpose, any map that is a derivative of the data would also need to be licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (or a compatible license) if shared. If the intention is to only have [derivative databases](https://osmfoundation.org/wiki/Licence/Community_Guidelines/Produced_Work_-_Guideline) under the same license, one might want to choose the [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/) for the database, as it was specifically designed not to apply to works produced from the data in the database. Otherwise [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) is an excellent choice for data.
 - __works in the public domain__: If a work is already in the public domain, it should be marked using the [PDM 1.0](https://creativecommons.org/publicdomain/mark/1.0/), rather than applying a waiver such as the [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (or another license).
 :::
 
 ### Copyleft?
 
-The consequence of applying a permissive license to your work is that others may distribute their adaptations from it under stricter terms, possibly without a free/open license. You may prefer that everybody who receives somebody else's adaptations of your work enjoys the same rights that you granted to them. This can be achieved by _copyleft_ licenses.^[So called because copyleft licenses make content permanently free, thus turning copyright around: © → 🄯. In the realm of Creative Commons licenses, copyleft is also called _share alike_.] For software, they come in two flavors:
-
-- __Weak copyleft licenses__ only require that modifications to the software itself are licensed under the same or a compatible license if shared. For example, if you create and publish software under a weak copyleft license, others who modify it and put their version on the internet have to apply the same license. However, people who merely _use_ your software in their own work which they make publicly available can choose any license for it.
-- __Strong copyleft licenses,__ on the other side, insist that any larger works that use the copyleft-licensed software must also be licensed under the same or a compatible license if shared. For example, if your software were to be put under a strong copyleft license, everybody publishing software that uses your software would need to put it under the same license. Because of only few rulings in courts, the extent of this requirement is disputed [@Wikipedia2024].
-
-Note, however, that the copyleft licenses we discuss here do not mandate sharing. Copyleft (and attribution) clauses are only triggered if the work is shared [@CC2015]. This means that if you only use a work internally, you do not need to share your derivative works. It is also worth reiterating that these licenses do not restrict the original author(s): They are still permitted to distribute their work under a different license and without sharing the source code.
+You may prefer that adaptations of your work stay free/open and thus choose a copyleft license. Of course, this does not restrict you as the original author: You are still permitted to distribute the work under a different license and without sharing the source code.
 
 ::: {#tip-license-r .callout-tip}
 #### Projects Involving R Code
 
-In most cases, the output of software, like images or tables, does not depend on the software's license.^[The exception is when the software is part of the output [see @apsillers2019].] Therefore, if you use an R package under a copyleft license to create a figure, you are likely the copyright owner. However, if the output is based on data, it can be considered a derivative work of the data and the license of the data also applies. For example, maps may be considered as a derivative of the geographic data they are based on.
+In most cases, the output of software, like images or tables, does not depend on the software's license.^[The exception is when the software is part of the output [see @FSF2024].] Therefore, if you use an R package under a copyleft license to create a figure, you are likely the copyright owner. However, if the output is based on data, it can be considered a derivative work of the data and the license of the data also applies. For example, maps may be considered as a derivative of the geographic data they are based on.
 
 It is disputed whether software that uses an R package under AGPLv3 or GPLv3^[a variant of the AGPLv3 that does not cover software running as a service] can only be published under a GPL-compatible license -- or even has to be published under the same license. Posit, the company behind RStudio, does not believe that to be the case [see also @Wickham2023PackagesLicense].
 
 You can learn which license an installed package uses via `packageDescription("<PACKAGE_NAME>", fields = "License")`. And to identify which licenses are being used by the R packages your project depends on, you can use the following code:
 
-```r
+```{.r filename="Console"}
 deps <- renv::dependencies()$Package |>
   unique() |>
   pak::pkg_deps(dependencies = NA) |>
@@ -161,45 +113,53 @@ unique(installed.packages(fields="License")[deps, "License"])
 
 We have prepared two advanced license flowcharts, one for software, writing, images, audio, and video in @fig-flowchart-non-data and one for data in @fig-flowchart-data where you can make additional choices. Note, however, that especially the advanced flowchart for licensing data is quite complex and we recommend you to seek legal counsel if you want to be sure.
 
-### Attribution, State Changes, and Anti-DRM?
+### Additional considerations
 
-The advanced license flowcharts also allow you to make additional decisions:
+The advanced license flowcharts also allow you to make additional decisions, such as whether attribution should be a condition of redistribution. As you have learned, even if attribution is not a condition of the license, there are other reasons for attributing you as an author (such as scientific citation standards or moral rights). All conditions are explained on the page on [copyright](copyright.qmd).
 
-- __Attribution__ means whether recipients of your work are required to provide attribution to you. For software licenses, the attribution is part of a copyright notice. Note that even if attribution is not a requirement of the license, good scientific practice demands that appropriate citations are made.
-- __Add license text__ means that recipients need to distribute the full text of the license along with the work (rather than only mentioning its license, for example, via a link).
-- __State changes__ means that recipients need to indicate if changes were made.
-- __Disclose code__ means that recipients need to disclose the source code when distributing modified versions of your work.
-- __Anti-DRM__ means that when others share your work they are not allowed to apply technological measures restricting anything that the license permits. Implementing such restrictive measures is also referred to as **d**igital **r**ights **m**anagement (DRM).
-
-From the Creative Commons licenses, only [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) does not require providing attribution. All software licenses in @fig-flowchart-non-data require providing attribution, although only [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) and [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) require others to indicate changes. For data, the [ODbL\ 1.0](https://opendatacommons.org/licenses/odbl/summary/) allows for technological measures that restrict the work only if a version of the database is provided in parallel without such measures.
+From the Creative Commons licenses, only [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) does not require providing attribution, and all software licenses in @fig-flowchart-non-data require providing attribution. As an author, you are free to waive license conditions such as attribution, however.
 
 ::: {#nte-silos .callout-note collapse="true"}
 ### Other Restrictions
 
-As indicated before, a free/open license must allow creating derivative works and must allow exercising the rights granted by it _for any purpose_, including commercial use. Otherwise, creating adaptations from multiple works by different authors would either limit commercial use for everybody (including the authors) or would not be possible at all (when including materials with a copyleft license), effectively creating _silos_ of works which are mutually incompatible with each other. This is especially relevant for work types for which adaptations are created frequently, such as text, data, and source code. In order to avoid silos, one should only choose licenses which are compatible with the dominant copyleft license in the respective community [@Lammerhirt2017; @Wheeler2014]. If you would like to learn more about the different types of compatibility, we recommend you to read the article "A Quick Guide to Software Licensing for the Scientist-Programmer" by @Morin2012. The following diagram provides an overview of the compatibility of various licenses:
+Creative Commons also offers licenses which prevent commercial use of a work and/or sharing of derivative works. A free/open license, however, must allow creating derivative works and must allow exercising the rights granted by it _for any purpose_, including commercial use. Otherwise, creating adaptations from multiple works by different authors would either limit commercial use for everybody (including the authors) or would not be possible at all (when including materials with a copyleft license), effectively creating _silos_ of works which are mutually incompatible with each other. This is especially relevant for work types for which adaptations are created frequently, such as text, data, and source code. In order to avoid silos, one should only choose licenses which are compatible with the dominant copyleft license in the respective community [@Lammerhirt2017; @Wheeler2014]. If you would like to learn more about the different types of compatibility, we recommend you to read the article "A Quick Guide to Software Licensing for the Scientist-Programmer" by @Morin2012. The following diagram provides an overview of the compatibility of various licenses:
 
 !["Open data-capable license interoperability" by Robbie Morrison [-@Morrison2024] licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)](images/Morrison2024.jpg){.lightbox}
 :::
 
-## Which Licenses to Choose for a Project?
-
-So far, we only discussed how to choose a license for works _of one type_. But what if you want to share a project with all kinds of files? For example, the project from this tutorial (among other things) includes a data file, a manuscript file with intermingled code and writing, and an R file. And what if you also want to share files by others, as is the case with `apaquarto` which you may have installed in this project?
-
-The answer is that you need to indicate the license on a per-file or per-folder basis (rather than choosing one for the whole project). Sometimes, even different parts of a file might be subject to different licenses. The easiest approach is to make note of every foreign work included in your project and record its license. Then, multi-license all the remaining files, which are yours, under a code and a non-code license in parallel as explained in @tip-license-r.
-
 ## Applying the License
 
-Having selected the licenses of your choice -- again, you might need multiple ones depending on the types of works your project contains --, we encourage you to read through the full license text (or at least a legal summary) to understand their effect. Then, you can record the license of existing content and apply the licenses of your own contributions. Mostly, this just means indicating which file or folder is covered by which license, usually in the project's README (among other places), whose creation will be discussed [later](make_readme.qmd). Notably, no sort of registration is required.
+Having selected the license(s) of your choice, we encourage you to read through the full license text (or at least a legal summary) to understand the legal effect. The following applies to all licenses mentioned here:
 
-::: {#cau-license-versions .callout-caution}
-### License Versions Are Important
+- Applying the license is irrevocable. You may stop distributing your work, but everybody who already received it may continue to share it.
+- As an author applying the license, you are not bound by the license terms. You cannot, however, give others an exclusive license to your content anymore (as some journals needlessly demand, see @wrn-exclusive-rights).
+- By applying the license you share with others your right to use your work for commercial purposes, including selling it.
+- If you apply the license to an image, the license [may also apply](https://commons.wikimedia.org/wiki/Commons:Same_work) to higher resolution version of your image.
+- If you apply a copyleft license to an image, a document in which the image is used may not constitute a derivative work and, as such, may not be affected by the copyleft condition.
+- If you are a member of a collecting society^[in Germany: _Verwertungsgesellschaft_] or if the work was created as part of your job, you may not be able to apply the license. Check with your collecting society or your employer in that case.
 
-You may have noticed that we mostly refer to licenses using a name _and_ a version number. This is because the organizations that created the licenses sometimes publish updated versions to accommodate for developments in copyright law and the communities that use the licenses. For example, the Creative Commons licenses (that start with `CC`) were first published in 2002. Since then, the possibility to relicense under later ([v2.0](https://creativecommons.org/weblog/entry/4216#:~:text=Share%20Alike%20Across%20Borders), 2004) and compatible licenses ([v3.0](https://creativecommons.org/weblog/entry/7249), 2007) has been added, a 30-day window to correct license violations has been established to combat [copyleft trolls](https://commons.wikimedia.org/wiki/Commons:Copyleft_trolling), and _sui generis_ database rights are covered explicitly ([v4.0](https://creativecommons.org/weblog/entry/40768), 2013). There are many more [subtle differences between license versions](https://wiki.creativecommons.org/wiki/License_Versions), therefore it is important to indicate which license version exactly one is referring to, as the license of a work does not "update" automatically. CC0, officially introduced in 2009, is still at version [1.0](http://www.creativecommons.org/weblog/entry/13304).
+::: {#nte-situation-lmu .callout-note collapse="true"}
+### For Researchers at LMU Munich
 
-For the AGPLv3 it is even recommended to state whether a work is licensed under exactly the indicated version of the license or, alternatively, also under newer versions of the license [@Stallman2022Version].
+If you are an employee at LMU and your funder does not mandate the use of a particular license, the decision of which license to use lies with the holder of your chair (_Lehrstuhlinhaber\*in_). The only exception is the case that you developed an invention you would like to exploit commercially with a patent. Then, you are required to officially report your invention to the IP management team of the LMU, which will work out the next steps with you.
 :::
 
-For example, the `apaquarto` extension that you included in your project is a work by others.^[Unless you are the author of the `apaquarto` extension.] You need to indicate its license so that others know what they are allowed to do -- and, of course, you need to comply with any terms yourself, such as retaining the copyright notice.^[In this particular case, `apaquarto` is licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/), which does not require you to retain a copyright notice. In fact, it's an extremely permissive license.] In contrast, if it were not for this tutorial, the manuscript would contain your own work and you would need to indicate under which license you provide it to others.
+For Creative Commons licenses, the following is additionally important to know:
+
+- By applying the license you waive any moral, publicity, privacy, or other similar personality rights to the extent necessary to use the work.
+- The attribution requirement may be implemented "in any reasonable manner", possibly not conforming to your precise expectations.
+
+Applying a license to a work mostly just means indicating which file or folder is covered by which license(s) (no sort of registration is required). There are multiple standards on how to do so:
+
+- You have already learned about the file `LICENSE.txt`. It usually contains detailed information, such as full license texts. This is a practice propagated by GitHub, which provides instructions for and comparisons of many licenses via [ChooseALicense.com](https://choosealicense.com/licenses/).
+- A summary of the licensing situation is often given in a `README` file, whose creation will be discussed [later](make_readme.qmd).
+- If only parts of a file are covered by a certain license, then it might make sense to indicate this directly in the file.
+- The license of embedded elements (e.g., images) is either given directly beneath to where they are embedded, at the end of the respective page, or collectively on an separate page.
+- Individual programming languages also have their own way of stating which license a package is distributed under. For R packages, this is usually set by the field `License` in the file `DESCRIPTION` [@Wickham2023PackagesLicense].
+- Software projects often indicate the license in every file, following the [REUSE](https://reuse.software/) specification to make the choice of license machine-readable (explained in @nte-reuse).
+- The following two metadata standards for increasing citability also allow to indicate the license:
+  - [CodeMeta](https://codemeta.github.io/): All information are stored in a file called `codemeta.json`, which can be created [on their website](https://codemeta.github.io/codemeta-generator/). Alternatively, one can use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create this file.
+  - [Citation File Format](https://citation-file-format.github.io/) (CFF): Here, everything is stored in a file called `CITATION.cff`. It is used by GitHub to directly show a recommended citation for a repository. The file can be created [on their website](https://citation-file-format.github.io/cff-initializer-javascript/). Alternatively, the R package [`cffr`](https://cran.r-project.org/package=cffr) may be used for that purpose.
 
 ::: {#tip-license-help .callout-tip}
 ### Follow the Help Provided by the License Authors
@@ -223,18 +183,10 @@ For all the licenses recommended in this tutorial, the organizations that create
 Creative Commons even provides a range of considerations for licensors and licensees [@CC2013] and an [interactive chooser](https://creativecommons.org/choose/) which you can use to create text snippet that you can copy and paste to the desired location.
 :::
 
-While it is common to state the chosen license(s) in the README, usually one of the following actions is taken in addition:
-
-In the simplest case, one just creates a file called `LICENSE.txt` where the full text of the license is copied verbatim. This is a practice propagated by GitHub, which provides instructions for and comparisons of many licenses via [ChooseALicense.com](https://choosealicense.com/licenses/). However, if the project is not completely covered by one single license, this practice may become unwieldy. For example, if a project contains different types of works by different authors, the `LICENSE.txt` needs to detail which file is covered by which license(s), along with any copyright notices.
-
-Individual programming languages also have their own way of stating which license a package is distributed under. For R packages, this is usually set by the field `License` in the file `DESCRIPTION` [@Wickham2023PackagesLicense].
-
-Finally, @nte-reuse explains how to use the [REUSE](https://reuse.software/) specification to make the choice of license machine-readable. This is the approach we recommend taking.
-
 ::: {#nte-reuse .callout-note collapse="true"}
 ### Using REUSE to Record Licenses
 
-Every major free/open license has a unique [SPDX identifier](https://spdx.org/licenses/) which allows communicating the license choice unequivocally. We will be using that to indicate the license for every file in your project, along with the year of publication and the copyright holder. To do this, we add a comment to the beginning of every file and include the two tags `SPDX-FileCopyrightText` and `SPDX-License-Identifier`. How this works depends on the file type, as the syntax for a comment varies.
+Every major free/open license has a unique [SPDX identifier](https://spdx.org/licenses/) which allows communicating the license choice unequivocally. We will be using that to indicate the license for every file in your project folder, along with the year of publication and the copyright holder. To do this, we add a comment to the beginning of every file and include the two tags `SPDX-FileCopyrightText` and `SPDX-License-Identifier`. How this works depends on the file type, as the syntax for a comment varies.
 
 For example, if you previously created the file `create_data_dictionary.R`, you can now add the following comment to the beginning of the file, replacing `<YEAR>` and `<NAME>` with the current year and your name -- of course, you can also choose a different license:
 
@@ -317,15 +269,693 @@ reuse lint
 ```
 :::
 
-Regardless of how exactly the licenses are added to the project, this is a good opportunity to verify one last time that all third party content is provided to you under a free/open license and that you comply with it. Please add a license to your project now, either creating a file `LICENSE.txt` or following the REUSE standard.
+The manuscript you downloaded for this tutorial is made available to you under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) or (at your option) under the [Apache License\ 2.0](https://www.apache.org/licenses/LICENSE-2.0), as is all code in this tutorial (e.g., for creating the data dictionary). Therefore, you can apply any license to your modified version (as long as you follow the terms of the existing license). Please apply the license of your choice now, using any of the methods mentioned above (except the `README`, which we will cover later).
 
-## Wrap-up
+::: {#tip-manuscript-licensetxt .callout-tip collapse="true"}
+### Addition to `LICENSE.txt` (Solution)
 
-If you would like to learn more about copyright and licenses you might find the following resources interesting:
+In the following example, the files from this tutorial are used under the terms of CC0\ 1.0 and therefore, the requirements of the Apache license\ 2.0 need not be followed.
 
-- "Open Content -- A Practical Guide to Using Creative Commons Licences" by @Kreutzer2014
-- "Creative Commons Certificate for Educators, Academic Librarians, and Open Culture" by @CC2024Certificate
-- "Freie Software -- Zwischen Privat- und Gemeineigentum" by @Grassmuck2004
+The edited manuscript files have been multi-licensed under [AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html) (or later) or (at option of the reuser) under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/), while the data dictionary and its code are made available under CC0\ 1.0.
+
+```{.txt .code-overflow-wrap filename="LICENSE.txt"}
+The Quarto documents stored in "Manuscript.qmd", "Manuscript.tex", and "Manuscript.pdf" by Josephine Zerna, Christoph Scheffel, and <YOUR NAME> are available under AGPLv3 (or later) <https://www.gnu.org/licenses/agpl-3.0.html> or (at your option) under CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>.
+
+The data dictionary (stored in "data_dictionary.html") and the code used to create it (stored in "create_data_dictionary.R") by Florian Kohrt and <YOUR NAME> are available under CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>.
+```
+
+As the AGPLv3 requires reusers adding the full license text, we recommend to also copy it to `LICENSE.txt` (if not already in there).
+
+<details>
+<summary>Full text of AGPLv3</summary>
+
+```{.txt .code-overflow-wrap filename="LICENSE.txt"}
+                    GNU AFFERO GENERAL PUBLIC LICENSE
+                       Version 3, 19 November 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU Affero General Public License is a free, copyleft license for
+software and other kinds of works, specifically designed to ensure
+cooperation with the community in the case of network server software.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+our General Public Licenses are intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+them if you wish), that you receive source code or can get it if you
+want it, that you can change the software or use pieces of it in new
+free programs, and that you know you can do these things.
+
+  Developers that use our General Public Licenses protect your rights
+with two steps: (1) assert copyright on the software, and (2) offer
+you this License which gives you legal permission to copy, distribute
+and/or modify the software.
+
+  A secondary benefit of defending all users' freedom is that
+improvements made in alternate versions of the program, if they
+receive widespread use, become available for other developers to
+incorporate.  Many developers of free software are heartened and
+encouraged by the resulting cooperation.  However, in the case of
+software used on network servers, this result may fail to come about.
+The GNU General Public License permits making a modified version and
+letting the public access it on a server without ever releasing its
+source code to the public.
+
+  The GNU Affero General Public License is designed specifically to
+ensure that, in such cases, the modified source code becomes available
+to the community.  It requires the operator of a network server to
+provide the source code of the modified version running there to the
+users of that server.  Therefore, public use of a modified version, on
+a publicly accessible server, gives the public access to the source
+code of the modified version.
+
+  An older license, called the Affero General Public License and
+published by Affero, was designed to accomplish similar goals.  This is
+a different license, not a version of the Affero GPL, but Affero has
+released a new version of the Affero GPL which permits relicensing under
+this license.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+                       TERMS AND CONDITIONS
+
+  0. Definitions.
+
+  "This License" refers to version 3 of the GNU Affero General Public License.
+
+  "Copyright" also means copyright-like laws that apply to other kinds of
+works, such as semiconductor masks.
+
+  "The Program" refers to any copyrightable work licensed under this
+License.  Each licensee is addressed as "you".  "Licensees" and
+"recipients" may be individuals or organizations.
+
+  To "modify" a work means to copy from or adapt all or part of the work
+in a fashion requiring copyright permission, other than the making of an
+exact copy.  The resulting work is called a "modified version" of the
+earlier work or a work "based on" the earlier work.
+
+  A "covered work" means either the unmodified Program or a work based
+on the Program.
+
+  To "propagate" a work means to do anything with it that, without
+permission, would make you directly or secondarily liable for
+infringement under applicable copyright law, except executing it on a
+computer or modifying a private copy.  Propagation includes copying,
+distribution (with or without modification), making available to the
+public, and in some countries other activities as well.
+
+  To "convey" a work means any kind of propagation that enables other
+parties to make or receive copies.  Mere interaction with a user through
+a computer network, with no transfer of a copy, is not conveying.
+
+  An interactive user interface displays "Appropriate Legal Notices"
+to the extent that it includes a convenient and prominently visible
+feature that (1) displays an appropriate copyright notice, and (2)
+tells the user that there is no warranty for the work (except to the
+extent that warranties are provided), that licensees may convey the
+work under this License, and how to view a copy of this License.  If
+the interface presents a list of user commands or options, such as a
+menu, a prominent item in the list meets this criterion.
+
+  1. Source Code.
+
+  The "source code" for a work means the preferred form of the work
+for making modifications to it.  "Object code" means any non-source
+form of a work.
+
+  A "Standard Interface" means an interface that either is an official
+standard defined by a recognized standards body, or, in the case of
+interfaces specified for a particular programming language, one that
+is widely used among developers working in that language.
+
+  The "System Libraries" of an executable work include anything, other
+than the work as a whole, that (a) is included in the normal form of
+packaging a Major Component, but which is not part of that Major
+Component, and (b) serves only to enable use of the work with that
+Major Component, or to implement a Standard Interface for which an
+implementation is available to the public in source code form.  A
+"Major Component", in this context, means a major essential component
+(kernel, window system, and so on) of the specific operating system
+(if any) on which the executable work runs, or a compiler used to
+produce the work, or an object code interpreter used to run it.
+
+  The "Corresponding Source" for a work in object code form means all
+the source code needed to generate, install, and (for an executable
+work) run the object code and to modify the work, including scripts to
+control those activities.  However, it does not include the work's
+System Libraries, or general-purpose tools or generally available free
+programs which are used unmodified in performing those activities but
+which are not part of the work.  For example, Corresponding Source
+includes interface definition files associated with source files for
+the work, and the source code for shared libraries and dynamically
+linked subprograms that the work is specifically designed to require,
+such as by intimate data communication or control flow between those
+subprograms and other parts of the work.
+
+  The Corresponding Source need not include anything that users
+can regenerate automatically from other parts of the Corresponding
+Source.
+
+  The Corresponding Source for a work in source code form is that
+same work.
+
+  2. Basic Permissions.
+
+  All rights granted under this License are granted for the term of
+copyright on the Program, and are irrevocable provided the stated
+conditions are met.  This License explicitly affirms your unlimited
+permission to run the unmodified Program.  The output from running a
+covered work is covered by this License only if the output, given its
+content, constitutes a covered work.  This License acknowledges your
+rights of fair use or other equivalent, as provided by copyright law.
+
+  You may make, run and propagate covered works that you do not
+convey, without conditions so long as your license otherwise remains
+in force.  You may convey covered works to others for the sole purpose
+of having them make modifications exclusively for you, or provide you
+with facilities for running those works, provided that you comply with
+the terms of this License in conveying all material for which you do
+not control copyright.  Those thus making or running the covered works
+for you must do so exclusively on your behalf, under your direction
+and control, on terms that prohibit them from making any copies of
+your copyrighted material outside their relationship with you.
+
+  Conveying under any other circumstances is permitted solely under
+the conditions stated below.  Sublicensing is not allowed; section 10
+makes it unnecessary.
+
+  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+
+  No covered work shall be deemed part of an effective technological
+measure under any applicable law fulfilling obligations under article
+11 of the WIPO copyright treaty adopted on 20 December 1996, or
+similar laws prohibiting or restricting circumvention of such
+measures.
+
+  When you convey a covered work, you waive any legal power to forbid
+circumvention of technological measures to the extent such circumvention
+is effected by exercising rights under this License with respect to
+the covered work, and you disclaim any intention to limit operation or
+modification of the work as a means of enforcing, against the work's
+users, your or third parties' legal rights to forbid circumvention of
+technological measures.
+
+  4. Conveying Verbatim Copies.
+
+  You may convey verbatim copies of the Program's source code as you
+receive it, in any medium, provided that you conspicuously and
+appropriately publish on each copy an appropriate copyright notice;
+keep intact all notices stating that this License and any
+non-permissive terms added in accord with section 7 apply to the code;
+keep intact all notices of the absence of any warranty; and give all
+recipients a copy of this License along with the Program.
+
+  You may charge any price or no price for each copy that you convey,
+and you may offer support or warranty protection for a fee.
+
+  5. Conveying Modified Source Versions.
+
+  You may convey a work based on the Program, or the modifications to
+produce it from the Program, in the form of source code under the
+terms of section 4, provided that you also meet all of these conditions:
+
+    a) The work must carry prominent notices stating that you modified
+    it, and giving a relevant date.
+
+    b) The work must carry prominent notices stating that it is
+    released under this License and any conditions added under section
+    7.  This requirement modifies the requirement in section 4 to
+    "keep intact all notices".
+
+    c) You must license the entire work, as a whole, under this
+    License to anyone who comes into possession of a copy.  This
+    License will therefore apply, along with any applicable section 7
+    additional terms, to the whole of the work, and all its parts,
+    regardless of how they are packaged.  This License gives no
+    permission to license the work in any other way, but it does not
+    invalidate such permission if you have separately received it.
+
+    d) If the work has interactive user interfaces, each must display
+    Appropriate Legal Notices; however, if the Program has interactive
+    interfaces that do not display Appropriate Legal Notices, your
+    work need not make them do so.
+
+  A compilation of a covered work with other separate and independent
+works, which are not by their nature extensions of the covered work,
+and which are not combined with it such as to form a larger program,
+in or on a volume of a storage or distribution medium, is called an
+"aggregate" if the compilation and its resulting copyright are not
+used to limit the access or legal rights of the compilation's users
+beyond what the individual works permit.  Inclusion of a covered work
+in an aggregate does not cause this License to apply to the other
+parts of the aggregate.
+
+  6. Conveying Non-Source Forms.
+
+  You may convey a covered work in object code form under the terms
+of sections 4 and 5, provided that you also convey the
+machine-readable Corresponding Source under the terms of this License,
+in one of these ways:
+
+    a) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by the
+    Corresponding Source fixed on a durable physical medium
+    customarily used for software interchange.
+
+    b) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by a
+    written offer, valid for at least three years and valid for as
+    long as you offer spare parts or customer support for that product
+    model, to give anyone who possesses the object code either (1) a
+    copy of the Corresponding Source for all the software in the
+    product that is covered by this License, on a durable physical
+    medium customarily used for software interchange, for a price no
+    more than your reasonable cost of physically performing this
+    conveying of source, or (2) access to copy the
+    Corresponding Source from a network server at no charge.
+
+    c) Convey individual copies of the object code with a copy of the
+    written offer to provide the Corresponding Source.  This
+    alternative is allowed only occasionally and noncommercially, and
+    only if you received the object code with such an offer, in accord
+    with subsection 6b.
+
+    d) Convey the object code by offering access from a designated
+    place (gratis or for a charge), and offer equivalent access to the
+    Corresponding Source in the same way through the same place at no
+    further charge.  You need not require recipients to copy the
+    Corresponding Source along with the object code.  If the place to
+    copy the object code is a network server, the Corresponding Source
+    may be on a different server (operated by you or a third party)
+    that supports equivalent copying facilities, provided you maintain
+    clear directions next to the object code saying where to find the
+    Corresponding Source.  Regardless of what server hosts the
+    Corresponding Source, you remain obligated to ensure that it is
+    available for as long as needed to satisfy these requirements.
+
+    e) Convey the object code using peer-to-peer transmission, provided
+    you inform other peers where the object code and Corresponding
+    Source of the work are being offered to the general public at no
+    charge under subsection 6d.
+
+  A separable portion of the object code, whose source code is excluded
+from the Corresponding Source as a System Library, need not be
+included in conveying the object code work.
+
+  A "User Product" is either (1) a "consumer product", which means any
+tangible personal property which is normally used for personal, family,
+or household purposes, or (2) anything designed or sold for incorporation
+into a dwelling.  In determining whether a product is a consumer product,
+doubtful cases shall be resolved in favor of coverage.  For a particular
+product received by a particular user, "normally used" refers to a
+typical or common use of that class of product, regardless of the status
+of the particular user or of the way in which the particular user
+actually uses, or expects or is expected to use, the product.  A product
+is a consumer product regardless of whether the product has substantial
+commercial, industrial or non-consumer uses, unless such uses represent
+the only significant mode of use of the product.
+
+  "Installation Information" for a User Product means any methods,
+procedures, authorization keys, or other information required to install
+and execute modified versions of a covered work in that User Product from
+a modified version of its Corresponding Source.  The information must
+suffice to ensure that the continued functioning of the modified object
+code is in no case prevented or interfered with solely because
+modification has been made.
+
+  If you convey an object code work under this section in, or with, or
+specifically for use in, a User Product, and the conveying occurs as
+part of a transaction in which the right of possession and use of the
+User Product is transferred to the recipient in perpetuity or for a
+fixed term (regardless of how the transaction is characterized), the
+Corresponding Source conveyed under this section must be accompanied
+by the Installation Information.  But this requirement does not apply
+if neither you nor any third party retains the ability to install
+modified object code on the User Product (for example, the work has
+been installed in ROM).
+
+  The requirement to provide Installation Information does not include a
+requirement to continue to provide support service, warranty, or updates
+for a work that has been modified or installed by the recipient, or for
+the User Product in which it has been modified or installed.  Access to a
+network may be denied when the modification itself materially and
+adversely affects the operation of the network or violates the rules and
+protocols for communication across the network.
+
+  Corresponding Source conveyed, and Installation Information provided,
+in accord with this section must be in a format that is publicly
+documented (and with an implementation available to the public in
+source code form), and must require no special password or key for
+unpacking, reading or copying.
+
+  7. Additional Terms.
+
+  "Additional permissions" are terms that supplement the terms of this
+License by making exceptions from one or more of its conditions.
+Additional permissions that are applicable to the entire Program shall
+be treated as though they were included in this License, to the extent
+that they are valid under applicable law.  If additional permissions
+apply only to part of the Program, that part may be used separately
+under those permissions, but the entire Program remains governed by
+this License without regard to the additional permissions.
+
+  When you convey a copy of a covered work, you may at your option
+remove any additional permissions from that copy, or from any part of
+it.  (Additional permissions may be written to require their own
+removal in certain cases when you modify the work.)  You may place
+additional permissions on material, added by you to a covered work,
+for which you have or can give appropriate copyright permission.
+
+  Notwithstanding any other provision of this License, for material you
+add to a covered work, you may (if authorized by the copyright holders of
+that material) supplement the terms of this License with terms:
+
+    a) Disclaiming warranty or limiting liability differently from the
+    terms of sections 15 and 16 of this License; or
+
+    b) Requiring preservation of specified reasonable legal notices or
+    author attributions in that material or in the Appropriate Legal
+    Notices displayed by works containing it; or
+
+    c) Prohibiting misrepresentation of the origin of that material, or
+    requiring that modified versions of such material be marked in
+    reasonable ways as different from the original version; or
+
+    d) Limiting the use for publicity purposes of names of licensors or
+    authors of the material; or
+
+    e) Declining to grant rights under trademark law for use of some
+    trade names, trademarks, or service marks; or
+
+    f) Requiring indemnification of licensors and authors of that
+    material by anyone who conveys the material (or modified versions of
+    it) with contractual assumptions of liability to the recipient, for
+    any liability that these contractual assumptions directly impose on
+    those licensors and authors.
+
+  All other non-permissive additional terms are considered "further
+restrictions" within the meaning of section 10.  If the Program as you
+received it, or any part of it, contains a notice stating that it is
+governed by this License along with a term that is a further
+restriction, you may remove that term.  If a license document contains
+a further restriction but permits relicensing or conveying under this
+License, you may add to a covered work material governed by the terms
+of that license document, provided that the further restriction does
+not survive such relicensing or conveying.
+
+  If you add terms to a covered work in accord with this section, you
+must place, in the relevant source files, a statement of the
+additional terms that apply to those files, or a notice indicating
+where to find the applicable terms.
+
+  Additional terms, permissive or non-permissive, may be stated in the
+form of a separately written license, or stated as exceptions;
+the above requirements apply either way.
+
+  8. Termination.
+
+  You may not propagate or modify a covered work except as expressly
+provided under this License.  Any attempt otherwise to propagate or
+modify it is void, and will automatically terminate your rights under
+this License (including any patent licenses granted under the third
+paragraph of section 11).
+
+  However, if you cease all violation of this License, then your
+license from a particular copyright holder is reinstated (a)
+provisionally, unless and until the copyright holder explicitly and
+finally terminates your license, and (b) permanently, if the copyright
+holder fails to notify you of the violation by some reasonable means
+prior to 60 days after the cessation.
+
+  Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+  Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, you do not qualify to receive new licenses for the same
+material under section 10.
+
+  9. Acceptance Not Required for Having Copies.
+
+  You are not required to accept this License in order to receive or
+run a copy of the Program.  Ancillary propagation of a covered work
+occurring solely as a consequence of using peer-to-peer transmission
+to receive a copy likewise does not require acceptance.  However,
+nothing other than this License grants you permission to propagate or
+modify any covered work.  These actions infringe copyright if you do
+not accept this License.  Therefore, by modifying or propagating a
+covered work, you indicate your acceptance of this License to do so.
+
+  10. Automatic Licensing of Downstream Recipients.
+
+  Each time you convey a covered work, the recipient automatically
+receives a license from the original licensors, to run, modify and
+propagate that work, subject to this License.  You are not responsible
+for enforcing compliance by third parties with this License.
+
+  An "entity transaction" is a transaction transferring control of an
+organization, or substantially all assets of one, or subdividing an
+organization, or merging organizations.  If propagation of a covered
+work results from an entity transaction, each party to that
+transaction who receives a copy of the work also receives whatever
+licenses to the work the party's predecessor in interest had or could
+give under the previous paragraph, plus a right to possession of the
+Corresponding Source of the work from the predecessor in interest, if
+the predecessor has it or can get it with reasonable efforts.
+
+  You may not impose any further restrictions on the exercise of the
+rights granted or affirmed under this License.  For example, you may
+not impose a license fee, royalty, or other charge for exercise of
+rights granted under this License, and you may not initiate litigation
+(including a cross-claim or counterclaim in a lawsuit) alleging that
+any patent claim is infringed by making, using, selling, offering for
+sale, or importing the Program or any portion of it.
+
+  11. Patents.
+
+  A "contributor" is a copyright holder who authorizes use under this
+License of the Program or a work on which the Program is based.  The
+work thus licensed is called the contributor's "contributor version".
+
+  A contributor's "essential patent claims" are all patent claims
+owned or controlled by the contributor, whether already acquired or
+hereafter acquired, that would be infringed by some manner, permitted
+by this License, of making, using, or selling its contributor version,
+but do not include claims that would be infringed only as a
+consequence of further modification of the contributor version.  For
+purposes of this definition, "control" includes the right to grant
+patent sublicenses in a manner consistent with the requirements of
+this License.
+
+  Each contributor grants you a non-exclusive, worldwide, royalty-free
+patent license under the contributor's essential patent claims, to
+make, use, sell, offer for sale, import and otherwise run, modify and
+propagate the contents of its contributor version.
+
+  In the following three paragraphs, a "patent license" is any express
+agreement or commitment, however denominated, not to enforce a patent
+(such as an express permission to practice a patent or covenant not to
+sue for patent infringement).  To "grant" such a patent license to a
+party means to make such an agreement or commitment not to enforce a
+patent against the party.
+
+  If you convey a covered work, knowingly relying on a patent license,
+and the Corresponding Source of the work is not available for anyone
+to copy, free of charge and under the terms of this License, through a
+publicly available network server or other readily accessible means,
+then you must either (1) cause the Corresponding Source to be so
+available, or (2) arrange to deprive yourself of the benefit of the
+patent license for this particular work, or (3) arrange, in a manner
+consistent with the requirements of this License, to extend the patent
+license to downstream recipients.  "Knowingly relying" means you have
+actual knowledge that, but for the patent license, your conveying the
+covered work in a country, or your recipient's use of the covered work
+in a country, would infringe one or more identifiable patents in that
+country that you have reason to believe are valid.
+
+  If, pursuant to or in connection with a single transaction or
+arrangement, you convey, or propagate by procuring conveyance of, a
+covered work, and grant a patent license to some of the parties
+receiving the covered work authorizing them to use, propagate, modify
+or convey a specific copy of the covered work, then the patent license
+you grant is automatically extended to all recipients of the covered
+work and works based on it.
+
+  A patent license is "discriminatory" if it does not include within
+the scope of its coverage, prohibits the exercise of, or is
+conditioned on the non-exercise of one or more of the rights that are
+specifically granted under this License.  You may not convey a covered
+work if you are a party to an arrangement with a third party that is
+in the business of distributing software, under which you make payment
+to the third party based on the extent of your activity of conveying
+the work, and under which the third party grants, to any of the
+parties who would receive the covered work from you, a discriminatory
+patent license (a) in connection with copies of the covered work
+conveyed by you (or copies made from those copies), or (b) primarily
+for and in connection with specific products or compilations that
+contain the covered work, unless you entered into that arrangement,
+or that patent license was granted, prior to 28 March 2007.
+
+  Nothing in this License shall be construed as excluding or limiting
+any implied license or other defenses to infringement that may
+otherwise be available to you under applicable patent law.
+
+  12. No Surrender of Others' Freedom.
+
+  If conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot convey a
+covered work so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you may
+not convey it at all.  For example, if you agree to terms that obligate you
+to collect a royalty for further conveying from those to whom you convey
+the Program, the only way you could satisfy both those terms and this
+License would be to refrain entirely from conveying the Program.
+
+  13. Remote Network Interaction; Use with the GNU General Public License.
+
+  Notwithstanding any other provision of this License, if you modify the
+Program, your modified version must prominently offer all users
+interacting with it remotely through a computer network (if your version
+supports such interaction) an opportunity to receive the Corresponding
+Source of your version by providing access to the Corresponding Source
+from a network server at no charge, through some standard or customary
+means of facilitating copying of software.  This Corresponding Source
+shall include the Corresponding Source for any work covered by version 3
+of the GNU General Public License that is incorporated pursuant to the
+following paragraph.
+
+  Notwithstanding any other provision of this License, you have
+permission to link or combine any covered work with a work licensed
+under version 3 of the GNU General Public License into a single
+combined work, and to convey the resulting work.  The terms of this
+License will continue to apply to the part which is the covered work,
+but the work with which it is combined will remain governed by version
+3 of the GNU General Public License.
+
+  14. Revised Versions of this License.
+
+  The Free Software Foundation may publish revised and/or new versions of
+the GNU Affero General Public License from time to time.  Such new versions
+will be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+  Each version is given a distinguishing version number.  If the
+Program specifies that a certain numbered version of the GNU Affero General
+Public License "or any later version" applies to it, you have the
+option of following the terms and conditions either of that numbered
+version or of any later version published by the Free Software
+Foundation.  If the Program does not specify a version number of the
+GNU Affero General Public License, you may choose any version ever published
+by the Free Software Foundation.
+
+  If the Program specifies that a proxy can decide which future
+versions of the GNU Affero General Public License can be used, that proxy's
+public statement of acceptance of a version permanently authorizes you
+to choose that version for the Program.
+
+  Later license versions may give you additional or different
+permissions.  However, no additional obligations are imposed on any
+author or copyright holder as a result of your choosing to follow a
+later version.
+
+  15. Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+  16. Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+  17. Interpretation of Sections 15 and 16.
+
+  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
+
+                     END OF TERMS AND CONDITIONS
+
+            How to Apply These Terms to Your New Programs
+
+  If you develop a new program, and you want it to be of the greatest
+possible use to the public, the best way to achieve this is to make it
+free software which everyone can redistribute and change under these terms.
+
+  To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+state the exclusion of warranty; and each file should have at least
+the "copyright" line and a pointer to where the full notice is found.
+
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) <year>  <name of author>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Also add information on how to contact you by electronic and paper mail.
+
+  If your software can interact with users remotely through a computer
+network, you should also make sure that it provides a way for users to
+get its source.  For example, if your program is a web application, its
+interface could display a "Source" link that leads users to an archive
+of the code.  There are many ways you could offer source, and different
+solutions will be better for different programs; see section 13 for the
+specific requirements.
+
+  You should also get your employer (if you work as a programmer) or school,
+if any, to sign a "copyright disclaimer" for the program, if necessary.
+For more information on this, and how to apply and follow the GNU AGPL, see
+<https://www.gnu.org/licenses/>.
+
+```
+
+</details>
+:::
 
 ## Additional Figures {.appendix}
 
@@ -338,16 +968,16 @@ flowchart TB
   regulation --"Exists"--> follow_existing_norms["<em>Follow that</em>"]
   regulation --"Does not<br>exist"--> type("Work type?")
   
-  type --"Software"--> code_sa("Attribution?<br>Add license text?<br>State changes?<br>Disclose code?<br>Copyleft?")
-  type --"Writing, image, audio, video"--> nocode_cc("Attribution?<br>State changes?<br>Anti-DRM?<br>Copyleft?")
+  type --"Software"--> code_sa("Attribution?<br>Indicate license?<br>Add license text?<br>State changes?<br>Disclose code?<br>Copyleft?")
+  type --"Writing, image, audio, video"--> nocode_cc("Attribution?<br>Indicate license?<br>State changes?<br>Anti-DRM?<br>Copyleft?")
   
   code_sa --"Attribution &<br>Add license text &<br>State changes"--> apache["Apache 2.0"]
-  code_sa --"Attribution &<br>Disclose code &<br>Weak copyleft"--> mpl["MPL 2.0"]
+  code_sa --"Attribution &<br>Indicate license &<br>Disclose code &<br>Weak copyleft"--> mpl["MPL 2.0"]
   code_sa --"Attribution &<br>Add license text &<br>State changes &<br>Disclose code &<br>Strong copyleft"--> agpl["AGPLv3"]
   
   nocode_cc --"Neither"--> cc0["CC0 1.0"]
-  nocode_cc --"Attribution &<br>State changes &<br>Anti-DRM"--> cc_by["CC BY 4.0"]
-  nocode_cc --"Attribution &<br>State changes &<br>Anti-DRM &<br>Copyleft"--> cc_by_sa["CC BY-SA 4.0"]
+  nocode_cc --"Attribution &<br>Indicate license &<br>State changes &<br>Anti-DRM"--> cc_by["CC BY 4.0"]
+  nocode_cc --"Attribution &<br>Indicate license &<br>State changes &<br>Anti-DRM &<br>Copyleft"--> cc_by_sa["CC BY-SA 4.0"]
   
   click apache href "https://choosealicense.com/licenses/apache-2.0/"
   click mpl href "https://choosealicense.com/licenses/mpl-2.0/"
@@ -383,11 +1013,11 @@ flowchart TB
   use_existing_license_content --> switch_license
   
   cc0_content_metadata --> cc0_db["CC0 1.0"]
-  switch_license --"CC0 or<br>non-CC license"--> sa("Attribution?<br>Anti-DRM?<br>Copyleft?")
+  switch_license --"CC0 or<br>non-CC license"--> sa("Attribution?<br>Indicate license?<br>Anti-DRM?<br>Copyleft?")
   switch_license --"CC BY or<br>CC BY-SA"--> same["<em>Same license for DB</em>"]
   
   sa --"Neither"--> cc0_db
-  sa --"Attribution &<br>Anti-DRM &<br>Copyleft"--> odbl["ODbL 1.0"]
+  sa --"Attribution &<br>Indicate license &<br>Anti-DRM &<br>Copyleft"--> odbl["ODbL 1.0"]
   
   %% the following link is only added to have terminal nodes on the same level
   sa ~~~ same

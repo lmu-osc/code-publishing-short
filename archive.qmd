@@ -4,7 +4,7 @@ title: "Archive Your Project"
 
 ## Where to Deposit Software
 
-The project is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder [excerpt from @Jackson2018, with footnotes removed, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
+The project folder is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder [excerpt from @Jackson2018, with footnotes removed, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
 
 > __Does the digital repository give you a unique persistent digital identifier for your deposit?__
 > 
@@ -37,9 +37,9 @@ The project is now ready to be deposited for long-term archival. When considerin
 
 Additional guidance is provided by @Daquin2023, @Garijo2022, and @ScienceEurope2021. You can use the registry of research data repositories [re3data.org](https://www.re3data.org/) to find one that matches your criteria. We think that the [Software Heritage code archive](https://www.softwareheritage.org/) and [Zenodo](https://zenodo.org/) are good choices, but don't forget to also check your local institutions for recommendations.
 
-## Using Zenodo to Archive Your Project
+## Using Zenodo to Archive Your Project Folder
 
-In the following we will demonstrate how to use Zenodo to archive one's project and obtain a DOI.
+In the following we will demonstrate how to use Zenodo to archive one's project folder and obtain a DOI.
 
 ::: {#cau-sandbox .callout-caution}
 ### Zenodo Sandbox
@@ -55,9 +55,9 @@ Now you can follow the guide "[Create new upload](https://help.zenodo.org/docs/d
 - __Fill in metadata__
   - __Digital Object Identifier__ (DOI): Usually, you will want a DOI, therefore you need to choose _No_ for the question whether you already have a DOI for this upload, and click on _Get a DOI now!_.
   - __Resource type__: Select the most appropriate one, for example, _Publication / Preprint_.
-  - __Licenses__: If your project only contains content by you and if you previously only chose one license, you can select that by choosing _Add standard_. Otherwise, click on _Add custom_ and describe how each file is licensed. If you have been using REUSE to record license information, you can run enter `SPDX Document` as title and run the reuse tool with `reuse spdx -o reuse.spdx` to create the file `reuse.spdx`. Then you can paste the content of `reuse.spdx` into the description field of the custom license as it contains information about the license of each file.
+  - __Licenses__: If your project folder only contains content by you and if you previously only chose one license, you can select that by choosing _Add standard_. Otherwise, click on _Add custom_ and describe how each file is licensed. If you have been using REUSE to record license information, you can run enter `SPDX Document` as title and run the reuse tool with `reuse spdx -o reuse.spdx` to create the file `reuse.spdx`. Then you can paste the content of `reuse.spdx` into the description field of the custom license as it contains information about the license of each file.
 
-If you previously uploaded your project to a public Git repository (which we didn't cover during this tutorial), you could also add the new DOI to your README, for example, under the section "Citation".
+If you previously uploaded your project folder to a public Git repository (which we didn't cover during this tutorial), you could also add the new DOI to your README, for example, under the section "Citation".
 
 ## Final Remarks
 

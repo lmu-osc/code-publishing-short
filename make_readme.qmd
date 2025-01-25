@@ -5,7 +5,7 @@ engine: knitr
 
 ## What Does a README Contain?
 
-Once you have prepared your project and settled on a license, it is time to add a final touch. Imagine returning to your project in five years, having forgotten most of the details of what you did exactly. What would be useful to know in order to quickly understand what is going on in the project? This is what needs to be described in the README. While you could just start writing along, most READMEs have some sections in common which we describe below.
+Having settled on a license, it is time to add a final touch. Imagine returning to your project in five years, having forgotten most of the details of what you did exactly. What would be useful to know in order to quickly understand what is going on in the project? This is what needs to be described in the README. While you could just start writing along, most READMEs have some sections in common which we describe below.
 
 Name
 
@@ -25,11 +25,11 @@ Visuals
 
 Installation/Dependencies
 
-:   What steps need to be taken to run the project? What software needs to be installed? R itself and the R packages are already documented as this project uses `renv`. Therefore you can focus on all other dependencies, such as the system dependencies of R packages as well as the version of Quarto.^[As of August 2024, a proposal for `renv` to record the version of Quarto has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] Also, don't forget to mention software that you have used for any manual steps. See @sec-dependencies for additional information.
+:   What steps need to be taken to run the project? What software needs to be installed? R itself and the R packages are already documented as this project uses `renv`. Therefore you can focus on all other dependencies, such as the system dependencies of R packages as well as the version of Quarto.^[As of August 2024, a proposal for `renv` to record the version of Quarto has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] Also, don't forget to mention software that you have used for any manual steps. See @sec-dependencies for additional information. It may make sense to provide these information in the README even if you already cite all programs and their version numbers in your manuscript.
 
 Usage
 
-:   Which files does the project contain? How are they organized? How can one run the project -- is there a master script or a particular order in which any scripts need to be executed? How long does it take to run all scripts? Is there additional documentation available?
+:   Which files does the project folder contain? How are they organized? How can one run the project -- is there a master script or a particular order in which any scripts need to be executed? How long does it take to run all scripts? Is there additional documentation available?
 
 Support
 
@@ -45,11 +45,11 @@ Authors
 
 Citation
 
-:   Is there a recommended way to cite this project? Is there a published article associated with it that you would like to have cited? We recommend to increase citability by using the [CodeMeta generator](https://codemeta.github.io/codemeta-generator/) to create a file called `codemeta.json`. Alternatively, one can also use the R package [`codemetar`](https://docs.ropensci.org/codemetar/) to create this file. Then, put it into the project folder. Another common standard is the [Citation File Format](https://citation-file-format.github.io/) (CFF), which is an equally valid option.
+:   Is there a recommended way to cite this project? Is there a published article associated with it that you would like to have cited?
 
 License
 
-:   Under which licenses are the works in this project available?
+:   Under which licenses are the works in this project folder available?
 
 ## Installation/Dependencies {#sec-dependencies}
 
@@ -69,22 +69,41 @@ renv::dependencies()$Package |>
 The output may look like the following:
 
 ```txt
-── Install scripts ─────────────────────── 
-dnf install -y make pandoc
+Finding R package dependencies ... Done!
+── Install scripts ──────────────────────── Fedora 40 ── 
+dnf install -y make pandoc libcurl-devel \
+  openssl-devel libicu-devel v8-devel libxml2-devel \
+  git
 
-── Packages and their system dependencies 
+── Packages and their system dependencies ──────────────
+blastula  – pandoc
+curl      – libcurl-devel, openssl-devel
 fs        – make
 knitr     – pandoc
+openssl   – openssl-devel
+remotes   – git
 rmarkdown – pandoc
 sass      – make
+stringi   – libicu-devel
+V8        – v8-devel
+xml2      – libxml2-devel
 ```
 
-We can see that `make` and `pandoc` were identified as system dependencies. Often, one can obtain their version by running them with the `--version` argument:
+We can see that the programs `make`, `pandoc`, and `git` were identified as system dependencies. Often, one can obtain their version by running them with the `--version` argument:
 
 ```{.bash filename="Terminal"}
 make --version
 pandoc --version
+git --version
 ```
+
+The other system dependencies are libraries, and the method to identify the installed version varies between operating systems. For example, on Fedora Linux, one can run the following:
+
+```{.bash .code-overflow-wrap filename="Terminal"}
+rpm -q libcurl-devel openssl-devel libicu-devel v8-devel libxml2-devel
+```
+
+However, they are only relevant if the R packages were installed from source, rather than as binary package.
 
 We also know that we need Quarto to create the PDF, so let's find out its version as well:
 
@@ -180,7 +199,7 @@ All R packages that this project requires are managed using [`renv`](https://cra
 install.packages("renv")
 ```
 
-Next, one can open a new R session in the root directory of this project and run the following, which should install all required R packages at their recorded versions:
+Next, one can open a new R session in the root folder of this project and run the following, which should install all required R packages at their recorded versions:
 
 ```r
 renv::restore()
@@ -194,10 +213,10 @@ renv::restore()
 `````{.md .code-overflow-wrap filename="README.md"}
 ## Usage
 
-The most important file in this project is `Manuscript.qmd` which contains the text of the article as well as the code for its computations. It is accompanied by the following files:
+The most important file in this project folder is `Manuscript.qmd` which contains the text of the article as well as the code for its computations. It is accompanied by the following files:
 
 - `Bibliography.bib`: bibliographic references used in the manuscript
-- `data.csv`: a data set containing the simplified `palmerpenguins` data created using `write.csv(palmerpenguins::penguins, "dat.csv", row.names = FALSE)`
+- `data.csv`: a data set containing the simplified `palmerpenguins` data
 - `data_dictionary.html`: a dictionary to the data file, created using `create_data_dictionary.R`
 
 The folder `_extensions` contains the `apaquarto` extension which is used to typeset the PDF accoording to APA guidelines.
@@ -213,21 +232,25 @@ quarto render Manuscript.qmd
 ::: {#tip-citation .callout-tip collapse="true"}
 ### Citation
 
+You need to add your name in the following example:
+
 ```{.md .code-overflow-wrap filename="README.md"}
 ## Citation
 
 Please cite this draft as follows:
 
-> Zerna & Scheffel (2024): "A Study on Penguins: A Minimal Reproducible Example". Unpublished manuscript.
+> Zerna, Scheffel, & <YOUR NAME> (2024): "A Study on Penguins: A Minimal Reproducible Example". Unpublished manuscript.
 ```
 :::
 
 ::: {#tip-citation .callout-tip collapse="true"}
 ### License
 
+Of course, you would use the same license for the manuscript that you chose in the previous step. You need to add your name in the following example:
+
 ```{.md .code-overflow-wrap filename="README.md"}
 ## License
 
-The manuscript file and the bibliographic references are made available by us under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/). The data set by Kristen Gorman has been published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). `apaquarto` has also been published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). All other files in this project are available under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+The manuscript files `Manuscript.qmd`, `Manuscript.tex`, and `Manuscript.pdf` by Josephine Zerna, Christoph Scheffel, and <YOUR NAME> are available under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/) or (at your option) under the [AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html) (or later). For further copyright information, see `LICENSE.txt`.
 ```
 :::

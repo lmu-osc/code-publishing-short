@@ -41,6 +41,8 @@ Click on _Create Project_. Your RStudio window should now look similar to this:
 
 If, like in the image, a Quarto file with some demo content was opened automatically, you can close and delete it, for example, using RStudio's file manager.
 
+Throughout this tutorial, you will need to run both R code and system commands (primarily `git` and `quarto`). Within RStudio, R code can be run by going to the tab _Console_, while system commands are executed in the tab _Terminal_. We also indicate where to run your code directly above each code snippet.
+
 Make sure that your project is in a consistent state according to `renv` by running:
 
 ```{.r filename="Console"}
@@ -52,6 +54,10 @@ If it reports packages that are not used, synchronize the lock file using:
 ```{.r filename="Console"}
 renv::snapshot()
 ```
+
+::: {#tip-renv-status .callout-tip}
+Always run `renv::status()` and resolve any inconsistencies before you commit code to your project. This way, every commit represents a working state of your project.
+:::
 
 ::: {#nte-terminal .callout-note collapse="true"}
 ### Without RStudio
@@ -66,7 +72,7 @@ git init
 git checkout -b main
 ```
 
-Then, one can open an R session by simply typing `R` into the terminal. Next, make sure that `getwd()` indicates that the working directory is `code-publishing-exercise`. Then, initialize `renv`:
+Then, one can open an R session by simply typing `R` into the terminal. Next, make sure that `getwd()` indicates that the working directory is `code-publishing-exercise`. Now, initialize `renv`:
 
 ```{.r filename="Console"}
 renv::init()
@@ -105,280 +111,23 @@ Then, commit again.
 
 ## Decide on Structure
 
-Before adding your project files, it is helpful to decide on a directory structure, that is, how to call each file and where to put it. In general, the directory structure should facilitate understanding a project by breaking it into logical chunks. There is no single best solution, as a good structure depends on where a project's complexity lies. However, it is usually helpful if the different files and folders reflect the execution order. For example, if there are multiple data processing stages, one can possibly differentiate input (raw data), intermediate (processed data), and output files (e.g., figures) and put them into separate folders. Similarly, the corresponding code files (e.g., preparation, modeling, visualization) can be prefixed with increasing numbers.
+Before adding your project files, it is helpful to decide on a folder structure, that is, how to call each file and where to put it. In general, the folder structure should facilitate understanding a project by breaking it into logical chunks. There is no single best solution, as a good structure depends on where a project's complexity lies. However, it is usually helpful if the different files and folders reflect the execution order. For example, if there are multiple data processing stages, one can possibly differentiate input (raw data), intermediate (processed data), and output files (e.g., figures) and put them into separate folders. Similarly, the corresponding code files (e.g., preparation, modeling, visualization) can be prefixed with increasing numbers.
 
-Luckily, there are already numerous proposals for how to organize one's project files, both general [e.g., @Wilson2017; @TIER4] as well as specific to a particular programming language [e.g., @Marwick2018; @Vuorre2021] or journal [@Vilhuber2021]. We recommend you to follow the standards of your field.
+Luckily, there are already numerous proposals for how to organize one's project files, both general [e.g., @Wilson2017; @TIER4] as well as specific to a particular programming language [e.g., @Marwick2018; @Vuorre2021; @ArayaSalas2024] or journal [@Vilhuber2021]. We recommend you to follow the standards of your field.
 
-For the purpose of this tutorial, we will provide you with a data set and a corresponding analysis. They are simple enough to be put together in the root folder of your project.
+In this simple project, we will explore differences in bill length between male and female penguins. You can put all your files in the root folder of your project.
 
-## Add Data
+![Artwork by \@allison_horst, licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/), adapted from [original](https://allisonhorst.github.io/palmerpenguins/articles/art.html)](images/culmen_depth.png)
 
-```{r}
-#| echo: false
+## Add Manuscript
 
-write.csv(palmerpenguins::penguins, file = "data.csv", row.names = FALSE)
-```
+In order to get you started, we have prepared a manuscript for you, alongside a bibliography file. Download the two files to your computer and put them into your project folder.
 
-You can now download the data set we have prepared for you and put it into your project folder: [`data.csv`](data.csv){download=""}
+[Manuscript.qmd](_01_Example/Manuscript.qmd){.btn .btn-lg .btn-info download=""} [Bibliography.bib](_01_Example/Bibliography.bib){.btn .btn-lg .btn-info download=""}
 
-::: {.column-margin}
-![palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data](images/palmerpenguins.png){width=250px}
-:::
+The manuscript already contains the narrative, but the results are still missing. It will be your job to conduct the data analysis. For now, add yourself as a co-author in the YAML header of the manuscript.
 
-The data set is from the package [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) (v`r packageVersion("palmerpenguins")`) and contains the recorded bill lengths and sex of penguins living on three islands in the Palmer Archipelago, Antarctica. It was made available under the license [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
-
-::: {#imp-legal-restrictions .callout-important}
-### Consider Legal Restrictions Before Sharing
-
-Everything you put into the project folder will be shared publicly. For reasons of reproducibility, this should include the data you analyze. Of course, you should only share them to the extent you are allowed to, taking into account:
-
-1. applicable privacy laws (e.g., the GDPR for European citizens),
-2. contractual obligations (e.g., with your data provider),
-3. copyright of the data and their particular structure, and
-4. any _sui generis_ database right.
-
-Privacy laws and contractual obligations may require you to create a completely anonymized or synthetic data set^[For example, using [Amnesia](https://amnesia.openaire.eu/), [ARX](https://arx.deidentifier.org/), [sdcMicro](https://sdctools.github.io/sdcMicro/), or [Synthpop](https://www.synthpop.org.uk/).] (if possible), or prohibit any sharing of data, in which case you should provide a reference to a data repository where they can be obtained from. For further information, you can watch the talk "[Data anonymity](https://osf.io/j6fy8)" by Felix Schönbrodt recorded during the LMU Open Science Center Summer School 2023 and have a look at [the accompanying slides](https://osf.io/z6gcu).
-
-Purely factual data such as measurements are usually not copyrightable, but literary or artistic works that cross the threshold of originality are. Additionally, in some jurisdictions data can be subject to _sui generis_ database rights which prevent extracting substantial parts of a database. As a consequence, you need to ensure that you own or have authority to share the data with respect to copyright and similar rights, and to license it to others (see "[Choose a License](choose_license.qmd)").
-:::
-
-When distributing a data set, it is important to document the meaning (e.g., units) and valid values of its variables. This is typically done with a _data dictionary_ (also called a _codebook_). In the following, we will demonstrate how to create a simple data dictionary using the R package [`pointblank`](https://rstudio.github.io/pointblank/). You can install it now using:
-
-::: {.column-margin}
-![pointblank: Data Validation and Organization of Metadata for Local and Remote Tables](images/pointblank.png){width=250px}
-:::
-
-```{.r filename="Console"}
-renv::install("pointblank")
-```
-
-You can put the code that follows for creating the data dictionary into a new file called `create_data_dictionary.R`.
-
-First, we write down everything we know about the data set. This includes:
-
-- a general description of the data set
-- descriptions of all columns
-- valid values, where applicable
-
-```{r, filename="create_data_dictionary.R"}
-table_info <- c(
-  title = "palmerpenguins::penguins",
-  description = "Size measurements for adult foraging penguins near Palmer Station, Antarctica"
-)
-descriptions <- c(
-  species = "a character string denoting penguin species",
-  island = "a character string denoting island in Palmer Archipelago, Antarctica",
-  bill_length_mm = "a number denoting bill length (millimeters)",
-  bill_depth_mm = "a number denoting bill depth (millimeters)",
-  flipper_length_mm = "an integer denoting flipper length (millimeters)",
-  body_mass_g = "an integer denoting body mass (grams)",
-  sex = "a character string denoting penguin sex",
-  year = "an integer denoting the study year"
-)
-
-vals <- list(
-  species = c("Adelie", "Gentoo", "Chinstrap"),
-  island = c("Torgersen", "Biscoe", "Dream"),
-  sex = c("male", "female"),
-  year = c(2007, 2008, 2009)
-)
-```
-
-Depending on the type of data, it may also be necessary to describe measurement instruments, sampling procedures, appropriate weighting, or contact information. In this case, as the data have already been published, we only store a reference to its source:
-
-```{r, class.output = "r code-overflow-wrap", echo = FALSE}
-
-# We have provided the data set as CSV file to the readers.
-# Therefore, we cannot assume or require that readers have
-# the R package palmerpenguins installed. Instead, we create
-# the citation on our end and hide how we obtained it.
-
-dat_source <- citation("palmerpenguins", auto = TRUE) |>
-  format(bibtex = FALSE, style = "text")
-dat_source |>
-  gsub("\\n", " ", x = _) |>
-  gsub("\"", "\\\\\"", x = _) |> # Escape any quotation marks
-  paste0("dat_source <- \"", ... = _, "\"") |>
-  cat()
-```
-
-Then, we use `pointblank` to create a data dictionary with this information.
-
-```{r, filename="create_data_dictionary.R"}
-vals <- sapply(vals, \(x) {
-  paste0(
-    "(",
-    knitr::combine_words(x, and = " or ", before = "`", after = "`"),
-    ")"
-  )
-})
-
-dat <- read.csv("data.csv")
-
-dict <- pointblank::create_informant(
-  dat,
-  tbl_name = NA,
-  label = table_info[["title"]],
-  lang = "en"
-) |>
-  pointblank::info_tabular(
-    Description = table_info[["description"]],
-    Source = dat_source
-  ) |>
-  pointblank::info_columns_from_tbl(stack(descriptions)[2:1]) |>
-  pointblank::info_columns_from_tbl(stack(vals)[2:1]) |>
-  pointblank::get_informant_report(
-    title = "Data Dictionary for `data.csv`"
-  )
-
-dict
-```
-
-Finally, we can store the data dictionary inside an HTML file and put the HTML file into the project folder as well.
-
-```{.r filename="create_data_dictionary.R"}
-pointblank::export_report(dict, filename = "data_dictionary.html")
-```
-
-For a more elaborate introduction to `pointblank`, you can read their [Intro to Information Management](https://rstudio.github.io/pointblank/articles/INFO-1.html).
-
-One could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR research data management](https://lmu-osc.github.io/FAIR-Data-Management/)".
-
-::: {#nte-frictionless .callout-note collapse="true"}
-### Create Machine-Readable Variable Documentation
-
-This example demonstrates how the title and description of the data set, the description of the variables and their valid values are stored in a machine-readable way. As before, we also provide a reference to the source.
-
-```{r, class.output = "r code-overflow-wrap", echo = FALSE}
-
-# We have provided the data set as CSV file to the readers.
-# Therefore, we cannot assume or require that readers have
-# the R package palmerpenguins installed. Instead, we create
-# the citation on our end and hide how we obtained it.
-
-citation("palmerpenguins", auto = TRUE)$url |>
-  paste0("dat_source <- \"", ... = _, "\"") |>
-  cat()
-```
-
-Generally, metadata are either stored embedded into the data or externally, for example, in a separate file. We will use the "[frictionless data](https://frictionlessdata.io/)" standard, where metadata are stored separately. Another alternative would be [RO-Crate](https://www.researchobject.org/ro-crate/).
-
-Specifically, one can use the R package [`frictionless`](https://docs.ropensci.org/frictionless/) to create a _schema_ which describes the structure of the data.^[In June 2024, [version 2](https://datapackage.org/) of the frictionless data standard has been released. As of November 2024, the R package `frictionless` only supports the first version, though support for v2 is [planned](https://github.com/frictionlessdata/frictionless-r/labels/datapackage%3Av2).] For the purpose of the following code, it is just a nested list that we edit to include our own information. We also explicitly record in the schema that missing values are stored in the data file as `NA` and that the data are licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Finally, the package is used to create a metadata file that contains the schema.
-
-```{.r filename="Console"}
-# Read data and create schema
-dat_filename <- "data.csv"
-dat <- read.csv(dat_filename)
-dat_schema <- frictionless::create_schema(dat)
-
-# Add descriptions to the fields
-dat_schema$fields <- lapply(dat_schema$fields, \(x) {
-  c(x, description = descriptions[[x$name]])
-})
-
-# Record valid values
-dat_schema$fields <- lapply(dat_schema$fields, \(x) {
-  if (x$name %in% names(vals)) {
-    modifyList(x, list(constraints = list(enum = vals[[x$name]])))
-  } else {
-    x
-  }
-})
-
-# Define missing values
-dat_schema$missingValues <- c("", "NA")
-
-# Create package with license info and write it
-dat_package <- frictionless::create_package() |>
-  frictionless::add_resource(
-    resource_name = "penguins",
-    data = dat_filename,
-    schema = dat_schema,
-    title = table_info[["title"]],
-    description = table_info[["description"]],
-    licenses = list(list(
-      name = "CC0-1.0",
-      path = "https://creativecommons.org/publicdomain/zero/1.0/",
-      title = "CC0 1.0 Universal"
-    )),
-    sources = list(list(
-      title = "CRAN",
-      path = dat_source
-    ))
-  )
-frictionless::write_package(dat_package, directory = ".")
-```
-
-This creates the metadata file `datapackage.json` in the current directory. Make sure it is located in the same folder as `data.csv`, as together they comprise a [data package](https://specs.frictionlessdata.io/data-package/).
-:::
-
-Having added the data and its documentation, one can view and record the utilized packages with `renv`...
-
-```{.r filename="Console"}
-renv::status()
-renv::snapshot()
-```
-
-...and go through the commit routine:
-
-```{.bash filename="Terminal"}
-git status
-git add .
-git commit -m "Add data"
-```
-
-## Add Code
-
-In order to have some code which you can practice to share, we have prepared a simple manuscript for you, alongside a bibliography file. The manuscript contains code together with a written narrative. Download the two files to your computer and put them into your project folder.
-
-- [`Manuscript.qmd`](_01_Example/Manuscript.qmd){download=""}
-- [`Bibliography.bib`](_01_Example/Bibliography.bib){download=""}
-
-The manuscript explores differences in bill length between male and female penguins, feel free to read through it.
-
-::: {#imp-take-copyright-seriously .callout-important}
-### Take Copyright Seriously
-
-If you include work by others in your project -- especially if you intend to make it available publicly --, make sure you have the necessary rights to do so. Only build on existing work for which you receive an express grant of relevant rights. How do you know you are allowed to copy, edit, and share the two files linked above?
-:::
-
-:::: {#nte-take-copyright-seriously-solution .callout-note collapse="true"}
-### Hint for "Take Copyright Seriously"
-
-Have a look at the [about page](about.qmd).
-::::
-
-As the manuscript uses some new packages, install them with:
-
-```{.r filename="Console"}
-renv::install()
-```
-
-
-The manuscript also uses the Quarto extension "[apaquarto](https://wjschne.github.io/apaquarto/)", which typesets documents according to the requirements of the American Psychological Association [-@APA2020]. It can be installed in the project using the following command:
-
-```{.bash filename="Terminal"}
-quarto add --no-prompt wjschne/apaquarto
-```
-
-::: {#tip-apaquarto .callout-tip}
-#### Not a Psychologist?
-
-If you are not a psychologist, you can also skip installing `apaquarto`. If you installed it by accident, run `quarto remove wjschne/apaquarto`.
-
-Note, however, that the file `Manuscript.qmd` we prepared for you uses `apaquarto` by default and you need to set a different `format` in the YAML header if you decide not to use `apaquarto`:
-
-```{.yml filename="Manuscript.qmd"}
-format:
-  pdf:
-    pdf-engine: lualatex
-    documentclass: scrartcl
-    papersize: a4
-```
-:::
-
-
-Also, you need to have a $\TeX$ distribution installed on your computer, which is used in the background to typeset PDF documents. A lightweight choice is [TinyTeX](https://yihui.org/tinytex/), which can be installed with Quarto as follows:
+To create a PDF from the manuscript, you need to have a $\TeX$ distribution installed on your computer. A lightweight choice is [TinyTeX](https://yihui.org/tinytex/), which can be installed with Quarto as follows:
 
 ```{.bash filename="Terminal"}
 quarto install tinytex
@@ -392,22 +141,7 @@ quarto render Manuscript.qmd
 
 This should create a PDF file called `Manuscript.pdf` in your project folder.
 
-::: {#tip-update-quarto .callout-tip}
-If the PDF file cannot be created, try updating Quarto. It comes bundled with RStudio, however, `apaquarto` sometimes requires more recent versions.
-:::
-
-With the code being added, one can use `renv` again to view and record the new packages:
-
-```{.r filename="Console"}
-renv::status()
-renv::snapshot()
-```
-
-::: {#tip-renv-status .callout-tip}
-Always run `renv::status()` and resolve any inconsistencies before you commit code to your project. This way, every commit represents a working state of your project.
-:::
-
-Finally, make your changes known to Git:
+You can now make your changes known to Git:
 
 ```{.bash filename="Terminal"}
 git status
@@ -415,200 +149,4 @@ git add .
 git commit -m "Add manuscript"
 ```
 
-::: {#wrn-credentials .callout-warning}
-### Beware of Credentials
-
-Sometimes, a data analysis requires the interaction with online services:
-
-- Data may be collected from social network sites using their APIs^[An _application programming interface_ provides the capability to interact with other software using a programming language.] or downloaded from a data repository, or
-- an analysis may be conducted with the help of AI providers.
-
-In these cases, make sure that the code you check in to Git does not contain any credentials that are required for accessing these services. Instead, make use of environment variables which are defined in a location that is excluded from version control. When programming with R, you can define them in a file called `.Renviron` in the root of your project folder:
-
-```{.ini filename=".Renviron"}
-MY_FIRST_KEY="your_api_key_here"
-MY_SECOND_KEY="your_api_key_here"
-```
-
-When you start a new session from the project root, the file is automatically read by R and the environment variables can be accessed using `Sys.getenv()`:
-
-```r
-query_api(..., api_key = Sys.getenv("MY_FIRST_KEY"))
-```
-
-Make sure that `.Renviron` is added to your `.gitignore` file in order to exclude it from the Git repository. If you already committed a file that contains credentials, you can follow @Chacon2024.
-:::
-
-### Coding Best Practices
-
-Although we provide the code in this example for you, a few things remain to be said about best practices when it comes to writing code that is readable and maintainable.
-
-- __Use project-relative paths.__ When you refer to a file within your project, write paths relative to your project root. For example, don't write `C:/Users/Public/Documents/my_project/images/result.png`, instead write `images/result.png`.
-
-- __Keep it simple.__ Add complexity only when you must. Whenever there's a boring way to do something and a clever way, go for the boring way. If the code grows increasingly complex, refactor it into separate functions and files.
-
-- __Don't repeat yourself.__ Use variables and functions before you start to write (or copy-paste) the same thing twice.
-
-- __Use comments to explain why you do things.__ The code already shows what you do. Use comments to summarize it and explain why you do it.
-
-- __Don't reinvent the wheel.__ With R, chances are that what you need to do is greatly facilitated by a package from one of many high-quality collections such as [rOpenSci](https://ropensci.org/packages/), [r-lib](https://github.com/r-lib), [Tidyverse](https://www.tidyverse.org/packages/), or [fastverse](https://fastverse.github.io/fastverse/).
-
-- __Think twice about your dependencies.__ Every dependency increases the risk of irreproducibility in the future. Prefer packages that are well-maintained and light on dependencies^[You can use the function `pak::pkg_deps()` to count the total number of package dependencies in R.]. We also recommend you to read "When should you take a dependency?" by @Wickham2023PackagesDependency.
-
-- __Fail early, often, and noisily.__ Whenever you expect a certain state, use assertions to be sure. In R, you can use `stopifnot()` to make sure that a condition is actually true.
-
-- __Test your code.__ Test your code with scenarios where you know what the result should be. Turn bugs you discovered into test cases. Use linting tools^[A linting tool analyzes your code without actually running it. Therefore, this process is also called static code analysis.] to identify common mistakes in your code, for example, the R package [`lintr`](https://lintr.r-lib.org/).
-
-- __Read through a style guide and follow it.__ A style guide is a set of stylistic conventions that improve the code quality. R users are recommended to read Wickham's [-@Wickham2022Style] "Tidyverse style guide" and use the R package [`styler`](https://styler.r-lib.org/). Python users may benefit from reading the "Style Guide for Python Code" by @VanRossum2013. And even if you don't follow a style guide, be consistent.
-
-This is only a brief summary and there is much more to be learned about coding practices. If you want to dive deeper we recommend the following resources:
-
-- "Tidy design principles" [@Wickham2023Design]
-- "The Good Research Code Handbook" [@Mineault2021]
-- "Quality assurance of code for analysis and research" [@UKGovernment2020]
-- "The Art of UNIX Programming" [@Raymond2003]
-
-> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
-> 
-> --- @Fowler1999, p. 15
-
-## Cite Data and Software
-
-If you rely on data or software by others in your research, the question arises whether and how to cite it in your publications.
-
-### Data
-
-Put simply, all data relied upon should be cited to allow for precise identification and access. From the "eight core principles of data citation" by @Starr2015, licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
-
-> **Principle 1 – Importance**: "Data should be considered legitimate, citable products of research. Data citations should be accorded the same importance in the scholarly record as citations of other research objects, such as publications."
-> 
-> **Principle 3 – Evidence**: "In scholarly literature, whenever and wherever a claim relies upon data, the corresponding data should be cited."
-> 
-> **Principle 5 – Access**: "Data citations should facilitate access to the data themselves and to such associated metadata, documentation, code, and other materials, as are necessary for both humans and machines to make informed use of the referenced data."
-> 
-> **Principle 7 – Specificity and Verifiability**: "Data citations should facilitate identification of, access to, and verification of the specific data that support a claim. Citations or citation metadata should include information about provenance and fixity sufficient to facilitate verifying that the specific time slice, version and/or granular portion of data retrieved subsequently is the same as was originally cited."
-
-Now, add an appropriate citation for the data set to the manuscript. Does your citation adhere to the principles above?
-
-::: {#nte-cite-palmerpenguins .callout-note collapse="true"}
-#### Hint for citing the data set
-
-As the data set is from the R package `palmerpenguins`, one can use the function `citation()` to display a suggested citation:
-
-```{r, echo = -1}
-invisible(loadNamespace("palmerpenguins")) # Tell renv that we need this package
-citation("palmerpenguins")
-```
-
-As this can only be run with the package `palmerpenguins` installed, you can also find a [suggested citation on its website](https://allisonhorst.github.io/palmerpenguins/#citation).
-
-Copy the BibTeX entry to the file `Bibliography.bib` and add an identifier between `@Manual{` and the comma, such that the entry's first line reads `@Manual{horst2020,`. Then, add a sentence to the manuscript such as follows:
-
-```md
-The analyzed data are by @horst2020.
-```
-
-Render the document to check that the citation is displayed properly.
-
-```{.bash filename="Terminal"}
-quarto render Manuscript.qmd
-```
-:::
-
-### Software
-
-When it comes to software, the answer is a little more nuanced due to the large number of involved dependencies. You can consult @fig-software-citation for general advice whether to cite a particular piece of software or not. As with data, citations should allow for exact identification and access. From the six "software citation principles" by @Smith2016, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/):
-
-> **1\. Importance**: Software should be considered a legitimate and citable product of research. Software citations should be accorded the same importance in the scholarly record as citations of other research products, such as publications and data; they should be included in the metadata of the citing work, for example in the reference list of a journal article, and should not be omitted or separated. Software should be cited on the same basis as any other research product such as a paper or a book, that is, authors should cite the appropriate set of software products just as they cite the appropriate set of papers.
-> 
-> **5\. Accessibility**: Software citations should facilitate access to the software itself and to its associated metadata, documentation, data, and other materials necessary for both humans and machines to make informed use of the referenced software.
-> 
-> **6\. Specificity**: Software citations should facilitate identification of, and access to, the specific version of software that was used. Software identification should be as specific as necessary, such as using version numbers, revision numbers, or variants such as platforms.
-
-In practice, the first step is to identify all pieces of software the project relies on. A few of them are obvious, such as R itself, Quarto, and the $\TeX$ distribution we installed before. Then there are the individual R packages, Quarto extensions, and $\TeX$ packages. All of them, in turn, may have dependencies and it is up to you decide when not to dig deeper. For example, some R packages are only thin wrappers around other R packages or around system dependencies which also might deserve credit. A system dependency is additional software that you require on your computer apart from the R package.
-
-::: {#fig-software-citation}
-```{mermaid}
-flowchart TB
-  asks_for_citation("Does the software<br>ask you to cite it?")
-  critical_or_unique_contribution("Did the software<br>play a critical part<br>in or contributed<br>something unique<br>to your research?")
-  manipulate("Did the software<br>manipulate or create<br>your data, software,<br>or other outputs?")
-  relies_on_credit("Do the authors of<br>the software rely<br>on academic credit<br>for funding?")
-  cite[Cite!]
-  nocite[Don't cite!]
-
-  asks_for_citation --"Yes"--> cite
-  asks_for_citation --"No"--> critical_or_unique_contribution
-  critical_or_unique_contribution --"Yes"--> cite
-  critical_or_unique_contribution --"No"--> manipulate
-  manipulate --"Yes"--> cite
-  manipulate --"No"--> relies_on_credit
-  relies_on_credit --"Yes"--> cite
-  relies_on_credit --"No"--> nocite
-```
-
-"Should I cite the software?" by @Brown2016 licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Simplified from original.
-:::
-
-Now, add references for the software you would like to cite to the manuscript. In the following, we will demonstrate this for R and all R packages by using the R package `grateful`. For arbitrary software, you can use the [CiteAs service](https://citeas.org/) to create appropriate citations.
-
-Add the following code chunk to the end of the discussion in the manuscript:
-
-``````{.qmd filename="Manuscript.qmd"}
-```{{r}}
-#| echo: false
-
-grateful::cite_packages(
-    output = "paragraph",
-    out.dir = ".",
-    omit = NULL,
-    dependencies = TRUE,
-    passive.voice = TRUE,
-    bib.file = "grateful-refs"
-)
-```
-``````
-
-This will automatically create a paragraph citing all used packages and generate the bibliography file `grateful-refs.bib`.^[Note that this automatic detection can miss packages in some circumstances, therefore always verify the rendered result.] Then, in the YAML header, add `grateful-refs.bib` by setting the `bibliography` as follows:
-
-```{.yml filename="Manuscript.qmd"}
-bibliography:
-  - Bibliography.bib
-  - grateful-refs.bib
-```
-
-Use `renv` to view, install, and record the newly used package:
-
-```{.r filename="Console"}
-renv::status()
-renv::install()
-renv::snapshot()
-```
-
-Finally, render the document again and commit the changes:
-
-```{.bash filename="Terminal"}
-quarto render Manuscript.qmd
-
-git status
-git add .
-git commit -m "Cite data and software"
-```
-
-## The Last Mile
-
-`renv` only records the versions of R packages and of R itself. This means that everything we have not decided to cite in the previous step is not documented anywhere. We will cover system dependencies when [creating a README](make_readme.qmd). For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:
-
-```{.bash filename="Terminal"}
-quarto use binder
-```
-
-This will create a few additional files which facilitate reconstructing the computational environment in the future.^[Either using [repo2docker](https://repo2docker.readthedocs.io/) or the public [binder](https://mybinder.org/) service.] As always, commit your changes:
-
-```{.bash filename="Terminal"}
-git status
-git add .
-git commit -m "Add repo2docker config"
-```
-
-You are now all set up to prepare your project for sharing!
+You are now all set up to prepare your project folder for sharing!

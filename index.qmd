@@ -28,4 +28,4 @@ We will start with creating a simple report which incorporates R code. Then, we 
 - high-level documentation: creating a README file
 - archival: uploading it to a repository
 
-[Get started](intro.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg}
+[Get started](intro.qmd){.btn .btn-lg .btn-success}

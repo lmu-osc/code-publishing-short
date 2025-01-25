@@ -2,7 +2,7 @@
 title: "Introduction"
 ---
 
-In the following, we will provide a brief introduction to the concept of _research compendia_.
+In the following, we will set the stage by highlighting the importance of sharing all materials, documenting their usage, and linking results with their computations, leading to the creation _research compendia_.
 
 ## The Importance of Sharing
 
@@ -12,9 +12,21 @@ Suppose you are reading an article about a new imaging method to turn seismologi
 
 Even when researchers merely apply existing methods (rather than report on a new method), sharing the source code and being transparent about the computational environment is imperative to making their results reproducible [@Ince2012]. By reproducibility, we mean "obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis" [@NASEM2019, p. 46].
 
+## Document Materials
+
+However, there's more to code publishing than sharing. Researchers should document (i.e., track) which data, software, images, texts, and other materials contributed to their work. In more elaborate terms, researchers should preserve the _provenance_ of shared materials, for at least three tangible reasons:
+
+- **Academic integrity**: Providing citations for works that are not one's own avoids plagiarism.
+- **Complying with the law**: Providing attribution and license texts (among other things) may be a legal obligation when redistributing materials.
+- **Facilitating reproductions**: Stating utilized software and data with their exact versions helps reproducers.
+
+Of course, when and how to reserve provenance varies for these reasons. Rephrasing someone's text avoids issues of copyright, but may be plagiarism. And bibliographies of various styles may comply with scientific citation standards, but if they omit the first names of authors or the version number of computer programs, they might not help with matters of copyright or reproducibility.
+
+In this tutorial, we'll consider all of these reasons important. And there are even more: Documenting the provenance puts research into context and allows others to understand how it came about. Also, cited authors benefit from the citation as they gain potential readers.
+
 ## Linking Results and Computations
 
-This tutorial not only covers sharing the source code, but also connecting it to the results through the creation of dynamic documents. Rather than manually copying numerical results, figures, or tables, they are inserted automatically upon rendering of the article. Dynamic documents bundled together with any necessary data and auxiliary software are called a [research compendium](https://research-compendium.science/) [@Gentleman2007].
+For the purpose of this tutorial, tracking the provenance of results deserves particular attention. This means connecting them to the source code through the creation of dynamic documents. Rather than manually copying numerical results, figures, or tables, they are inserted automatically upon rendering of the article. Dynamic documents bundled together with any necessary data and auxiliary software are called [research compendia](https://research-compendium.science/) [@Gentleman2007].
 
 The practice to interleave narrative text with code has its roots in the paradigm of literate programming, where documentation and source code are treated as equals and are arranged in a way to maximize understanding [@Knuth1984]. Alternating text and code can be also found in notebook interfaces for exploratory programming [e.g., Wolfram Mathematica or Jupyter Notebooks, see @Kluyver2016] that also have the capability to execute code and embed its output. With _Sweave_ [@Leisch2002], ideas from both worlds -- literate programming and embedding program output -- were combined into one tool for rendering dynamic documents using the R programming language. It is the predecessor of the R package `knitr` [@Xie2015] which is being used under the hood in this tutorial.^[Specifically, Quarto employs `knitr` to execute chunks of R code.]
 
@@ -22,7 +34,7 @@ Linking results with their computations has benefits for authors and readers. Fo
 
 ## Best Practices
 
-When creating a research compendium, there are a few things to consider [by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
+To recap, in this tutorial you will share your materials, document their usage, and connect results to the underlying source code through the creation of a research compendium. Make sure to consider the following things along the way [by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
 
 > __Does the research compendium contain everything needed to reproduce a predefined outcome in an organized and parsimonious way?__
 > 
