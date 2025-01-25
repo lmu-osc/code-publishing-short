@@ -475,7 +475,7 @@ In addition, we recommend creating a file called `LICENSE.txt` to describe the l
 "Chinstrap Penguin" stored in "penguin.jpg" by "steve b" available from <https://flic.kr/p/2pEKnUr> is licensed under CC0 1.0: <https://creativecommons.org/publicdomain/zero/1.0/>
 ```
 
-If the license required adding the full license text, you would also need to copy it to `LICENSE.txt`.
+If the license required adding the full license text, you would also need to copy it to the project folder.
 
 Finally, you can store the changes in the version control system:
 

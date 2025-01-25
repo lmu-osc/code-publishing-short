@@ -277,7 +277,7 @@ cat(paste0(
 ))
 ```
 
-As before, if the license required adding the full license text, you would also need to copy it to `LICENSE.txt` (if not already in there).
+As before, if the license required adding the full license text, you would also need to copy it to the project folder (if not already in there).
 
 Finally, you can go through the commit routine:
 
