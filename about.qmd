@@ -37,7 +37,7 @@ sessioninfo::session_info()
 
 None of the discussion in this tutorial constitutes legal advice.
 
-Except where noted otherwise, the material in this tutorial is licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/); the code chunks are also (at your option) available under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) or the [Apache License\ 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+Except where noted otherwise, the material in this tutorial is licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/); the code chunks are also (at your option) available under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 The file `Manuscript.qmd` is made available by Josephine Zerna and Christoph Scheffel under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 
