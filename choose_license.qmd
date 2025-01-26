@@ -3,7 +3,7 @@ title: "Choose a License"
 engine: knitr
 ---
 
-So far, you took care to legally include works by others in your project folder. Up next, you will free up your project for reuse. This means ensuring that every bit (co-)authored by you in the project is put under a free/open license. It may be that your project (i.e., its files and folders) is not one work, but rather consists of multiple works available under different licenses. In that case, you need to indicate the license on a per-file or per-folder basis (rather than choosing one for the whole project). Sometimes, even different parts of a file might be subject to different licenses. For the purpose of this tutorial, we will consider the manuscript which you edited and the data dictionary you created.
+So far, you took care to legally include works by others in your project folder. Up next, you will free up your project for reuse. This means ensuring that every bit (co-)authored by you in the project is put under a free/open license. It may be that your project (i.e., its files and folders) is not one work, but rather consists of multiple works available under different licenses. In that case, you need to indicate the license on a per-file or per-folder basis (rather than choosing one for the whole project). Sometimes, even different parts of a file might be subject to different licenses. For the purpose of this tutorial, we will consider the manuscript and the bibliography which you edited as well as the data dictionary you created.
 
 ::: {#wrn-exclusive-rights .callout-warning}
 ### Giving Publishers Exclusive Rights
@@ -16,7 +16,7 @@ If your chosen publisher insists on an exclusive license, you may at least retai
 ::: {#nte-license-choice-tldr .callout-note}
 ## License Choice TL;DR
 
-We recommend to choose free/open licenses suitable to the type of work (i.e., code, data, and everything else). [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) are good choices to apply simultaneously to all own works. Take your time to read the summaries behind the links and/or the actual license text to understand the legal effect. You can adapt the following wording to your use case:
+We recommend to choose free/open licenses suitable to the type of work (e.g., code, data, image etc.). [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and [Apache\ 2.0](https://choosealicense.com/licenses/apache-2.0/) are good choices to apply simultaneously to all own works. Take your time to read the summaries behind the links and/or the actual license text to understand the legal effect. You can adapt the following wording to your use case:
 
 > Except where noted otherwise, all files in this project are made available under CC0\ 1.0 or (at your option) under the terms of the Apache License\ 2.0.
 :::
@@ -255,7 +255,7 @@ SPDX-FileCopyrightText = "2024 William Joel Schneider <w.joel.schneider@gmail.co
 SPDX-License-Identifier = "CC0-1.0"
 ```
 
-Finally, there may be some minor files which are build artifacts. You can either add them to your `.gitignore` file or use the CC0\ 1.0 license/waiver with a copyright tag such as `SPDX-FileCopyrightText: NONE` to assert that there is no copyright holder. For more information, also discussing other corner cases, you can read their [Frequently Asked Questions](https://reuse.software/faq/).
+Finally, there may be some minor files which are build artifacts. You can either add them to your `.gitignore` file or use CC0\ 1.0 with a copyright tag such as `SPDX-FileCopyrightText: NONE` to assert that there is no copyright holder. For more information, also discussing other corner cases, you can read their [Frequently Asked Questions](https://reuse.software/faq/).
 
 Once you are done, you can download the texts of all indicated licenses using...
 
