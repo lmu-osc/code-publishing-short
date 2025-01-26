@@ -1,5 +1,5 @@
 Except where noted otherwise, the narrative text in this tutorial is licensed under CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>; the code without any narrative text is also (at your option) available under CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>.
 
-The file "Manuscript.qmd" is made available by Josephine Zerna and Christoph Scheffel under CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>.
+The files "Manuscript.qmd" and "Bibliography.bib" are made available by Josephine Zerna and Christoph Scheffel under CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 The screenshots of the RStudio IDE are Copyright (C) 2024 Posit PBC and available under the GNU Affero General Public License v3 (available below). The source code is available on GitHub: <https://github.com/rstudio/rstudio/tree/v2024.04.2%2B764>
