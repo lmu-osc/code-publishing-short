@@ -188,10 +188,10 @@ Creative Commons even provides a range of considerations for licensors and licen
 
 Every major free/open license has a unique [SPDX identifier](https://spdx.org/licenses/) which allows communicating the license choice unequivocally. We will be using that to indicate the license for every file in your project folder, along with the year of publication and the copyright holder. To do this, we add a comment to the beginning of every file and include the two tags `SPDX-FileCopyrightText` and `SPDX-License-Identifier`. How this works depends on the file type, as the syntax for a comment varies.
 
-For example, if you previously created the file `create_data_dictionary.R`, you can now add the following comment to the beginning of the file, replacing `<YEAR>` and `<NAME>` with the current year and your name -- of course, you can also choose a different license:
+For example, if you previously created the file `create_data_dictionary.R`, you can now add the following comment to the beginning of the file, replacing `<YEAR>` and `<YOUR NAME>` with the current year and your name -- of course, you can also choose a different license:
 
 ```{.r filename="create_data_dictionary.R"}
-# SPDX-FileCopyrightText: <YEAR> <NAME>
+# SPDX-FileCopyrightText: <YEAR> <YOUR NAME>
 #
 # SPDX-License-Identifier: CC0-1.0
 ```
@@ -205,38 +205,39 @@ pipx install reuse
 ...you can add the copyright information using the following command -- the current year will be added automatically:
 
 ```{.bash .code-overflow-wrap filename="Terminal"}
-reuse annotate --copyright="<NAME>" --license="CC0-1.0" create_data_dictionary.R
+reuse annotate --copyright="<YOUR NAME>" --license="CC0-1.0" create_data_dictionary.R
 ```
 
 In many cases, the reuse tool will figure out the appropriate comment style for you. If this is not the case, as currently with Quarto files, you can tell it directly which comment style to use (`html` in this case):
 
 ```{.bash .code-overflow-wrap filename="Terminal"}
-reuse annotate --copyright="Josephine Zerna <josephine.zerna@tu-dresden.de>" --copyright="Christoph Scheffel <christoph_scheffel@tu-dresden.de>" --copyright="Florian Kohrt" --license="CC-BY-4.0" --style=html Manuscript.qmd
+reuse annotate --copyright="Josephine Zerna" --copyright="Christoph Scheffel" --license="CC0-1.0" --style=html Manuscript.qmd
 ```
 
 This adds the following header to `Manuscript.qmd`:
 
 ```{.html filename="Manuscript.qmd"}
 <!--
-SPDX-FileCopyrightText: 2024 Christoph Scheffel <christoph_scheffel@tu-dresden.de>
-SPDX-FileCopyrightText: 2024 Florian Kohrt
-SPDX-FileCopyrightText: 2024 Josephine Zerna <josephine.zerna@tu-dresden.de>
+SPDX-FileCopyrightText: 2024 Christoph Scheffel
+SPDX-FileCopyrightText: 2024 Josephine Zerna
 
-SPDX-License-Identifier: CC-BY-4.0
+SPDX-License-Identifier: CC0-1.0
 -->
 ```
 
-Note that `Manuscript.qmd` was provided to you under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/), which is what you indicate with the previous comment. If you edited the file, you may also add yourself.^[For licenses that require that modifications are indicated, this is an easy way to comply with them, although you do not need to provide your real name.]
+Note that `Manuscript.qmd` was provided to you under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/), which is what you indicate with the previous comment. As you edited the file throughout this tutorial, you may also add yourself.^[For licenses that require that modifications are indicated, this is an easy way to comply with them. Also, you do not need to provide your real name.]
 
 Sometimes, there are file types which do not allow for adding the license information inside them, such as PDF and CSV files. For these, a corresponding `.license` file can be created. Try the following command which indicates that the data were published under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
 
 ```{.bash .code-overflow-wrap filename="Terminal"}
-reuse annotate --copyright="Kristen Gorman" --license="CC0-1.0" data.csv
+reuse annotate --copyright="Allison Horst" --copyright="Alison Hill" --copyright="Kristen Gorman" --license="CC0-1.0" data.csv
 ```
 
 You will notice that this creates another file called `data.csv.license` containing the relevant information:
 
 ```{.yml filename="data.csv.license"}
+SPDX-FileCopyrightText: 2024 Allison Horst
+SPDX-FileCopyrightText: 2024 Alison Hill
 SPDX-FileCopyrightText: 2024 Kristen Gorman
 
 SPDX-License-Identifier: CC0-1.0
