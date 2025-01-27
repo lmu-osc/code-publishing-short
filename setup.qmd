@@ -113,7 +113,7 @@ Then, commit again.
 
 Before adding your project files, it is helpful to decide on a folder structure, that is, how to call each file and where to put it. In general, the folder structure should facilitate understanding a project by breaking it into logical chunks. There is no single best solution, as a good structure depends on where a project's complexity lies. However, it is usually helpful if the different files and folders reflect the execution order. For example, if there are multiple data processing stages, one can possibly differentiate input (raw data), intermediate (processed data), and output files (e.g., figures) and put them into separate folders. Similarly, the corresponding code files (e.g., preparation, modeling, visualization) can be prefixed with increasing numbers.
 
-Luckily, there are already numerous proposals for how to organize one's project files, both general [e.g., @Wilson2017; @TIER4] as well as specific to a particular programming language [e.g., @Marwick2018; @Vuorre2021; @ArayaSalas2024] or journal [@Vilhuber2021]. We recommend you to follow the standards of your field.
+Luckily, there are already numerous proposals for how to organize one's project files, both general [e.g., @TIER4; @Wilson2017] as well as specific to a particular programming language [e.g., @ArayaSalas2024; @Marwick2018; @Vuorre2021] or journal [@Vilhuber2021]. We recommend you to follow the standards of your field.
 
 In this simple project, we will explore differences in bill length between male and female penguins. You can put all your files in the root folder of your project.
 
