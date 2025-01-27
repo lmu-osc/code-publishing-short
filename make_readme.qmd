@@ -59,11 +59,14 @@ An overview over the system dependencies of R packages can be created using the 
 # First, install pak
 renv::install("pak")
 
-# Then, identify the system dependencies
-# of your direct dependencies.
-renv::dependencies()$Package |>
-  unique() |>
-  pak::pkg_sysreqs()
+# Find all dependencies
+deps <- renv::dependencies()$Package |>
+   unique() |>
+   pak::pkg_deps(dependencies = NA) |>
+   getElement("package")
+
+# Identify the system dependencies
+pak::pkg_sysreqs(deps)
 ```
 
 The output may look like the following:
