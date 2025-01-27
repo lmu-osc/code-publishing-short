@@ -6,7 +6,7 @@ In the following, we will set the stage by highlighting the importance of sharin
 
 ## The Importance of Sharing
 
-Suppose you are reading an article about a new imaging method to turn seismological data into subsurface images. The article describes the ideas that went into developing this method and presents a few examples to illustrate its superiority over previous approaches. You got interested and would like to apply this method to your own data. However, with only the article available, it could take months to come up with a working solution, if possible at all. This situation has been put aptly by Buckheit & Donoho [-@Buckheit1995, p. 59, emphasis in original], distilling an idea by the geophysicist Jon Claerbout:
+Suppose you are reading an article about a new imaging method to turn seismological data into subsurface images. The article describes the ideas that went into developing this method and presents a few examples to illustrate its superiority over previous approaches. You got interested and would like to apply this method to your own data. However, with only the article available, it could take you months to come up with a working solution, if possible at all. This situation has been put aptly by Buckheit & Donoho [-@Buckheit1995, p. 59, emphasis in original], distilling an idea by the geophysicist Jon Claerbout:
 
 > "An article about computational science in a scientific publication is __not__ the scholarship itself, it is merely __advertising__ of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
 
@@ -14,7 +14,7 @@ Even when researchers merely apply existing methods (rather than report on a new
 
 ## Document Materials
 
-However, there's more to code publishing than sharing. Researchers should document (i.e., track) which data, software, images, texts, and other materials contributed to their work. In more elaborate terms, researchers should preserve the _provenance_ of shared materials, for at least three tangible reasons:
+However, there's more to code publishing than sharing. Researchers should document (i.e., track) which foreign data, software, images, texts, and other materials contributed to their work. In more elaborate terms, researchers should preserve the _provenance_ of shared materials, for at least three tangible reasons:
 
 - **Academic integrity**: Providing citations for works that are not one's own avoids plagiarism.
 - **Complying with the law**: Providing attribution and license texts (among other things) may be a legal obligation when redistributing materials.
