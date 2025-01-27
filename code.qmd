@@ -225,7 +225,7 @@ flowchart TB
 "Should I cite the software?" by @Brown2016 licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Simplified from original.
 :::
 
-Now, add references for the software you would like to cite to the manuscript. In the following, we will demonstrate this for R and all R packages by using the R package `grateful`. For arbitrary software, you can use the [CiteAs service](https://citeas.org/) to create appropriate citations.
+Now, add references for the software you would like to cite to the manuscript. In the following, we will demonstrate this for R and all R packages by using the R package `grateful`. For arbitrary software, you can use [CiteAs](https://citeas.org/) or the [DOI Citation Formatter](https://citation.doi.org/) to create appropriate citations.
 
 Add the following code chunk to the end of the discussion in the manuscript:
 
