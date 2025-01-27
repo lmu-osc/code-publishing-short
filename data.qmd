@@ -79,7 +79,7 @@ Depending on the type of data, it may also be necessary to describe measurement 
 
 As the data set is from the R package `palmerpenguins`, if you have it installed you can use the function `citation()` to create such a reference:
 
-```{r, filename="create_data_dictionary.R"}
+```{r}
 dat_source <- citation("palmerpenguins", auto = TRUE) |>
   format(bibtex = FALSE, style = "text")
 ```
