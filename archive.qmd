@@ -88,7 +88,7 @@ but don't forget to also check your local institutions for recommendations.
 Note that the Open Science Framework (OSF) is not recommended
 because it allows the deletion of files and projects after their publication.
 
-[re2data]: https://www.re3data.org/
+[re3data]: https://www.re3data.org/
 [sw-heritage]: https://www.softwareheritage.org/
 [zenodo]: https://zenodo.org/
 
