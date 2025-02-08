@@ -13,7 +13,8 @@ stopifnot(packageDescription("palmerpenguins", fields = "License") == "CC0")
 write.csv(palmerpenguins::penguins, file = "data.csv", row.names = FALSE)
 ```
 
-You can now download the data set we have prepared for you and put it into your project folder:
+You can now download the data set we have prepared for you
+and put it into your project folder:
 
 [data.csv](data.csv){.btn .btn-lg .btn-info download=""}
 
@@ -21,19 +22,51 @@ You can now download the data set we have prepared for you and put it into your 
 ![palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data](images/palmerpenguins.png){width=250px}
 :::
 
-The data set is from the package [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) (v`r packageVersion("palmerpenguins")`) and contains the recorded bill lengths and sex of penguins living on three islands in the Palmer Archipelago, Antarctica. It was made available by Allison Horst, Alison Hill, and Kristen Gorman under the license [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+The data set is from the package [`palmerpenguins`][palmerpenguins]
+(v`r packageVersion("palmerpenguins")`)
+and contains the recorded bill lengths and sex of penguins
+living on three islands in the Palmer Archipelago, Antarctica.
+It was made available by Allison Horst, Alison Hill, and Kristen Gorman
+under the license [CC0\ 1.0][cc0].
+
+[palmerpenguins]: https://allisonhorst.github.io/palmerpenguins/
+[cc0]: https://creativecommons.org/publicdomain/zero/1.0/
 
 ::: {#imp-legal-restrictions .callout-important}
 ### Consider Legal Restrictions Before Sharing
 
-Everything you put into the project folder will be shared publicly. For reasons of reproducibility, this should include the data you analyze. Of course, you should only share them to the extent you are allowed to. Besides copyright and similar rights, you need to take into account applicable privacy laws (e.g., the GDPR for European citizens) and contractual obligations (e.g., with your data provider).
+Everything you put into the project folder will be shared publicly.
+For reasons of reproducibility, this should include the data you analyze.
+Of course, you should only share them to the extent you are allowed to.
+Besides copyright and similar rights, you need to take into account
+applicable privacy laws (e.g., the GDPR for European citizens)
+and contractual obligations (e.g., with your data provider).
 
-Privacy laws and contractual obligations may require you to create a completely anonymized or synthetic data set^[For example, using [Amnesia](https://amnesia.openaire.eu/), [ARX](https://arx.deidentifier.org/), [sdcTools](https://github.com/sdcTools), or [Synthpop](https://www.synthpop.org.uk/).] (if possible), or prohibit any sharing of data, in which case you should provide a reference to a data repository where they can be obtained from. For further information, you can watch the talk "[Data anonymity](https://osf.io/j6fy8)" by Felix Schönbrodt recorded during the LMU Open Science Center Summer School 2023 and have a look at [the accompanying slides](https://osf.io/z6gcu). Another resource to look at is the presentation "Creating reproducible packages when data are confidential" by @Vilhuber2024.
+Privacy laws and contractual obligations may require you
+to create a completely anonymized or synthetic data set[^anon-synth-tools] (if possible),
+or prohibit any sharing of data, in which case you should provide a reference
+to a data repository where they can be obtained from.
+For further information, you can watch the talk "[Data anonymity](https://osf.io/j6fy8)"
+by Felix Schönbrodt recorded during the LMU Open Science Center Summer School 2023
+and have a look at [the accompanying slides](https://osf.io/z6gcu).
+Another resource to look at is the presentation
+"Creating reproducible packages when data are confidential" by @Vilhuber2024.
 :::
+
+[^anon-synth-tools]: For example, using [Amnesia](https://amnesia.openaire.eu/),
+[ARX](https://arx.deidentifier.org/), [sdcTools](https://github.com/sdcTools),
+or [Synthpop](https://www.synthpop.org.uk/).
 
 ## Add Data Dictionary
 
-When distributing a data set, it is important to document the meaning (e.g., units) and valid values of its variables. This is typically done with a _data dictionary_ (also called a _codebook_). In the following, we will demonstrate how to create a simple data dictionary using the R package [`pointblank`](https://rstudio.github.io/pointblank/). You can install it now using:
+When distributing a data set, it is important to document the meaning (e.g., units)
+and valid values of its variables.
+This is typically done with a _data dictionary_ (also called a _codebook_).
+In the following, we will demonstrate how to create a simple data dictionary
+using the R package [`pointblank`][pointblank].
+You can install it now using:
+
+[pointblank]: https://rstudio.github.io/pointblank/
 
 ::: {.column-margin}
 ![pointblank: Data Validation and Organization of Metadata for Local and Remote Tables](images/pointblank.png){width=250px}
@@ -43,9 +76,11 @@ When distributing a data set, it is important to document the meaning (e.g., uni
 renv::install("pointblank")
 ```
 
-You can put the code that follows for creating the data dictionary into a new file called `create_data_dictionary.R`.
+You can put the code that follows for creating the data dictionary
+into a new file called `create_data_dictionary.R`.
 
-First, we write down everything we know about the data set. This includes:
+First, we write down everything we know about the data set.
+This includes:
 
 - a general description of the data set
 - descriptions of all columns
@@ -75,16 +110,26 @@ vals <- list(
 )
 ```
 
-Depending on the type of data, it may also be necessary to describe measurement instruments, sampling procedures, appropriate weighting, applied preprocessing steps, or contact information. In our case, as the data have already been published, we only store a reference to its source.
+Depending on the type of data, it may also be necessary
+to describe measurement instruments, sampling procedures, appropriate weighting,
+applied preprocessing steps, or contact information.
+In our case, as the data have already been published,
+we only store a reference to its source.
 
-As the data set is from the R package `palmerpenguins`, if you have it installed you can use the function `citation()` to create such a reference:
+As the data set is from the R package `palmerpenguins`,
+if you have it installed you can use the function `citation()`
+to create such a reference:
 
 ```{r}
 dat_source <- citation("palmerpenguins", auto = TRUE) |>
   format(bibtex = FALSE, style = "text")
 ```
 
-Without the package `palmerpenguins` installed, you can find a [suggested citation on its website](https://allisonhorst.github.io/palmerpenguins/#citation) and run the following:
+Without the package `palmerpenguins` installed,
+you can find a [suggested citation on its website][palmerpenguins-citation]
+and run the following:
+
+[palmerpenguins-citation]: https://allisonhorst.github.io/palmerpenguins/#citation
 
 ```{r}
 #| echo: false
@@ -134,20 +179,31 @@ dict <- pointblank::create_informant(
 dict
 ```
 
-Finally, we can store the data dictionary inside an HTML file and put the HTML file into the project folder as well.
+Finally, we can store the data dictionary inside an HTML file
+and put the HTML file into the project folder as well.
 
 ```{.r filename="create_data_dictionary.R"}
 pointblank::export_report(dict, filename = "data_dictionary.html")
 ```
 
-For a more elaborate introduction to `pointblank`, you can read its "[Intro to Information Management](https://rstudio.github.io/pointblank/articles/INFO-1.html)".
+For a more elaborate introduction to `pointblank`,
+you can read its "[Intro to Information Management][pointblank-intro]".
 
-One could go even further by making the information machine-readable in a standardized way. We provide an optional example of that in @nte-frictionless. If you want to learn more about the sharing of research data, have a look at the tutorial "[FAIR research data management](https://lmu-osc.github.io/FAIR-Data-Management/)".
+[pointblank-intro]: https://rstudio.github.io/pointblank/articles/INFO-1.html
+
+One could go even further by making the information machine-readable in a standardized way.
+We provide an optional example of that in @nte-frictionless.
+If you want to learn more about the sharing of research data,
+have a look at the tutorial "[FAIR research data management][fair-tutorial]".
+
+[fair-tutorial]: https://lmu-osc.github.io/FAIR-Data-Management/
 
 ::: {#nte-frictionless .callout-note collapse="true"}
 ### Create Machine-Readable Variable Documentation
 
-This example demonstrates how the title and description of the data set, the description of the variables and their valid values are stored in a machine-readable way. As before, we also provide a reference to the source.
+This example demonstrates how the title and description of the data set,
+the description of the variables and their valid values are stored in a machine-readable way.
+As before, we also provide a reference to the source.
 
 ```{r}
 #| echo: false
@@ -164,9 +220,27 @@ citation("palmerpenguins", auto = TRUE)$url |>
   cat()
 ```
 
-Generally, metadata are either stored embedded into the data or externally, for example, in a separate file. We will use the "[frictionless data](https://frictionlessdata.io/)" standard, where metadata are stored separately. Another alternative would be [RO-Crate](https://www.researchobject.org/ro-crate/).
+Generally, metadata are either stored embedded into the data or externally,
+for example, in a separate file.
+We will use the "[frictionless data](https://frictionlessdata.io/)" standard,
+where metadata are stored separately.
+Another alternative would be [RO-Crate](https://www.researchobject.org/ro-crate/).
 
-Specifically, one can use the R package [`frictionless`](https://docs.ropensci.org/frictionless/) to create a _schema_ which describes the structure of the data.^[In June 2024, [version 2](https://datapackage.org/) of the frictionless data standard has been released. As of November 2024, the R package `frictionless` only supports the first version, though support for v2 is [planned](https://github.com/frictionlessdata/frictionless-r/labels/datapackage%3Av2).] For the purpose of the following code, it is just a nested list that we edit to include our own information. We also explicitly record in the schema that missing values are stored in the data file as `NA` and that the data are licensed under CC0\ 1.0. Finally, the package is used to create a metadata file that contains the schema.
+Specifically, one can use the R package [`frictionless`][frictionless]
+to create a _schema_ which describes the structure of the data.[^frictionless-note]
+For the purpose of the following code,
+it is just a nested list that we edit to include our own information.
+We also explicitly record in the schema
+that missing values are stored in the data file as `NA`
+and that the data are licensed under CC0\ 1.0.
+Finally, the package is used to create a metadata file that contains the schema.
+
+[frictionless]: https://docs.ropensci.org/frictionless/
+
+[^frictionless-note]: In June 2024, [version 2](https://datapackage.org/)
+of the frictionless data standard has been released.
+As of November 2024, the R package `frictionless` only supports the first version,
+though support for v2 is [planned](https://github.com/frictionlessdata/frictionless-r/labels/datapackage%3Av2).
 
 ```{.r filename="Console"}
 # Read data and create schema
@@ -212,10 +286,13 @@ dat_package <- frictionless::create_package() |>
 frictionless::write_package(dat_package, directory = ".")
 ```
 
-This creates the metadata file `datapackage.json` in the current directory. Make sure it is located in the same folder as `data.csv`, as together they comprise a [data package](https://specs.frictionlessdata.io/data-package/).
+This creates the metadata file `datapackage.json` in the current directory.
+Make sure it is located in the same folder as `data.csv`,
+as together they comprise a [data package](https://specs.frictionlessdata.io/data-package/).
 :::
 
-Having added the data and its documentation, one can view and record the utilized packages with `renv`:
+Having added the data and its documentation,
+one can view and record the utilized packages with `renv`:
 
 ```{.r filename="Console"}
 renv::status()
@@ -224,22 +301,40 @@ renv::snapshot()
 
 ## Add Data Citation and Attribution
 
-All data relied upon should be cited in the manuscript to allow for precise identification and access. From the "eight core principles of data citation" by @Starr2015, licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
+All data relied upon should be cited in the manuscript
+to allow for precise identification and access.
+From the "eight core principles of data citation" by @Starr2015,
+licensed under [CC0\ 1.0][cc0]:
 
-> **Principle 1 – Importance**: "Data should be considered legitimate, citable products of research. Data citations should be accorded the same importance in the scholarly record as citations of other research objects, such as publications."
+> **Principle 1 – Importance**: "Data should be considered legitimate,
+> citable products of research. Data citations should be accorded the same
+> importance in the scholarly record as citations of other research objects,
+> such as publications."
 > 
-> **Principle 3 – Evidence**: "In scholarly literature, whenever and wherever a claim relies upon data, the corresponding data should be cited."
+> **Principle 3 – Evidence**: "In scholarly literature, whenever and wherever a
+> claim relies upon data, the corresponding data should be cited."
 > 
-> **Principle 5 – Access**: "Data citations should facilitate access to the data themselves and to such associated metadata, documentation, code, and other materials, as are necessary for both humans and machines to make informed use of the referenced data."
+> **Principle 5 – Access**: "Data citations should facilitate access to the data
+> themselves and to such associated metadata, documentation, code, and other
+> materials, as are necessary for both humans and machines to make informed use
+> of the referenced data."
 > 
-> **Principle 7 – Specificity and Verifiability**: "Data citations should facilitate identification of, access to, and verification of the specific data that support a claim. Citations or citation metadata should include information about provenance and fixity sufficient to facilitate verifying that the specific time slice, version and/or granular portion of data retrieved subsequently is the same as was originally cited."
+> **Principle 7 – Specificity and Verifiability**: "Data citations should
+> facilitate identification of, access to, and verification of the specific data
+> that support a claim. Citations or citation metadata should include
+> information about provenance and fixity sufficient to facilitate verifying
+> that the specific time slice, version and/or granular portion of data
+> retrieved subsequently is the same as was originally cited."
 
-Now, it's your turn to add an appropriate citation for the data set to the manuscript. Does your citation adhere to the principles above?
+Now, it's your turn to add an appropriate citation for the data set to the manuscript.
+Does your citation adhere to the principles above?
 
 ::: {#tip-cite-palmerpenguins .callout-tip collapse="true"}
 #### Citing the Data Set (Solution)
 
-You can find an appropriate BibTeX entry on [the package website](https://allisonhorst.github.io/palmerpenguins/#citation) or with the function `citation()`:^[Note that this function requires to have the respective package installed.]
+You can find an appropriate BibTeX entry on [the package website][palmerpenguins-citation]
+or with the function `citation()`:^[Note that this function requires
+to have the respective package installed.]
 
 ```{r}
 #| class.output: "bib code-overflow-scroll"
@@ -250,7 +345,9 @@ citation("palmerpenguins", auto = TRUE) |>
   toBibtex()
 ```
 
-Copy the BibTeX entry to the file `Bibliography.bib`. Then, find the line in the manuscript that says "cite data here" and replace it with a sentence such as the following:
+Copy the BibTeX entry to the file `Bibliography.bib`.
+Then, find the line in the manuscript that says "cite data here"
+and replace it with a sentence such as the following:
 
 ```{.md filename="Manuscript.qmd"}
 The analyzed data are by @horst2020.
@@ -263,7 +360,10 @@ quarto render Manuscript.qmd
 ```
 :::
 
-While citation happens in the manuscript for reasons of academic integrity and reproducibility, to comply with any licenses you also may need to provide attribution within your project folder. Even though the data file we use here does not require attribution, we recommend adding a short paragraph to `LICENSE.txt`:
+While citation happens in the manuscript for reasons of academic integrity and reproducibility,
+to comply with any licenses you also may need to provide attribution within your project folder.
+Even though the data file we use here does not require attribution,
+we recommend adding a short paragraph to `LICENSE.txt`:
 
 ```{r}
 #| echo: false
@@ -277,7 +377,8 @@ cat(paste0(
 ))
 ```
 
-As before, if the license required adding the full license text, you would also need to copy it to the project folder (if not already in there).
+As before, if the license required adding the full license text,
+you would also need to copy it to the project folder (if not already in there).
 
 Finally, you can go through the commit routine:
 

@@ -2,63 +2,139 @@
 title: "Introduction"
 ---
 
-In the following, we will set the stage by highlighting the importance of sharing all materials, documenting their usage, and linking results with their computations, leading to the creation _research compendia_.
+In the following, we will set the stage by
+highlighting the importance of sharing all materials,
+documenting their usage,
+and linking results with their computations,
+leading to the creation _research compendia_.
 
 ## The Importance of Sharing
 
-Suppose you are reading an article about a new imaging method to turn seismological data into subsurface images. The article describes the ideas that went into developing this method and presents a few examples to illustrate its superiority over previous approaches. You got interested and would like to apply this method to your own data. However, with only the article available, it could take you months to come up with a working solution, if possible at all. This situation has been put aptly by Buckheit & Donoho [-@Buckheit1995, p. 59, emphasis in original], distilling an idea by the geophysicist Jon Claerbout:
+Suppose you are reading an article about a new imaging method
+to turn seismological data into subsurface images.
+The article describes the ideas that went into developing this method
+and presents a few examples to illustrate its superiority over previous approaches.
+You got interested and would like to apply this method to your own data.
+However, with only the article available, it could take months
+to come up with a working solution, if possible at all.
+This situation has been put aptly by
+Buckheit & Donoho [-@Buckheit1995, p. 59, emphasis in original],
+distilling an idea by the geophysicist Jon Claerbout:
 
-> "An article about computational science in a scientific publication is __not__ the scholarship itself, it is merely __advertising__ of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."
+> "An article about computational science in a scientific publication
+> is __not__ the scholarship itself, it is merely __advertising__ of the scholarship.
+The actual scholarship is the complete software development environment
+and the complete set of instructions which generated the figures."
 
-Even when researchers merely apply existing methods (rather than report on a new method), sharing the source code and being transparent about the computational environment is imperative to making their results reproducible [@Ince2012]. By reproducibility, we mean "obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis" [@NASEM2019, p. 46].
+Even when researchers merely apply existing methods (rather than report on a new method),
+sharing the source code and being transparent about the computational environment
+is imperative to making their results reproducible [@Ince2012].
+By reproducibility, we mean "obtaining consistent results using the same
+input data; computational steps, methods, and code;
+and conditions of analysis" [@NASEM2019, p. 46].
 
 ## Document Materials
 
-However, there's more to code publishing than sharing. Researchers should document (i.e., track) which foreign data, software, images, texts, and other materials contributed to their work. In more elaborate terms, researchers should preserve the _provenance_ of shared materials, for at least three tangible reasons:
+However, there's more to code publishing than sharing.
+Researchers should document (i.e., track) which data, software, images, texts,
+and other materials contributed to their work.
+In more elaborate terms, researchers should preserve the _provenance_ of shared materials,
+for at least three tangible reasons:
 
 - **Academic integrity**: Providing citations for works that are not one's own avoids plagiarism.
-- **Complying with the law**: Providing attribution and license texts (among other things) may be a legal obligation when redistributing materials.
-- **Facilitating reproductions**: Stating utilized software and data with their exact versions helps reproducers.
+- **Complying with the law**: Providing attribution and license texts
+  (among other things) may be a legal obligation when redistributing materials.
+- **Facilitating reproductions**: Stating utilized software and data
+  with their exact versions helps reproducers.
 
-Of course, when and how to reserve provenance varies for these reasons. Rephrasing someone's text avoids issues of copyright, but may be plagiarism. And bibliographies of various styles may comply with scientific citation standards, but if they omit the first names of authors or the version number of computer programs, they might not help with matters of copyright or reproducibility.
+Of course, when and how to reserve provenance varies for these reasons.
+Rephrasing someone's text avoids issues of copyright, but may be plagiarism.
+And bibliographies of various styles may comply with scientific citation standards,
+but if they omit the first names of authors or the version number of computer programs,
+they might not help with matters of copyright or reproducibility.
 
-In this tutorial, we'll consider all of these reasons important. And there are even more: Documenting the provenance puts research into context and allows others to understand how it came about. Also, cited authors benefit from the citation as they gain potential readers.
+In this tutorial, we'll consider all of these reasons important.
+And there are even more: Documenting the provenance puts research into context
+and allows others to understand how it came about.
+Also, cited authors benefit from the citation as they gain potential readers.
 
 ## Linking Results and Computations
 
-For the purpose of this tutorial, tracking the provenance of results deserves particular attention. This means connecting them to the source code through the creation of dynamic documents. Rather than manually copying numerical results, figures, or tables, they are inserted automatically upon rendering of the article. Dynamic documents bundled together with any necessary data and auxiliary software are called [research compendia](https://research-compendium.science/) [@Gentleman2007].
+For the purpose of this tutorial,
+tracking the provenance of results deserves particular attention.
+This means connecting them to the source code through the creation of dynamic documents.
+Rather than manually copying numerical results, figures, or tables,
+they are inserted automatically upon rendering of the article.
+Dynamic documents bundled together with any necessary data and auxiliary software
+are called [research compendia](https://research-compendium.science/) [@Gentleman2007].
 
-The practice to interleave narrative text with code has its roots in the paradigm of literate programming, where documentation and source code are treated as equals and are arranged in a way to maximize understanding [@Knuth1984]. Alternating text and code can be also found in notebook interfaces for exploratory programming [e.g., Wolfram Mathematica or Jupyter Notebooks, see @Kluyver2016] that also have the capability to execute code and embed its output. With _Sweave_ [@Leisch2002], ideas from both worlds -- literate programming and embedding program output -- were combined into one tool for rendering dynamic documents using the R programming language. It is the predecessor of the R package `knitr` [@Xie2015] which is being used under the hood in this tutorial.^[Specifically, Quarto employs `knitr` to execute chunks of R code.]
+The practice to interleave narrative text with code has its roots
+in the paradigm of literate programming, where documentation and source code
+are treated as equals and are arranged in a way to maximize understanding [@Knuth1984].
+Alternating text and code can be also found in notebook interfaces for exploratory programming
+[e.g., Wolfram Mathematica or Jupyter Notebooks, see @Kluyver2016]
+that also have the capability to execute code and embed its output.
+With _Sweave_ [@Leisch2002], ideas from both world
+-- literate programming and embedding program output --
+were combined into one tool for rendering dynamic documents using the R programming language.
+It is the predecessor of the R package `knitr` [@Xie2015]
+which is being used under the hood in this tutorial.[^knitr]
 
-Linking results with their computations has benefits for authors and readers. For the author, articles always contain the most recent version of figures, as they are updated automatically when the computation changes. For the readers, it enables understanding exactly how a particular result was obtained if they get access to the underlying research compendium.
+[^knitr]: Specifically, Quarto employs `knitr` to execute chunks of R code.
+
+Linking results with their computations has benefits for authors and readers.
+For the author, articles always contain the most recent version of figures,
+as they are updated automatically when the computation changes.
+For the readers, it enables understanding exactly how a particular result was obtained
+if they get access to the underlying research compendium.
 
 ## Best Practices
 
-To recap, in this tutorial you will share your materials, document their usage, and connect results to the underlying source code through the creation of a research compendium. Make sure to consider the following things along the way [by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
+To recap, in this tutorial you will share your materials, document their usage,
+and connect results to the underlying source code through the creation of a research compendium.
+Make sure to consider the following things along the way
+[by @Arguillas2022, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
 
-> __Does the research compendium contain everything needed to reproduce a predefined outcome in an organized and parsimonious way?__
+> __Does the research compendium contain everything needed to reproduce a
+> predefined outcome in an organized and parsimonious way?__
 > 
-> 1. __Completeness:__ The research compendium contains all of the objects needed to reproduce a predefined outcome.
-> 2. __Organization:__ It is easy to understand and keep track of the various objects in the research compendium and their relationship over time.
-> 3. __Economy:__ Fewer extraneous objects in the compendium mean fewer things that can break and require less maintenance over time.
+> 1. __Completeness:__ The research compendium contains all of the objects
+>    needed to reproduce a predefined outcome.
+> 2. __Organization:__ It is easy to understand and keep track of the various
+>    objects in the research compendium and their relationship over time.
+> 3. __Economy:__ Fewer extraneous objects in the compendium mean fewer things
+>    that can break and require less maintenance over time.
 > 
-> __Is descriptive information about the research compendium and its components available and easy to understand?__
+> __Is descriptive information about the research compendium and its components
+> available and easy to understand?__
 > 
-> 4. __Transparency:__ The research compendium provides full disclosure of the research process that produced the scientific claim.
-> 5. __Documentation:__ Information describing compendium objects is provided in enough detail to enable independent understanding and use of the compendium.
+> 4. __Transparency:__ The research compendium provides full disclosure of
+>    the research process that produced the scientific claim.
+> 5. __Documentation:__ Information describing compendium objects is provided
+>    in enough detail to enable independent understanding and use of the compendium.
 > 
-> __Is information about how the research compendium and its components can be used available and easy to understand?__
+> __Is information about how the research compendium and its components
+> can be used available and easy to understand?__
 > 
-> 6. __Access:__ It is clear who can use what, how, and under what conditions, with open access preferred.
-> 7. __Provenance:__ The origin of the components of the research compendium and how each has changed over time is evident.
+> 6. __Access:__ It is clear who can use what, how, and under what conditions,
+>    with open access preferred.
+> 7. __Provenance:__ The origin of the components of the research compendium
+>    and how each has changed over time is evident.
 > 
 > __Is information about the research compendium and its components embedded in code?__
 > 
-> 8. __Metadata:__ Information about the research compendium and its components is embedded in a standardized, machine-readable code.
-> 9. __Automation:__ As much as possible, the computational workflow is script- or workflow-based so that the workflow can be re-executed using minimal actions.
+> 8. __Metadata:__ Information about the research compendium and its component
+>    is embedded in a standardized, machine-readable code.
+> 9. __Automation:__ As much as possible, the computational workflow is script-
+>    or workflow-based so that the workflow can be re-executed using minimal actions.
 > 
-> __Is there a plan for reviewing the research compendium for FAIR and computational reproducibility standards over time?__
+> __Is there a plan for reviewing the research compendium for FAIR
+> and computational reproducibility standards over time?__
 > 
-> 10. __Review:__ A series of managed activities are needed to ensure continued access to and functionality of the research compendium and its components for as long as necessary.
+> 10. __Review:__ A series of managed activities are needed to ensure
+>    continued access to and functionality of the research compendium and its components for as long as necessary.
 
-Although this tutorial guides you through the creation of a research compendium, you are invited to revisit these questions after completion and check whether and how each point was addressed (or not). Further, you can consult them as a checklist for future projects.
+Although this tutorial guides you through the creation of a research compendium,
+you are invited to revisit these questions after completion and check
+whether and how each point was addressed (or not).
+Further, you can consult them as a checklist for future projects.

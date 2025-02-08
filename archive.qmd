@@ -4,63 +4,155 @@ title: "Archive Your Project"
 
 ## Where to Deposit Software
 
-The project folder is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder [excerpt from @Jackson2018, with footnotes removed, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/)]:
+The project folder is now ready to be deposited for long-term archival.
+When considering an appropriate repository,
+there are a few questions to ponder
+[excerpt from @Jackson2018, with footnotes removed, licensed under [CC\ BY\ 4.0][cc-by]]:
 
-> __Does the digital repository give you a unique persistent digital identifier for your deposit?__
+[cc-by]: https://creativecommons.org/licenses/by/4.0/
+
+> __Does the digital repository give you a unique persistent digital identifier
+> for your deposit?__
 > 
-> Persistent digital identifiers are identifiers that are provided under the assumption that they, and the digital objects they refer to, will remain available long term. Examples of unique persistent digital identifiers include DOIs and ARKs. The use of persistent digital identifiers for research outputs, including papers, data and software, and the use of these for citation purposes, is becoming prevalent in research.
+> Persistent digital identifiers are identifiers that are provided under the
+> assumption that they, and the digital objects they refer to, will remain
+> available long term. Examples of unique persistent digital identifiers include
+> DOIs and ARKs. The use of persistent digital identifiers for research outputs,
+> including papers, data and software, and the use of these for citation
+> purposes, is becoming prevalent in research.
 > 
 > __Can the digital repository accommodate the size of your deposit?__
 > 
-> Digital repositories may have constraints on the size of deposits they accept. For example, Zenodo has a limit of 50 GB and the University of Edinburgh DataShare has a limit of 20 GB for deposits done via a browser and 100 GB otherwise.
+> Digital repositories may have constraints on the size of deposits they accept.
+> For example, Zenodo has a limit of 50 GB and the University of Edinburgh
+> DataShare has a limit of 20 GB for deposits done via a browser and 100 GB
+> otherwise.
 > 
-> __Has your funder or publisher recommended or mandated a digital repository to use?__
+> __Has your funder or publisher recommended or mandated a digital repository
+> to use?__
 > 
-> If both a funder and publisher mandate two different digital repositories you could deposit within them both, or discuss with each to see if they will agree for you to use one only, even if it is not the one they mandate.
+> If both a funder and publisher mandate two different digital repositories you
+> could deposit within them both, or discuss with each to see if they will agree
+> for you to use one only, even if it is not the one they mandate.
 > 
 > __Are the policies of the digital repository acceptable to you?__
 > 
-> These can include terms and conditions of use; availability of the service (e.g. does the service regularly go down for updates or does it run 24/7); how resilient the service is to breakdowns; where deposits are stored; how they are stored; what are the plans for stored deposits if the repository goes out of business; how secure the storage is; how regularly it is backed up; how long backups are kept for; and what disaster recovery plans are in place. Knowing the quality of service can help you judge whether your deposit will be available to others, and yourself, even in the face of disaster. It also allows you, and your institution, to develop contingency plans should such drastic circumstances arise.
+> These can include terms and conditions of use; availability of the service
+> (e.g. does the service regularly go down for updates or does it run 24/7);
+> how resilient the service is to breakdowns; where deposits are stored;
+> how they are stored; what are the plans for stored deposits if the repository
+> goes out of business; how secure the storage is; how regularly it is backed up;
+> how long backups are kept for; and what disaster recovery plans are in place.
+> Knowing the quality of service can help you judge whether your deposit will be
+> available to others, and yourself, even in the face of disaster. It also
+> allows you, and your institution, to develop contingency plans should such
+> drastic circumstances arise.
 > 
 > __Is the longevity of the digital repository acceptable to you?__
 > 
-> You want to know that the digital repository will host your deposit for as long as you need it too, not just 6 months or so. The policies or terms and conditions of the digital repository should state this. For example, Zenodo states that their lifetime is currently 20 years and figshare guarantees 10 years of persistent availability.
+> You want to know that the digital repository will host your deposit for as
+> long as you need it too, not just 6 months or so. The policies or terms and
+> conditions of the digital repository should state this. For example, Zenodo
+> states that their lifetime is currently 20 years and figshare guarantees
+> 10 years of persistent availability.
 > 
 > __Is the digital repository free or do you have to pay a fee?__
 > __If there is a fee, is this a one-off payment and can you afford it?__
 > 
-> If a digital repository expects a one-off payment, to subsidise its hosting, you may be able to pay for this out of your project budget or your institution may pay this for you. It is recommended that you avoid any digital repository that expects a regular fee for the duration for which they hold the deposit, since it would most likely be unsustainable for your institution to commit to ever-increasing fees over a long term. There are many free digital repositories available.
+> If a digital repository expects a one-off payment, to subsidise its hosting,
+> you may be able to pay for this out of your project budget or your institution
+> may pay this for you. It is recommended that you avoid any digital repository
+> that expects a regular fee for the duration for which they hold the deposit,
+> since it would most likely be unsustainable for your institution to commit to
+> ever-increasing fees over a long term. There are many free digital
+> repositories available.
 > 
 > __Is the digital repository accredited or certified?__
 > 
-> The digital repository may be accredited or certified by an independent agency that reviews digital repositories according to various criteria related to its policies and processes. The presence of an accreditation or certification may provide you with an additional degree of confidence that the digital repository meets your requirements. For example, the Data Seal of Approval can be awarded to digital repositories who satisfy a set of quality guidelines relating to how they manage, preserve and make available the deposits they hold. The presence of a Data Seal of Approval could give you additional confidence that a digital repository is suitable for holding your deposit.
+> The digital repository may be accredited or certified by an independent agency
+> that reviews digital repositories according to various criteria related to its
+> policies and processes. The presence of an accreditation or certification may
+> provide you with an additional degree of confidence that the digital
+> repository meets your requirements. For example, the Data Seal of Approval can
+> be awarded to digital repositories who satisfy a set of quality guidelines
+> relating to how they manage, preserve and make available the deposits they hold.
+> The presence of a Data Seal of Approval could give you additional confidence
+> that a digital repository is suitable for holding your deposit.
 
-Additional guidance is provided by @Daquin2023, @Garijo2022, and @ScienceEurope2021. You can use the registry of research data repositories [re3data.org](https://www.re3data.org/) to find one that matches your criteria. We think that the [Software Heritage code archive](https://www.softwareheritage.org/) and [Zenodo](https://zenodo.org/) are good choices, but don't forget to also check your local institutions for recommendations. Note that the Open Science Framework (OSF) is not recommended because it allows the deletion of files and projects after their publication.
+Additional guidance is provided by @Daquin2023, @Garijo2022, and @ScienceEurope2021.
+You can use the registry of research data repositories [re3data.org][re3data]
+to find one that matches your criteria.
+We think that the [Software Heritage code archive][sw-heritage]
+and [Zenodo][zenodo] are good choices,
+but don't forget to also check your local institutions for recommendations.
+Note that the Open Science Framework (OSF) is not recommended
+because it allows the deletion of files and projects after their publication.
+
+[re2data]: https://www.re3data.org/
+[sw-heritage]: https://www.softwareheritage.org/
+[zenodo]: https://zenodo.org/
 
 ## Using Zenodo to Archive Your Project Folder
 
-In the following we will demonstrate how to use Zenodo to archive one's project folder and obtain a DOI.
+In the following we will demonstrate how to use Zenodo
+to archive one's project folder and obtain a DOI.
 
 ::: {#cau-sandbox .callout-caution}
 ### Zenodo Sandbox
 
-Note that during this tutorial, we will be using Zenodo's sandbox instance located at [`sandbox.zenodo.org`](https://sandbox.zenodo.org/) in order to learn how to use it while not wasting Zenodo's resources. For real projects, use the production instance at [`zenodo.org`](https://zenodo.org/), which requires a separate account.
+Note that during this tutorial, we will be using Zenodo's sandbox instance
+located at [`sandbox.zenodo.org`][zenodo-sandbox] in order to learn
+how to use it while not wasting Zenodo's resources.
+For real projects, use the production instance at [`zenodo.org`][zenodo],
+which requires a separate account.
 :::
 
-First, create an account on the Zenodo Sandbox by clicking on _Sign up_ in the upper right corner and submitting the provided form. Then, confirm your email address (also check your spam folder if you cannot find the confirmation email).
+[zenodo-sandbox]: https://sandbox.zenodo.org/
 
-Now you can follow the guide "[Create new upload](https://help.zenodo.org/docs/deposit/create-new-upload/)", taking into account the following notes specific to each step:
+First, create an account on the Zenodo Sandbox
+by clicking on _Sign up_ in the upper right corner and submitting the provided form.
+Then, confirm your email address
+(also check your spam folder if you cannot find the confirmation email).
 
-- __Add/remove files__: To circumvent the file limit on Zenodo, you can bundle your project folder in one ZIP file and upload that instead. Be sure to exclude all files mentioned in your `.gitignore` file!
+Now you can follow the guide "[Create new upload][zenodo-upload]",
+taking into account the following notes specific to each step:
+
+[zenodo-upload]: https://help.zenodo.org/docs/deposit/create-new-upload/
+
+- __Add/remove files__:
+  To circumvent the file limit on Zenodo, you can bundle your project folder
+  in one ZIP file and upload that instead.
+  Be sure to exclude all files mentioned in your `.gitignore` file!
 - __Fill in metadata__
-  - __Digital Object Identifier__ (DOI): Usually, you will want a DOI, therefore you need to choose _No_ for the question whether you already have a DOI for this upload, and click on _Get a DOI now!_.
-  - __Resource type__: Select the most appropriate one, for example, _Publication / Preprint_.
-  - __Licenses__: If your project folder only contains content by you and if you previously only chose one license, you can select that by choosing _Add standard_. Otherwise, click on _Add custom_ and describe how each file is licensed. If you have been using REUSE to record license information, you can run enter `SPDX Document` as title and run the reuse tool with `reuse spdx -o reuse.spdx` to create the file `reuse.spdx`. Then you can paste the content of `reuse.spdx` into the description field of the custom license as it contains information about the license of each file.
+  - __Digital Object Identifier__ (DOI):
+    Usually, you will want a DOI,
+    therefore you need to choose _No_ for the question
+    whether you already have a DOI for this upload, and click on _Get a DOI now!_.
+  - __Resource type__:
+    Select the most appropriate one, for example, _Publication / Preprint_.
+  - __Licenses__:
+    If your project folder only contains content by you
+    and if you previously only chose one license,
+    you can select that by choosing _Add standard_.
+    Otherwise, click on _Add custom_ and describe how each file is licensed.
+    If you have been using REUSE to record license information,
+    you can run enter `SPDX Document` as title
+    and run the reuse tool with `reuse spdx -o reuse.spdx`
+    to create the file `reuse.spdx`.
+    Then you can paste the content of `reuse.spdx`
+    into the description field of the custom license
+    as it contains information about the license of each file.
 
-If you previously uploaded your project folder to a public Git repository (which we didn't cover during this tutorial), you could also add the new DOI to your README, for example, under the section "Citation".
+If you previously uploaded your project folder to a public Git repository
+(which we didn't cover during this tutorial),
+you could also add the new DOI to your README,
+for example, under the section "Citation".
 
 ## Final Remarks
 
-There are situations in which you are not allowed to share your data publicly. In this case, consider using a repository specifically for research data, which later grants access for valid uses individually.
+There are situations in which you are not allowed to share your data publicly.
+In this case, consider using a repository specifically for research data,
+which later grants access for valid uses individually.
 
-For further information, you may be interested in [Software Deposit Guidance for Researchers](https://softwaresaved.github.io/software-deposit-guidance/).
+For further information, you may be interested in
+[Software Deposit Guidance for Researchers](https://softwaresaved.github.io/software-deposit-guidance/).

@@ -9,7 +9,9 @@ We will start by setting up a simple example of a reproducible report.
 
 First, we will need to create a new Quarto project.
 
-If you haven't already, open RStudio -- see @nte-terminal for how to use the terminal instead. Then, click on _File_ > _New Project..._ to open the _New Project Wizard_.
+If you haven't already, open RStudio
+-- see @nte-terminal for how to use the terminal instead.
+Then, click on _File_ > _New Project..._ to open the _New Project Wizard_.
 
 ![](images/setup_01.png){width=500px fig-align="center"}
 
@@ -21,27 +23,51 @@ And choose the project type _Quarto Project_.
 
 ![](images/setup_03.png){width=600px fig-align="center"}
 
-Finally, enter the name of the directory where our report will be created in, for example `code-publishing-exercise`.
+Finally, enter the name of the directory where our report will be created in,
+for example `code-publishing-exercise`.
 
-As we will use Git to track the version history of files, be sure to check _Create a git repository_. If you don't know what Git is, have a look at the tutorial "[Introduction to version control with git and GitHub within RStudio](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)".
+As we will use Git to track the version history of files,
+be sure to check _Create a git repository_.
+If you don't know what Git is, have a look at the tutorial
+"[Introduction to version control with git and GitHub within RStudio][git-tutorial]".
+
+[git-tutorial]: https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/
 
 ::: {.column-margin}
 ![renv: A dependency management toolkit for R](images/renv.svg){width=250px}
 :::
 
-Also, we will utilize the package [`renv`](https://rstudio.github.io/renv/) to track the R packages our project depends on. Using it makes it easier for others to view and obtain them at the exact same version at a later point in time. Therefore make sure that the box _Use renv with this project_ is checked. Again, if this is the first time you are hearing about `renv`, have a look at the tutorial "[Introduction to {renv}](https://lmu-osc.github.io/introduction-to-renv/)".
+Also, we will utilize the package [`renv`][renv]
+to track the R packages our project depends on.
+Using it makes it easier for others to view and obtain them
+at the exact same version at a later point in time.
+Therefore make sure that the box _Use renv with this project_ is checked.
+Again, if this is the first time you are hearing about `renv`,
+have a look at the tutorial "[Introduction to {renv}][renv-tutorial]".
 
-If you are already familiar with Markdown and Quarto, you can uncheck the box _Use visual markdown editor_.
+[renv]: https://rstudio.github.io/renv/
+[renv-tutorial]: https://lmu-osc.github.io/introduction-to-renv/
+
+If you are already familiar with Markdown and Quarto,
+you can uncheck the box _Use visual markdown editor_.
 
 ![](images/setup_04.png){width=600px fig-align="center"}
 
-Click on _Create Project_. Your RStudio window should now look similar to this:
+Click on _Create Project_.
+Your RStudio window should now look similar to this:
 
 ![](images/setup_05.png){.lightbox fig-align="center" alt="The project `code-publishing-exercise` opened in RStudio. The source pane to the top left has a Quarto file open called \"code-publishing-exercise.qmd\". The console pane to the bottom left indicates by its output that renv is active in the current project. The environment pane to the top right indicates that the environment is currently empty. The output pane to the bottom right shows the files in the current project."}
 
-If, like in the image, a Quarto file with some demo content was opened automatically, you can close and delete it, for example, using RStudio's file manager.
+If, like in the image, a Quarto file with some demo content was opened automatically,
+you can close and delete it, for example, using RStudio's file manager.
 
-Throughout this tutorial, you will need to run both R code and system commands (primarily `git` and `quarto`). Within RStudio, R code can be run by going to the tab _Console_, while system commands are executed in the tab _Terminal_. We also indicate where to run your code directly above each code snippet. If no indication is given, the code is only for demonstration purposes and does not need to be run.
+Throughout this tutorial, you will need to run both R code and system commands
+(primarily `git` and `quarto`).
+Within RStudio, R code can be run by going to the tab _Console_,
+while system commands are executed in the tab _Terminal_.
+We also indicate where to run your code directly above each code snippet.
+If no indication is given,
+the code is only for demonstration purposes and does not need to be run.
 
 Make sure that your project is in a consistent state according to `renv` by running:
 
@@ -56,13 +82,16 @@ renv::snapshot()
 ```
 
 ::: {#tip-renv-status .callout-tip}
-Always run `renv::status()` and resolve any inconsistencies before you commit code to your project. This way, every commit represents a working state of your project.
+Always run `renv::status()` and resolve any inconsistencies
+before you commit code to your project.
+This way, every commit represents a working state of your project.
 :::
 
 ::: {#nte-terminal .callout-note collapse="true"}
 ### Without RStudio
 
-Without RStudio, one can create a Quarto project with version control and `renv` enabled by typing the following into a terminal:
+Without RStudio, one can create a Quarto project
+with version control and `renv` enabled by typing the following into a terminal:
 
 ```{.bash filename="Terminal"}
 quarto create project default code-publishing-exercise
@@ -72,34 +101,50 @@ git init
 git checkout -b main
 ```
 
-Then, one can open an R session by simply typing `R` into the terminal. Next, make sure that `getwd()` indicates that the working directory is `code-publishing-exercise`. Now, initialize `renv`:
+Then, one can open an R session by simply typing `R` into the terminal.
+Next, make sure that `getwd()` indicates that
+the working directory is `code-publishing-exercise`.
+Now, initialize `renv`:
 
 ```{.r filename="Console"}
 renv::init()
 ```
 :::
 
-You are now ready to stage and commit your files. You can either stage files separately or the whole project folder at once. If you do the latter, we recommend you to inspect the untracked changes before staging all of them:
+You are now ready to stage and commit your files.
+You can either stage files separately or the whole project folder at once.
+If you do the latter,
+we recommend you to inspect the untracked changes before staging all of them:
 
 ::: {.column-margin}
-In file paths, a period (`.`) means "the current directory", while two periods (`..`) mean "the parent directory". Therefore `git add .` means "stage the current directory for committing".
+In file paths, a period (`.`) means "the current directory",
+while two periods (`..`) mean "the parent directory".
+Therefore `git add .` means "stage the current directory for committing".
 :::
 
 ```{.bash filename="Terminal"}
 git status
 ```
 
-Since no commits have been made so far, this should include every file that is not covered by the `.gitignore` file. If everything can be staged for committing -- as is the case in this tutorial -- you can follow up with:
+Since no commits have been made so far,
+this should include every file that is not covered by the `.gitignore` file.
+If everything can be staged for committing
+-- as is the case in this tutorial -- you can follow up with:
 
 ```{.bash filename="Terminal"}
 git add .
 git commit -m "Initial commit"
 ```
 
-If you see a file you'd rather not commit, delete it or add its name to the `.gitignore` file. If you don't check your changes before committing, you might accidentally commit something you'd rather not.
+If you see a file you'd rather not commit,
+delete it or add its name to the `.gitignore` file.
+If you don't check your changes before committing,
+you might accidentally commit something you'd rather not.
 
 ::: {#tip-author-identity-unknown .callout-tip}
-If `git commit` fails with the message `Author identity unknown`, you need to tell Git who you are. Run the following commands to set your name and email address:
+If `git commit` fails with the message `Author identity unknown`,
+you need to tell Git who you are.
+Run the following commands to set your name and email address:
 
 ```{.bash filename="Terminal"}
 git config user.name "YOUR NAME"
@@ -111,23 +156,46 @@ Then, commit again.
 
 ## Decide on Structure
 
-Before adding your project files, it is helpful to decide on a folder structure, that is, how to call each file and where to put it. In general, the folder structure should facilitate understanding a project by breaking it into logical chunks. There is no single best solution, as a good structure depends on where a project's complexity lies. However, it is usually helpful if the different files and folders reflect the execution order. For example, if there are multiple data processing stages, one can possibly differentiate input (raw data), intermediate (processed data), and output files (e.g., figures) and put them into separate folders. Similarly, the corresponding code files (e.g., preparation, modeling, visualization) can be prefixed with increasing numbers.
+Before adding your project files, it is helpful to decide on a folder structure,
+that is, how to call each file and where to put it.
+In general, the folder structure should facilitate understanding a project
+by breaking it into logical chunks.
+There is no single best solution, as a good structure depends on where a project's complexity lies.
+However, it is usually helpful if the different files and folders reflect the execution order.
+For example, if there are multiple data processing stages,
+one can possibly differentiate input (raw data), intermediate (processed data),
+and output files (e.g., figures) and put them into separate folders.
+Similarly, the corresponding code files (e.g., preparation, modeling, visualization)
+can be prefixed with increasing numbers.
 
-Luckily, there are already numerous proposals for how to organize one's project files, both general [e.g., @TIER4; @Wilson2017] as well as specific to a particular programming language [e.g., @ArayaSalas2024; @Marwick2018; @Vuorre2021] or journal [@Vilhuber2021]. We recommend you to follow the standards of your field.
+Luckily, there are already numerous proposals for how to organize one's project files,
+both general [e.g., @TIER4; @Wilson2017] as well as specific
+to a particular programming language [e.g., @ArayaSalas2024; @Marwick2018; @Vuorre2021]
+or journal [@Vilhuber2021].
+We recommend you to follow the standards of your field.
 
-In this simple project, we will explore differences in bill length between male and female penguins. You can put all your files in the root folder of your project.
+In this simple project, we will explore differences in bill length
+between male and female penguins.
+You can put all your files in the root folder of your project.
 
 ![Artwork by \@allison_horst, licensed under [CC0\ 1.0](https://creativecommons.org/publicdomain/zero/1.0/), adapted from [original](https://allisonhorst.github.io/palmerpenguins/articles/art.html)](images/culmen_depth.png)
 
 ## Add Manuscript
 
-In order to get you started, we have prepared a manuscript for you, alongside a bibliography file. Download the two files to your computer and put them into your project folder.
+In order to get you started, we have prepared a manuscript for you,
+alongside a bibliography file.
+Download the two files to your computer and put them into your project folder.
 
 [Manuscript.qmd](_01_Example/Manuscript.qmd){.btn .btn-lg .btn-info download=""} [Bibliography.bib](_01_Example/Bibliography.bib){.btn .btn-lg .btn-info download=""}
 
-The manuscript already contains the narrative, but the results are still missing. It will be your job to conduct the data analysis. For now, add yourself as a co-author in the YAML header of the manuscript.
+The manuscript already contains the narrative, but the results are still missing.
+It will be your job to conduct the data analysis.
+For now, add yourself as a co-author in the YAML header of the manuscript.
 
-To create a PDF from the manuscript, you need to have a $\TeX$ distribution installed on your computer. A lightweight choice is [TinyTeX](https://yihui.org/tinytex/), which can be installed with Quarto as follows:
+To create a PDF from the manuscript,
+you need to have a $\TeX$ distribution installed on your computer.
+A lightweight choice is [TinyTeX](https://yihui.org/tinytex/),
+which can be installed with Quarto as follows:
 
 ```{.bash filename="Terminal"}
 quarto install tinytex

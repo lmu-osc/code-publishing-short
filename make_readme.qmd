@@ -5,7 +5,14 @@ engine: knitr
 
 ## What Does a README Contain?
 
-Having settled on a license, it is time to add a final touch. Imagine returning to your project in five years, having forgotten most of the details of what you did exactly. What would be useful to know in order to quickly understand what is going on in the project? This is what needs to be described in the README. While you could just start writing along, most READMEs have some sections in common which we describe below.
+Having settled on a license, it is time to add a final touch.
+Imagine returning to your project in five years,
+having forgotten most of the details of what you did exactly.
+What would be useful to know in order to quickly understand
+what is going on in the project?
+This is what needs to be described in the README.
+While you could just start writing along,
+most READMEs have some sections in common which we describe below.
 
 Name
 
@@ -13,7 +20,17 @@ Name
 
 Badges/Project Status
 
-:   Badges typically report quick facts, like [whether the project is actively maintained](https://www.repostatus.org/), [how many dependencies it has](https://tinyverse.netlify.app/), or [whether it has been published in a package repository](https://www.r-pkg.org/services#badges). Sometimes, the license, any associated DOIs, or quality metrics like code coverage by unit tests are communicated via badges as well.
+:   Badges typically report quick facts, like
+    [whether the project is actively maintained][repostatus],
+    [how many dependencies it has][tinyverse],
+    or [whether it has been published in a package repository][metacran].
+    Sometimes, the license, any associated DOIs,
+    or quality metrics like code coverage by unit tests
+    are communicated via badges as well.
+
+[repostatus]: https://www.repostatus.org/
+[tinyverse]: https://tinyverse.netlify.app/
+[metacran]: https://www.r-pkg.org/services#badges
 
 Description
 
@@ -21,31 +38,53 @@ Description
 
 Visuals
 
-:   Is there anything you can show that demonstrates how the project can be used? Screenshots or other visuals can make the README more appealing.
+:   Is there anything you can show that demonstrates how the project can be used?
+    Screenshots or other visuals can make the README more appealing.
 
 Installation/Dependencies
 
-:   What steps need to be taken to run the project? What software needs to be installed? R itself and the R packages are already documented as this project uses `renv`. Therefore you can focus on all other dependencies, such as the system dependencies of R packages as well as the version of Quarto.^[As of August 2024, a proposal for `renv` to record the version of Quarto has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).] Also, don't forget to mention software that you have used for any manual steps. See @sec-dependencies for additional information. It may make sense to provide these information in the README even if you already cite all programs and their version numbers in your manuscript.
+:   What steps need to be taken to run the project? What software needs to be installed?
+    R itself and the R packages are already documented as this project uses `renv`.
+    Therefore you can focus on all other dependencies,
+    such as the system dependencies of R packages
+    as well as the version of Quarto.[^renv-quarto]
+    Also, don't forget to mention software that you have used for any manual steps.
+    See @sec-dependencies for additional information.
+    It may make sense to provide these information in the README
+    even if you already cite all programs and their version numbers in your manuscript.
+
+[^renv-quarto]: As of August 2024, a proposal for `renv` to record the version of Quarto
+has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).
 
 Usage
 
-:   Which files does the project folder contain? How are they organized? How can one run the project -- is there a master script or a particular order in which any scripts need to be executed? How long does it take to run all scripts? Is there additional documentation available?
+:   Which files does the project folder contain? How are they organized?
+    How can one run the project -- is there a master script
+    or a particular order in which any scripts need to be executed?
+    How long does it take to run all scripts?
+    Is there additional documentation available?
 
 Support
 
-:   Do you offer support or help, for example, via GitHub discussions or a mailing list?
+:   Do you offer support or help, for example, via GitHub discussions
+    or a mailing list?
 
 Contributing
 
-:   If the project is active: Can other people contribute? How? Do you accept contributions? Do you review issues? This section is sometimes outsourced into a file called `CONTRIBUTING.md`.
+:   If the project is active: Can other people contribute? How?
+    Do you accept contributions? Do you review issues?
+    This section is sometimes outsourced into a file called `CONTRIBUTING.md`.
 
 Authors
 
-:   Who was involved in creating this project? This involves you, your co-authors, and anybody you accepted contributions from.
+:   Who was involved in creating this project? This involves you,
+    your co-authors, and anybody you accepted contributions from.
 
 Citation
 
-:   Is there a recommended way to cite this project? Is there a published article associated with it that you would like to have cited?
+:   Is there a recommended way to cite this project?
+    Is there a published article associated with it
+    that you would like to have cited?
 
 License
 
@@ -53,7 +92,10 @@ License
 
 ## Installation/Dependencies {#sec-dependencies}
 
-An overview over the system dependencies of R packages can be created using the function `pak::pkg_sysreqs()`. In combination with `renv`, we can obtain the system dependencies of all R packages the current project directly depends on:
+An overview over the system dependencies of R packages can be created
+using the function `pak::pkg_sysreqs()`.
+In combination with `renv`, we can obtain the system dependencies
+of all R packages the current project directly depends on:
 
 ```{.r filename="Console"}
 # First, install pak
@@ -92,7 +134,9 @@ V8        – v8-devel
 xml2      – libxml2-devel
 ```
 
-We can see that the programs `make`, `pandoc`, and `git` were identified as system dependencies. Often, one can obtain their version by running them with the `--version` argument:
+We can see that the programs `make`, `pandoc`,
+and `git` were identified as system dependencies.
+Often, one can obtain their version by running them with the `--version` argument:
 
 ```{.bash filename="Terminal"}
 make --version
@@ -100,33 +144,43 @@ pandoc --version
 git --version
 ```
 
-The other system dependencies are libraries, and the method to identify the installed version varies between operating systems. For example, on Fedora Linux, one can run the following:
+The other system dependencies are libraries,
+and the method to identify the installed version varies between operating systems.
+For example, on Fedora Linux, one can run the following:
 
 ```{.bash .code-overflow-wrap filename="Terminal"}
 rpm -q libcurl-devel openssl-devel libicu-devel v8-devel libxml2-devel
 ```
 
-However, they are only relevant if the R packages were installed from source, rather than as binary package.
+However, they are only relevant if the R packages were installed from source,
+rather than as binary package.
 
-We also know that we need Quarto to create the PDF, so let's find out its version as well:
+We also know that we need Quarto to create the PDF,
+so let's find out its version as well:
 
 ```{.bash filename="Terminal"}
 quarto --version
 ```
 
-If you installed `apaquarto` or any other Quarto extension, one can query their versions as follows:^[Luckily, the extensions are included in the project folder, so technically their version is already recorded in the project's files.]
+If you installed `apaquarto` or any other Quarto extension,
+one can query their versions as follows:[^already-included]
+
+[^already-included]: Luckily, the extensions are included in the project folder,
+so technically their version is already recorded in the project's files.
 
 ```{.bash filename="Terminal"}
 quarto list extensions
 ```
 
-Finally, we know that we installed a $\TeX$ distribution to create the PDF, so let's find out its version by running:
+Finally, we know that we installed a $\TeX$ distribution to create the PDF,
+so let's find out its version by running:
 
 ```{.bash filename="Terminal"}
 quarto check
 ```
 
-The output is quite long and it might look slightly different for you, but the relevant sections are the following:
+The output is quite long and it might look slightly different for you,
+but the relevant sections are the following:
 
 ```txt
 [✓] Checking tools....................OK
@@ -139,11 +193,13 @@ The output is quite long and it might look slightly different for you, but the r
       Version: 2024
 ```
 
-Of course, all the system dependencies identified until now may have dependencies on their own. Use your own judgement to decide when not to dig deeper.
+Of course, all the system dependencies identified until now
+may have dependencies on their own. Use your own judgement to decide when not to dig deeper.
 
 ## Create It!
 
-Create your README now as the file `README.md`. If you feel stuck, you can have a look at the following examples:
+Create your README now as the file `README.md`. If you feel stuck,
+you can have a look at the following examples:
 
 ::: {#tip-name .callout-tip collapse="true"}
 ### Name
@@ -220,7 +276,8 @@ The most important file in this project folder is `Manuscript.qmd` which contain
 
 - `Bibliography.bib`: bibliographic references used in the manuscript
 - `data.csv`: a data set containing the simplified `palmerpenguins` data
-- `data_dictionary.html`: a dictionary to the data file, created using `create_data_dictionary.R`
+- `data_dictionary.html`: a dictionary to the data file,
+  created using `create_data_dictionary.R`
 
 The folder `_extensions` contains the `apaquarto` extension which is used to typeset the PDF accoording to APA guidelines.
 

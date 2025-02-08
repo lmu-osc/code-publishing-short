@@ -4,7 +4,10 @@ title: "Add Code"
 
 ## Add Data Analysis
 
-With the data added to the project folder, you can now analyze them and describe the results. For the purpose of this tutorial, we suggest to conduct a simple analysis that explores whether the bill lengths of penguins vary between sex. You can write your own or use the following example:
+With the data added to the project folder, you can now analyze them and describe the results.
+For the purpose of this tutorial, we suggest to conduct a simple analysis
+that explores whether the bill lengths of penguins vary between sex.
+You can write your own or use the following example:
 
 ::: {#tip-t-test .callout-tip collapse="true"}
 ### Data Analysis Example
@@ -106,28 +109,49 @@ git commit -m "Add data analysis"
 
 Sometimes, a data analysis requires the interaction with online services:
 
-- Data may be collected from social network sites using their APIs^[An **a**pplication **p**rogramming **i**nterface provides the capability to interact with other software using a programming language.] or downloaded from a data repository, or
+- Data may be collected from social network sites using their APIs[^api-explanation]
+  or downloaded from a data repository, or
 - an analysis may be conducted with the help of AI providers.
 
-In these cases, make sure that the code you check in to Git does not contain any credentials that are required for accessing these services. Instead, make use of environment variables which are defined in a location that is excluded from version control. When programming with R, you can define them in a file called `.Renviron` in the root of your project folder:
+[^api-explanation]: An **a**pplication **p**rogramming **i**nterface
+provides the capability to interact with other software using a programming language.
+
+In these cases, make sure that the code you check in to Git
+does not contain any credentials that are required for accessing these services.
+Instead, make use of environment variables which are defined
+in a location that is excluded from version control.
+When programming with R, you can define them
+in a file called `.Renviron` in the root of your project folder:
 
 ```{.ini filename=".Renviron"}
 MY_FIRST_KEY="your_api_key_here"
 MY_SECOND_KEY="your_api_key_here"
 ```
 
-When you start a new session from the project folder, the file is automatically read by R and the environment variables can be accessed using `Sys.getenv()`:
+When you start a new session from the project folder,
+the file is automatically read by R
+and the environment variables can be accessed using `Sys.getenv()`:
 
 ```r
 query_api(..., api_key = Sys.getenv("MY_FIRST_KEY"))
 ```
 
-Make sure that `.Renviron` is added to your `.gitignore` file in order to exclude it from the Git repository. If you already committed a file that contains credentials, you can follow @Chacon2024.
+Make sure that `.Renviron` is added to your `.gitignore` file
+in order to exclude it from the Git repository.
+If you already committed a file that contains credentials, you can follow @Chacon2024.
 :::
 
 ## Style Manuscript
 
-To format manuscripts according to the requirements of a particular journal, [multiple Quarto extensions are available](https://quarto.org/docs/extensions/listing-journals.html). In the following, we will demonstrate the usage of [`apaquarto`](https://wjschne.github.io/apaquarto/), which typesets documents according to the requirements of the American Psychological Association [-@APA2020]. Of course, you may also use an extension for a different journal.
+To format manuscripts according to the requirements of a particular journal,
+[multiple Quarto extensions are available][apaquarto-extensions].
+In the following, we will demonstrate the usage of [`apaquarto`][apaquarto],
+which typesets documents according to the requirements
+of the American Psychological Association [-@APA2020].
+Of course, you may also use an extension for a different journal.
+
+[apaquarto]: https://wjschne.github.io/apaquarto/
+[apaquarto-extensions]: https://quarto.org/docs/extensions/listing-journals.html
 
 `apaquarto` can be installed in the project folder using the following command:
 
@@ -155,7 +179,9 @@ quarto render Manuscript.qmd
 ```
 
 ::: {#tip-update-quarto .callout-tip}
-If the PDF file cannot be created, try updating Quarto. It comes bundled with RStudio, however, `apaquarto` sometimes requires more recent versions.
+If the PDF file cannot be created, try updating Quarto.
+It comes bundled with RStudio,
+however, `apaquarto` sometimes requires more recent versions.
 :::
 
 Again, make your changes known to Git:
@@ -168,14 +194,19 @@ git commit -m "Apply custom manuscript style"
 
 ## Add Code Citation and Attribution
 
-As with data, there are multiple reasons to indicate when using code by others. First, there is software which is actually copied into the own project folder. For example, this is the case for the Quarto extension that you downloaded earlier. These cases matter from a copyright perspective and you need to make sure to have permission for redistribution.
+As with data, there are multiple reasons to indicate when using code by others.
+First, there is software which is actually copied into the own project folder.
+For example, this is the case for the Quarto extension that you downloaded earlier.
+These cases matter from a copyright perspective
+and you need to make sure to have permission for redistribution.
 
 Under which license is `apaquarto` made available?
 
 ::: {#tip-apaquarto-license .callout-tip collapse="true"}
 ### `apaquarto` License (Solution)
 
-According to its GitHub page, `apaquarto` is licensed under CC0\ 1.0. This means that it can be used and distributed even without attribution.
+According to its GitHub page, `apaquarto` is licensed under CC0\ 1.0.
+This means that it can be used and distributed even without attribution.
 :::
 
 We recommend adding a short paragraph to `LICENSE.txt` to describe its license.
@@ -189,20 +220,57 @@ It is best to provide attribution even if the license does not require it.
 "apaquarto" stored in "_extensions/wjschne/apaquarto" by W. Joel Schneider available from <https://github.com/wjschne/apaquarto> is licensed under CC0 1.0: <https://creativecommons.org/publicdomain/zero/1.0/>
 ```
 
-Again, if the license required adding the full license text, you would also need to copy it to the project folder (if not already in there).
+Again, if the license required adding the full license text,
+you would also need to copy it to the project folder (if not already in there).
 :::
 
-Then, there is software that is used (e.g., during the data analysis), but not copied into the project folder. Here, questions of copyright due to redistribution do not apply.
+Then, there is software that is used (e.g., during the data analysis),
+but not copied into the project folder.
+Here, questions of copyright due to redistribution do not apply.
 
-Of course, being transparent about used software for reasons of reproducibility and academic integrity matters in any case. You can consult @fig-software-citation for general advice whether to cite a particular piece of software or not. As with data, citations should allow for exact identification and access. From the six "software citation principles" by @Smith2016, licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/):
+Of course, being transparent about used software
+for reasons of reproducibility and academic integrity matters in any case.
+You can consult @fig-software-citation for general advice
+whether to cite a particular piece of software or not.
+As with data, citations should allow for exact identification and access.
+From the six "software citation principles" by @Smith2016,
+licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/):
 
-> **1\. Importance**: Software should be considered a legitimate and citable product of research. Software citations should be accorded the same importance in the scholarly record as citations of other research products, such as publications and data; they should be included in the metadata of the citing work, for example in the reference list of a journal article, and should not be omitted or separated. Software should be cited on the same basis as any other research product such as a paper or a book, that is, authors should cite the appropriate set of software products just as they cite the appropriate set of papers.
+> **1\. Importance**: Software should be considered a legitimate and citable
+> product of research. Software citations should be accorded the same importance
+> in the scholarly record as citations of other research products, such as
+> publications and data; they should be included in the metadata of the citing
+> work, for example in the reference list of a journal article, and should not
+> be omitted or separated. Software should be cited on the same basis as any
+> other research product such as a paper or a book, that is, authors should cite
+> the appropriate set of software products just as they cite the appropriate set
+> of papers.
 > 
-> **5\. Accessibility**: Software citations should facilitate access to the software itself and to its associated metadata, documentation, data, and other materials necessary for both humans and machines to make informed use of the referenced software.
+> **5\. Accessibility**: Software citations should facilitate access to the
+> software itself and to its associated metadata, documentation, data, and other
+> materials necessary for both humans and machines to make informed use of the
+> referenced software.
 > 
-> **6\. Specificity**: Software citations should facilitate identification of, and access to, the specific version of software that was used. Software identification should be as specific as necessary, such as using version numbers, revision numbers, or variants such as platforms.
+> **6\. Specificity**: Software citations should facilitate identification of,
+> and access to, the specific version of software that was used. Software
+> identification should be as specific as necessary, such as using version
+> numbers, revision numbers, or variants such as platforms.
 
-In practice, you would identify all pieces of software the project relies on. A few of them are obvious, such as R itself, Quarto, and the $\TeX$ distribution we installed before. Then there are the individual R packages^[By default, `renv` avoids copying them into the project folder. And even that happens (e.g., by using `renv::isolate()`) they are excluded from Git by default.], Quarto extensions, and $\TeX$ packages. All of them, in turn, may have dependencies and it is up to you decide when not to dig deeper. For example, some R packages are only thin wrappers around other R packages or around system dependencies which also might deserve credit. A system dependency is additional software that you require on your computer apart from the R package.
+In practice, you would identify all pieces of software the project relies on.
+A few of them are obvious, such as R itself, Quarto,
+and the $\TeX$ distribution we installed before.
+Then there are the individual R packages[^renv-copying],
+Quarto extensions, and $\TeX$ packages.
+All of them, in turn, may have dependencies
+and it is up to you decide when not to dig deeper.
+For example, some R packages are only thin wrappers around other R packages
+or around system dependencies which also might deserve credit.
+A system dependency is additional software
+that you require on your computer apart from the R package.
+
+[^renv-copying]: By default, `renv` avoids copying them into the project folder.
+And even that happens (e.g., by using `renv::isolate()`)
+they are excluded from Git by default.
 
 ::: {#fig-software-citation}
 ```{mermaid}
@@ -224,10 +292,21 @@ flowchart TB
   relies_on_credit --"No"--> nocite
 ```
 
-"Should I cite the software?" by @Brown2016 licensed under [CC\ BY-SA\ 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Simplified from original.
+"Should I cite the software?" by @Brown2016 licensed under [CC\ BY-SA\ 4.0][cc-by-sa].
+Simplified from original.
 :::
 
-Now, add references for the software you would like to cite to the manuscript. In the following, we will demonstrate this for R and all R packages by using the R package `grateful`. For arbitrary software, you can use [CiteAs](https://citeas.org/) or the [DOI Citation Formatter](https://citation.doi.org/) to create appropriate citations.
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+
+Now, add references for the software you would like to cite to the manuscript.
+In the following, we will demonstrate this for R and all R packages
+by using the R package `grateful`.
+For arbitrary software,
+you can use [CiteAs][citeas] or the [DOI Citation Formatter][doi-citation]
+to create appropriate citations.
+
+[citeas]: https://citeas.org/
+[doi-citation]: https://citation.doi.org/
 
 Add the following code chunk to the end of the discussion in the manuscript:
 
@@ -246,7 +325,14 @@ grateful::cite_packages(
 ```
 ``````
 
-This will automatically create a paragraph citing all used packages and generate the bibliography file `grateful-refs.bib`.^[Note that this automatic detection can miss packages in some circumstances, therefore always verify the rendered result.] Then, in the YAML header, add `grateful-refs.bib` by setting the `bibliography` as follows:
+This will automatically create a paragraph citing all used packages
+and generate the bibliography file `grateful-refs.bib`.[^automatic.note]
+Then, in the YAML header,
+add `grateful-refs.bib` by setting the `bibliography` as follows:
+
+[^automatic.note]: Note that this automatic detection
+can miss packages in some circumstances,
+therefore always verify the rendered result.
 
 ```{.yml filename="Manuscript.qmd"}
 bibliography:
@@ -274,46 +360,103 @@ git commit -m "Add software citation"
 
 ## Coding Best Practices
 
-Although we provide you with example code in this tutorial, a few things remain to be said about best practices when it comes to writing code that is readable and maintainable.
+Although we provide you with example code in this tutorial,
+a few things remain to be said about best practices
+when it comes to writing code that is readable and maintainable.
 
-- __Use project-relative paths.__ When you refer to a file within your project folder, write paths relative to the root (the uppermost folder in your project). For example, don't write `C:/Users/Public/Documents/my_project/images/result.png`, instead write `images/result.png`.
+- __Use project-relative paths.__
+  When you refer to a file within your project folder,
+  write paths relative to the root (the uppermost folder in your project).
+  For example, don't write `C:/Users/Public/Documents/my_project/images/result.png`,
+  instead write `images/result.png`.
 
-- __Keep it simple.__ Add complexity only when you must. Whenever there's a boring way to do something and a clever way, go for the boring way. If the code grows increasingly complex, refactor it into separate functions and files.
+- __Keep it simple.__
+  Add complexity only when you must.
+  Whenever there's a boring way to do something and a clever way,
+  go for the boring way.
+  If the code grows increasingly complex,
+  refactor it into separate functions and files.
 
-- __Don't repeat yourself.__ Use variables and functions before you start to write (or copy-paste) the same thing twice.
+- __Don't repeat yourself.__
+  Use variables and functions before you start
+  to write (or copy-paste) the same thing twice.
 
-- __Use comments to explain why you do things.__ The code already shows what you do. Use comments to summarize it and explain why you do it.
+- __Use comments to explain why you do things.__
+  The code already shows what you do.
+  Use comments to summarize it and explain why you do it.
 
-- __Don't reinvent the wheel.__ With R, chances are that what you need to do is greatly facilitated by a package from one of many high-quality collections such as [rOpenSci](https://ropensci.org/packages/), [r-lib](https://github.com/r-lib), [Tidyverse](https://www.tidyverse.org/packages/), or [fastverse](https://fastverse.github.io/fastverse/).
+- __Don't reinvent the wheel.__
+  With R, chances are that what you need to do is greatly facilitated
+  by a package from one of many high-quality collections
+  such as [rOpenSci][ropensci], [r-lib][r-lib], [Tidyverse][tidyverse],
+  or [fastverse][fastverse].
 
-- __Think twice about your dependencies.__ Every dependency increases the risk of irreproducibility in the future. Prefer packages that are well-maintained and light on dependencies^[You can use the function `pak::pkg_deps()` to count the total number of package dependencies in R.]. We also recommend you to read "When should you take a dependency?" by @Wickham2023PackagesDependency.
+- __Think twice about your dependencies.__
+  Every dependency increases the risk of irreproducibility in the future.
+  Prefer packages that are well-maintained and light on dependencies[^pkg-deps].
+  We also recommend you to read "When should you take a dependency?"
+  by @Wickham2023PackagesDependency.
 
-- __Fail early, often, and noisily.__ Whenever you expect a certain state, use assertions to be sure. In R, you can use `stopifnot()` to make sure that a condition is actually true.
+- __Fail early, often, and noisily.__
+  Whenever you expect a certain state, use assertions to be sure.
+  In R, you can use `stopifnot()` to make sure that a condition is actually true.
 
-- __Test your code.__ Test your code with scenarios where you know what the result should be. Turn bugs you discovered into test cases. Use linting tools^[A linting tool analyzes your code without actually running it. Therefore, this process is also called static code analysis.] to identify common mistakes in your code, for example, the R package [`lintr`](https://lintr.r-lib.org/).
+- __Test your code.__
+  Test your code with scenarios where you know what the result should be.
+  Turn bugs you discovered into test cases. Use linting tools[^linting-explanation]
+  to identify common mistakes in your code,
+  for example, the R package [`lintr`](https://lintr.r-lib.org/).
 
-- __Read through a style guide and follow it.__ A style guide is a set of stylistic conventions that improve the code quality. R users are recommended to read Wickham's [-@Wickham2022Style] "Tidyverse style guide" and use the R package [`styler`](https://styler.r-lib.org/). Python users may benefit from reading the "Style Guide for Python Code" by @VanRossum2013. And even if you don't follow a style guide, be consistent.
+- __Read through a style guide and follow it.__
+  A style guide is a set of stylistic conventions that improve the code quality.
+  R users are recommended to read Wickham's [-@Wickham2022Style] "Tidyverse style guide"
+  and use the R package [`styler`](https://styler.r-lib.org/).
+  Python users may benefit from reading the "Style Guide for Python Code" by @VanRossum2013.
+  And even if you don't follow a style guide, be consistent.
 
-This is only a brief summary and there is much more to be learned about coding practices. If you want to dive deeper we recommend the following resources:
+[ropensci]: https://ropensci.org/packages/
+[r-lib]: https://github.com/r-lib
+[tidyverse]: https://www.tidyverse.org/packages/
+[fastverse]: https://fastverse.github.io/fastverse/
+
+[^pkg-deps]: You can use the function `pak::pkg_deps()`
+to count the total number of package dependencies in R.
+
+[^linting-explanation]: A linting tool analyzes your code without actually running it. Therefore, this process is also called static code analysis.
+
+This is only a brief summary and there is much more to be learned about coding practices.
+If you want to dive deeper we recommend the following resources:
 
 - "Tidy design principles" [@Wickham2023Design]
 - "The Good Research Code Handbook" [@Mineault2021]
 - "Quality assurance of code for analysis and research" [@UKGovernment2020]
 - "The Art of UNIX Programming" [@Raymond2003]
 
-> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+> "Any fool can write code that a computer can understand.
+> Good programmers write code that humans can understand."
 > 
 > --- @Fowler1999, p. 15
 
 ## The Last Mile
 
-`renv` only records the versions of R packages and of R itself. This means that everything we have not decided to cite or attribute is not documented anywhere. We will cover system dependencies when [creating a `README`](make_readme.qmd). For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:
+`renv` only records the versions of R packages and of R itself.
+This means that everything we have not decided to cite or attribute
+is not documented anywhere.
+We will cover system dependencies when [creating a `README`](make_readme.qmd).
+For now, however, there is one simple step you can take
+to record the version of Quarto (and a few other dependencies).
+Do run the following:
 
 ```{.bash filename="Terminal"}
 quarto use binder
 ```
 
-This will create a few additional files which facilitate reconstructing the computational environment in the future.^[Either using [repo2docker](https://repo2docker.readthedocs.io/) or the public [binder](https://mybinder.org/) service.] As always, commit your changes:
+This will create a few additional files which facilitate
+reconstructing the computational environment in the future.[^binder-note]
+As always, commit your changes:
+
+[^binder-note]: Either using [repo2docker](https://repo2docker.readthedocs.io/)
+or the public [binder](https://mybinder.org/) service.
 
 ```{.bash filename="Terminal"}
 git status
