@@ -450,43 +450,8 @@ To do this, we add a comment to the beginning of every file
 and include the two tags `SPDX-FileCopyrightText` and `SPDX-License-Identifier`.
 How this works depends on the file type, as the syntax for a comment varies.
 
-For example, if you previously created the file `create_data_dictionary.R`,
-you can now add the following comment to the beginning of the file,
-replacing `<YEAR>` and `<YOUR NAME>` with the current year and your name
--- of course, you can also choose a different license:
-
-```{.r filename="create_data_dictionary.R"}
-# SPDX-FileCopyrightText: <YEAR> <YOUR NAME>
-#
-# SPDX-License-Identifier: CC0-1.0
-```
-
-You need to use `#` to start the comment
-because this is the symbol that starts comment lines in R scripts.
-Alternatively, you can use the [reuse tool](https://github.com/fsfe/reuse-tool)
-to add these information for you.
-After installing it with...
-
-```{.bash filename="Terminal"}
-pipx install reuse
-```
-
-...you can add the copyright information using the following command
--- the current year will be added automatically:
-
-```{.bash .code-overflow-wrap filename="Terminal"}
-reuse annotate --copyright="<YOUR NAME>" --license="CC0-1.0" create_data_dictionary.R
-```
-
-In many cases, the reuse tool will figure out the appropriate comment style for you.
-If this is not the case, as currently with Quarto files,
-you can tell it directly which comment style to use (`html` in this case):
-
-```{.bash .code-overflow-wrap filename="Terminal"}
-reuse annotate --copyright="Josephine Zerna" --copyright="Christoph Scheffel" --license="CC0-1.0" --style=html Manuscript.qmd
-```
-
-This adds the following header to `Manuscript.qmd`:
+For example, the file `Manuscript.qmd` was provided to you under [CC0\ 1.0][cc0].
+You can indicate that by adding the following comment to the beginning of the file:
 
 ```{.html filename="Manuscript.qmd"}
 <!--
@@ -497,12 +462,34 @@ SPDX-License-Identifier: CC0-1.0
 -->
 ```
 
-Note that `Manuscript.qmd` was provided to you under [CC0\ 1.0][cc0],
-which is what you indicate with the previous comment.
+You need to use `<!--` and `-->` to start and end the comment
+because this is the convention that starts comment lines in Quarto files.
+Alternatively, you can use the [reuse tool](https://github.com/fsfe/reuse-tool)
+to add these information for you.
+After installing it with...
+
+```{.bash filename="Terminal"}
+pipx install reuse
+```
+
+...you can add the copyright information using the following command
+-- the current year will be added automatically.
+In many cases, the reuse tool will figure out the appropriate comment style for you.
+If this is not the case, as currently with Quarto files,
+you can tell it directly which comment style to use (`html` in this case):
+
+```{.bash .code-overflow-wrap filename="Terminal"}
+reuse annotate --copyright="Josephine Zerna" --copyright="Christoph Scheffel" --license="CC0-1.0" --style=html Manuscript.qmd
+```
+
 As you edited the file throughout this tutorial,
 you may also add yourself.^[For licenses that require that modifications are indicated,
 this is an easy way to comply with them.
 Also, you do not need to provide your real name.]
+
+```{.bash .code-overflow-wrap filename="Terminal"}
+reuse annotate --copyright="<YOUR NAME>" --license="CC0-1.0" --style=html Manuscript.qmd
+```
 
 Sometimes, there are file types which do not allow
 for adding the license information inside them, such as PDF and CSV files.
@@ -560,7 +547,7 @@ reuse lint
 
 The manuscript and the bibliography file you downloaded for this tutorial
 are made available to you under [CC0\ 1.0][cc0]
-as is all code in this tutorial (e.g., for creating the data dictionary).
+as is all code in this tutorial (e.g., for the data analysis).
 Therefore, you can apply any license to your modified version.
 Please apply the license of your choice now,
 using any of the methods mentioned above (except the `README`, which we will cover later).
@@ -577,7 +564,7 @@ while the bibliography, the data dictionary and its code are made available unde
 ```{.txt .code-overflow-wrap filename="LICENSE.txt"}
 The Quarto documents stored in "Manuscript.qmd", "Manuscript.tex", and "Manuscript.pdf" by Josephine Zerna, Christoph Scheffel, and <YOUR NAME> are available under AGPLv3 (or later) <https://www.gnu.org/licenses/agpl-3.0.html> or (at your option) under CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>.
 
-The bibliography (stored in "Bibliography.bib"), data dictionary (stored in "data_dictionary.html"), and the code used to create it (stored in "create_data_dictionary.R") by Florian Kohrt and <YOUR NAME> are available under CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>.
+The bibliography (stored in "Bibliography.bib") by Florian Kohrt and <YOUR NAME> is available under CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>.
 ```
 
 As the AGPLv3 requires reusers adding the [full license text](https://www.gnu.org/licenses/agpl-3.0.txt),

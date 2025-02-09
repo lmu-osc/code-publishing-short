@@ -114,24 +114,15 @@ pak::pkg_sysreqs(deps)
 The output may look like the following:
 
 ```txt
-Finding R package dependencies ... Done!
-── Install scripts ──────────────────────── Fedora 40 ── 
-dnf install -y make pandoc libcurl-devel \
-  openssl-devel libicu-devel v8-devel libxml2-devel \
-  git
+── Install scripts ────────────────── Fedora 40 ── 
+dnf install -y make pandoc git
 
-── Packages and their system dependencies ──────────────
-blastula  – pandoc
-curl      – libcurl-devel, openssl-devel
+── Packages and their system dependencies ────────
 fs        – make
 knitr     – pandoc
-openssl   – openssl-devel
 remotes   – git
 rmarkdown – pandoc
 sass      – make
-stringi   – libicu-devel
-V8        – v8-devel
-xml2      – libxml2-devel
 ```
 
 We can see that the programs `make`, `pandoc`,
@@ -144,16 +135,9 @@ pandoc --version
 git --version
 ```
 
-The other system dependencies are libraries,
-and the method to identify the installed version varies between operating systems.
-For example, on Fedora Linux, one can run the following:
-
-```{.bash .code-overflow-wrap filename="Terminal"}
-rpm -q libcurl-devel openssl-devel libicu-devel v8-devel libxml2-devel
-```
-
-However, they are only relevant if the R packages were installed from source,
-rather than as binary package.
+However, this does not work for all system dependencies.
+Specifically, it does not work for libraries -- software that is not supposed to be run on its own.
+Identifying their version is beyond the scope of this tutorial.
 
 We also know that we need Quarto to create the PDF,
 so let's find out its version as well:
@@ -277,7 +261,7 @@ The most important file in this project folder is `Manuscript.qmd` which contain
 - `Bibliography.bib`: bibliographic references used in the manuscript
 - `data.csv`: a data set containing the simplified `palmerpenguins` data
 - `data_dictionary.html`: a dictionary to the data file,
-  created using `create_data_dictionary.R`
+  created using `data_dictionary.qmd`
 
 The folder `_extensions` contains the `apaquarto` extension which is used to typeset the PDF accoording to APA guidelines.
 
