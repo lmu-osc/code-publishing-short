@@ -35,14 +35,23 @@ Windows users may additionally need
 ## Alternatives to Quarto
 
 Quarto is a tool to render dynamic documents, but not the only one.
-You may also use [`rmarkdown`](https://rmarkdown.rstudio.com/),
-[Jupyter Book](https://jupyterbook.org/),
-[Stencila](https://stencila.io/),
-[Curvenote](https://curvenote.dev/),
-[showyourwork!](https://show-your.work/),
-[Org Mode](https://orgmode.org/),
-[StatTag](https://sites.northwestern.edu/stattag/),
-or one of the countless others.
+
+It is the successor of the R package [`rmarkdown`](https://rmarkdown.rstudio.com/)
+and mostly backwards-compatible.
+`rmarkdown` continues to be supported,
+but the development of new features happens in Quarto.
+The main difference is that Quarto has first-class support for Python.
+In other words, Python users of Quarto do not need to have R installed.
+
+While this tutorial focuses on Quarto,
+you can also create reproducible research projects with the following tools:
+
+- [Jupyter Book](https://jupyterbook.org/)
+- [Stencila](https://stencila.io/)
+- [Curvenote](https://curvenote.dev/)
+- [showyourwork!](https://show-your.work/)
+- [Org Mode](https://orgmode.org/)
+- [StatTag](https://sites.northwestern.edu/stattag/)
 :::
 
 We will start with creating a simple report which incorporates R code.
