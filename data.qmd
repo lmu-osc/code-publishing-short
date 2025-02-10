@@ -64,17 +64,13 @@ it is important to document the meaning (e.g., units)
 and values of its variables.
 This is typically done with a _data dictionary_ (also called a _codebook_).
 In the following, we will demonstrate how to create a simple data dictionary
-using the R packages [`datawizard`][datawizard] and [`tinytable`][tinytable].
+using the R package [`datawizard`][datawizard].
 You can install them now using:
 
 [datawizard]: https://easystats.github.io/datawizard/
-[tinytable]: https://vincentarelbundock.github.io/tinytable/
 
 ```{.r filename="Console"}
-renv::install(c(
-  "datawizard",
-  "tinytable"
-))
+renv::install("datawizard")
 ```
 
 You can put the code that follows in a separate document.
@@ -175,15 +171,9 @@ for (x in names(vars)) {
 
 ``````
 
-Next, you can use `datawizard` again to create
-the data dictionary containing the descriptions,
+Then, you can create the data dictionary containing the descriptions,
 but also some other information about each variable
-(e.g., the number of missing values).
-Finally, you can use `tinytable` to print the table.
-
-::: {.column-margin}
-![tinytable: Simple and Configurable Tables](images/tinytable.svg){width=250px}
-:::
+(e.g., the number of missing values) and print it.
 
 ``````{cat}
 #| engine.opts = list(file = "_data_dictionary.qmd", append = TRUE),
@@ -193,11 +183,12 @@ Finally, you can use `tinytable` to print the table.
 ```{r}
 #| echo: false
 #| column: "body-outset"
+#| classes: plain
 
-(dict <- datawizard::data_codebook(dat) |>
-  subset(select = -c(ID, .row_id)) |>
-  tinytable::tt() |>
-  tinytable::format_tt(replace = "")) # hide NAs
+datawizard::data_codebook(dat) |>
+  datawizard::data_select(exclude = c("ID", ".row_id")) |>
+  datawizard::data_filter(N != "") |>
+  datawizard::print_md()
 ```
 
 ``````
