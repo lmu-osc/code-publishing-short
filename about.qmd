@@ -3,8 +3,20 @@ title: "About"
 author:
   - name: "Florian Kohrt"
     orcid: "0000-0003-0374-5625"
+  - name: "Josephine Zerna"
+    orcid: "0000-0003-2892-884X"
+  - name: "Christoph Scheffel"
+    orcid: "0000-0001-5963-9229"
 bibliography: grateful-refs.bib
 ---
+
+---
+
+This tutorial was created by Florian Kohrt.
+It is based on previous work by Josephine Zerna and Christoph Scheffel.
+Comments on earlier versions were kindly provided by
+Malika Ihle, Florian Pargent, Jonas Hagenberg, Felix Schönbrodt,
+and Sarah von Grebmer zu Wolfsthurn.
 
 ## Utilized Software
 
