@@ -81,6 +81,8 @@ effectively limiting the author in dealing with their own work.
 It can also be non-exclusive, thus giving rights to others without the author losing them.
 To avoid that every author who would like to share their work writes their own license,
 pre-formulated "boilerplate" licenses have been created.
+For example, you might have heard about ["Creative Commons" licenses][cc-licenses],
+which are used by Wikipedia.
 Recognizing them facilitates both sharing (on the side of the author)
 and re-using (on the side of the recipient).^[In fact, authors should not
 create their own license texts if the purpose is to share their work freely
@@ -88,6 +90,7 @@ and openly with others.
 By using a boilerplate license others know what to expect,
 also because it may have already been [tested][sfconservancy] in [courts][cc-db].]
 
+[cc-licenses]: https://creativecommons.org/share-your-work/cclicenses/
 [sfconservancy]: https://sfconservancy.org/copyleft-compliance/
 [cc-db]: https://legaldb.creativecommons.org/
 
@@ -100,7 +103,16 @@ Put simply, works under a free/open license "can be freely studied, applied, cop
 by anyone, for any purpose" [@Moller2015].
 Importantly, this also means that others do not need to ask or notify the author
 and that they can use it for commercial purposes.
-By the choice of license, authors can, however, demand that they are credited,
+Coming back to the example of Creative Commons licenses,
+not all of them are free/open.
+For example, some restrict commercial use and modification.
+The Creative Commons license "[Attribution-ShareAlike 4.0][cc-by-sa]"
+is an example of a free/open license, however,
+and we will cover several others below.
+
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+
+By the choice of license, authors can demand that they are credited,
 that the original license is indicated, that modifications are indicated,
 that derivative works are only shared under the same license,
 and that no further restrictions are imposed on the work.
