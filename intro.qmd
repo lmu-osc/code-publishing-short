@@ -5,8 +5,7 @@ title: "Introduction"
 In the following, we will set the stage by
 highlighting the importance of sharing all materials,
 documenting their usage,
-and linking results with their computations,
-leading to the creation _research compendia_.
+and linking results with their computations.
 
 ## The Importance of Sharing
 
