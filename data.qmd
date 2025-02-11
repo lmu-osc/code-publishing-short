@@ -391,7 +391,8 @@ as together they comprise a [data package](https://specs.frictionlessdata.io/dat
 :::
 
 Having added the data and its documentation,
-one can view and record the utilized packages with `renv`:
+one can view and record the utilized packages with `renv`,
+thus bringing the project into a consistent state:
 
 ```{.r filename="Console"}
 renv::status()
