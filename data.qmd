@@ -210,7 +210,7 @@ you could use the function `citation()` to create such a reference:
 
 ```{r}
 #| label: "data-citation"
-#| output: false
+#| eval: false
 
 citation("palmerpenguins", auto = TRUE) |>
   format(bibtex = FALSE, style = "text")
