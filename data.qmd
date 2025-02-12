@@ -305,6 +305,7 @@ valid_vals <- list(
 Finally, store the descriptions of the variables we already created earlier:
 
 ```{.r filename="Console"}
+# Store the description of variables
 vars <- c(
   species = "a character string denoting penguin species",
   island = "a character string denoting island in Palmer Archipelago, Antarctica",
