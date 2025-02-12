@@ -201,9 +201,11 @@ datawizard::data_codebook(dat) |>
 ```
 
 Depending on the type of data, it may also be necessary
-to describe measurement instruments, sampling procedures, appropriate weighting,
-applied preprocessing steps, or contact information.
-In our case, as the data have already been published,
+to describe sampling procedures (e.g., selection criteria),
+measurement instruments (e.g., questionnaires),
+appropriate weighting,
+already applied preprocessing steps, or contact information.
+In our case, as the data has already been published,
 we only store a reference to its source.
 
 The data set is from the R package `palmerpenguins`.
