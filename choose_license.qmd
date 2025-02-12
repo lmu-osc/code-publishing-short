@@ -139,7 +139,7 @@ to display the full text of the license [see @Wikipedia2024FDL]
 One solution is to make such a work simultaneously available
 under two (or more) licenses, at the choice of the recipient:
 Either under a specified software license,
-or under a Creative Commons license[^media].
+or under a Creative Commons license.[^media]
 This is called multi-licensing and makes it easier
 to reuse both the rendered document as well as the code.
 For example, one could write:

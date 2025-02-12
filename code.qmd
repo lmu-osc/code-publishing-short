@@ -257,7 +257,7 @@ licensed under [CC\ BY\ 4.0](https://creativecommons.org/licenses/by/4.0/):
 In practice, you would identify all pieces of software the project relies on.
 A few of them are obvious, such as R itself, Quarto,
 and the $\TeX$ distribution we installed before.
-Then there are the individual R packages[^renv-copying],
+Then there are the individual R packages,[^renv-copying]
 Quarto extensions, and $\TeX$ packages.
 All of them, in turn, may have dependencies
 and it is up to you decide when not to dig deeper.
@@ -391,7 +391,7 @@ when it comes to writing code that is readable and maintainable.
 
 - __Think twice about your dependencies.__
   Every dependency increases the risk of irreproducibility in the future.
-  Prefer packages that are well-maintained and light on dependencies[^pkg-deps].
+  Prefer packages that are well-maintained and light on dependencies.[^pkg-deps]
   We also recommend you to read "When should you take a dependency?"
   by @Wickham2023PackagesDependency.
 
