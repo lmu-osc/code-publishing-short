@@ -108,6 +108,7 @@ along with the English name.
 ```{r}
 #| echo: false
 
+# Store the description of variables
 vars <- c(
   species = "a character string denoting penguin species",
   island = "a character string denoting island in Palmer Archipelago, Antarctica",
@@ -119,6 +120,7 @@ vars <- c(
   year = "an integer denoting the study year"
 )
 
+# Store the description of variable values
 vals <- list(
   species = c(
     Adelie = "Pygoscelis adeliae",
