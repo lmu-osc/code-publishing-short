@@ -188,7 +188,7 @@ but also some other information about each variable
 #| classes: plain
 
 datawizard::data_codebook(dat) |>
-  datawizard::data_select(exclude = c("ID", ".row_id")) |>
+  datawizard::data_select(exclude = ID) |>
   datawizard::data_filter(N != "") |>
   datawizard::print_md()
 ```
