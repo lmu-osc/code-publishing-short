@@ -155,7 +155,7 @@ Of course, you may also use an extension for a different journal.
 `apaquarto` can be installed in the project folder using the following command:
 
 ```{.bash filename="Terminal"}
-quarto add --no-prompt wjschne/apaquarto
+quarto add wjschne/apaquarto
 ```
 
 This downloads the extension into the folder `_extensions` of your project.
