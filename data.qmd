@@ -43,9 +43,9 @@ applicable privacy laws (e.g., the GDPR for European citizens)
 and contractual obligations (e.g., with your data provider).
 
 Privacy laws and contractual obligations may require you
-to create a completely anonymized or synthetic data set[^anon-synth-tools] (if possible),
-or prohibit any sharing of data, in which case you should provide a reference
-to a data repository where they can be obtained from.
+to create an anonymized or synthetic data set[^anon-synth-tools],
+in which case you should provide a reference
+to a repository where the originally measured data can be obtained from.
 For further information, you can watch the talk "[Data anonymity](https://osf.io/j6fy8)"
 by Felix Schönbrodt recorded during the LMU Open Science Center Summer School 2023
 and have a look at [the accompanying slides](https://osf.io/z6gcu).

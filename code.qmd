@@ -7,7 +7,7 @@ engine: knitr
 
 With the data added to the project folder, you can now analyze them and describe the results.
 For the purpose of this tutorial, we suggest to conduct a simple analysis
-that explores whether the bill lengths of penguins vary between sex.
+that explores whether the bill lengths of penguins vary depending on their sex.
 You can write your own or use the following example:
 
 ::: {#tip-t-test .callout-tip collapse="true"}
