@@ -1,11 +1,59 @@
-# Repository for the Reproducible Manuscripts Quarto Workshop
+# Code Publishing Tutorial
 
-This repository is for day 2 of the self-paced Reproducible Manuscripts Quarto Workshop.
-The repository is structured as follows:
+This repository contains a tutorial on code publishing created for the LMU Open Science Center.
+It can be viewed online at <https://lmu-osc.github.io/code-publishing/>.
 
-1. The folder "01_Example" contains a **minimal reproducible example** with a Quarto manuscript using the Palmer Penguins data set. All necessary files are there, including the .qmd-file, the data in .csv format, a .bib-file with references, and a citation style csl.-file.
-2. The folder "02_Practise" contains the data in .csv format, a .bib-file with references, a .cls-file for *apaquarto*, and a citation style .csl-file. These are necessary components to **recreate the minimal reproducible example as a practise**, and would have to be copy-pasted anyway. Other files, like the .RProj-, renv-, and .qmd-files will be created by the participants during the practise in this folder.
-3. The folder "03_Supplement" contains a **checklist** that participants can use to go over their project at the end and see which reproducibility measures they were able to implement and how to take it one step further.
-4. The file "Instructions.qmd" contains the detailed instructions for day 2, i.e. how to execute the example, recreate it, apply the techniques to own data, and use the checklist, step-by-step.
+The tutorial pages are contained in the `*.qmd` files in the root folder.
+All images are contained in the folder `images`.
 
-If you encounter any issues during the workshop that you cannot resolve through a quick Google search, please approach the workshop instructors.
+## Previewing and rendering the tutorial
+
+The tutorial is written in Markdown and uses [Quarto][quarto] to render it as a website.
+To render the tutorial on your own computer, you need to have Quarto installed.
+
+[quarto]: (https://quarto.org/)
+
+Further, the R package [`renv`][renv] is used to track the project's dependencies
+
+[renv]: https://cran.r-project.org/package=renv
+
+One can install `renv` by running the following:
+
+```r
+install.packages("renv")
+```
+
+Then, one can restore the dependencies tracked with `renv` by running the following:
+
+```r
+renv::restore()
+```
+
+While you are working on the tutorial, you can preview it by running:
+
+```sh
+quarto preview
+```
+
+This will open the tutorial in your browser.
+If you make any changes, the website will automatically reload.
+
+If you are done editing and would like to render the tutorial to a static website,
+run the following:
+
+```sh
+quarto render
+```
+
+## Contributing
+
+If you are contributing to this tutorial,
+please read the [contributing notes](CONTRIBUTING.md) before.
+
+## License
+
+Except where noted otherwise, the narrative text in this tutorial is licensed under [CC BY-SA 4.0][cc-by-sa];
+the code without any narrative text is also (at your option) available under [CC0 1.0][cc0].
+
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+[cc0]: https://creativecommons.org/publicdomain/zero/1.0/
