@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+engine: knitr
 ---
 
 In the following, we will set the stage by
