@@ -11,7 +11,7 @@ All images are contained in the folder `images`.
 The tutorial is written in Markdown and uses [Quarto][quarto] to render it as a website.
 To render the tutorial on your own computer, you need to have Quarto installed.
 
-[quarto]: (https://quarto.org/)
+[quarto]: https://quarto.org/
 
 Further, the R package [`renv`][renv] is used to track the project's dependencies
 
