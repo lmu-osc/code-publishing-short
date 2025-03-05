@@ -816,9 +816,13 @@ First, try to answer the following questions:
 
 [cc0]: https://creativecommons.org/publicdomain/zero/1.0/
 
-You can now download the image and move it to your project folder (maybe call it `penguin.jpg`).
+You can now download the image[^image-resolution]
+and move it to your project folder (maybe call it `penguin.jpg`).
 In your manuscript file, find the line that says "add image here", remove it,
 and add the image instead, including proper attribution.
+
+[^image-resolution]: If you are unsure which image resolution (size) is required,
+just download it in the largest possible resolution so it can be printed.
 
 ::: {#tip-example-license .callout-tip collapse="true"}
 ### Attribution for Penguin Picture (Solution)
