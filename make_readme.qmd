@@ -12,85 +12,75 @@ What would be useful to know in order to quickly understand
 what is going on in the project?
 This is what needs to be described in the README.
 While you could just start writing along,
-most READMEs have some sections in common which we describe below.
+it is helpful to provide at least the following information in sections on their own.
 
-Name
+### Name and Description
 
-:   How is the project called?
+How is the project called?
+What is it about?
+Which files does the project folder contain?
+How are they organized?
 
-Badges/Project Status
+### Involved Data
 
-:   Badges typically report quick facts, like
-    [whether the project is actively maintained][repostatus],
-    [how many dependencies it has][tinyverse],
-    or [whether it has been published in a package repository][metacran].
-    Sometimes, the license, any associated DOIs,
-    or quality metrics like code coverage by unit tests
-    are communicated via badges as well.
+Are any (empirical) data involved (e.g., being analyzed or used as input)?
+From which sources can they be obtained?
+Are they already included in the project folder?
+Where is their data dictionary located?
+Which terms, usage restrictions, or licenses apply?
+If they are not publicly available,
+is an alternative, synthesized version provided?
 
-[repostatus]: https://www.repostatus.org/
-[tinyverse]: https://tinyverse.netlify.app/
-[metacran]: https://www.r-pkg.org/services#badges
+### Computational Requirements
 
-Description
+What software needs to be installed to run the analysis
+-- in other words, what are its dependencies?
+This also includes software that you have used for any manual steps.
+If the code has particular hardware requirements
+(e.g., in terms of processor or memory),
+these should be also noted.
+Finally, for steps that take more than a couple of seconds,
+the approximate runtime should be indicated.
 
-:   What is the project about? What are its features? Why was it created?
+@nte-dependencies provides more information
+on determining the dependencies of an R project.
 
-Visuals
+### Usage
 
-:   Is there anything you can show that demonstrates how the project can be used?
-    Screenshots or other visuals can make the README more appealing.
+How can one run the project -- is there a master script
+or a particular order in which any scripts need to be executed?
+Provide detailed instructions for running the full project.
 
-Installation/Dependencies
+### List of Results
 
-:   What steps need to be taken to run the project? What software needs to be installed?
-    R itself and the R packages are already documented as this project uses `renv`.
-    Therefore you can focus on all other dependencies,
-    such as the system dependencies of R packages
-    as well as the version of Quarto.[^renv-quarto]
-    Also, don't forget to mention software that you have used for any manual steps.
-    See @sec-dependencies for additional information.
-    It may make sense to provide these information in the README
-    even if you already cite all programs and their version numbers in your manuscript.
+For every result (i.e., number, figure, or table) that is
+computed in the project and displayed in the manuscript,
+indicate where exactly it is computed.
+
+### Citation
+
+Is there a recommended way to cite this project?
+Is there a published article associated with it
+that you would like to have cited?
+
+### License
+
+Under which licenses are the works in this project folder available?
+
+## Create It!
+
+Create your README now as the file `README.md`.
+
+::: {#nte-dependencies .callout-note}
+### Identifying R Dependencies
+
+R itself and the R packages are already documented as this project uses `renv`.
+Therefore you can focus on all other dependencies,
+such as the system dependencies of R packages
+as well as the version of Quarto.[^renv-quarto]
 
 [^renv-quarto]: As of August 2024, a proposal for `renv` to record the version of Quarto
 has not been implemented, see [rstudio/renv#1143](https://github.com/rstudio/renv/issues/1143).
-
-Usage
-
-:   Which files does the project folder contain? How are they organized?
-    How can one run the project -- is there a master script
-    or a particular order in which any scripts need to be executed?
-    How long does it take to run all scripts?
-    Is there additional documentation available?
-
-Support
-
-:   Do you offer support or help, for example, via GitHub discussions
-    or a mailing list?
-
-Contributing
-
-:   If the project is active: Can other people contribute? How?
-    Do you accept contributions? Do you review issues?
-    This section is sometimes outsourced into a file called `CONTRIBUTING.md`.
-
-Authors
-
-:   Who was involved in creating this project? This involves you,
-    your co-authors, and anybody you accepted contributions from.
-
-Citation
-
-:   Is there a recommended way to cite this project?
-    Is there a published article associated with it
-    that you would like to have cited?
-
-License
-
-:   Under which licenses are the works in this project folder available?
-
-## Installation/Dependencies {#sec-dependencies}
 
 An overview over the system dependencies of R packages can be created
 using the function `pak::pkg_sysreqs()`.
@@ -98,14 +88,11 @@ In combination with `renv`, we can obtain the system dependencies
 of all R packages the current project directly depends on:
 
 ```{.r filename="Console"}
-# First, install pak
-renv::install("pak")
-
 # Find all R package dependencies
 deps <- renv::dependencies()$Package |>
-   unique() |>
-   pak::pkg_deps(dependencies = NA) |>
-   getElement("package")
+  unique() |>
+  pak::pkg_deps(dependencies = NA) |>
+  getElement("package")
 
 # Identify their system dependencies
 pak::pkg_sysreqs(deps)
@@ -178,43 +165,46 @@ but the relevant sections are the following:
 ```
 
 Of course, all the system dependencies identified until now
-may have dependencies on their own. Use your own judgement to decide when not to dig deeper.
+may have dependencies on their own.
+Use your own judgement to decide when not to dig deeper.
+:::
 
-## Create It!
+If you feel stuck, you can have a look at the following examples:
 
-Create your README now as the file `README.md`. If you feel stuck,
-you can have a look at the following examples:
-
-::: {#tip-name .callout-tip collapse="true"}
-### Name
+::: {#tip-name-description .callout-tip collapse="true"}
+### Name and Description
 
 ```{.md .code-overflow-wrap filename="README.md"}
 # Penguin Paper
 
+This project contains the Quarto manuscript of our study on penguins ("Manuscript.qmd"). It is written in R and uses `renv` to track its dependencies.
+
+The most important file in this project folder is `Manuscript.qmd` which contains the text of the article as well as the code for its computations. It is accompanied by the following files:
+
+- `Bibliography.bib`: bibliographic references used in the manuscript
+- `data.csv`: a data set containing the simplified `palmerpenguins` data
+- `data_dictionary.html`: a dictionary to the data file,
+  created using `data_dictionary.qmd`
+
+The folder `_extensions` contains the `apaquarto` extension which is used to typeset the PDF accoording to APA guidelines.
 ```
 :::
 
-::: {#tip-project-status .callout-tip collapse="true"}
-### Badges/Project Status
+::: {#tip-data .callout-tip collapse="true"}
+### Involved Data
 
 ```{.md .code-overflow-wrap filename="README.md"}
-[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
+## Involved Data
+
+The manuscript analyzes the "palmerpenguins" data set available from <https://cran.r-project.org/package=palmerpenguins>. The data is stored as "data.csv" and documented in the file "data_dictionary.html". It is made available under CC0 1.0.
 ```
 :::
 
-::: {#tip-description .callout-tip collapse="true"}
-### Description
-
-```{.md .code-overflow-wrap filename="README.md"}
-This project contains the Quarto manuscript of our study on penguins. It is written in R and uses `renv` to track its dependencies.
-```
-:::
-
-::: {#tip-installation .callout-tip collapse="true"}
-### Installation/Dependencies
+::: {#tip-computational-requirements .callout-tip collapse="true"}
+### Computational Requirements
 
 ``````{.md .code-overflow-wrap filename="README.md"}
-## Dependencies
+## Computational Requirements
 
 This manuscript requires the following system software to be installed. In addition, we provide the version numbers this manuscript has last been run with:
 
@@ -256,21 +246,24 @@ renv::restore()
 `````{.md .code-overflow-wrap filename="README.md"}
 ## Usage
 
-The most important file in this project folder is `Manuscript.qmd` which contains the text of the article as well as the code for its computations. It is accompanied by the following files:
-
-- `Bibliography.bib`: bibliographic references used in the manuscript
-- `data.csv`: a data set containing the simplified `palmerpenguins` data
-- `data_dictionary.html`: a dictionary to the data file,
-  created using `data_dictionary.qmd`
-
-The folder `_extensions` contains the `apaquarto` extension which is used to typeset the PDF accoording to APA guidelines.
-
 The manuscript can be rendered to PDF using the following command:
 
 ```bash
 quarto render Manuscript.qmd
 ```
 ``````
+:::
+
+::: {#tip-list-of-results .callout-tip collapse="true"}
+### List of Results
+
+```{.md .code-overflow-wrap filename="README.md"}
+## List of Results
+
+- In-text numbers in the section "results": Calculated in the chunk "t-test" within "Manuscript.qmd"
+- Table 1: Calculated in the chunk "tbl-descriptive-statistics" within "Manuscript.qmd"
+- Figure 2: Calculated in the chunk "fig-bill-length-comparison" within "Manuscript.qmd"
+```
 :::
 
 ::: {#tip-citation .callout-tip collapse="true"}

@@ -140,6 +140,64 @@ in order to exclude it from the Git repository.
 If you already committed a file that contains credentials, you can follow @Chacon2024.
 :::
 
+::: {#wrn-dependencies .callout-warning}
+### Dealing with Dependencies
+
+Everything not included in the project folder that is required
+for running the project is called a dependency.
+Dependencies are possible breaking points in the future,
+therefore it's best to keep them at a minimum.
+If you cannot avoid taking a dependency,
+make sure that it's available to users of your project in the long term.
+In the following, we will discuss two common examples of dependencies:
+R packages and downloaded files.
+
+#### R Packages
+
+R packages that you use in your analysis are an obvious example of dependencies.
+Their version is recorded by `renv`,
+but you also need to ensure that they are available for download.
+First, identify the source from which you installed your packages:
+
+```{.r filename="Console"}
+# First, install {pak} and {sessioninfo}
+renv::install(c(
+  "pak",
+  "sessioninfo"
+))
+
+# Which R packages does the project directly depend on?
+deps <- renv::dependencies()$Package |>
+  unique()
+
+# Which R packages does the project indirectly depend on?
+deps <- deps |>
+  pak::pkg_deps(dependencies = NA) |>
+  getElement("package")
+
+# Get information about their source
+sessioninfo::package_info(deps)
+```
+
+If the `source` column only contains the entries `CRAN`, `RSPM`, or `Bioconductor`,
+they are already archived.
+If the `source` column instead mentions something else (e.g., `GitHub`),
+you need to make sure yourself that the package is available to users of your project.
+You can either archive the package,
+for example in the [Software Heritage archive](https://archive.softwareheritage.org/).
+Or you store a copy of the package in the project folder
+-- of course, you need to make sure that you are allowed to do so from a copyright perspective
+and comply with its license.
+
+#### Downloaded Files
+
+If your code interacts with the internet, for example, to download files,
+this is another common dependency with the risk of breaking in the future.
+If possible, store a copy of the downloaded file in your project folder.
+Alternatively, you can upload it to a permanent repository such as Zenodo
+(discussed [later](make_readme.qmd)).
+:::
+
 ## Style Manuscript
 
 To format manuscripts according to the requirements of a particular journal,
