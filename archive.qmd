@@ -7,7 +7,7 @@ title: "Archive Your Project"
 The project folder is now ready to be deposited for long-term archival.
 When considering an appropriate repository,
 there are a few questions to ponder
-[excerpt from @Jackson2018, with footnotes removed, licensed under [CC\ BY\ 4.0][cc-by]]:
+[excerpt from @Jackson2018Where, with footnotes removed, licensed under [CC\ BY\ 4.0][cc-by]]:
 
 [cc-by]: https://creativecommons.org/licenses/by/4.0/
 
@@ -155,4 +155,4 @@ In this case, consider using a repository specifically for research data,
 which later grants access for valid uses individually.
 
 For further information, you may be interested in
-[Software Deposit Guidance for Researchers](https://softwaresaved.github.io/software-deposit-guidance/).
+"Software Deposit Guidance for Researchers" [@Jackson2018Guidance].
