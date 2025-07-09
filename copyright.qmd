@@ -777,7 +777,7 @@ due to the author's moral rights.
 For these reasons, we recommend that you provide attribution
 for all works under a free/open license
 -- even if the license does not strictly require it (e.g., CC0).
-For this reason, you need to make note of every foreign work
+Also, you should take note of every foreign work
 included in your project folder and record its license.
 
 ::: {#imp-non-copyright-restrictions .callout-important}
