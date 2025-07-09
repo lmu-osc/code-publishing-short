@@ -17,19 +17,19 @@ Further, the R package [`renv`][renv] is used to track the project's dependencie
 
 [renv]: https://cran.r-project.org/package=renv
 
-One can install `renv` by running the following:
+One can install `renv` as follows in R:
 
 ```r
 install.packages("renv")
 ```
 
-Then, one can restore the dependencies tracked with `renv` by running the following:
+Then, also from within R, one can restore the dependencies tracked with `renv`:
 
 ```r
 renv::restore()
 ```
 
-While you are working on the tutorial, you can preview it by running:
+While you are working on the tutorial, you can preview it as follows:
 
 ```sh
 quarto preview
@@ -55,5 +55,5 @@ please read the [contributing notes](CONTRIBUTING.md) before.
 Except where noted otherwise, the narrative text in this tutorial is licensed under [CC BY-SA 4.0][cc-by-sa];
 the code without any narrative text is also (at your option) available under [CC0 1.0][cc0].
 
-[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
-[cc0]: https://creativecommons.org/publicdomain/zero/1.0/
+[cc-by-sa]: LICENSE-CC-BY-SA.txt
+[cc0]: LICENSE-CC0.txt
