@@ -381,7 +381,7 @@ There are multiple standards on how to do so:
 - The license of embedded elements (e.g., images) is either given
   directly beneath to where they are embedded,
   at the end of the respective page,
-  or collectively on an separate page.
+  or collectively on a separate page.
 
 - Individual programming languages also have their own way
   of stating which license a package is distributed under.
@@ -549,7 +549,8 @@ are made available to you under [CC0\ 1.0][cc0]
 as is all code in this tutorial (e.g., for the data analysis).
 Therefore, you can apply any license to your modified version.
 Please apply the license of your choice now,
-using any of the methods mentioned above (except the `README`, which we will cover later).
+using any of the methods mentioned above (except the `README`,
+which we will [cover later](make_readme.qmd)).
 
 ::: {#tip-manuscript-licensetxt .callout-tip collapse="true"}
 ### Addition to `LICENSE.txt` (Solution)
@@ -600,7 +601,7 @@ flowchart TB
   click cc_by_sa href "https://creativecommons.org/licenses/by-sa/4.0/"
 ```
 
-Note. DRM = digital rights management
+_Note._ DRM = digital rights management
 
 Advanced License Flowchart for Software, Writing, Images, Audio, and Video
 :::
@@ -640,6 +641,8 @@ flowchart TB
   click cc0_db href "https://creativecommons.org/publicdomain/zero/1.0/"
   click odbl href "https://opendatacommons.org/licenses/odbl/summary/"
 ```
+
+_Note._ DRM = digital rights management
 
 Advanced License Flowchart for Data(base)
 :::

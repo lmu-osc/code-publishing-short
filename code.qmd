@@ -195,7 +195,7 @@ If your code interacts with the internet, for example, to download files,
 this is another common dependency with the risk of breaking in the future.
 If possible, store a copy of the downloaded file in your project folder.
 Alternatively, you can upload it to a permanent repository such as Zenodo
-(discussed [later](make_readme.qmd)).
+(discussed [later](archive.qmd)).
 :::
 
 ## Style Manuscript

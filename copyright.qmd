@@ -205,7 +205,7 @@ More often than not, however, the situation is a little more complicated:
   In the best case, the authors indicate which parts of the work are covered by which license.
 - A work may be available under different licenses at the choice of the (re-)user.
   This is also called multi-licensing.
-  For example, authors might allow to user a work under any version of a license.
+  For example, authors might allow to use a work under any version of a license.
 - In contrast, it may also be the case that one has to comply
   with the conditions of multiple licenses at the same time.
   This is the case, for example, if a derivative work is published
@@ -226,7 +226,7 @@ If no license notice is present and the work is not in the public domain,
 it is _in copyright_ and you are generally not allowed to share it with others.
 You can, however, ask the author to put the corresponding work under a free/open license
 -- Wikimedia Commons provides an [email template][commons-templates] to obtain such a permission.
-Without permission you can check you national laws
+Without permission you can check your national laws
 for limitations and exceptions to copyright.^[in Germany: _Schranken des Urheberrechts_]
 Examples include the right to quote, [trivial use][commons-minimis],
 and the US-American [fair use][wiki-fair-use].
@@ -573,7 +573,7 @@ CC0, officially introduced in 2009, is still at version [1.0][cc0-v1].
 [cc-v2]: https://creativecommons.org/weblog/entry/4216#:~:text=Share%20Alike%20Across%20Borders
 [cc-v3]: https://creativecommons.org/weblog/entry/7249#:~:text=BY-SA%20%E2%80%94%20Compatibility%20Structure%20Now%20Included
 [cc-v4]: https://creativecommons.org/weblog/entry/40768
-[cc0-v1]: http://www.creativecommons.org/weblog/entry/13304
+[cc0-v1]: https://www.creativecommons.org/weblog/entry/13304
 [cc-versions]: https://wiki.creativecommons.org/wiki/License_Versions
 [commons-trolls]: https://commons.wikimedia.org/wiki/Commons:Copyleft_trolling
 

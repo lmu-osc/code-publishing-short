@@ -13,7 +13,7 @@ To render the tutorial on your own computer, you need to have Quarto installed.
 
 [quarto]: https://quarto.org/
 
-Further, the R package [`renv`][renv] is used to track the project's dependencies
+Further, the R package [`renv`][renv] is used to track the project's dependencies.
 
 [renv]: https://cran.r-project.org/package=renv
 

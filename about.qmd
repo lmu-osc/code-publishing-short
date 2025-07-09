@@ -63,4 +63,6 @@ The source code is available on [GitHub](https://github.com/rstudio/rstudio/tree
 ![](images/bitss.png){width=250px}
 :::
 
-This work was partly funded by the Berkeley Initiative for Transparency in the Social Sciences (BITSS), managed by the Center for Effective Global Action (CEGA).
+This work was partly funded by the Berkeley Initiative
+for Transparency in the Social Sciences (BITSS),
+managed by the Center for Effective Global Action (CEGA).
