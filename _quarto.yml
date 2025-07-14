@@ -51,6 +51,10 @@ website:
       - choose_license.qmd
       - make_readme.qmd
       - archive.qmd
+      - section: "💡 In-depth material"
+        contents:
+          - href: in_depth_material/introduction_copyright.qmd
+            text: "Introduction to Copyright and Licensing"
 # End Website
 
 

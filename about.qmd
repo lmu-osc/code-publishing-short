@@ -7,6 +7,8 @@ author:
     orcid: "0000-0003-2892-884X"
   - name: "Christoph Scheffel"
     orcid: "0000-0001-5963-9229"
+  - name: "Felix Schönbrodt"
+    orcid: "0000-0002-8282-3910"
 bibliography: grateful-refs.bib
 ---
 
@@ -17,6 +19,7 @@ It is based on previous work by Josephine Zerna and Christoph Scheffel.
 Comments on earlier versions were kindly provided by
 Malika Ihle, Florian Pargent, Jonas Hagenberg, Felix Schönbrodt,
 and Sarah von Grebmer zu Wolfsthurn.
+Felix Schönbrodt created this short version of the [longer original tutorial](https://lmu-osc.github.io/code-publishing/).
 
 ## Utilized Software
 
@@ -32,7 +35,7 @@ grateful::cite_packages(
   withr::with_options(new = list(warnPartialMatchDollar = FALSE))
 ```
 
-Quarto {{< version >}} was utilized to render the files.
+Quarto {{< var version >}} was utilized to render the files.
 
 ```{r}
 #| class-output: "txt code-overflow-scroll"
