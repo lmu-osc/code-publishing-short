@@ -12,11 +12,17 @@ authors:
   - given-names: Christoph
     family-names: Scheffel
     orcid: 'https://orcid.org/0000-0001-5963-9229'
+  - given-names: Felix
+    family-names: Schönbrodt
+    orcid: 'https://orcid.org/0000-0002-8282-3910'
+    affiliation: "LMU Munich"
+    email: felix.schoenbrodt@psy.lmu.de
 
-title: "Code Publishing Tutorial"
+
+title: "Code Publishing Tutorial (Short version)"
 version: 0.1.0
 doi: "DOI_HERE_AFTER_GENERATED"
-date-released: 2024-09-13
+date-released: 2025-09-13
 repository-code: 'https://github.com/lmu-osc/code-publishing'
 url: 'https://lmu-osc.github.io/code-publishing/'
 preferred-citation:

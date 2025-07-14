@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.2",
+    "Version": "4.4.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -11,24 +11,13 @@
   "Packages": {
     "R6": {
       "Package": "R6",
-      "Version": "2.5.1",
+      "Version": "2.6.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R"
       ],
-      "Hash": "470851b6d5d0ac559e9d01bb352b4021"
-    },
-    "Rcpp": {
-      "Package": "Rcpp",
-      "Version": "1.0.13",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "methods",
-        "utils"
-      ],
-      "Hash": "f27411eb6d9c3dada5edd444b8416675"
+      "Hash": "d4335fe7207f1c01ab8c41762f5840d4"
     },
     "base64enc": {
       "Package": "base64enc",
@@ -75,14 +64,14 @@
     },
     "cli": {
       "Package": "cli",
-      "Version": "3.6.3",
+      "Version": "3.6.5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "utils"
       ],
-      "Hash": "b21916dd77a27642b447374a5d30ecf3"
+      "Hash": "16850760556401a2eeb27d39bd11c9cb"
     },
     "datawizard": {
       "Package": "datawizard",
@@ -139,14 +128,14 @@
     },
     "fs": {
       "Package": "fs",
-      "Version": "1.6.4",
+      "Version": "1.6.6",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "methods"
       ],
-      "Hash": "15aeb8c27f5ea5161f9f6a641fafd93a"
+      "Hash": "7eb1e342eee7e0a7449c49cdaa526d39"
     },
     "glue": {
       "Package": "glue",
@@ -227,17 +216,17 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.8.8",
+      "Version": "2.0.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "methods"
       ],
-      "Hash": "e1b9c55281c5adc4dd113652d9e26768"
+      "Hash": "b0776f526d36d8bd4a3344a88fe165c4"
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.48",
+      "Version": "1.50",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -249,18 +238,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "acf380f300c721da9fde7df115a5f86f"
-    },
-    "later": {
-      "Package": "later",
-      "Version": "1.3.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "Rcpp",
-        "rlang"
-      ],
-      "Hash": "a3e051d405326b8b0012377434c62b37"
+      "Hash": "5a07d8ec459d7b80bd4acca5f4a6e062"
     },
     "lifecycle": {
       "Package": "lifecycle",
@@ -306,50 +284,6 @@
       ],
       "Hash": "6c6861efbc13c1d543749e9c7be4a592"
     },
-    "processx": {
-      "Package": "processx",
-      "Version": "3.8.4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "R6",
-        "ps",
-        "utils"
-      ],
-      "Hash": "0c90a7d71988856bad2a2a45dd871bb9"
-    },
-    "ps": {
-      "Package": "ps",
-      "Version": "1.7.7",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "utils"
-      ],
-      "Hash": "878b467580097e9c383acbb16adab57a"
-    },
-    "quarto": {
-      "Package": "quarto",
-      "Version": "1.4.4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "cli",
-        "jsonlite",
-        "later",
-        "processx",
-        "rlang",
-        "rmarkdown",
-        "rstudioapi",
-        "tools",
-        "utils",
-        "yaml"
-      ],
-      "Hash": "af456d7a181750812bd8b2bfedb3ea4e"
-    },
     "rappdirs": {
       "Package": "rappdirs",
       "Version": "0.3.3",
@@ -386,14 +320,14 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "1.1.4",
+      "Version": "1.1.6",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "utils"
       ],
-      "Hash": "3eec01f8b1dee337674b2e34ab1f9bc1"
+      "Hash": "892124978869b74935dc3934c42bfe5a"
     },
     "rmarkdown": {
       "Package": "rmarkdown",
@@ -476,7 +410,7 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.47",
+      "Version": "0.52",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -485,7 +419,7 @@
         "stats",
         "tools"
       ],
-      "Hash": "36ab21660e2d095fef0d83f689e0477c"
+      "Hash": "652ce36fe7d57688e6786819b09d9190"
     },
     "yaml": {
       "Package": "yaml",

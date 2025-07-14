@@ -21,7 +21,7 @@ There are some things to consider when contributing to this repo:
   - caution
   - warning
   - important
-- headings (including tabset tabs and callout titles) are written in title case
+- headings (including tabset tabs and callout titles) are written in Title Case
 - on any page, start headings at level 2 (i.e., use `##`) and above
   because the page title is already at level 1
 - maintain the hierarchy of headings, that is,
