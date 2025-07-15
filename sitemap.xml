@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lmu-osc.github.io/code-publishing-short/copyright.html</loc>
-    <lastmod>2025-07-15T09:26:26.567Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmu-osc.github.io/code-publishing-short/choose_license.html</loc>
-    <lastmod>2025-07-15T09:26:26.567Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmu-osc.github.io/code-publishing-short/code.html</loc>
-    <lastmod>2025-07-15T09:26:26.567Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmu-osc.github.io/code-publishing-short/CONTRIBUTING.html</loc>
-    <lastmod>2025-07-15T09:26:26.563Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmu-osc.github.io/code-publishing-short/index.html</loc>
-    <lastmod>2025-07-15T09:26:26.580Z</lastmod>
-  </url>
-  <url>
     <loc>https://lmu-osc.github.io/code-publishing-short/in_depth_material/introduction_copyright.html</loc>
-    <lastmod>2025-07-15T09:26:26.580Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmu-osc.github.io/code-publishing-short/about.html</loc>
-    <lastmod>2025-07-15T09:26:26.566Z</lastmod>
+    <lastmod>2025-07-15T09:33:37.994Z</lastmod>
   </url>
   <url>
     <loc>https://lmu-osc.github.io/code-publishing-short/data.html</loc>
-    <lastmod>2025-07-15T09:26:26.567Z</lastmod>
+    <lastmod>2025-07-15T14:14:43.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmu-osc.github.io/code-publishing-short/CONTRIBUTING.html</loc>
+    <lastmod>2025-07-15T07:52:10.571Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmu-osc.github.io/code-publishing-short/about.html</loc>
+    <lastmod>2025-07-15T07:58:48.815Z</lastmod>
   </url>
   <url>
     <loc>https://lmu-osc.github.io/code-publishing-short/archive.html</loc>
-    <lastmod>2025-07-15T09:26:26.567Z</lastmod>
+    <lastmod>2025-07-15T07:52:10.577Z</lastmod>
   </url>
   <url>
-    <loc>https://lmu-osc.github.io/code-publishing-short/make_readme.html</loc>
-    <lastmod>2025-07-15T09:26:26.580Z</lastmod>
+    <loc>https://lmu-osc.github.io/code-publishing-short/code.html</loc>
+    <lastmod>2025-07-15T07:52:10.578Z</lastmod>
   </url>
   <url>
     <loc>https://lmu-osc.github.io/code-publishing-short/intro.html</loc>
-    <lastmod>2025-07-15T09:26:26.580Z</lastmod>
+    <lastmod>2025-07-15T07:52:10.591Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmu-osc.github.io/code-publishing-short/copyright.html</loc>
+    <lastmod>2025-07-15T13:53:20.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmu-osc.github.io/code-publishing-short/make_readme.html</loc>
+    <lastmod>2025-07-15T07:52:10.591Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmu-osc.github.io/code-publishing-short/index.html</loc>
+    <lastmod>2025-07-15T07:52:10.591Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmu-osc.github.io/code-publishing-short/choose_license.html</loc>
+    <lastmod>2025-07-15T07:52:10.577Z</lastmod>
   </url>
   <url>
     <loc>https://lmu-osc.github.io/code-publishing-short/setup.html</loc>
-    <lastmod>2025-07-15T09:26:26.581Z</lastmod>
+    <lastmod>2025-07-15T07:52:10.592Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmu-osc.github.io/code-publishing-short/in_depth_material/data_dic_generation.html</loc>
+    <lastmod>2025-07-15T14:11:08.751Z</lastmod>
   </url>
 </urlset>
