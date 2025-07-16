@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Archive Your Project – Code Publishing Tutorial (Short version)</title>
+<title>Identify additional system dependencies for the README – Code Publishing Tutorial (Short version)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,48 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./in_depth_material/introduction_copyright.html" rel="next">
-<link href="./make_readme.html" rel="prev">
-<link href="./images/LMU-OSC_favicon.jpg" rel="icon" type="image/jpeg">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-36dc7bbaa3d20bf5f4d508e004e4c556.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../in_depth_material/data_dic_generation.html" rel="prev">
+<link href="../images/LMU-OSC_favicon.jpg" rel="icon" type="image/jpeg">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-36dc7bbaa3d20bf5f4d508e004e4c556.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,6 +117,35 @@ div.csl-indent {
 </script>
 <!-- End Matomo Code -->
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="https://raw.githubusercontent.com/lmu-osc/branding-resources/refs/heads/main/lmu-osc-styles.css">
 </head>
@@ -115,7 +157,7 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Code Publishing Tutorial (Short version)</span>
     </a>
   </div>
@@ -125,13 +167,13 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -161,7 +203,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./archive.html">Archive Your Project</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../in_depth_material/introduction_copyright.html">Excursus: In-depth material 💡</a></li><li class="breadcrumb-item"><a href="../in_depth_material/other_dependencies.html">Identify additional system dependencies for the README</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -183,49 +225,49 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./copyright.html" class="sidebar-item-text sidebar-link">
+  <a href="../copyright.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sharing work of others: Copyright</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data.html" class="sidebar-item-text sidebar-link">
+  <a href="../data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add Data and Data Dictionary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./code.html" class="sidebar-item-text sidebar-link">
+  <a href="../code.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add Code</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./choose_license.html" class="sidebar-item-text sidebar-link">
+  <a href="../choose_license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Choose a License</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./make_readme.html" class="sidebar-item-text sidebar-link">
+  <a href="../make_readme.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Make a README</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./archive.html" class="sidebar-item-text sidebar-link active">
+  <a href="../archive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Archive Your Project</span></a>
   </div>
 </li>
@@ -240,19 +282,19 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./in_depth_material/introduction_copyright.html" class="sidebar-item-text sidebar-link">
+  <a href="../in_depth_material/introduction_copyright.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Copyright and Licensing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./in_depth_material/data_dic_generation.html" class="sidebar-item-text sidebar-link">
+  <a href="../in_depth_material/data_dic_generation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Automatic Generation of Data Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./in_depth_material/other_dependencies.html" class="sidebar-item-text sidebar-link">
+  <a href="../in_depth_material/other_dependencies.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Identify additional system dependencies for the README</span></a>
   </div>
 </li>
@@ -264,24 +306,16 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><img src="./images/LMU-OSC_logo.jpg" class="img-fluid" width="175"></p>
+<p><img src="../images/LMU-OSC_logo.jpg" class="img-fluid" width="175"></p>
 </div></div>
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#where-to-deposit-software" id="toc-where-to-deposit-software" class="nav-link active" data-scroll-target="#where-to-deposit-software">Where to Deposit Software</a></li>
-  <li><a href="#using-zenodo-to-archive-your-project-folder" id="toc-using-zenodo-to-archive-your-project-folder" class="nav-link" data-scroll-target="#using-zenodo-to-archive-your-project-folder">Using Zenodo to Archive Your Project Folder</a></li>
-  <li><a href="#final-remarks" id="toc-final-remarks" class="nav-link" data-scroll-target="#final-remarks">Final Remarks</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/lmu-osc/code-publishing/edit/main/archive.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lmu-osc/code-publishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../in_depth_material/introduction_copyright.html">Excursus: In-depth material 💡</a></li><li class="breadcrumb-item"><a href="../in_depth_material/other_dependencies.html">Identify additional system dependencies for the README</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Archive Your Project</h1>
+<h1 class="title">Identify additional system dependencies for the README</h1>
 </div>
 
 
@@ -298,82 +332,84 @@ div.csl-indent {
 </header>
 
 
-<section id="where-to-deposit-software" class="level2">
-<h2 class="anchored" data-anchor-id="where-to-deposit-software">Where to Deposit Software</h2>
-<p>The project folder is now ready to be deposited for long-term archival. When considering an appropriate repository, there are a few questions to ponder <span class="citation" data-cites="Jackson2018Where">(excerpt from <a href="#ref-Jackson2018Where" role="doc-biblioref">Jackson &amp; The Software Sustainability Institute, 2018b</a>, with footnotes removed, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>)</span>:</p>
-<blockquote class="blockquote">
-<p><strong>Does the digital repository give you a unique persistent digital identifier for your deposit?</strong></p>
-<p>Persistent digital identifiers are identifiers that are provided under the assumption that they, and the digital objects they refer to, will remain available long term. Examples of unique persistent digital identifiers include DOIs and ARKs. The use of persistent digital identifiers for research outputs, including papers, data and software, and the use of these for citation purposes, is becoming prevalent in research.</p>
-<p><strong>Can the digital repository accommodate the size of your deposit?</strong></p>
-<p>Digital repositories may have constraints on the size of deposits they accept. For example, Zenodo has a limit of 50 GB and the University of Edinburgh DataShare has a limit of 20 GB for deposits done via a browser and 100 GB otherwise.</p>
-<p><strong>Has your funder or publisher recommended or mandated a digital repository to use?</strong></p>
-<p>If both a funder and publisher mandate two different digital repositories you could deposit within them both, or discuss with each to see if they will agree for you to use one only, even if it is not the one they mandate.</p>
-<p><strong>Are the policies of the digital repository acceptable to you?</strong></p>
-<p>These can include terms and conditions of use; availability of the service (e.g.&nbsp;does the service regularly go down for updates or does it run 24/7); how resilient the service is to breakdowns; where deposits are stored; how they are stored; what are the plans for stored deposits if the repository goes out of business; how secure the storage is; how regularly it is backed up; how long backups are kept for; and what disaster recovery plans are in place. Knowing the quality of service can help you judge whether your deposit will be available to others, and yourself, even in the face of disaster. It also allows you, and your institution, to develop contingency plans should such drastic circumstances arise.</p>
-<p><strong>Is the longevity of the digital repository acceptable to you?</strong></p>
-<p>You want to know that the digital repository will host your deposit for as long as you need it too, not just 6 months or so. The policies or terms and conditions of the digital repository should state this. For example, Zenodo states that their lifetime is currently 20 years and figshare guarantees 10 years of persistent availability.</p>
-<p><strong>Is the digital repository free or do you have to pay a fee?</strong> <strong>If there is a fee, is this a one-off payment and can you afford it?</strong></p>
-<p>If a digital repository expects a one-off payment, to subsidise its hosting, you may be able to pay for this out of your project budget or your institution may pay this for you. It is recommended that you avoid any digital repository that expects a regular fee for the duration for which they hold the deposit, since it would most likely be unsustainable for your institution to commit to ever-increasing fees over a long term. There are many free digital repositories available.</p>
-<p><strong>Is the digital repository accredited or certified?</strong></p>
-<p>The digital repository may be accredited or certified by an independent agency that reviews digital repositories according to various criteria related to its policies and processes. The presence of an accreditation or certification may provide you with an additional degree of confidence that the digital repository meets your requirements. For example, the Data Seal of Approval can be awarded to digital repositories who satisfy a set of quality guidelines relating to how they manage, preserve and make available the deposits they hold. The presence of a Data Seal of Approval could give you additional confidence that a digital repository is suitable for holding your deposit.</p>
-</blockquote>
-<p>Additional guidance is provided by <span class="citation" data-cites="Daquin2023">d’Aquin et al. (<a href="#ref-Daquin2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="Garijo2022">Garijo et al. (<a href="#ref-Garijo2022" role="doc-biblioref">2022</a>)</span>, and <span class="citation" data-cites="ScienceEurope2021">Science Europe (<a href="#ref-ScienceEurope2021" role="doc-biblioref">2021</a>)</span>. You can use the registry of research data repositories <a href="https://www.re3data.org/">re3data.org</a> to find one that matches your criteria. We think that the <a href="https://www.softwareheritage.org/">Software Heritage code archive</a> and <a href="https://zenodo.org/">Zenodo</a> are good choices, but don’t forget to also check your local institutions for recommendations. Note that the Open Science Framework (OSF) is not recommended because it allows the deletion of files and projects after their publication.</p>
-</section>
-<section id="using-zenodo-to-archive-your-project-folder" class="level2">
-<h2 class="anchored" data-anchor-id="using-zenodo-to-archive-your-project-folder">Using Zenodo to Archive Your Project Folder</h2>
-<p>In the following we will demonstrate how to use Zenodo to archive one’s project folder and obtain a DOI.</p>
-<div id="cau-sandbox" class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>The specific version of R and the loaded packages is the most crucial information that should go into the README (or that is stored in the <code>renv</code> lockfile). Ideally, you list other system dependencies, such as the version of Quarto<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that you used to render your paper.</p>
+<p>An overview over the system dependencies of R packages can be created using the function <code>pak::pkg_sysreqs()</code>. In combination with <code>renv</code>, we can obtain the system dependencies of all R packages the current project directly depends on:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Console</strong></pre>
 </div>
-<div class="callout-title-container flex-fill">
-Caution&nbsp;1: Zenodo Sandbox
+<div class="sourceCode" id="cb1" data-filename="Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find all R package dependencies</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>deps <span class="ot">&lt;-</span> renv<span class="sc">::</span><span class="fu">dependencies</span>()<span class="sc">$</span>Package <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  pak<span class="sc">::</span><span class="fu">pkg_deps</span>(<span class="at">dependencies =</span> <span class="cn">NA</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">getElement</span>(<span class="st">"package"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify their system dependencies</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_sysreqs</span>(deps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>The output may look like the following:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>── Install scripts ────────────────── Fedora 40 ── </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dnf install -y make pandoc git</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>── Packages and their system dependencies ────────</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fs        – make</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>knitr     – pandoc</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>remotes   – git</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>rmarkdown – pandoc</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>sass      – make</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can see that the programs <code>make</code>, <code>pandoc</code>, and <code>git</code> were identified as system dependencies. Often, one can obtain their version by running them with the <code>--version</code> argument:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
 </div>
-<div class="callout-body-container callout-body">
-<p>Note that during this tutorial, we will be using Zenodo’s sandbox instance located at <a href="https://sandbox.zenodo.org/"><code>sandbox.zenodo.org</code></a> in order to learn how to use it while not wasting Zenodo’s resources. For real projects, use the production instance at <a href="https://zenodo.org/"><code>zenodo.org</code></a>, which requires a separate account.</p>
+<div class="sourceCode" id="cb3" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--version</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>However, this does not work for all system dependencies. Specifically, it does not work for libraries – software that is not supposed to be run on its own. Identifying their version is beyond the scope of this tutorial.</p>
+<p>We also know that we need Quarto to create the PDF, so let’s find out its version as well:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
 </div>
-<p>First, create an account on the Zenodo Sandbox by clicking on <em>Sign up</em> in the upper right corner and submitting the provided form. Then, confirm your email address (also check your spam folder if you cannot find the confirmation email).</p>
-<p>Now you can follow the guide “<a href="https://help.zenodo.org/docs/deposit/create-new-upload/">Create new upload</a>”, taking into account the following notes specific to each step:</p>
-<ul>
-<li><strong>Add/remove files</strong>: To circumvent the file limit on Zenodo, you can bundle your project folder in one ZIP file and upload that instead. Be sure to exclude all files mentioned in your <code>.gitignore</code> file!</li>
-<li><strong>Fill in metadata</strong>
-<ul>
-<li><strong>Digital Object Identifier</strong> (DOI): Usually, you will want a DOI, therefore you need to choose <em>No</em> for the question whether you already have a DOI for this upload, and click on <em>Get a DOI now!</em>.</li>
-<li><strong>Resource type</strong>: Select the most appropriate one, for example, <em>Publication / Preprint</em>.</li>
-<li><strong>Licenses</strong>: If your project folder only contains content by you and if you previously only chose one license, you can select that by choosing <em>Add standard</em>. Otherwise, click on <em>Add custom</em> and describe how each file is licensed. If you have been using REUSE to record license information, you can run enter <code>SPDX Document</code> as title and run the reuse tool with <code>reuse spdx -o reuse.spdx</code> to create the file <code>reuse.spdx</code>. Then you can paste the content of <code>reuse.spdx</code> into the description field of the custom license as it contains information about the license of each file.</li>
-</ul></li>
-</ul>
-<p>If you previously uploaded your project folder to a public Git repository (which we didn’t cover during this tutorial), you could also add the new DOI to your README, for example, under the section “Citation”.</p>
-</section>
-<section id="final-remarks" class="level2">
-<h2 class="anchored" data-anchor-id="final-remarks">Final Remarks</h2>
-<p>There are situations in which you are not allowed to share your data publicly. In this case, consider using a repository specifically for research data, which later grants access for valid uses individually.</p>
-<p>For further information, you may be interested in “Software Deposit Guidance for Researchers” <span class="citation" data-cites="Jackson2018Guidance">(<a href="#ref-Jackson2018Guidance" role="doc-biblioref">Jackson &amp; The Software Sustainability Institute, 2018a</a>)</span>.</p>
+<div class="sourceCode" id="cb4" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you installed <code>apaquarto</code> or any other Quarto extension, one can query their versions as follows:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> list extensions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, we know that we installed a <span class="math inline">\(\TeX\)</span> distribution to create the PDF, so let’s find out its version by running:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output is quite long and it might look slightly different for you, but the relevant sections are the following:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[✓] Checking tools....................OK</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>      TinyTeX: v2024.09</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      Chromium: (not installed)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>[✓] Checking LaTeX....................OK</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      Using: TinyTex</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      Path: /home/r155953/.TinyTeX/bin/x86_64-linux</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>      Version: 2024</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Add these dependencies to the section <strong>Computational Requirements / Dependencies</strong> of your README file.</p>
+<p>Of course, all the system dependencies identified until now may have dependencies on their own. Use your own judgement to decide when not to dig deeper.</p>
 
 
 
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Daquin2023" class="csl-entry" role="listitem">
-d’Aquin, M., Kirstein, F., Oliveira, D., Schimmler, S., &amp; Urbanek, S. (2023). <span>FAIREST</span>: A framework for assessing research repositories. <em>Data Intelligence</em>, <em>5</em>(1), 202–241. <a href="https://doi.org/10.1162/dint_a_00159">https://doi.org/10.1162/dint_a_00159</a>
-</div>
-<div id="ref-Garijo2022" class="csl-entry" role="listitem">
-Garijo, D., Ménager, H., Hwang, L., Trisovic, A., Hucka, M., Morrell, T., Allen, A., Task Force on Best Practices for Software Registries, &amp; SciCodes Consortium. (2022). Nine best practices for research software registries and repositories. <em><span>PeerJ</span> Computer Science</em>, <em>8</em>, e1023. <a href="https://doi.org/10.7717/peerj-cs.1023">https://doi.org/10.7717/peerj-cs.1023</a>
-</div>
-<div id="ref-Jackson2018Guidance" class="csl-entry" role="listitem">
-Jackson, M., &amp; The Software Sustainability Institute. (2018a). <em>Software deposit: Guidance for researchers</em>. <a href="https://doi.org/10.5281/zenodo.1327310">https://doi.org/10.5281/zenodo.1327310</a>
-</div>
-<div id="ref-Jackson2018Where" class="csl-entry" role="listitem">
-Jackson, M., &amp; The Software Sustainability Institute. (2018b). <em>Software deposit: Where to deposit software</em>. <a href="https://softwaresaved.github.io/software-deposit-guidance/WhereToDepositSoftware.html" class="uri">https://softwaresaved.github.io/software-deposit-guidance/WhereToDepositSoftware.html</a>. <a href="https://doi.org/10.5281/zenodo.1327329">https://doi.org/10.5281/zenodo.1327329</a>
-</div>
-<div id="ref-ScienceEurope2021" class="csl-entry" role="listitem">
-Science Europe. (2021). <em>Practical guide to the international alignment of research data management - extended edition</em>. <a href="https://scienceeurope.org/our-resources/practical-guide-to-the-international-alignment-of-research-data-management/" class="uri">https://scienceeurope.org/our-resources/practical-guide-to-the-international-alignment-of-research-data-management/</a>. <a href="https://doi.org/10.5281/zenodo.4915861">https://doi.org/10.5281/zenodo.4915861</a>
-</div>
-</div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>As of August 2024, a proposal for <code>renv</code> to record the version of Quarto has not been implemented, see <a href="https://github.com/rstudio/renv/issues/1143">rstudio/renv#1143</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Luckily, the extensions are included in the project folder, so technically their version is already recorded in the project’s files.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -793,14 +829,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./make_readme.html" class="pagination-link" aria-label="Make a README">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Make a README</span>
+      <a href="../in_depth_material/data_dic_generation.html" class="pagination-link" aria-label="Automatic Generation of Data Dictionaries">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Automatic Generation of Data Dictionaries</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./in_depth_material/introduction_copyright.html" class="pagination-link" aria-label="Introduction to Copyright and Licensing">
-        <span class="nav-page-text">Introduction to Copyright and Licensing</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -811,7 +844,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© 2024–2025 Open Science Center at LMU Munich</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lmu-osc/code-publishing/edit/main/archive.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lmu-osc/code-publishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/lmu-osc/code-publishing/edit/main/in_depth_material/other_dependencies.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lmu-osc/code-publishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
