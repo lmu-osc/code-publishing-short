@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -55,14 +55,15 @@ div.csl-indent {
 <link href="../images/LMU-OSC_favicon.jpg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3597b45cc477c62cc82342a383b47de7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c1a6ea863596caab1af46c5c88b893b5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -125,6 +126,8 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Code Publishing Tutorial (Short version)</span>
     </a>
@@ -135,7 +138,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -184,6 +187,10 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -341,7 +348,7 @@ Note&nbsp;1: Copyright TL;DR
 </div></div><p>An important class of boilerplate licenses are <em>free/open</em> licenses. Put simply, works under a free/open license “can be freely studied, applied, copied and/or modified, by anyone, for any purpose” <span class="citation" data-cites="Moller2015">(<a href="#ref-Moller2015" role="doc-biblioref">Möller et al., 2015</a>)</span>. Importantly, this also means that others do not need to ask or notify the author and that they can use it for commercial purposes. Coming back to the example of Creative Commons licenses, not all of them are free/open. For example, some restrict commercial use and modification. The Creative Commons license “<a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike 4.0</a>” is an example of a free/open license, however, and we will cover several others below.</p>
 <p>By the choice of license, authors can demand that they are credited, that the original license is indicated, that modifications are indicated, that derivative works are only shared under the same license, and that no further restrictions are imposed on the work. Software licenses may additionally require to make the source code available to everybody the software is shared with and often require to display the full text of the license upon distribution.</p>
 <div id="nte-terminology" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -394,7 +401,7 @@ Tip&nbsp;1: Consider Complicated Licensing Situations
 <li><strong>Type of work and use case</strong>: Many licenses were written with a particular type of work in mind, along with a certain use case. Software licenses, for example, may consider that the source code is the preferred form for making modifications and that software can be encumbered by patents, while licenses for data can differentiate between the database and any works produced from it. Take caution if a license applies to a type work for which it was not originally created and conflicts with your use case. Sometimes, the license name hints at the intended type of work, but when in doubt always read the full license text (and/or consult with a lawyer) to determine whether the conditions are acceptable to you.</li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Software</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Writing, Images, Audio, Video</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Data</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Software</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Writing, Images, Audio, Video</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Data</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>For a software license to be considered free/open, it must be approved by either the <a href="https://opensource.org/licenses">Open Source Initiative</a> (OSI) or the <a href="https://www.gnu.org/licenses/license-list.html#SoftwareLicenses">Free Software Foundation</a> (FSF). Some of the most common free/open software licenses are listed below:</p>
@@ -727,7 +734,7 @@ Note&nbsp;3: Private Use
 <p>The question is then: Which uses of a work do not create a derivative work? In many cases, if an unaltered excerpt “is used to illuminate an idea or provide an example in another larger work” <span class="citation" data-cites="CC2024NoDerivs">(<a href="#ref-CC2024NoDerivs" role="doc-biblioref">Creative Commons, 2024a</a>)</span> no derivative work is made. The excerpt needs to “remain separate and distinct in the new context” <span class="citation" data-cites="Kreutzer2024">(<a href="#ref-Kreutzer2024" role="doc-biblioref">Kreutzer, 2024, p. 44</a>)</span> and not be “merged with other material into a new and larger work” <span class="citation" data-cites="Kreutzer2024">(<a href="#ref-Kreutzer2024" role="doc-biblioref">Kreutzer, 2024, p. 45</a>)</span>. For example, embedding images in a document and clearly separating them from the rest or assembling works as part of a collection typically would not create a derivative work. However, due to a lack of case law, there is only little guidance on what constitutes a derivative work in general.</p>
 <p>Also note that the copyleft licenses we discuss here do not mandate sharing. Copyleft (and attribution) clauses are only triggered if the work is shared <span class="citation" data-cites="CC2015">(<a href="#ref-CC2015" role="doc-biblioref">Creative Commons, 2015</a>)</span>. This means that if you only use a work internally, you do not need to share your derivative works.</p>
 <div id="nte-weak-strong-copyleft" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -933,13 +940,14 @@ Winslow, S. (2020, January 10). <em>Copyright notices in open source software pr
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
