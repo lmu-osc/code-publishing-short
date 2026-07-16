@@ -1,0 +1,5 @@
+
+
+* Pages on Copyright and License compose over half the content of the whole tutorial (when including the in-depth material section)
+* Not including in-depth material, these still comprise ~45% of content which is disproportionate to the aims of this summary tutorial
+    - Important info, but really should be broken out into its own tutorial
