@@ -88,7 +88,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./choose_license.html" rel="next">
+<link href="./choose-license.html" rel="next">
 <link href="./data.html" rel="prev">
 <link href="./images/LMU-OSC_favicon.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -133,6 +133,7 @@ div.csl-indent {
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <!-- Matomo -->
 <script>
+if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
   var _paq = window._paq = window._paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(['trackPageView']);
@@ -144,6 +145,7 @@ div.csl-indent {
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
+}
 </script>
 <!-- End Matomo Code -->
 
@@ -285,13 +287,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./choose_license.html" class="sidebar-item-text sidebar-link">
+  <a href="./choose-license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Choose a License</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./make_readme.html" class="sidebar-item-text sidebar-link">
+  <a href="./make-readme.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Make a README</span></a>
   </div>
 </li>
@@ -369,7 +371,7 @@ window.Quarto = {
 <section id="add-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="add-data-analysis">Add Data Analysis</h2>
 <p>With the data added to the project folder, you can now analyze them and describe the results. For the purpose of this tutorial, we suggest to conduct a simple analysis that explores whether the bill lengths of penguins vary depending on their sex. You can write your own or use the following example:</p>
-<div id="tip-t-test" class="callout callout-style-default callout-tip callout-titled">
+<div id="tip-data-analysis-example" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -434,29 +436,30 @@ Tip&nbsp;1: Data Analysis Example
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Scatter Plot of Bill Lengths by Sex With Violin Plot Showing Quartiles"</span></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(dat_clean, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> bill_length_mm, <span class="at">fill =</span> sex), <span class="at">group =</span> sex) <span class="sc">+</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(dat_clean, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> bill_length_mm, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_violin</span>(</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">draw_quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>),</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sex"</span>, <span class="at">y =</span> <span class="st">"Bill length in mm"</span>) <span class="sc">+</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>),</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">quantile.linetype =</span> <span class="dv">1</span>,</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sex"</span>, <span class="at">y =</span> <span class="st">"Bill length in mm"</span>) <span class="sc">+</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This code uses some new packages, one can use <code>renv</code> to view them:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Console</strong></pre>
+<pre><strong>R Console</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="R Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then, install and record them with:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Console</strong></pre>
+<pre><strong>R Console</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="R Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -522,9 +525,9 @@ Warning&nbsp;2: Dealing with Dependencies
 <p>R packages that you use in your analysis are an obvious example of dependencies. Their version is recorded by <code>renv</code>, but you also need to ensure that they are available for download. First, identify the source from which you installed your packages:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Console</strong></pre>
+<pre><strong>R Console</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, install {pak} and {sessioninfo}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="R Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, install {pak} and {sessioninfo}</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"pak"</span>,</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"sessioninfo"</span></span>
@@ -542,7 +545,7 @@ Warning&nbsp;2: Dealing with Dependencies
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Get information about their source</span></span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">package_info</span>(deps)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>If the <code>source</code> column only contains the entries <code>CRAN</code>, <code>RSPM</code>, or <code>Bioconductor</code>, they are already archived. If the <code>source</code> column instead mentions something else (e.g., <code>GitHub</code>), you need to make sure yourself that the package is available to users of your project. You can either archive the package, for example in the <a href="https://archive.softwareheritage.org/">Software Heritage archive</a>. Or you store a copy of the package in the project folder – of course, you need to make sure that you are allowed to do so from a copyright perspective and comply with its license.</p>
+<p>If the <code>source</code> column only contains the entries <code>CRAN</code>, <code>RSPM</code>, or <code>Bioconductor</code>, they are already archived. If the <code>source</code> column instead mentions something else (e.g., <code>Github</code>), you need to make sure yourself that the package is available to users of your project. You can either archive the package, for example in the <a href="https://archive.softwareheritage.org/">Software Heritage archive</a>. Or you store a copy of the package in the project folder – of course, you need to make sure that you are allowed to do so from a copyright perspective and comply with its license.</p>
 </section>
 <section id="downloaded-files" class="level4">
 <h4 class="anchored" data-anchor-id="downloaded-files">Downloaded Files</h4>
@@ -571,8 +574,7 @@ Warning&nbsp;2: Dealing with Dependencies
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">apaquarto-pdf</span><span class="kw">:</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">documentmode</span><span class="kw">:</span><span class="at"> man</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep-tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> lualatex</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">a4paper</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">a4paper</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can now render the manuscript with the new format:</p>
 <div class="code-with-filename">
@@ -620,7 +622,7 @@ Tip&nbsp;3: <code>apaquarto</code> License (Solution)
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>According to its GitHub page, <code>apaquarto</code> is licensed under CC0&nbsp;1.0. This means that it can be used and distributed even without attribution.</p>
+<p>According to its GitHub page, <code>apaquarto</code> is licensed under CC0&nbsp;1.0. This means that with regards to copyright it can be used and distributed even without attribution.</p>
 </div>
 </div>
 </div>
@@ -652,6 +654,8 @@ Tip&nbsp;4: Addition to <code>LICENSE.txt</code> (Solution)
 <p>Of course, being transparent about used software for reasons of reproducibility and academic integrity matters in any case. You can consult <a href="#fig-software-citation" class="quarto-xref">Figure&nbsp;1</a> for general advice whether to cite a particular piece of software or not. As with data, citations should allow for exact identification and access. From the six “software citation principles” by <span class="citation" data-cites="Smith2016">Smith et al. (<a href="#ref-Smith2016" role="doc-biblioref">2016</a>)</span>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>:</p>
 <blockquote class="blockquote">
 <p><strong>1. Importance</strong>: Software should be considered a legitimate and citable product of research. Software citations should be accorded the same importance in the scholarly record as citations of other research products, such as publications and data; they should be included in the metadata of the citing work, for example in the reference list of a journal article, and should not be omitted or separated. Software should be cited on the same basis as any other research product such as a paper or a book, that is, authors should cite the appropriate set of software products just as they cite the appropriate set of papers.</p>
+</blockquote>
+<blockquote class="blockquote">
 <p><strong>5. Accessibility</strong>: Software citations should facilitate access to the software itself and to its associated metadata, documentation, data, and other materials necessary for both humans and machines to make informed use of the referenced software.</p>
 <p><strong>6. Specificity</strong>: Software citations should facilitate identification of, and access to, the specific version of software that was used. Software identification should be as specific as necessary, such as using version numbers, revision numbers, or variants such as platforms.</p>
 </blockquote>
@@ -723,9 +727,9 @@ Figure&nbsp;1: “Should I cite the software?” by <span class="citation" data-
 <p>Use <code>renv</code> to view, install, and record the newly used package:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Console</strong></pre>
+<pre><strong>R Console</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-filename="Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-filename="R Console"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>()</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -769,7 +773,7 @@ Figure&nbsp;1: “Should I cite the software?” by <span class="citation" data-
 </section>
 <section id="the-last-mile" class="level2">
 <h2 class="anchored" data-anchor-id="the-last-mile">The Last Mile</h2>
-<p><code>renv</code> only records the versions of R packages and of R itself. This means that everything we have not decided to cite or attribute is not documented anywhere. We will cover system dependencies when <a href="./make_readme.html">creating a <code>README</code></a>. For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:</p>
+<p><code>renv</code> only records the versions of R packages and of R itself. This means that everything we have not decided to cite or attribute is not documented anywhere. We will cover system dependencies when <a href="./make-readme.html">creating a README</a>. For now, however, there is one simple step you can take to record the version of Quarto (and a few other dependencies). Do run the following:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
@@ -805,7 +809,7 @@ Fowler, M., Beck, K., Opdyke, W., &amp; Roberts, D. (1999). <em>Refactoring: Imp
 Mineault, P., &amp; Nozawa, K. (2021, December 21). <em>The good research code handbook</em>. <a href="https://goodresearch.dev/" class="uri">https://goodresearch.dev/</a>. <a href="https://doi.org/10.5281/zenodo.5796873">https://doi.org/10.5281/zenodo.5796873</a>
 </div>
 <div id="ref-APA2020" class="csl-entry" role="listitem">
-<em>Publication manual of the american psychological association</em> (7th ed.). (2020). American Psychological Association. <a href="https://doi.org/10.1037/0000165-000">https://doi.org/10.1037/0000165-000</a>
+<em>Publication manual of the <span>American Psychological Association</span></em> (7th ed.). (2020). American Psychological Association. <a href="https://doi.org/10.1037/0000165-000">https://doi.org/10.1037/0000165-000</a>
 </div>
 <div id="ref-Raymond2003" class="csl-entry" role="listitem">
 Raymond, E. S. (2003). <em>The art of <span>UNIX</span> programming: With contributions from thirteen <span>UNIX</span> pioneers, including its inventor, <span>Ken Thompson</span></em>. Addison-Wesley. <a href="https://www.arp242.net/the-art-of-unix-programming/">https://www.arp242.net/the-art-of-unix-programming/</a>
@@ -1246,7 +1250,7 @@ Wickham, H., &amp; Bryan, J. (2023). When should you take a dependency? In <em>R
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./choose_license.html" class="pagination-link" aria-label="Choose a License">
+      <a href="./choose-license.html" class="pagination-link" aria-label="Choose a License">
         <span class="nav-page-text">Choose a License</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1258,7 +1262,7 @@ Wickham, H., &amp; Bryan, J. (2023). When should you take a dependency? In <em>R
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2024–2025 Open Science Center at LMU Munich</p>
+<p>A recommended citation and license information for this tutorial are provided on the <a href="./about.html">about page</a>.</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lmu-osc/code-publishing/edit/main/code.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lmu-osc/code-publishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;

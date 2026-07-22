@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <!-- Matomo -->
 <script>
+if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
   var _paq = window._paq = window._paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(['trackPageView']);
@@ -83,6 +84,7 @@ ul.task-list li input[type="checkbox"] {
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
+}
 </script>
 <!-- End Matomo Code -->
 
@@ -195,13 +197,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./choose_license.html" class="sidebar-item-text sidebar-link">
+  <a href="./choose-license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Choose a License</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./make_readme.html" class="sidebar-item-text sidebar-link">
+  <a href="./make-readme.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Make a README</span></a>
   </div>
 </li>
@@ -271,13 +273,13 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/">Introduction to version control with git and GitHub within RStudio</a>: This tutorial explains how to set up a simple project with version control.</li>
 <li><a href="https://lmu-osc.github.io/Collaborative-RStudio-GitHub/">Collaborative coding with GitHub and RStudio</a>: Here you can learn how to collaborate with others on code projects using GitHub.</li>
 <li><a href="https://lmu-osc.github.io/introduction-to-R/">Introduction to R</a>: This is an introduction to the R programming language.</li>
-<li><a href="https://lmu-osc.github.io/introduction-to-renv/">Introduction to <code>renv</code></a>: Here you can learn how to manage the dependencies of an R project.</li>
+<li><a href="https://lmu-osc.github.io/introduction-to-renv/">Introduction to {renv}</a>: Here you can learn how to manage the dependencies of an R project.</li>
 <li><a href="https://lmu-osc.github.io/introduction-to-Quarto/">Introduction to Quarto</a>: Learn how to combine prose and code to make documents more reproducible.</li>
 <li><a href="https://lmu-osc.github.io/introduction-to-zotero/">Introduction to Zotero</a>: Get introduced to the reference management software Zotero.</li>
 <li><a href="https://lmu-osc.github.io/FAIR-Data-Management/">FAIR research data management</a>: Learn how to make your data findable, accessible, interoperable, and reusable.</li>
 </ul>
 <p>While the general principles taught in this tutorial apply to most researchers publishing code, we will focus on the programming language R and the publishing system Quarto.</p>
-<p>To follow the tutorial you need to have installed <a href="https://git-scm.com/downloads">Git</a>, <a href="https://cloud.r-project.org/">R</a>, and <a href="https://quarto.org/docs/download/">Quarto</a>. Windows users may additionally need <a href="https://cloud.r-project.org/bin/windows/Rtools/">RTools</a>. Some things will be explained using the <a href="https://posit.co/download/rstudio-desktop/#:~:text=2%3A%20Install%20RStudio">RStudio IDE</a>, but you are free to use any IDE you like.</p>
+<p>To follow the tutorial you need to have installed <a href="https://git-scm.com/downloads">Git</a>, <a href="https://cloud.r-project.org/">R</a>, and <a href="https://quarto.org/docs/download/release.html">Quarto</a>. Windows users may additionally need <a href="https://cloud.r-project.org/bin/windows/Rtools/">RTools</a>. Some things will be explained using the <a href="https://posit.co/download/rstudio-desktop/#:~:text=2%3A%20Install%20RStudio">RStudio IDE</a>, but you are free to use any IDE you like.</p>
 <div id="nte-quarto-alternatives" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -291,10 +293,12 @@ Note&nbsp;1: Alternatives to Quarto
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Quarto is a tool to render dynamic documents, but not the only one.</p>
-<p>It is the successor of the R package <a href="https://rmarkdown.rstudio.com/"><code>rmarkdown</code></a> and mostly backwards-compatible. <code>rmarkdown</code> continues to be supported, but the development of new features happens in Quarto. The main difference is that Quarto has first-class support for Python. In other words, Python users of Quarto do not need to have R installed.</p>
-<p>While this tutorial focuses on Quarto, you can also create reproducible research projects with the following tools:</p>
+<p>It is the successor of the R package <a href="https://pkgs.rstudio.com/rmarkdown/"><code>rmarkdown</code></a> and mostly backwards-compatible. <code>rmarkdown</code> continues to be supported, but the development of new features happens in Quarto. The main difference is that Quarto has first-class support for Python. In other words, Python users of Quarto do not need to have R installed.</p>
+<p>While this tutorial focuses on Quarto, you can also create dynamic documents with the following tools:</p>
 <ul>
 <li><a href="https://jupyterbook.org/">Jupyter Book</a></li>
+<li><a href="https://plutojl.org/">Pluto</a></li>
+<li><a href="https://marimo.io/">marimo</a></li>
 <li><a href="https://stencila.io/">Stencila</a></li>
 <li><a href="https://curvenote.dev/">Curvenote</a></li>
 <li><a href="https://show-your.work/">showyourwork!</a></li>
@@ -722,7 +726,7 @@ Note&nbsp;1: Alternatives to Quarto
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2024–2025 Open Science Center at LMU Munich</p>
+<p>A recommended citation and license information for this tutorial are provided on the <a href="./about.html">about page</a>.</p>
 <div class="toc-actions"><ul><li><a href="https://github.com/lmu-osc/code-publishing/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lmu-osc/code-publishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
