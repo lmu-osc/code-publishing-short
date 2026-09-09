@@ -19,17 +19,16 @@ format:
 By default, everything you put into the project folder will be shared publicly.
 This typically includes:
 
+- **work that was created by yourself** or your co-authors.
 - **works by others** than yourself or your co-authors,
   because you may use existing data, images or software. 
-  Make sure to only share those to the extent you are allowed to.
-- **work that was created by yourself** or your co-authors.
 
-
-Copyright and licensing can be complicated. 
-In this chapter, we focus on rather simple (but typical) situations.
+When sharing works by others, you need to make sure that you are allowed to do so,
+which is the topic of this chapter.
+As copyright and licensing can be complicated,
+we focus on rather simple (but typical) situations.
 For an in-depth explanation of copyright and licenses, 
-see our supplementary material "[Introduction to Copyright and Licenses](in_depth_material/introduction_copyright.qmd)".
-
+see our supplementary in-depth material "[Introduction to Copyright and Licenses](in_depth_material/introduction_copyright.qmd)".
 
 ## Short Introduction to Copyright and Licenses
 
@@ -48,7 +47,8 @@ We strongly recommend to use *existing boilerplate licenses*
 For the purpose of this tutorial, by _license_ we mean _copyright license_.
 :::
 
-Works under a free/open license "can be freely studied, applied, copied and/or modified,
+In particular, we recommend reusing works under a free/open license,
+which allow the work to "be freely studied, applied, copied and/or modified,
 by anyone, for any purpose" [@Moller2015].
 Importantly, this also means that others do not need to ask or notify the author
 and that they can use it also for commercial purposes. If you modified the work and put a sufficient amount of creativity into it,
@@ -63,8 +63,6 @@ For example, they can (optionally)...
 - that derivative works are only shared under the same license, or
 - that no further restrictions are imposed on the derivative work.
 
-We explain below how to choose a license that brings the desired "settings".
-
 ## Can I Share the Work of Others? {#can-i-share-others-works}
 
 To determine whether a particular work can be included in the project folder
@@ -75,7 +73,10 @@ whereas other websites sometimes state the license in the footer.
 Other places to look include a project's README file or a dedicated `LICENSE` or `COPYING` file.
 If a project has been stored in a research repository,
 yet another means of communicating its copyright status might exist.
-For media from Wikimedia Commons, an [Attribution Generator][commons-gen] exists.
+For media from Wikimedia Commons,
+you can determine the license using the website [lizenzhinweisgenerator.de][commons-gen].
+
+[commons-gen]: https://lizenzhinweisgenerator.de/?lang=en
 
 If you cannot find any license, the work might be
 in the **public domain** (see details [here](in_depth_material/introduction_copyright.qmd#public-domain)). In this case, you can simply reuse it, but still should credit the original creator(s) in accordance with good scientific practice.
@@ -85,17 +86,20 @@ it is by default  _in copyright_ and you are generally not allowed to share it w
 You can, however, ask the author to put the corresponding work under a free/open license
 -- Wikimedia Commons provides an [email template][commons-templates] to obtain such a permission.
 
+[commons-templates]: https://commons.wikimedia.org/wiki/Commons:Email_templates
+
 Without permission you can check your national laws
 for limitations and exceptions to copyright.^[in Germany: _Schranken des Urheberrechts_]
 Examples include the right to quote, [trivial use][commons-minimis],
 scientific research exceptions, and the US-American [fair use][wiki-fair-use].
 
-[commons-templates]: https://commons.wikimedia.org/wiki/Commons:Email_templates
+[commons-minimis]: https://commons.wikimedia.org/wiki/Commons:De_minimis
+[wiki-fair-use]: https://en.wikipedia.org/wiki/Wikipedia:FAQ/Copyright#What_is_fair_use?
 
 Once you found a license, you need to determine whether it is a standard (boilerplate) license and
 whether it is a free/open. Then you can share the reused material in your repository according to the terms of the license.
 
-Below are listed typical licenses that are free/open. To better understand the conditions under which you are allowed to include others' works in your project folder, please take a look at our supplementary [Copyright Conditions](in_depth_material/copyright-conditions.qmd) page.
+Below are listed typical free/open boilerplate licenses. To better understand the conditions under which you are allowed to include others' works in your project folder, please take a look at our supplementary [Copyright Conditions](in_depth_material/copyright-conditions.qmd) page.
 
 [osi-list]: https://opensource.org/licenses
 [fsf-list]: https://www.gnu.org/licenses/license-list.html#SoftwareLicenses
