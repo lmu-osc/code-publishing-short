@@ -42,6 +42,10 @@ A license is a legal document that regulates what other people than the author
 can and cannot do with a copyright-protected work, and under which conditions.
 We strongly recommend to use *existing boilerplate licenses*
 (and not to craft your own license text).
+For example, you might have heard about ["Creative Commons" licenses][cc-licenses],
+which are used by Wikipedia.
+
+[cc-licenses]: https://creativecommons.org/share-your-work/cclicenses/
 
 ::: {.column-margin}
 For the purpose of this tutorial, by _license_ we mean _copyright license_.
@@ -96,10 +100,13 @@ scientific research exceptions, and the US-American [fair use][wiki-fair-use].
 [commons-minimis]: https://commons.wikimedia.org/wiki/Commons:De_minimis
 [wiki-fair-use]: https://en.wikipedia.org/wiki/Wikipedia:FAQ/Copyright#What_is_fair_use?
 
-Once you found a license, you need to determine whether it is a standard (boilerplate) license and
-whether it is a free/open. Then you can share the reused material in your repository according to the terms of the license.
+Once you found a license,
+you need to determine
+(1) whether it is a standard (boilerplate) license,
+(2) whether it is a free/open,
+and (3) whether it is appropriate for the particular type of work and use case.
 
-Below are listed typical free/open boilerplate licenses. To better understand the conditions under which you are allowed to include others' works in your project folder, please take a look at our supplementary [Copyright Conditions](in_depth_material/copyright-conditions.qmd) page.
+Below are listed several standard free/open licenses. To better understand the conditions under which you are allowed to include others' works in your project folder, please take a look at our supplementary [Copyright Conditions](in_depth_material/copyright-conditions.qmd) page.
 
 [osi-list]: https://opensource.org/licenses
 [fsf-list]: https://www.gnu.org/licenses/license-list.html#SoftwareLicenses

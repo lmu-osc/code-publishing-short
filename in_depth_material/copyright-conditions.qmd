@@ -10,14 +10,13 @@ This is a continuation of the discussion "[When Can I Share the Work of Others?]
 
 :::
 
-
 ### Under Which Conditions?
 
-Finally, if you verified that the work has been made available to you under a free/open license,
+If you verified that the work has been made available to you under a free/open license,
 you need to understand the conditions under which you are allowed to include the work in your project folder
 and share it with others -- regardless of whether you modified it.
 
-In the following, we will explain the most important conditions of the licenses listed above.
+In the following, we will explain the most important conditions of the licenses listed in the [section on copyright](/copyright.qmd).
 For other licenses we recommend reading their text in full and/or consulting with a lawyer.
 The conditions of many popular free/open licenses are also [summarized on ChooseALicense.com][cal-appendix],
 which you can use to get a general idea of a license.
