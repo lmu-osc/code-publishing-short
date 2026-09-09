@@ -56,6 +56,8 @@ website:
             text: "Copyright Conditions"
           - href: in_depth_material/data_dic_generation.qmd
             text: "Automatic Generation of Data Dictionaries"
+          - href: in_depth_material/licenses-continued.qmd
+            text: "Licenses Continued"
 # End Website
 
 # Begin Format

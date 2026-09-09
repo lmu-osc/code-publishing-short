@@ -18,11 +18,11 @@ we will consider the manuscript and the bibliography which you edited.
 ::: {#wrn-exclusive-rights .callout-warning}
 ### Giving Publishers Exclusive Rights
 
-Some journals offer to publish your article under a Creative Commons license,
+Some journals offer to publish your article under a free/open license,
 but still demand an exclusive publishing and distribution license
 or a copyright assignment from you.
 This would give them more rights than the readers of the article have
-through the respective Creative Commons license [@Rumsey2022]
+through the respective free/open license [@Rumsey2022]
 and exceeds by far what is necessary to make publication possible [@Suber2022].
 Consequently, authors should oppose this practice and grant publishers the same rights
 that every other reader of the article has.
@@ -272,8 +272,8 @@ unique(installed.packages(fields="License")[deps, "License"])
 :::
 
 We have prepared two advanced license flowcharts,
-one for software, writing, images, audio, and video in @fig-flowchart-non-data
-and one for data in @fig-flowchart-data where you can make additional choices.
+[one for software, writing, images, audio, and video](/in_depth_material/licenses-continued.qmd#fig-flowchart-non-data)
+and [one for data](/in_depth_material/licenses-continued.qmd#fig-flowchart-data) where you can make additional choices.
 Note, however, that especially the advanced flowchart for licensing data is quite complex
 and we recommend you to seek legal counsel if you want to be sure.
 
@@ -284,11 +284,11 @@ such as whether attribution should be a condition of redistribution.
 As you have learned, even if attribution is not a condition of the license,
 there are other reasons for attributing you as an author
 (such as scientific citation standards or moral rights).
-All conditions are explained on the page on [copyright](copyright.qmd).
+All conditions are explained on the supplementary page on [copyright conditions](in_depth_material/copyright-conditions.qmd).
 
 From the Creative Commons licenses,
 only [CC0\ 1.0][cc0] does not require providing attribution,
-and all software licenses in @fig-flowchart-non-data require providing attribution.
+and all software licenses in [the first advanced license flowchart](/in_depth_material/licenses-continued.qmd#fig-flowchart-non-data) require providing attribution.
 As an author, you are free to waive license conditions such as attribution, however.
 
 ::: {#nte-silos .callout-note collapse="true"}
@@ -547,111 +547,26 @@ reuse lint
 The manuscript and the bibliography file you downloaded for this tutorial
 are made available to you under [CC0\ 1.0][cc0]
 as is all code in this tutorial (e.g., for the data analysis).
-Therefore, you can apply any license to your modified version.
-Please apply the license of your choice now,
-using any of the methods mentioned above (except the README,
-which we will [cover later](make-readme.qmd)).
+Therefore, you could apply any license to your modified version.
+
+Please practice this now by dual-licensing the manuscript and the bibliography
+under the licenses [CC0\ 1.0][cc0] and [Apache\ 2.0][apache2]
+(as recommended in @nte-license-choice-tldr) by updating the file `LICENSE.txt`.
 
 ::: {#tip-manuscript-licensetxt .callout-tip collapse="true"}
 ### Addition to `LICENSE.txt` (Solution)
 
-In the following example, the edited manuscript files have been multi-licensed
-under [AGPLv3][agpl] (or later) or (at the option of the reuser) under [CC\ BY-SA\ 4.0][cc-by-sa],
-while the bibliography is made available under CC0\ 1.0.
-
-[agpl]: https://www.gnu.org/licenses/agpl-3.0.html
-
 ```{.txt .code-overflow-wrap filename="LICENSE.txt"}
-The Quarto documents stored in "Manuscript.qmd", "Manuscript.tex", and "Manuscript.pdf" by Josephine Zerna, Christoph Scheffel, and <YOUR NAME> are available under AGPLv3 (or later) <https://www.gnu.org/licenses/agpl-3.0.html> or (at your option) under CC\ BY-SA\ 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>.
+The Quarto documents stored in "Manuscript.qmd", "Manuscript.tex", and "Manuscript.pdf" by Josephine Zerna, Christoph Scheffel, and <YOUR NAME> are available under CC0\ 1.0 <https://creativecommons.org/publicdomain/zero/1.0/> or (at your option) under Apache License\ 2.0 <https://choosealicense.com/licenses/apache-2.0/>.
 
-The bibliography (stored in "Bibliography.bib") by Florian Kohrt and <YOUR NAME> is available under CC0\ 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>.
+The bibliography (stored in "Bibliography.bib") by Florian Kohrt and <YOUR NAME> is available under CC0\ 1.0 or (at your option) under Apache License\ 2.0.
 ```
-
-As the AGPLv3 requires reusers adding the [full license text](https://www.gnu.org/licenses/agpl-3.0.txt),
-we recommend to also copy it to the project folder (if not already in there).
 :::
 
-After choosing a license, commit your changes:
+Now, commit your changes:
 
 ```{.bash filename="Terminal"}
 git status
 git add .
 git commit -m "Add license"
 ```
-
-## Additional Figures {.appendix}
-
-::: {#fig-flowchart-non-data}
-```{mermaid}
-flowchart TB
-  start("We want to choose a<br>license for software,<br>writing, image, audio,<br>or video.") --"We adapted a work by<br>others shared under a<br>free/open license."--> use_existing_license["<em>Use its license</em>"]
-  start --"We created the work<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>concerning license?")
-  
-  regulation --"Exists"--> follow_existing_norms["<em>Follow that</em>"]
-  regulation --"Does not<br>exist"--> type("Work type?")
-  
-  type --"Software"--> code_sa("Attribution?<br>Indicate license?<br>Add license text?<br>State changes?<br>Disclose code?<br>Copyleft?")
-  type --"Writing, image, audio, video"--> nocode_cc("Attribution?<br>Indicate license?<br>State changes?<br>Anti-DRM?<br>Copyleft?")
-  
-  code_sa --"Attribution &<br>Add license text &<br>State changes"--> apache["Apache 2.0"]
-  code_sa --"Attribution &<br>Indicate license &<br>Disclose code &<br>Weak copyleft"--> mpl["MPL 2.0"]
-  code_sa --"Attribution &<br>Add license text &<br>State changes &<br>Disclose code &<br>Strong copyleft"--> agpl["AGPLv3"]
-  
-  nocode_cc --"Neither"--> cc0["CC0 1.0"]
-  nocode_cc --"Attribution &<br>Indicate license &<br>State changes &<br>Anti-DRM"--> cc_by["CC BY 4.0"]
-  nocode_cc --"Attribution &<br>Indicate license &<br>State changes &<br>Anti-DRM &<br>Copyleft"--> cc_by_sa["CC BY-SA 4.0"]
-  
-  click apache href "https://choosealicense.com/licenses/apache-2.0/"
-  click mpl href "https://choosealicense.com/licenses/mpl-2.0/"
-  click agpl href "https://choosealicense.com/licenses/agpl-3.0/"
-  click cc0 href "https://creativecommons.org/publicdomain/zero/1.0/"
-  click cc_by href "https://creativecommons.org/licenses/by/4.0/"
-  click cc_by_sa href "https://creativecommons.org/licenses/by-sa/4.0/"
-```
-
-_Note._ DRM = digital rights management
-
-Advanced License Flowchart for Software, Writing, Images, Audio, and Video
-:::
-
-::: {#fig-flowchart-data}
-```{mermaid}
-flowchart TB
-  start("We want to choose a<br>license for data.") --"We adapted a database by<br>others shared under a<br>free/open license."--> use_existing_license_db["<em>Use its license(s)<br>for content and database</em>"]
-  start --"We created a database<br>entirely by ourselves."--> regulation("Other regulation<br>(by community or funder)<br>concerning license?")
-  
-  regulation --"Exists"--> follow_existing_norms["<em>Follow that</em>"]
-  regulation --"Does not<br>exist"--> existing_license_content("Adapting content<br> by others?")
-  
-  subgraph content["<strong>License for content</strong>"]
-  existing_license_content --"No, we created the content<br>entirely by ourselves."--> facts("Entries are facts<br>(like measurements<br>or metadata)?")
-  existing_license_content --"Yes, it was<br>shared under a<br>free/open license."--> use_existing_license_content["<em>Use that license</em>"]
-  facts --"Yes"--> cc0_content_metadata["CC0 1.0"]
-  facts --"No"--> choose_license["<em>Consult flowchart for<br>software, writing,<br>image, audio, and video</em>"]
-  end
-  
-  subgraph database["<strong>License for database</strong>"]
-  choose_license --> switch_license["<em>Depending on<br>content license</em>"]
-  use_existing_license_content --> switch_license
-  
-  cc0_content_metadata --> cc0_db["CC0 1.0"]
-  switch_license --"CC0 or<br>non-CC license"--> sa("Attribution?<br>Indicate license?<br>Anti-DRM?<br>Copyleft?")
-  switch_license --"CC BY or<br>CC BY-SA"--> same["<em>Same license for DB</em>"]
-  
-  sa --"Neither"--> cc0_db
-  sa --"Attribution &<br>Indicate license &<br>Anti-DRM &<br>Copyleft"--> odbl["ODbL 1.0"]
-  
-  %% the following link is only added to have terminal nodes on the same level
-  sa ~~~ same
-  end
-  
-  click cc0_content_metadata href "https://creativecommons.org/publicdomain/zero/1.0/"
-  click cc0_db href "https://creativecommons.org/publicdomain/zero/1.0/"
-  click odbl href "https://opendatacommons.org/licenses/odbl/summary/"
-```
-
-_Note._ DRM = digital rights management
-
-Advanced License Flowchart for Data(base)
-:::
-
