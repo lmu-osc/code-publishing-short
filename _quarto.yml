@@ -1,19 +1,15 @@
 # Begin Project
 project:
   type: website
-  pre-render: wget -nc https://raw.githubusercontent.com/lmu-osc/branding-resources/refs/heads/main/lmu-osc-custom.scss
-  post-render: rm lmu-osc-custom.scss
 # End Project
-
-
 
 # Begin Website
 website:
-  title: "Code Publishing Tutorial (Short version)"
+  title: "Code Publishing Tutorial"
   page-footer:
     center: |
       A recommended citation and license information for this tutorial
-      are provided on the [about page](about.qmd).
+      are provided on the [about page](/about.qmd).
     border: false
   search:
     location: sidebar
@@ -25,7 +21,6 @@ website:
   margin-header: |
     ![](/images/LMU-OSC_logo.jpg){width="175"}
 
-
   navbar:
     right:
       - about.qmd
@@ -36,9 +31,9 @@ website:
       - icon: github
         menu:
           - text: Source Code
-            url:  https://github.com/lmu-osc/code-publishing
+            url: https://github.com/lmu-osc/code-publishing
           - text: Report a Bug
-            url:  https://github.com/lmu-osc/code-publishing/issues
+            url: https://github.com/lmu-osc/code-publishing/issues
       - icon: house-heart
         url: https://www.osc.uni-muenchen.de/
 
@@ -53,22 +48,26 @@ website:
       - choose-license.qmd
       - make-readme.qmd
       - archive.qmd
-      - section: "💡 In-depth material"
+      - section: "Excursus: In-depth material 💡"
         contents:
           - href: in_depth_material/introduction_copyright.qmd
             text: "Introduction to Copyright and Licensing"
+          - href: in_depth_material/copyright-conditions.qmd
+            text: "Copyright Conditions"
           - href: in_depth_material/data_dic_generation.qmd
             text: "Automatic Generation of Data Dictionaries"
+          - href: in_depth_material/licenses-continued.qmd
+            text: "Licenses Continued"
+          - href: in_depth_material/other_dependencies.qmd
+            text: "Identify additional system dependencies for the README"
 # End Website
-
 
 # Begin Format
 format:
   html:
     theme:
       - cosmo
-      - lmu-osc-custom.scss
-    css: 
+    css:
       - https://raw.githubusercontent.com/lmu-osc/branding-resources/refs/heads/main/lmu-osc-styles.css
     toc: true
     fontsize: 13pt
@@ -79,7 +78,6 @@ format:
     include-in-header:
       - file: matomo_analytics.html
 # End Format
-
 
 csl: apa.csl
 bibliography: literature.bib
